@@ -1,0 +1,208 @@
+# 18Dragon — story catalog (descriptive; stable)
+#
+# id -> title, type, epics, points. STATUS and SPRINT membership live in
+# sprint-status.yaml. Epic definitions in epics.yaml. `points` is null until a
+# story is pointed during sprint planning (agile-sprint-plan). This file changes
+# when stories are added/split/re-titled or (re)pointed.
+
+stories:
+  # --- DEV (18xxMaker fork) ---
+  D01:
+    title: "Register art glob + registry export"
+    type: dev
+    epics: ["Custom SVG", "Renderer Foundations"]
+    points: 1
+  D02:
+    title: "Art shape atom (sized/positioned/layerable)"
+    type: dev
+    epics: ["Custom SVG"]
+    points: 3
+  D03:
+    title: "Wire art type into Shape.jsx mapping"
+    type: dev
+    epics: ["Custom SVG"]
+    points: 2
+  D04:
+    title: "Sample art asset proves render on a hex"
+    type: dev
+    epics: ["Custom SVG"]
+    points: 1
+    # Carry-over from D02 QA: must verify `opacity` passthrough on the compiled SVG.
+    # Icon.jsx proves width/height/x/y reach the root <svg>, but opacity via
+    # vite-plugin-fast-react-svg is UNPROVEN — add an AC to render an art element
+    # with opacity < 1 and confirm it visibly renders semi-transparent.
+  D05:
+    title: "Permit letters -> top-most overlay layer"
+    type: dev
+    epics: ["Permit Overlay", "Renderer Foundations"]
+    points: 3
+  D06:
+    title: "Permit letter stays visible over placed tiles"
+    type: dev
+    epics: ["Permit Overlay"]
+    points: 2
+  D07:
+    title: "Render special ruins hex styling"
+    type: dev
+    epics: ["Ruins Rendering", "Verantum"]
+    points: 3
+  # D08 (annotate ruins upgrade targets) was DROPPED 2026-07-24: the ruins SVG
+  # marker (D07) already signals that ruins tile-lays are allowed on the hex.
+  # Placement follows normal tile rules (track must connect, etc.), covered by the
+  # rulebook — no per-hex board annotation needed.
+
+  # --- CONTENT (game material, components & rules) ---
+  # Board split (2026-07-24, sprint-2 planning): each region = a geography pass +
+  # a cities pass (finer granularity). Verantum is done via C01 + C27 + C28.
+  # Mainland regions (N/D/E/S) each split geo+cities when scheduled, on top of the
+  # C02 skeleton. The emergent "2nd city from ruins" is an optional play-time
+  # development (PRD §6.2, corrected 2026-07-24) — the pre-placed minor-home cities
+  # are legitimate and the map is laid out without assuming a second city.
+  C01:
+    title: "Verantum island — geography (dits, ruins markers, terrain)"
+    type: content
+    epics: ["World & Map", "Verantum"]
+    points: 2
+  C02:
+    title: "Map skeleton — place the 5 regions on the grid (from doodle map)"
+    type: content
+    epics: ["World & Map"]
+    points: null
+  C03:
+    title: "Define 10 majors (names/abbrev/colors/tokens/region)"
+    type: content
+    epics: ["Companies"]
+    points: null
+  C04:
+    title: "Define 30 minors (6/region, home hexes, permits)"
+    type: content
+    epics: ["Companies", "Permits"]
+    points: null
+  C05:
+    title: "Define the 5 region permit privates"
+    type: content
+    epics: ["Privates", "Permits"]
+    points: null
+  C06:
+    title: "Document 18Dragon divergences from 1822"
+    type: content
+    epics: ["Rules & Balance"]
+    points: null
+  C07:
+    title: "Specify the region-permit mechanic"
+    type: content
+    epics: ["Rules & Balance", "Permits"]
+    points: null
+  C08:
+    title: "Specify Verantum ruins/metro value system"
+    type: content
+    epics: ["Rules & Balance", "Verantum"]
+    points: null
+  C09:
+    title: "Set and validate balance targets"
+    type: content
+    epics: ["Rules & Balance", "Scaling"]
+    points: null
+  C10:
+    title: "Define opener private (phlogiston / 5P / bid box 1)"
+    type: content
+    epics: ["Privates", "Companies"]
+    points: null
+  C11:
+    title: "Detail the remaining privates (designer-known + fill gaps)"
+    type: content
+    epics: ["Privates"]
+    points: null
+  C12:
+    title: "Assign 4+/5+ player-count gates to privates"
+    type: content
+    epics: ["Privates", "Scaling"]
+    points: null
+  C13:
+    title: "Specify the merger mechanic (rules writeup)"
+    type: content
+    epics: ["Rules & Balance", "Mergers"]
+    points: null
+  C14:
+    title: "Resolve PRD open questions (section 9)"
+    type: content
+    epics: ["Rules & Balance", "Mergers", "Verantum"]
+    points: null
+  C15:
+    title: "Define track tile set + tile manifest"
+    type: content
+    epics: ["World & Map", "Game Components"]
+    points: null
+  C16:
+    title: "Phase/round track on the board"
+    type: content
+    epics: ["World & Map", "Game Components"]
+    points: null
+  C17:
+    title: "Major & minor charters"
+    type: content
+    epics: ["Companies", "Game Components"]
+    points: null
+  C18:
+    title: "Bid boxes"
+    type: content
+    epics: ["Game Components"]
+    points: null
+  C19:
+    title: "Misc cards (player-order, reference)"
+    type: content
+    epics: ["Game Components"]
+    points: null
+  C20:
+    title: "Add Merger round to the rounds tracker (JSON)"
+    type: content
+    epics: ["Game Components", "Rules & Balance"]
+    points: null
+  C21:
+    title: "Finalize stock market (verify vs PRD)"
+    type: content
+    epics: ["Game Components"]
+    points: null
+  C22:
+    title: "Extract base 1822 rulebook"
+    type: content
+    epics: ["Rulebook"]
+    points: null
+  C23:
+    title: "Author 18Dragon rulebook (1822-diff style)"
+    type: content
+    epics: ["Rulebook"]
+    points: null
+  C24:
+    title: "Token sticker designs (station/market/revenue/destination/misc)"
+    type: content
+    epics: ["Stickers"]
+    points: null
+  C25:
+    title: "Certificates (major shares + minor certs)"
+    type: content
+    epics: ["Companies", "Game Components"]
+    points: null
+  C26:
+    title: "Train cards (verify roster + render)"
+    type: content
+    epics: ["Game Components"]
+    points: null
+  C27:
+    title: "Verantum island — cities & the 6 minor homes"
+    type: content
+    epics: ["World & Map", "Verantum"]
+    points: 3
+  C28:
+    title: "Verantum bridge hexes (native bridge rendering)"
+    type: content
+    epics: ["World & Map", "Verantum"]
+    points: 1
+    # Designer (2026-07-24): bridge hexes are M12 and F19 (both currently water).
+    # Designer said "bridge SVGs" here but chose native rendering at planning —
+    # confirm native vs custom SVG when fleshing C28.
+
+# Notes:
+# - Stickers (C24) are content track but produced via Silhouette Cameo, not
+#   18xxMaker (PRD section 11).
+# - Every PRD section-11 component and section-10 deliverable maps to >=1 story.

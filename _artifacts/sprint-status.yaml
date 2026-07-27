@@ -1,0 +1,69 @@
+# 18Dragon — sprint & story status (CANONICAL)
+#
+# Stories live in exactly ONE bucket: `backlog` (unscheduled) or a sprint.
+# A story's sprint is implied by its bucket — there is NO per-story sprint field.
+# Status values: stub | ready | in-progress | review | done
+#
+# Descriptive data (title, type, epics, POINTS) is in backlog.yaml; epic
+# definitions in epics.yaml. Skills read/write THIS file for status and bucket
+# membership. Points are assigned in backlog.yaml during sprint planning.
+
+meta:
+  updated: "2026-07-24"
+
+# Unscheduled stories — id: status
+backlog:
+  C02: stub
+  C03: stub
+  C04: stub
+  C05: stub
+  C06: stub
+  C07: stub
+  C08: stub
+  C09: stub
+  C10: stub
+  C11: stub
+  C12: stub
+  C13: stub
+  C14: stub
+  C15: stub
+  C16: stub
+  C17: stub
+  C18: stub
+  C19: stub
+  C20: stub
+  C21: stub
+  C22: stub
+  C23: stub
+  C24: stub
+  C25: stub
+  C26: stub
+
+# Real sprints — id: { status: planning|active|complete, goal: str, stories: { id: status } }
+sprints:
+  sprint-01:
+    status: complete
+    goal: >-
+      The 18xxMaker fork renders every board feature 18Dragon needs — custom
+      full-color SVG art, permit-letter overlays that survive placed tiles, and
+      styled ruins hexes — so the board content (map) can be laid out and
+      rendered correctly. (Original goal said "ruins hexes with upgrade
+      annotations"; D08 dropped mid-sprint — the ruins marker is the annotation.)
+    stories:
+      D01: done
+      D02: done
+      D03: done
+      D04: done
+      D05: done
+      D06: done
+      D07: done
+  sprint-02:
+    status: complete
+    goal: >-
+      The Verantum island board is fully laid out — cities, the 6 minor homes,
+      dits, ruins markers, and bridge hexes — ready to render. Rules/features
+      (ruins/metro values C08, the bridge-enabling private) are deferred.
+    stories:
+      C27: done
+      C01: done
+      C28: done

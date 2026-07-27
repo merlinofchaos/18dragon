@@ -1,0 +1,49 @@
+// Headless visual verification for a dev story (18xxMaker fork).
+// Renders a game's map in the running dev server and screenshots it, reporting
+// any browser console errors. Used because the app has no File>Open automation.
+//
+// Setup (once): the game must be reachable at /games/<slug>/map. The fork serves
+// any `src/data/games/*.json` via a glob, so TEMPORARILY copy the test game in:
+//   cp /Users/earlmiles/Projects/18dragon/18dragon.json \
+//      /Users/earlmiles/Projects/18xx-maker/src/data/games/18dragon.json
+// ...run this script, inspect the PNG, then REMOVE the copy:
+//   rm /Users/earlmiles/Projects/18xx-maker/src/data/games/18dragon.json
+// Never leave the copy behind (it pollutes the fork's bundled game list).
+//
+// Usage (run from the fork so playwright resolves):
+//   node verify-screenshot.mjs <out.png> [slug=18dragon] [clip=x,y,w,h] [scale=2]
+// Requires chromium once: `npx playwright install chromium`.
+
+import pkg from "/Users/earlmiles/Projects/18xx-maker/node_modules/playwright/index.js";
+const { chromium } = pkg;
+
+const [out, slug = "18dragon", clipArg, scaleArg] = process.argv.slice(2);
+if (!out) {
+  console.error("usage: node verify-screenshot.mjs <out.png> [slug] [x,y,w,h] [scale]");
+  process.exit(1);
+}
+const clip = clipArg ? (([x, y, w, h]) => ({ x, y, width: w, height: h }))(clipArg.split(",").map(Number)) : null;
+const deviceScaleFactor = scaleArg ? Number(scaleArg) : 2;
+
+const browser = await chromium.launch();
+const page = await browser.newPage({ viewport: { width: 1800, height: 1300 }, deviceScaleFactor });
+const errors = [];
+page.on("console", (m) => { if (m.type() === "error") errors.push(m.text()); });
+page.on("pageerror", (e) => errors.push("PAGEERROR: " + e.message));
+
+// domcontentloaded (NOT networkidle — vite HMR never idles). Wait out any
+// recompile the game-copy triggered, then screenshot.
+await page.goto(`http://localhost:3000/games/${slug}/map`, { waitUntil: "domcontentloaded", timeout: 30000 });
+await page.waitForTimeout(4000);
+
+const info = await page.evaluate(() => {
+  const texts = [...document.querySelectorAll("text")].map((t) => t.textContent);
+  let area = 0;
+  document.querySelectorAll("svg").forEach((s) => { const r = s.getBoundingClientRect(); area = Math.max(area, r.width * r.height); });
+  return { svgCount: document.querySelectorAll("svg").length, mapArea: Math.round(area), textSample: texts.slice(0, 40) };
+});
+console.log("INFO:" + JSON.stringify(info));
+console.log("CONSOLE_ERRORS:" + JSON.stringify(errors));
+
+await page.screenshot(clip ? { path: out, clip } : { path: out, fullPage: true });
+await browser.close();

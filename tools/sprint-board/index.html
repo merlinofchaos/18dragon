@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>18Dragon — Sprint Board</title>
+<style>
+  :root {
+    --bg: #14161c; --panel: #1b1e27; --panel2: #222634; --line: #2c3140;
+    --text: #e6e8ee; --dim: #9aa2b4; --accent: #7B2D8B;
+    --stub: #6b7280; --ready: #56B4E9; --inprogress: #E69F00;
+    --review: #b57edc; --done: #009E73;
+    --dev: #56B4E9; --content: #E69F00;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; }
+  body {
+    background: var(--bg); color: var(--text);
+    font: 13px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    display: flex; height: 100vh; overflow: hidden;
+  }
+
+  /* Sidebar */
+  #sidebar {
+    width: 232px; flex: 0 0 232px; background: var(--panel);
+    border-right: 1px solid var(--line); display: flex; flex-direction: column;
+  }
+  #brand {
+    padding: 14px 16px; font-weight: 700; font-size: 15px; letter-spacing: .3px;
+    border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 8px;
+  }
+  #brand .dragon { color: var(--accent); }
+  #sprintList { flex: 1; overflow-y: auto; padding: 6px; }
+  #backlogSlot { border-top: 1px solid var(--line); padding: 6px; }
+  .navitem {
+    padding: 9px 10px; border-radius: 7px; cursor: pointer; margin-bottom: 3px;
+    display: flex; align-items: center; gap: 8px; user-select: none;
+  }
+  .navitem:hover { background: var(--panel2); }
+  .navitem.active { background: var(--accent); }
+  .navitem.active .sub, .navitem.active .count { color: #f0dcf5; }
+  .navitem .dot { width: 8px; height: 8px; border-radius: 50%; flex: 0 0 8px; }
+  .navitem .label { font-weight: 600; }
+  .navitem .sub { color: var(--dim); font-size: 11px; margin-left: auto; }
+  .navitem .count {
+    margin-left: auto; color: var(--dim); font-size: 11px;
+    background: var(--panel2); padding: 1px 7px; border-radius: 10px;
+  }
+  .navitem.active .count { background: rgba(0,0,0,.25); }
+  .navhead {
+    padding: 8px 12px 4px; color: var(--dim); font-size: 10.5px;
+    text-transform: uppercase; letter-spacing: .8px;
+  }
+
+  /* Main */
+  #main { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+  #header {
+    padding: 16px 22px; border-bottom: 1px solid var(--line);
+    display: flex; align-items: center; gap: 20px;
+  }
+  #header .htext { flex: 1; min-width: 0; }
+  #header h1 { margin: 0; font-size: 19px; }
+  #header .goal { color: var(--dim); margin-top: 3px; }
+  #header .metarow { margin-top: 8px; display: flex; gap: 16px; flex-wrap: wrap; color: var(--dim); font-size: 12px; }
+  #header .metarow b { color: var(--text); }
+  .statuspill { padding: 2px 9px; border-radius: 10px; font-size: 11px; font-weight: 700; color: #10131a; }
+
+  /* Gauge */
+  #gauge { flex: 0 0 auto; text-align: center; }
+  #gauge svg { display: block; }
+  #gauge .pct { font-size: 20px; font-weight: 800; fill: var(--text); }
+  #gauge .cap { color: var(--dim); font-size: 11px; margin-top: 2px; }
+
+  /* Board: one scroll area; sticky header row shares the body's width (aligned) */
+  #board { flex: 1; padding: 16px; display: flex; flex-direction: column; overflow: hidden; }
+  .board-scroll { flex: 1; overflow-y: auto; padding-right: 12px; }
+  .board-head, .board-body { display: grid; gap: 14px; }
+  .board-head { position: sticky; top: 0; z-index: 2; background: var(--bg); padding-bottom: 10px; }
+  .board-body { align-items: start; }
+  .colhead {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 9px;
+    padding: 10px 12px; font-size: 12px; text-transform: uppercase; letter-spacing: .6px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .colhead .n { margin-left: auto; color: var(--dim); font-weight: 600; }
+  .colbody {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+    padding: 9px; display: flex; flex-direction: column; gap: 9px; min-height: 56px;
+  }
+  .colbody .empty { color: var(--dim); font-size: 11px; padding: 8px 4px; text-align: center; }
+
+  .card {
+    background: var(--panel2); border: 1px solid var(--line); border-left-width: 3px;
+    border-radius: 8px; padding: 9px 10px; cursor: default;
+  }
+  .card.clickable { cursor: pointer; }
+  .card.clickable:hover { border-color: var(--accent); }
+  .card .top { display: flex; align-items: center; gap: 7px; margin-bottom: 5px; }
+  .card .id { font-weight: 800; font-size: 11px; letter-spacing: .3px; }
+  .card .pts { margin-left: auto; font-size: 10.5px; color: var(--dim); background: var(--panel); border-radius: 9px; padding: 1px 7px; }
+  .card .file { color: var(--done); font-size: 11px; }
+  .card .title { font-size: 12.5px; overflow-wrap: anywhere; }
+  .card .chips { margin-top: 7px; display: flex; flex-wrap: wrap; gap: 4px; }
+  .chip { font-size: 9.5px; padding: 1px 6px; border-radius: 8px; background: var(--panel); color: var(--dim); border: 1px solid var(--line); }
+  .chip.type { text-transform: uppercase; font-weight: 700; letter-spacing: .4px; }
+
+  /* Modal */
+  #overlay { position: fixed; inset: 0; background: rgba(0,0,0,.55); display: none; align-items: center; justify-content: center; z-index: 20; }
+  #overlay.show { display: flex; }
+  #modal { background: var(--panel); width: min(820px, 92vw); max-height: 88vh; border-radius: 12px; border: 1px solid var(--line); display: flex; flex-direction: column; overflow: hidden; }
+  #modal .mhead { padding: 12px 18px; border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 10px; }
+  #modal .mhead .file { color: var(--dim); font-size: 12px; margin-left: auto; }
+  #modal .x { cursor: pointer; color: var(--dim); font-size: 20px; line-height: 1; padding: 0 4px; }
+  #modal .x:hover { color: var(--text); }
+  #mbody { padding: 8px 24px 24px; overflow-y: auto; }
+  #mbody h1 { font-size: 20px; } #mbody h2 { font-size: 16px; border-bottom: 1px solid var(--line); padding-bottom: 4px; }
+  #mbody h3 { font-size: 14px; } #mbody code { background: var(--panel2); padding: 1px 5px; border-radius: 4px; }
+  #mbody pre { background: var(--panel2); padding: 12px; border-radius: 8px; overflow-x: auto; }
+  #mbody table { border-collapse: collapse; width: 100%; margin: 10px 0; }
+  #mbody th, #mbody td { border: 1px solid var(--line); padding: 5px 9px; text-align: left; }
+  #mbody a { color: var(--ready); }
+
+  #empty { margin: auto; color: var(--dim); text-align: center; }
+</style>
+</head>
+<body>
+  <div id="sidebar">
+    <div id="brand"><span class="dragon">◆</span> 18Dragon</div>
+    <div id="sprintList"></div>
+    <div id="backlogSlot"></div>
+  </div>
+
+  <div id="main">
+    <div id="header"></div>
+    <div id="board"></div>
+  </div>
+
+  <div id="overlay">
+    <div id="modal">
+      <div class="mhead">
+        <b id="mtitle"></b>
+        <span class="file" id="mfile"></span>
+        <span class="x" onclick="closeModal()">✕</span>
+      </div>
+      <div id="mbody"></div>
+    </div>
+  </div>
+
+<script>
+const STATUS_COLORS = {
+  "stub": "var(--stub)", "ready": "var(--ready)", "in-progress": "var(--inprogress)",
+  "review": "var(--review)", "done": "var(--done)"
+};
+// Display labels for column headers (does not change the underlying status value)
+const STATUS_LABELS = { "stub": "todo" };
+const statusLabel = st => STATUS_LABELS[st] || st;
+let BOARD = null;
+let SELECTED = null; // sprint id or 'backlog'
+
+function esc(s){ return (s==null?"":String(s)).replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+async function loadBoard() {
+  BOARD = await window.pywebview.api.get_board();
+  if (SELECTED === null) {
+    const open = BOARD.sprints.find(s => s.status === "active") ||
+                 BOARD.sprints.find(s => s.status === "planning");
+    SELECTED = open ? open.id : "backlog";
+  } else if (SELECTED !== "backlog" && !BOARD.sprints.some(s => s.id === SELECTED)) {
+    SELECTED = "backlog"; // selected sprint vanished
+  }
+  render();
+}
+window.refreshBoard = loadBoard;
+
+function currentView() {
+  if (SELECTED === "backlog")
+    return { id: "Backlog", goal: "Unscheduled stories", status: null,
+             created: null, stories: BOARD.backlog, isBacklog: true };
+  return BOARD.sprints.find(s => s.id === SELECTED);
+}
+
+function completion(stories) {
+  const pointed = stories.filter(s => typeof s.points === "number");
+  const totalPts = pointed.reduce((a,s)=>a+s.points,0);
+  const donePts = pointed.filter(s=>BOARD.doneStatuses.includes(s.status)).reduce((a,s)=>a+s.points,0);
+  if (totalPts > 0) return { pct: Math.round(100*donePts/totalPts), basis: "points", done: donePts, total: totalPts };
+  const total = stories.length;
+  const done = stories.filter(s=>BOARD.doneStatuses.includes(s.status)).length;
+  return { pct: total?Math.round(100*done/total):0, basis: "stories", done, total };
+}
+
+function gaugeSVG(pct) {
+  const r=34, c=2*Math.PI*r, off=c*(1-pct/100);
+  return `<svg width="92" height="92" viewBox="0 0 92 92">
+    <circle cx="46" cy="46" r="${r}" fill="none" stroke="var(--line)" stroke-width="9"/>
+    <circle cx="46" cy="46" r="${r}" fill="none" stroke="var(--done)" stroke-width="9"
+      stroke-linecap="round" stroke-dasharray="${c}" stroke-dashoffset="${off}"
+      transform="rotate(-90 46 46)"/>
+    <text class="pct" x="46" y="46" text-anchor="middle" dominant-baseline="central">${pct}%</text>
+  </svg>`;
+}
+
+function renderSidebar() {
+  const sl = document.getElementById("sprintList");
+  let h = `<div class="navhead">Sprints</div>`;
+  if (!BOARD.sprints.length) h += `<div class="empty" style="color:var(--dim);padding:8px 12px">No sprints yet</div>`;
+  for (const s of BOARD.sprints) {
+    const c = completion(s.stories);
+    h += `<div class="navitem ${SELECTED===s.id?'active':''}" onclick="select('${s.id}')">
+      <span class="dot" style="background:${STATUS_COLORS[s.status]||'var(--dim)'}"></span>
+      <span class="label">${esc(s.id)}</span>
+      <span class="sub">${c.pct}%</span>
+    </div>`;
+  }
+  sl.innerHTML = h;
+
+  const bl = completion(BOARD.backlog);
+  document.getElementById("backlogSlot").innerHTML =
+    `<div class="navitem ${SELECTED==='backlog'?'active':''}" onclick="select('backlog')">
+      <span class="dot" style="background:var(--stub)"></span>
+      <span class="label">Backlog</span>
+      <span class="count">${BOARD.backlog.length}</span>
+    </div>`;
+}
+
+function renderHeader(view) {
+  const c = completion(view.stories);
+  const pts = view.stories.filter(s=>typeof s.points==="number").reduce((a,s)=>a+s.points,0);
+  const unpointed = view.stories.filter(s=>typeof s.points!=="number").length;
+  let meta = `<span><b>${view.stories.length}</b> stories</span>
+    <span><b>${pts}</b> points${unpointed?` <span style="opacity:.7">(+${unpointed} unpointed)</span>`:''}</span>
+    <span><b>${c.done}</b>/<b>${c.total}</b> ${c.basis} done</span>`;
+  if (view.created) meta += `<span>created <b>${esc(view.created)}</b></span>`;
+  if (BOARD.meta && BOARD.meta.updated) meta += `<span>updated <b>${esc(BOARD.meta.updated)}</b></span>`;
+  const pill = view.status ? `<span class="statuspill" style="background:${STATUS_COLORS[view.status]||'var(--dim)'}">${esc(view.status)}</span>` : "";
+
+  document.getElementById("header").innerHTML = `
+    <div class="htext">
+      <h1>${esc(view.isBacklog?"Backlog":view.id)} ${pill}</h1>
+      <div class="goal">${esc(view.goal||"")}</div>
+      <div class="metarow">${meta}</div>
+    </div>
+    <div id="gauge">${gaugeSVG(c.pct)}<div class="cap">complete (${c.basis})</div></div>`;
+}
+
+function card(s) {
+  const clickable = s.hasFile;
+  const chips = [`<span class="chip type" style="color:${s.type==='dev'?'var(--dev)':'var(--content)'}">${esc(s.type)}</span>`]
+    .concat((s.epics||[]).map(e=>`<span class="chip">${esc(e)}</span>`)).join("");
+  return `<div class="card ${clickable?'clickable':''}" style="border-left-color:${STATUS_COLORS[s.status]||'var(--line)'}"
+        ${clickable?`onclick="openStory('${s.id}')"`:''}>
+    <div class="top">
+      <span class="id">${esc(s.id)}</span>
+      ${s.hasFile?'<span class="file" title="story file exists">●</span>':''}
+      <span class="pts">${typeof s.points==="number"?s.points+" pt":"–"}</span>
+    </div>
+    <div class="title">${esc(s.title)}</div>
+    <div class="chips">${chips}</div>
+  </div>`;
+}
+
+function renderBoard(view) {
+  const byStatus = {};
+  for (const st of BOARD.statusOrder) byStatus[st] = [];
+  for (const s of view.stories) (byStatus[s.status] || (byStatus[s.status]=[])).push(s);
+
+  const cols = `repeat(${BOARD.statusOrder.length}, minmax(0, 1fr))`;
+  let head = "", body = "";
+  for (const st of BOARD.statusOrder) {
+    const items = byStatus[st] || [];
+    const pts = items.reduce((a,s)=> a + (typeof s.points==="number"?s.points:0), 0);
+    head += `<div class="colhead">
+      <span class="dot" style="display:inline-block;width:9px;height:9px;border-radius:50%;background:${STATUS_COLORS[st]}"></span>
+      ${statusLabel(st)}<span class="n">${items.length} · ${pts} pt</span></div>`;
+    body += `<div class="colbody">${items.length?items.map(card).join(""):'<div class="empty">—</div>'}</div>`;
+  }
+  document.getElementById("board").innerHTML =
+    `<div class="board-scroll">
+       <div class="board-head" style="grid-template-columns:${cols}">${head}</div>
+       <div class="board-body" style="grid-template-columns:${cols}">${body}</div>
+     </div>`;
+}
+
+function render() {
+  renderSidebar();
+  const view = currentView();
+  if (!view) { document.getElementById("header").innerHTML=""; document.getElementById("board").innerHTML='<div id="empty">Nothing selected</div>'; return; }
+  renderHeader(view);
+  renderBoard(view);
+}
+
+function select(id) { SELECTED = id; render(); }
+
+async function openStory(id) {
+  const s = await window.pywebview.api.get_story(id);
+  if (!s) return;
+  document.getElementById("mtitle").textContent = id;
+  document.getElementById("mfile").textContent = s.file;
+  document.getElementById("mbody").innerHTML = s.html;
+  document.getElementById("mbody").scrollTop = 0;
+  document.getElementById("overlay").classList.add("show");
+}
+function closeModal(){ document.getElementById("overlay").classList.remove("show"); }
+document.getElementById("overlay").addEventListener("click", e=>{ if(e.target.id==="overlay") closeModal(); });
+document.addEventListener("keydown", e=>{ if(e.key==="Escape") closeModal(); });
+
+if (window.pywebview && window.pywebview.api) loadBoard();
+else window.addEventListener("pywebviewready", loadBoard);
+</script>
+</body>
+</html>

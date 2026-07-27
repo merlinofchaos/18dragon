@@ -1,0 +1,87 @@
+# 18Dragon — epics (concept clusters; many-to-many with stories)
+#
+# Epics organize stories by concept; a story may belong to several. Epics do NOT
+# imply a schedule — that's sprints. Members are story IDs (see backlog.yaml).
+# Derived from prd-game.md + prd-tooling.md.
+
+epics:
+  # --- Dev (18xxMaker fork) ---
+  "Custom SVG":
+    concept: "Render arbitrary full-color SVG artwork on hexes/tiles."
+    track: dev
+    prd: "prd-tooling.md 2.1"
+    stories: [D01, D02, D03, D04]
+  "Permit Overlay":
+    concept: "Region-permit letters that stay visible under placed track tiles."
+    track: dev
+    prd: "prd-tooling.md 2.2"
+    stories: [D05, D06]
+  "Ruins Rendering":
+    concept: "Rendering the special ruins hexes (marker + styling)."
+    track: dev
+    prd: "prd-tooling.md 2.3"
+    stories: [D07]
+  "Renderer Foundations":
+    concept: "Cross-cutting renderer plumbing other dev work builds on."
+    track: dev
+    prd: null
+    stories: [D01, D05]
+
+  # --- Content (game material, components & rules) ---
+  "World & Map":
+    concept: "The physical board — regions, island, tiles, and on-board tracks."
+    track: content
+    prd: "prd-game.md 3, 11"
+    stories: [C01, C02, C15, C16, C27, C28]
+  "Companies":
+    concept: "Majors, minors, and their charters/certificates."
+    track: content
+    prd: "prd-game.md 4"
+    stories: [C03, C04, C10, C17, C25]
+  "Privates":
+    concept: "The 30 privates — permit privates, the opener, and the rest."
+    track: content
+    prd: "prd-game.md 4.3"
+    stories: [C05, C10, C11, C12]
+  "Rules & Balance":
+    concept: "How 18Dragon plays and the numbers that keep it fair."
+    track: content
+    prd: "prd-game.md 5-7, 9"
+    stories: [C06, C07, C08, C09, C13, C14, C20]
+  "Rulebook":
+    concept: "The 1822-diff rulebook deliverable."
+    track: content
+    prd: "prd-game.md 10.1"
+    stories: [C22, C23]
+  "Game Components":
+    concept: "The 18xxMaker-produced pieces (section 11 manifest) beyond the map."
+    track: content
+    prd: "prd-game.md 11"
+    stories: [C15, C16, C17, C18, C19, C20, C21, C25, C26]
+  "Stickers":
+    concept: "Token stickers produced via Silhouette Cameo (not 18xxMaker)."
+    track: content
+    prd: "prd-game.md 11"
+    stories: [C24]
+
+  # --- Cross-cutting ---
+  "Verantum":
+    concept: "The island — its map, ruins/metro system, and special rendering."
+    track: mixed
+    prd: "prd-game.md 6.2"
+    stories: [C01, C08, C14, D07, C27, C28]
+  "Permits":
+    concept: "The region-permit mechanic — rules, permit privates, and the letter overlay."
+    track: mixed
+    prd: "prd-game.md 6.1"
+    stories: [C04, C05, C07, D05, D06]
+  "Scaling":
+    concept: "Player-count scaling via the modular board and gated privates."
+    track: content
+    prd: "prd-game.md 6.3"
+    stories: [C09, C12]
+  "Mergers":
+    concept: "The merger mechanic that replaces concessions."
+    track: content
+    prd: "prd-game.md 5.1"
+    stories: [C13, C14]

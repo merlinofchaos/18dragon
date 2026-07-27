@@ -1,0 +1,4 @@
+pywebview
+watchdog
+pyyaml
+markdown
