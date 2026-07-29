@@ -202,6 +202,82 @@ stories:
     # Designer said "bridge SVGs" here but chose native rendering at planning —
     # confirm native vs custom SVG when fleshing C28.
 
+  # --- Mainland: Caelimor (region N, leftmost/NW). Placed incrementally (no full
+  # skeleton yet). Split geo further into hexes vs terrain+dits per designer. ---
+  C29:
+    title: "Caelimor (N) — hexes & permit letters (region footprint)"
+    type: content
+    epics: ["World & Map", "Permits"]
+    points: 3
+  C30:
+    title: "Caelimor (N) — terrain & dits"
+    type: content
+    epics: ["World & Map"]
+    points: 2
+  C31:
+    title: "Caelimor (N) — cities (Draeven + special tiles)"
+    type: content
+    epics: ["World & Map"]
+    points: 3
+
+  # --- Mainland: Gördum (region D, center-north mountains). Placed east of
+  # Caelimor (G permit). Split geo → terrain → cities per the Caelimor pattern,
+  # rebalanced (terrain is the heavy story here; cities are sparser). ---
+  C32:
+    title: "Gördum (G) — hexes & permit letters (region footprint)"
+    type: content
+    epics: ["World & Map", "Permits"]
+    points: 3
+  C33:
+    title: "Gördum (G) — mountain terrain (3 cost bands) & dits"
+    type: content
+    epics: ["World & Map"]
+    points: 3
+  C34:
+    title: "Gördum (G) — cities (capital Brekheim + sparse settlements)"
+    type: content
+    epics: ["World & Map"]
+    points: 2
+
+  # --- Mainland: Muravel (region S, southern plains). A wide southern band below
+  # the existing board (extends the grid DOWN), sea on all 3 outer sides + an
+  # interior west lake + an inlet south of Caelimor. Permit M. Split geo →
+  # terrain → cities per the Caelimor/Gördum pattern. ---
+  C35:
+    title: "Muravel (M) — hexes, coastline & permit letters (region footprint)"
+    type: content
+    epics: ["World & Map", "Permits"]
+    points: 3
+  C36:
+    title: "Muravel (M) — terrain & dits"
+    type: content
+    epics: ["World & Map"]
+    points: 2
+  C37:
+    title: "Muravel (M) — cities (capital Kalavar + settlements)"
+    type: content
+    epics: ["World & Map"]
+    points: 3
+
+  # --- Mainland: Varstova (region E, northeast hills). The LAST region — a NE
+  # wedge east of Gördum's diagonal edge (anchored at L43). Permit V. Completes
+  # the 5-region map. Split geo → terrain → cities per the established pattern. ---
+  C38:
+    title: "Varstova (V) — hexes & permit letters (region footprint)"
+    type: content
+    epics: ["World & Map", "Permits"]
+    points: 3
+  C39:
+    title: "Varstova (V) — hills terrain & dits"
+    type: content
+    epics: ["World & Map"]
+    points: 2
+  C40:
+    title: "Varstova (V) — cities (capital Varstgrad + settlements)"
+    type: content
+    epics: ["World & Map"]
+    points: 3
+
 # Notes:
 # - Stickers (C24) are content track but produced via Silhouette Cameo, not
 #   18xxMaker (PRD section 11).

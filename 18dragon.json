@@ -1,476 +1,4303 @@
 {
-  "info": {
-    "title": "18Dragon",
-    "subtitle": "Railways in a Fantasy Land",
-    "designer": "E. Halsey Miles",
-    "background": "gray",
-    "currency": "#gp"
+ "info": {
+  "title": "18Dragon",
+  "subtitle": "Railways in a Fantasy Land",
+  "designer": "E. Halsey Miles",
+  "background": "gray",
+  "currency": "#gp"
+ },
+ "colors": {
+  "blue": "#2165ae",
+  "ruins": "#d9d9d9"
+ },
+ "links": {
+  "bgg": ""
+ },
+ "bank": 12000,
+ "players": [
+  {
+   "number": 2,
+   "certLimit": 40,
+   "capital": 1000
   },
-  "colors": {
-    "blue": "#2165ae",
-    "ruins": "#d9d9d9"
+  {
+   "number": 3,
+   "certLimit": 26,
+   "capital": 700
   },
-  "links": {
-    "bgg": ""
+  {
+   "number": 4,
+   "certLimit": 20,
+   "capital": 525
   },
-  "bank": 12000,
-  "players": [
-    {
-      "number": 2,
-      "certLimit": 40,
-      "capital": 1000
-    },
-    {
-      "number": 3,
-      "certLimit": 26,
-      "capital": 700
-    },
-    {
-      "number": 4,
-      "certLimit": 20,
-      "capital": 525
-    },
-    {
-      "number": 5,
-      "certLimit": 16,
-      "capital": 420
-    },
-    {
-      "number": 6,
-      "certLimit": 13,
-      "capital": 350
-    },
-    {
-      "number": 7,
-      "certLimit": 11,
-      "capital": 300
-    }
-  ],
-  "shareTypes": {
-    "default": [
-      {
-        "quantity": 1,
-        "label": "President's Certificate",
-        "percent": 20,
-        "shares": 2
-      },
-      {
-        "quantity": 8,
-        "percent": 10,
-        "shares": 1
-      }
-    ]
+  {
+   "number": 5,
+   "certLimit": 16,
+   "capital": 420
   },
-  "tokenTypes": {
-    "two": [
-      "Home",
-      40
-    ],
-    "three": [
-      "Home",
-      40,
-      100
-    ],
-    "four": [
-      "Home",
-      40,
-      100,
-      100
-    ],
-    "five": [
-      "Home",
-      40,
-      60,
-      80,
-      100
-    ]
+  {
+   "number": 6,
+   "certLimit": 13,
+   "capital": 350
   },
-  "companies": [],
-  "trains": [
-    {
-      "name": "L",
-      "quantity": 22,
-      "price": 60,
-      "color": "yellow",
-      "rust": "3",
-      "description": "May be upgraded to a 2-train for an additional 60gp"
-    },
-    {
-      "name": "2",
-      "quantity": 22,
-      "price": 120,
-      "color": "yellow",
-      "rust": "4",
-      "variant": "L",
-      "available": "1",
-      "description": "Upgrade of an L-train. Shares the L-train quota of 22."
-    },
-    {
-      "name": "3",
-      "quantity": 9,
-      "price": 200,
-      "color": "green",
-      "rust": "6"
-    },
-    {
-      "name": "4",
-      "quantity": 6,
-      "price": 300,
-      "color": "green",
-      "rust": "7"
-    },
-    {
-      "name": "5",
-      "quantity": 3,
-      "price": 500,
-      "color": "brown",
-      "permanent": true
-    },
-    {
-      "name": "6",
-      "quantity": 3,
-      "price": 600,
-      "color": "brown",
-      "permanent": true
-    },
-    {
-      "name": "7",
-      "quantity": 20,
-      "price": 750,
-      "color": "brown",
-      "permanent": true
-    },
-    {
-      "name": "E",
-      "quantity": 20,
-      "price": 1000,
-      "color": "brown",
-      "permanent": true,
-      "variant": "7",
-      "description": "Express train. Counts all city revenue twice. Shares the 7-train quota of 20."
-    },
-    {
-      "name": "2P",
-      "quantity": 2,
-      "price": 0,
-      "color": "brown",
-      "permanent": true,
-      "description": "Permanent 2-train. Not purchasable from bank; awarded as prize."
-    },
-    {
-      "name": "LP",
-      "quantity": 1,
-      "price": 0,
-      "color": "brown",
-      "permanent": true,
-      "description": "Permanent L-train. Not purchasable from bank; awarded as prize."
-    },
-    {
-      "name": "5P",
-      "quantity": 1,
-      "price": 500,
-      "color": "brown",
-      "permanent": true,
-      "description": "Permanent 5-train."
-    },
-    {
-      "name": "P+",
-      "quantity": 2,
-      "price": 0,
-      "color": "brown",
-      "permanent": true,
-      "description": "Pullman. Adds the revenue of one additional city or town to any route."
-    }
-  ],
-  "phases": [
-    {
-      "name": "1",
-      "limit": "2/4",
-      "tiles": "yellow",
-      "rounds": 1,
-      "on": ""
-    },
-    {
-      "name": "2",
-      "limit": "2/4",
-      "tiles": "yellow",
-      "rounds": 2,
-      "on": ["2", "3"],
-      "notes": "Concessions may be converted"
-    },
-    {
-      "name": "3",
-      "limit": "2/4",
-      "tiles": "green",
-      "rounds": 2,
-      "on": "3",
-      "notes": "Concessions may be converted"
-    },
-    {
-      "name": "4",
-      "limit": "1/3",
-      "tiles": "green",
-      "rounds": 2,
-      "on": "4",
-      "notes": "Concessions may be converted"
-    },
-    {
-      "name": "5",
-      "limit": "1/2",
-      "tiles": "brown",
-      "rounds": 2,
-      "on": "5",
-      "notes": "Concessions close. Minors may be acquired from bidbox for 200gp"
-    },
-    {
-      "name": "6",
-      "limit": "1/2",
-      "tiles": "brown",
-      "rounds": 2,
-      "on": "6",
-      "notes": "Full capitalisation. Minors may be acquired from bidbox for 200gp"
-    },
-    {
-      "name": "7",
-      "limit": "1/2",
-      "tiles": "gray",
-      "rounds": 2,
-      "on": "7",
-      "notes": "Full capitalisation. Minors may be acquired from bidbox for 200gp"
-    }
-  ],
-  "pools": [
-    {
-      "name": "Market",
-      "notes": [
-        {
-          "color": "orange",
-          "note": "Shares in the market pay dividends to the corporation"
-        },
-        {
-          "color": "brown",
-          "icon": "exclamation",
-          "note": "No more than 50% of a corporation's shares may be in the market at any time"
-        },
-        {
-          "color": "red",
-          "icon": "times",
-          "note": "Shares cannot be sold during the first stock round"
-        }
-      ]
-    }
-  ],
-  "rounds": [
-    {
-      "name": "OR2",
-      "color": "brown"
-    },
-    {
-      "name": "OR1",
-      "color": "green"
-    },
-    {
-      "name": "SR",
-      "color": "white"
-    }
-  ],
-  "turns": [
-    {
-      "name": "Stock Round",
-      "steps": [
-        "Sell any number of shares",
-        "Buy one share",
-        "Sell any number of shares"
-      ],
-      "ordered": true
-    },
-    {
-      "name": "Operating Round",
-      "steps": [
-        "Lay or upgrade track",
-        "Purchase a station token",
-        "Run trains",
-        "Pay dividends or withhold revenue",
-        "Purchase trains"
-      ],
-      "ordered": true,
-      "optional": [
-        "Purchase private companies or minors"
-      ]
-    }
-  ],
-  "stock": {
-    "type": "1D",
-    "display": {
-      "roundTracker": {
-        "type": "row",
-        "x": 1,
-        "y": 1
-      },
-      "legend": {
-        "x": 1,
-        "y": 2
-      }
-    },
-    "par": {
-      "values": [50, 55, 60, 65, 70, 75, 80, 90, 100]
-    },
-    "movement": {
-      "right": ["Full dividend paid"],
-      "left": ["Revenue withheld", "Each share sold (one space per 10% share)"]
-    },
-    "market": [
-      40,
-      { "value": 50, "par": true },
-      { "value": 55, "par": true },
-      { "value": 60, "par": true },
-      { "value": 65, "par": true },
-      { "value": 70, "par": true },
-      { "value": 75, "par": true },
-      { "value": 80, "par": true },
-      { "value": 90, "par": true },
-      { "value": 100, "par": true },
-      110, 120, 135, 150, 165, 180, 200, 220, 245, 270, 300, 330, 360, 400, 450, 500, 550,
-      { "value": 600, "arrow": "up", "color": "blue" }
-    ]
-  },
-  "map": {
-    "hexes": [
-      {
-        "color": "water",
-        "hexes": [
-          "B11", "B13",
-          "C6",  "C8",  "C14",
-          "D5",  "D15",
-          "E4",  "E16", "E18",
-          "F3",
-          "G2",  "G18",
-          "H17",
-          "I2",  "I16",
-          "J1",  "J15",
-          "K2",  "K4",  "K14",
-          "L5",  "L7",  "L13",
-          "M8",  "M10"
-        ]
-      },
-      {
-        "color": "water",
-        "track": [
-          {"side": 2, "type": "offboard"},
-          {"side": 5, "type": "offboard"}
-        ],
-        "icons": [{"type": "bridge", "noCircle": true, "angle": 60}],
-        "hexes": ["M12"]
-      },
-      {
-        "color": "water",
-        "track": [
-          {"side": 1, "type": "offboard"},
-          {"side": 4, "type": "offboard"}
-        ],
-        "icons": [{"type": "bridge", "noCircle": true, "angle": 0}],
-        "hexes": ["F19"]
-      },
-      {
-        "color": "ruins",
-        "labels": [{"label": "A", "color": "#7B2D8B", "angle": 300, "percent": 0.85, "fontSize": 9, "permit": true}],
-        "shapes": [{"type": "art", "art": "ruins", "width": 34, "background": true}],
-        "hexes": [
-          "G8",  "G10",
-          "H7",  "H11",
-          "I6",  "I8",  "I10",
-          "J7",  "J9",  "J11",
-          "K8",  "K10"
-        ]
-      },
-      {
-        "color": "plain",
-        "labels": [{"label": "A", "color": "#7B2D8B", "angle": 300, "percent": 0.85, "fontSize": 9, "permit": true}],
-        "hexes": [
-          "C10", "C12",
-          "D7",  "D9",  "D11", "D13",
-          "E6",  "E8",  "E10", "E12", "E14",
-          "F5",  "F7",  "F9",  "F11", "F13", "F15",
-          "G4",  "G6",  "G12", "G14",
-          "H5",
-          "I4",  "I12",
-          "J3",  "J5",  "J13",
-          "K6",  "K12",
-          "L9"
-        ]
-      },
-      {
-        "color": "offboard",
-        "track": [
-          {"type": "offboard", "side": 3},
-          {"type": "offboard", "side": 4},
-          {"type": "offboard", "side": 5}
-        ],
-        "offBoardRevenue": {
-          "name": {"name": "Atlanteum"},
-          "revenues": [
-            {"color": "yellow", "value": 0},
-            {"color": "green", "value": 10},
-            {"color": "brown", "value": 50},
-            {"color": "gray", "value": 60}
-          ]
-        },
-        "hexes": ["H3"]
-      },
-      {
-        "color": "plain",
-        "labels": [{"label": "A", "color": "#7B2D8B", "angle": 300, "percent": 0.85, "fontSize": 9, "permit": true}],
-        "centerTowns": [{"name": {"name": "Velia"}}],
-        "hexes": ["H13"]
-      },
-      {
-        "color": "plain",
-        "labels": [{"label": "A", "color": "#7B2D8B", "angle": 300, "percent": 0.85, "fontSize": 9, "permit": true}],
-        "centerTowns": [{"name": {"name": "Larium"}}],
-        "hexes": ["H15"]
-      },
-      {
-        "color": "plain",
-        "labels": [{"label": "A", "color": "#7B2D8B", "angle": 300, "percent": 0.85, "fontSize": 9, "permit": true}],
-        "centerTowns": [{"name": {"name": "Calvia"}}],
-        "hexes": ["G16"]
-      },
-      {
-        "color": "plain",
-        "cities": [{"size": 1, "name": {"name": "Corvium"}}],
-        "labels": [{"label": "A", "color": "#7B2D8B", "angle": 300, "percent": 0.85, "fontSize": 9, "permit": true}],
-        "tokens": [{"label": "4"}],
-        "hexes": ["F17"]
-      },
-      {
-        "color": "plain",
-        "cities": [{"size": 1, "name": {"name": "Ostia"}}],
-        "labels": [{"label": "A", "color": "#7B2D8B", "angle": 300, "percent": 0.85, "fontSize": 9, "permit": true}],
-        "tokens": [{"label": "5"}],
-        "hexes": ["I14"]
-      },
-      {
-        "color": "plain",
-        "cities": [{"size": 1, "name": {"name": "Lavinia"}}],
-        "labels": [{"label": "A", "color": "#7B2D8B", "angle": 300, "percent": 0.85, "fontSize": 9, "permit": true}],
-        "tokens": [{"label": "6"}],
-        "hexes": ["L11"]
-      },
-      {
-        "color": "gray",
-        "cities": [{"size": 4, "name": {"name": "Verantia"}}],
-        "track": [{"side": 1}, {"side": 2}, {"side": 3}, {"side": 4}, {"side": 5}, {"side": 6}],
-        "values": [{"value": 10, "angle": 0, "percent": 0.86}],
-        "labels": [
-          {"label": "A", "color": "#7B2D8B", "angle": 300, "percent": 0.85, "fontSize": 9, "permit": true}
-        ],
-        "tokens": [
-          {"label": "1", "x": -25, "y": -25},
-          {"label": "2", "x": 25, "y": -25},
-          {"label": "3", "x": 25, "y": 25}
-        ],
-        "hexes": ["H9"]
-      }
-    ]
+  {
+   "number": 7,
+   "certLimit": 11,
+   "capital": 300
   }
+ ],
+ "shareTypes": {
+  "default": [
+   {
+    "quantity": 1,
+    "label": "President's Certificate",
+    "percent": 20,
+    "shares": 2
+   },
+   {
+    "quantity": 8,
+    "percent": 10,
+    "shares": 1
+   }
+  ]
+ },
+ "tokenTypes": {
+  "two": [
+   "Home",
+   40
+  ],
+  "three": [
+   "Home",
+   40,
+   100
+  ],
+  "four": [
+   "Home",
+   40,
+   100,
+   100
+  ],
+  "five": [
+   "Home",
+   40,
+   60,
+   80,
+   100
+  ]
+ },
+ "companies": [],
+ "trains": [
+  {
+   "name": "L",
+   "quantity": 22,
+   "price": 60,
+   "color": "yellow",
+   "rust": "3",
+   "description": "May be upgraded to a 2-train for an additional 60gp"
+  },
+  {
+   "name": "2",
+   "quantity": 22,
+   "price": 120,
+   "color": "yellow",
+   "rust": "4",
+   "variant": "L",
+   "available": "1",
+   "description": "Upgrade of an L-train. Shares the L-train quota of 22."
+  },
+  {
+   "name": "3",
+   "quantity": 9,
+   "price": 200,
+   "color": "green",
+   "rust": "6"
+  },
+  {
+   "name": "4",
+   "quantity": 6,
+   "price": 300,
+   "color": "green",
+   "rust": "7"
+  },
+  {
+   "name": "5",
+   "quantity": 3,
+   "price": 500,
+   "color": "brown",
+   "permanent": true
+  },
+  {
+   "name": "6",
+   "quantity": 3,
+   "price": 600,
+   "color": "brown",
+   "permanent": true
+  },
+  {
+   "name": "7",
+   "quantity": 20,
+   "price": 750,
+   "color": "brown",
+   "permanent": true
+  },
+  {
+   "name": "E",
+   "quantity": 20,
+   "price": 1000,
+   "color": "brown",
+   "permanent": true,
+   "variant": "7",
+   "description": "Express train. Counts all city revenue twice. Shares the 7-train quota of 20."
+  },
+  {
+   "name": "2P",
+   "quantity": 2,
+   "price": 0,
+   "color": "brown",
+   "permanent": true,
+   "description": "Permanent 2-train. Not purchasable from bank; awarded as prize."
+  },
+  {
+   "name": "LP",
+   "quantity": 1,
+   "price": 0,
+   "color": "brown",
+   "permanent": true,
+   "description": "Permanent L-train. Not purchasable from bank; awarded as prize."
+  },
+  {
+   "name": "5P",
+   "quantity": 1,
+   "price": 500,
+   "color": "brown",
+   "permanent": true,
+   "description": "Permanent 5-train."
+  },
+  {
+   "name": "P+",
+   "quantity": 2,
+   "price": 0,
+   "color": "brown",
+   "permanent": true,
+   "description": "Pullman. Adds the revenue of one additional city or town to any route."
+  }
+ ],
+ "phases": [
+  {
+   "name": "1",
+   "limit": "2/4",
+   "tiles": "yellow",
+   "rounds": 1,
+   "on": ""
+  },
+  {
+   "name": "2",
+   "limit": "2/4",
+   "tiles": "yellow",
+   "rounds": 2,
+   "on": [
+    "2",
+    "3"
+   ],
+   "notes": "Concessions may be converted"
+  },
+  {
+   "name": "3",
+   "limit": "2/4",
+   "tiles": "green",
+   "rounds": 2,
+   "on": "3",
+   "notes": "Concessions may be converted"
+  },
+  {
+   "name": "4",
+   "limit": "1/3",
+   "tiles": "green",
+   "rounds": 2,
+   "on": "4",
+   "notes": "Concessions may be converted"
+  },
+  {
+   "name": "5",
+   "limit": "1/2",
+   "tiles": "brown",
+   "rounds": 2,
+   "on": "5",
+   "notes": "Concessions close. Minors may be acquired from bidbox for 200gp"
+  },
+  {
+   "name": "6",
+   "limit": "1/2",
+   "tiles": "brown",
+   "rounds": 2,
+   "on": "6",
+   "notes": "Full capitalisation. Minors may be acquired from bidbox for 200gp"
+  },
+  {
+   "name": "7",
+   "limit": "1/2",
+   "tiles": "gray",
+   "rounds": 2,
+   "on": "7",
+   "notes": "Full capitalisation. Minors may be acquired from bidbox for 200gp"
+  }
+ ],
+ "pools": [
+  {
+   "name": "Market",
+   "notes": [
+    {
+     "color": "orange",
+     "note": "Shares in the market pay dividends to the corporation"
+    },
+    {
+     "color": "brown",
+     "icon": "exclamation",
+     "note": "No more than 50% of a corporation's shares may be in the market at any time"
+    },
+    {
+     "color": "red",
+     "icon": "times",
+     "note": "Shares cannot be sold during the first stock round"
+    }
+   ]
+  }
+ ],
+ "rounds": [
+  {
+   "name": "OR2",
+   "color": "brown"
+  },
+  {
+   "name": "OR1",
+   "color": "green"
+  },
+  {
+   "name": "SR",
+   "color": "white"
+  }
+ ],
+ "turns": [
+  {
+   "name": "Stock Round",
+   "steps": [
+    "Sell any number of shares",
+    "Buy one share",
+    "Sell any number of shares"
+   ],
+   "ordered": true
+  },
+  {
+   "name": "Operating Round",
+   "steps": [
+    "Lay or upgrade track",
+    "Purchase a station token",
+    "Run trains",
+    "Pay dividends or withhold revenue",
+    "Purchase trains"
+   ],
+   "ordered": true,
+   "optional": [
+    "Purchase private companies or minors"
+   ]
+  }
+ ],
+ "stock": {
+  "type": "1D",
+  "display": {
+   "roundTracker": {
+    "type": "row",
+    "x": 1,
+    "y": 1
+   },
+   "legend": {
+    "x": 1,
+    "y": 2
+   }
+  },
+  "par": {
+   "values": [
+    50,
+    55,
+    60,
+    65,
+    70,
+    75,
+    80,
+    90,
+    100
+   ]
+  },
+  "movement": {
+   "right": [
+    "Full dividend paid"
+   ],
+   "left": [
+    "Revenue withheld",
+    "Each share sold (one space per 10% share)"
+   ]
+  },
+  "market": [
+   40,
+   {
+    "value": 50,
+    "par": true
+   },
+   {
+    "value": 55,
+    "par": true
+   },
+   {
+    "value": 60,
+    "par": true
+   },
+   {
+    "value": 65,
+    "par": true
+   },
+   {
+    "value": 70,
+    "par": true
+   },
+   {
+    "value": 75,
+    "par": true
+   },
+   {
+    "value": 80,
+    "par": true
+   },
+   {
+    "value": 90,
+    "par": true
+   },
+   {
+    "value": 100,
+    "par": true
+   },
+   110,
+   120,
+   135,
+   150,
+   165,
+   180,
+   200,
+   220,
+   245,
+   270,
+   300,
+   330,
+   360,
+   400,
+   450,
+   500,
+   550,
+   {
+    "value": 600,
+    "arrow": "up",
+    "color": "blue"
+   }
+  ]
+ },
+ "map": {
+  "hexes": [
+   {
+    "color": "water",
+    "hexes": [
+     "B11",
+     "B13",
+     "C6",
+     "C8",
+     "C14",
+     "D5",
+     "D15",
+     "E4",
+     "E16",
+     "E18",
+     "F3",
+     "G2",
+     "G18",
+     "H17",
+     "I2",
+     "I16",
+     "J1",
+     "J15",
+     "K2",
+     "K4",
+     "K14",
+     "L5",
+     "L7",
+     "L13",
+     "M8",
+     "M10"
+    ]
+   },
+   {
+    "color": "water",
+    "track": [
+     {
+      "side": 2,
+      "type": "offboard"
+     },
+     {
+      "side": 5,
+      "type": "offboard"
+     }
+    ],
+    "icons": [
+     {
+      "type": "bridge",
+      "noCircle": true,
+      "angle": 60
+     }
+    ],
+    "hexes": [
+     "M12"
+    ]
+   },
+   {
+    "color": "water",
+    "track": [
+     {
+      "side": 1,
+      "type": "offboard"
+     },
+     {
+      "side": 4,
+      "type": "offboard"
+     }
+    ],
+    "icons": [
+     {
+      "type": "bridge",
+      "noCircle": true,
+      "angle": 0
+     }
+    ],
+    "hexes": [
+     "F19"
+    ]
+   },
+   {
+    "color": "ruins",
+    "labels": [
+     {
+      "label": "A",
+      "color": "#7B2D8B",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "shapes": [
+     {
+      "type": "art",
+      "art": "ruins",
+      "width": 34,
+      "background": true
+     }
+    ],
+    "hexes": [
+     "G8",
+     "G10",
+     "H7",
+     "H11",
+     "I6",
+     "I8",
+     "I10",
+     "J7",
+     "J9",
+     "J11",
+     "K8",
+     "K10"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "A",
+      "color": "#7B2D8B",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "hexes": [
+     "C10",
+     "C12",
+     "D7",
+     "D9",
+     "D11",
+     "D13",
+     "E6",
+     "E8",
+     "E10",
+     "E12",
+     "E14",
+     "F5",
+     "F7",
+     "F9",
+     "F11",
+     "F13",
+     "F15",
+     "G4",
+     "G6",
+     "G12",
+     "G14",
+     "H5",
+     "I4",
+     "I12",
+     "J3",
+     "J5",
+     "J13",
+     "K6",
+     "K12",
+     "L9"
+    ]
+   },
+   {
+    "color": "offboard",
+    "track": [
+     {
+      "type": "offboard",
+      "side": 3
+     },
+     {
+      "type": "offboard",
+      "side": 4
+     },
+     {
+      "type": "offboard",
+      "side": 5
+     }
+    ],
+    "offBoardRevenue": {
+     "name": {
+      "name": "Atlanteum"
+     },
+     "revenues": [
+      {
+       "color": "yellow",
+       "value": 0
+      },
+      {
+       "color": "green",
+       "value": 10
+      },
+      {
+       "color": "brown",
+       "value": 50
+      },
+      {
+       "color": "gray",
+       "value": 60
+      }
+     ]
+    },
+    "hexes": [
+     "H3"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "A",
+      "color": "#7B2D8B",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "centerTowns": [
+     {
+      "name": {
+       "name": "Velia"
+      }
+     }
+    ],
+    "hexes": [
+     "H13"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "A",
+      "color": "#7B2D8B",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "centerTowns": [
+     {
+      "name": {
+       "name": "Larium"
+      }
+     }
+    ],
+    "hexes": [
+     "H15"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "A",
+      "color": "#7B2D8B",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "centerTowns": [
+     {
+      "name": {
+       "name": "Calvia"
+      }
+     }
+    ],
+    "hexes": [
+     "G16"
+    ]
+   },
+   {
+    "color": "plain",
+    "cities": [
+     {
+      "size": 1,
+      "name": {
+       "name": "Corvium"
+      }
+     }
+    ],
+    "labels": [
+     {
+      "label": "A",
+      "color": "#7B2D8B",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "tokens": [
+     {
+      "label": "4"
+     }
+    ],
+    "hexes": [
+     "F17"
+    ]
+   },
+   {
+    "color": "plain",
+    "cities": [
+     {
+      "size": 1,
+      "name": {
+       "name": "Ostia"
+      }
+     }
+    ],
+    "labels": [
+     {
+      "label": "A",
+      "color": "#7B2D8B",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "tokens": [
+     {
+      "label": "5"
+     }
+    ],
+    "hexes": [
+     "I14"
+    ]
+   },
+   {
+    "color": "plain",
+    "cities": [
+     {
+      "size": 1,
+      "name": {
+       "name": "Lavinia"
+      }
+     }
+    ],
+    "labels": [
+     {
+      "label": "A",
+      "color": "#7B2D8B",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "tokens": [
+     {
+      "label": "6"
+     }
+    ],
+    "hexes": [
+     "L11"
+    ]
+   },
+   {
+    "color": "gray",
+    "cities": [
+     {
+      "size": 4,
+      "name": {
+       "name": "Verantia"
+      }
+     }
+    ],
+    "track": [
+     {
+      "side": 1
+     },
+     {
+      "side": 2
+     },
+     {
+      "side": 3
+     },
+     {
+      "side": 4
+     },
+     {
+      "side": 5
+     },
+     {
+      "side": 6
+     }
+    ],
+    "values": [
+     {
+      "value": 10,
+      "angle": 0,
+      "percent": 0.86
+     }
+    ],
+    "labels": [
+     {
+      "label": "A",
+      "color": "#7B2D8B",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "tokens": [
+     {
+      "label": "1",
+      "x": -25,
+      "y": -25
+     },
+     {
+      "label": "2",
+      "x": 25,
+      "y": -25
+     },
+     {
+      "label": "3",
+      "x": 25,
+      "y": 25
+     }
+    ],
+    "hexes": [
+     "H9"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "N",
+      "color": "#56B4E9",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "hexes": [
+     "C22",
+     "C28",
+     "D21",
+     "D23",
+     "D25",
+     "E24",
+     "E26",
+     "F23",
+     "F25",
+     "H21",
+     "I20",
+     "I22",
+     "I24",
+     "K22",
+     "J19",
+     "K20",
+     "L19"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "N",
+      "color": "#56B4E9",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "terrain": [
+     {
+      "type": "river",
+      "cost": 20
+     }
+    ],
+    "hexes": [
+     "G22",
+     "G24",
+     "G26",
+     "G28"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "N",
+      "color": "#56B4E9",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "terrain": [
+     {
+      "type": "river",
+      "cost": 20
+     }
+    ],
+    "hexes": [
+     "G30"
+    ],
+    "borders": [
+     {
+      "side": 4,
+      "color": "black"
+     },
+     {
+      "side": 5,
+      "color": "black"
+     },
+     {
+      "side": 3,
+      "color": "black"
+     }
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "N",
+      "color": "#56B4E9",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "terrain": [
+     {
+      "type": "hills",
+      "cost": 20
+     }
+    ],
+    "hexes": [
+     "H27",
+     "I26",
+     "J25"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "N",
+      "color": "#56B4E9",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "terrain": [
+     {
+      "type": "hills",
+      "cost": 20
+     }
+    ],
+    "hexes": [
+     "C30"
+    ],
+    "borders": [
+     {
+      "side": 4,
+      "color": "black"
+     },
+     {
+      "side": 5,
+      "color": "black"
+     }
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "N",
+      "color": "#56B4E9",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "terrain": [
+     {
+      "type": "hills",
+      "cost": 20
+     }
+    ],
+    "hexes": [
+     "D29"
+    ],
+    "borders": [
+     {
+      "side": 4,
+      "color": "black"
+     },
+     {
+      "side": 5,
+      "color": "black"
+     }
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "N",
+      "color": "#56B4E9",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "terrain": [
+     {
+      "type": "hills",
+      "cost": 20
+     }
+    ],
+    "hexes": [
+     "E28"
+    ],
+    "borders": [
+     {
+      "side": 4,
+      "color": "black"
+     }
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "N",
+      "color": "#56B4E9",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "terrain": [
+     {
+      "type": "hillsLarge",
+      "cost": 40
+     }
+    ],
+    "hexes": [
+     "J27",
+     "K24",
+     "K26",
+     "L23",
+     "L25"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "N",
+      "color": "#56B4E9",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "terrain": [
+     {
+      "type": "hillsLarge",
+      "cost": 40
+     }
+    ],
+    "hexes": [
+     "H29"
+    ],
+    "borders": [
+     {
+      "side": 4,
+      "color": "black"
+     },
+     {
+      "side": 5,
+      "color": "black"
+     }
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "N",
+      "color": "#56B4E9",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "terrain": [
+     {
+      "type": "hillsLarge",
+      "cost": 40
+     }
+    ],
+    "hexes": [
+     "I28"
+    ],
+    "borders": [
+     {
+      "side": 4,
+      "color": "black"
+     }
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "N",
+      "color": "#56B4E9",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "terrain": [
+     {
+      "type": "hillsLarge",
+      "cost": 40
+     }
+    ],
+    "hexes": [
+     "J29"
+    ],
+    "borders": [
+     {
+      "side": 4,
+      "color": "black"
+     },
+     {
+      "side": 5,
+      "color": "black"
+     },
+     {
+      "side": 3,
+      "color": "black"
+     }
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "N",
+      "color": "#56B4E9",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "terrain": [
+     {
+      "type": "hillsLarge",
+      "cost": 40
+     }
+    ],
+    "hexes": [
+     "K28"
+    ],
+    "borders": [
+     {
+      "side": 4,
+      "color": "black"
+     },
+     {
+      "side": 5,
+      "color": "black"
+     }
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "N",
+      "color": "#56B4E9",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "terrain": [
+     {
+      "type": "hillsLarge",
+      "cost": 40
+     }
+    ],
+    "hexes": [
+     "L27"
+    ],
+    "borders": [
+     {
+      "side": 4,
+      "color": "black"
+     },
+     {
+      "side": 5,
+      "color": "black"
+     }
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "N",
+      "color": "#56B4E9",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "terrain": [
+     {
+      "type": "hillsLarge",
+      "cost": 40
+     }
+    ],
+    "hexes": [
+     "M22"
+    ],
+    "borders": [
+     {
+      "side": 5,
+      "color": "black"
+     },
+     {
+      "side": 6,
+      "color": "black"
+     }
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "N",
+      "color": "#56B4E9",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "terrain": [
+     {
+      "type": "hillsLarge",
+      "cost": 40
+     }
+    ],
+    "hexes": [
+     "M24"
+    ],
+    "borders": [
+     {
+      "side": 5,
+      "color": "black"
+     },
+     {
+      "side": 6,
+      "color": "black"
+     }
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "N",
+      "color": "#56B4E9",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "terrain": [
+     {
+      "type": "hillsLarge",
+      "cost": 40
+     }
+    ],
+    "hexes": [
+     "M26"
+    ],
+    "borders": [
+     {
+      "side": 4,
+      "color": "black"
+     },
+     {
+      "side": 5,
+      "color": "black"
+     },
+     {
+      "side": 6,
+      "color": "black"
+     }
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "N",
+      "color": "#56B4E9",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "centerTowns": [
+     {
+      "name": {
+       "name": "Aeldun"
+      }
+     }
+    ],
+    "hexes": [
+     "C26"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "N",
+      "color": "#56B4E9",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "centerTowns": [
+     {
+      "name": {
+       "name": "Caermor"
+      }
+     }
+    ],
+    "hexes": [
+     "E22"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "N",
+      "color": "#56B4E9",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "centerTowns": [
+     {
+      "name": {
+       "name": "Brynael"
+      }
+     }
+    ],
+    "hexes": [
+     "F27"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "N",
+      "color": "#56B4E9",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "centerTowns": [
+     {
+      "name": {
+       "name": "Maeldun"
+      }
+     }
+    ],
+    "hexes": [
+     "H23"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "N",
+      "color": "#56B4E9",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "centerTowns": [
+     {
+      "name": {
+       "name": "Faeldun"
+      }
+     }
+    ],
+    "hexes": [
+     "J23"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "N",
+      "color": "#56B4E9",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "centerTowns": [
+     {
+      "name": {
+       "name": "Vaelmor"
+      }
+     }
+    ],
+    "hexes": [
+     "L21"
+    ]
+   },
+   {
+    "color": "yellow",
+    "cities": [
+     {
+      "size": 2,
+      "name": {
+       "name": "Draeven"
+      }
+     }
+    ],
+    "track": [
+     {
+      "side": 1
+     },
+     {
+      "side": 4
+     },
+     {
+      "side": 6
+     }
+    ],
+    "labels": [
+     {
+      "label": "N",
+      "color": "#56B4E9",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     },
+     {
+      "label": "D",
+      "color": "#000000",
+      "angle": 60,
+      "percent": 0.82,
+      "fontSize": 18
+     }
+    ],
+    "tokens": [
+     {
+      "label": "9",
+      "x": -25
+     }
+    ],
+    "values": [
+     {
+      "value": 30,
+      "angle": 0,
+      "percent": 0.78
+     }
+    ],
+    "hexes": [
+     "F29"
+    ],
+    "borders": [
+     {
+      "side": 4,
+      "color": "black"
+     },
+     {
+      "side": 3,
+      "color": "black"
+     }
+    ]
+   },
+   {
+    "color": "plain",
+    "cities": [
+     {
+      "size": 1,
+      "name": {
+       "name": "Braemael"
+      }
+     }
+    ],
+    "labels": [
+     {
+      "label": "N",
+      "color": "#56B4E9",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "tokens": [
+     {
+      "label": "7"
+     }
+    ],
+    "hexes": [
+     "C24"
+    ]
+   },
+   {
+    "color": "plain",
+    "cities": [
+     {
+      "size": 1,
+      "name": {
+       "name": "Dunmael"
+      }
+     }
+    ],
+    "labels": [
+     {
+      "label": "N",
+      "color": "#56B4E9",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "tokens": [
+     {
+      "label": "8"
+     }
+    ],
+    "hexes": [
+     "E20"
+    ]
+   },
+   {
+    "color": "plain",
+    "cities": [
+     {
+      "size": 1,
+      "name": {
+       "name": "Gwyndael"
+      }
+     }
+    ],
+    "labels": [
+     {
+      "label": "N",
+      "color": "#56B4E9",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "tokens": [
+     {
+      "label": "10"
+     }
+    ],
+    "hexes": [
+     "H25"
+    ]
+   },
+   {
+    "color": "plain",
+    "cities": [
+     {
+      "size": 1,
+      "name": {
+       "name": "Kaeldun"
+      }
+     }
+    ],
+    "labels": [
+     {
+      "label": "N",
+      "color": "#56B4E9",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     },
+     {
+      "label": "K",
+      "color": "#000000",
+      "angle": 60,
+      "percent": 0.72,
+      "fontSize": 18
+     }
+    ],
+    "tokens": [
+     {
+      "label": "11"
+     }
+    ],
+    "hexes": [
+     "K18"
+    ]
+   },
+   {
+    "color": "plain",
+    "cities": [
+     {
+      "size": 1,
+      "name": {
+       "name": "Taeldun"
+      }
+     }
+    ],
+    "labels": [
+     {
+      "label": "N",
+      "color": "#56B4E9",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "tokens": [
+     {
+      "label": "12"
+     }
+    ],
+    "hexes": [
+     "M20"
+    ],
+    "borders": [
+     {
+      "side": 5,
+      "color": "black"
+     },
+     {
+      "side": 6,
+      "color": "black"
+     }
+    ]
+   },
+   {
+    "color": "plain",
+    "cities": [
+     {
+      "size": 1,
+      "name": {
+       "name": "Rhydmor"
+      }
+     }
+    ],
+    "labels": [
+     {
+      "label": "N",
+      "color": "#56B4E9",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "hexes": [
+     "F21"
+    ]
+   },
+   {
+    "color": "plain",
+    "cities": [
+     {
+      "size": 1,
+      "name": {
+       "name": "Caerdun"
+      }
+     }
+    ],
+    "labels": [
+     {
+      "label": "N",
+      "color": "#56B4E9",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "hexes": [
+     "D27"
+    ]
+   },
+   {
+    "color": "plain",
+    "cities": [
+     {
+      "size": 1,
+      "name": {
+       "name": "Lyrmor"
+      }
+     }
+    ],
+    "labels": [
+     {
+      "label": "N",
+      "color": "#56B4E9",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "hexes": [
+     "J21"
+    ]
+   },
+   {
+    "color": "water",
+    "hexes": [
+     "C16",
+     "C18",
+     "C20",
+     "D17",
+     "D19",
+     "G20",
+     "H19",
+     "I18",
+     "J17",
+     "K16",
+     "L15",
+     "L17",
+     "M14",
+     "M16",
+     "M18"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "G",
+      "color": "#E69F00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "centerTowns": [
+     {
+      "name": {
+       "name": "Krossdum"
+      }
+     }
+    ],
+    "borders": [
+     {
+      "side": 3,
+      "color": "black"
+     },
+     {
+      "side": 4,
+      "color": "black"
+     }
+    ],
+    "hexes": [
+     "J39"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "G",
+      "color": "#E69F00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "centerTowns": [
+     {
+      "name": {
+       "name": "Skarndum"
+      }
+     }
+    ],
+    "hexes": [
+     "K38"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "G",
+      "color": "#E69F00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "centerTowns": [
+     {
+      "name": {
+       "name": "Durrok"
+      }
+     }
+    ],
+    "borders": [
+     {
+      "side": 3,
+      "color": "black"
+     },
+     {
+      "side": 4,
+      "color": "black"
+     }
+    ],
+    "hexes": [
+     "L41"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "G",
+      "color": "#E69F00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "centerTowns": [
+     {
+      "name": {
+       "name": "Bramgeld"
+      }
+     }
+    ],
+    "borders": [
+     {
+      "side": 5,
+      "color": "black"
+     },
+     {
+      "side": 6,
+      "color": "black"
+     }
+    ],
+    "hexes": [
+     "M38"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "G",
+      "color": "#E69F00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "borders": [
+     {
+      "side": 1,
+      "color": "black"
+     }
+    ],
+    "terrain": [
+     {
+      "cost": 60,
+      "type": "mtnLow"
+     }
+    ],
+    "hexes": [
+     "C32"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "G",
+      "color": "#E69F00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "terrain": [
+     {
+      "cost": 60,
+      "type": "mtnLow"
+     }
+    ],
+    "hexes": [
+     "C34",
+     "D35",
+     "E32",
+     "E34",
+     "E36",
+     "F33",
+     "F35",
+     "L31",
+     "L35"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "G",
+      "color": "#E69F00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "borders": [
+     {
+      "side": 4,
+      "color": "black"
+     }
+    ],
+    "terrain": [
+     {
+      "cost": 60,
+      "type": "mtnLow"
+     }
+    ],
+    "hexes": [
+     "C36",
+     "F37"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "G",
+      "color": "#E69F00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "borders": [
+     {
+      "side": 1,
+      "color": "black"
+     },
+     {
+      "side": 2,
+      "color": "black"
+     }
+    ],
+    "terrain": [
+     {
+      "cost": 60,
+      "type": "mtnLow"
+     }
+    ],
+    "hexes": [
+     "D31",
+     "K30",
+     "L29"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "G",
+      "color": "#E69F00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "borders": [
+     {
+      "side": 3,
+      "color": "black"
+     },
+     {
+      "side": 4,
+      "color": "black"
+     }
+    ],
+    "terrain": [
+     {
+      "cost": 60,
+      "type": "mtnLow"
+     }
+    ],
+    "hexes": [
+     "D37"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "G",
+      "color": "#E69F00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "borders": [
+     {
+      "side": 1,
+      "color": "black"
+     },
+     {
+      "side": 2,
+      "color": "black"
+     },
+     {
+      "side": 6,
+      "color": "black"
+     }
+    ],
+    "terrain": [
+     {
+      "cost": 60,
+      "type": "mtnLow"
+     }
+    ],
+    "hexes": [
+     "E30"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "G",
+      "color": "#E69F00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "borders": [
+     {
+      "side": 3,
+      "color": "black"
+     },
+     {
+      "side": 4,
+      "color": "black"
+     },
+     {
+      "side": 5,
+      "color": "black"
+     }
+    ],
+    "terrain": [
+     {
+      "cost": 60,
+      "type": "mtnLow"
+     }
+    ],
+    "hexes": [
+     "E38",
+     "G38"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "G",
+      "color": "#E69F00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "borders": [
+     {
+      "side": 1,
+      "color": "black"
+     },
+     {
+      "side": 6,
+      "color": "black"
+     }
+    ],
+    "terrain": [
+     {
+      "cost": 60,
+      "type": "mtnLow"
+     }
+    ],
+    "hexes": [
+     "F31"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "G",
+      "color": "#E69F00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "borders": [
+     {
+      "side": 1,
+      "color": "black"
+     }
+    ],
+    "terrain": [
+     {
+      "cost": 80,
+      "type": "mtnMid"
+     }
+    ],
+    "hexes": [
+     "G32",
+     "J31"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "G",
+      "color": "#E69F00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "terrain": [
+     {
+      "cost": 80,
+      "type": "mtnMid"
+     }
+    ],
+    "hexes": [
+     "G36",
+     "K32",
+     "K34"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "G",
+      "color": "#E69F00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "borders": [
+     {
+      "side": 1,
+      "color": "black"
+     },
+     {
+      "side": 2,
+      "color": "black"
+     }
+    ],
+    "terrain": [
+     {
+      "cost": 80,
+      "type": "mtnMid"
+     }
+    ],
+    "hexes": [
+     "H31"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "G",
+      "color": "#E69F00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "terrain": [
+     {
+      "cost": 120,
+      "type": "mtnHigh"
+     }
+    ],
+    "hexes": [
+     "H33",
+     "H35",
+     "I34",
+     "J33",
+     "J35"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "G",
+      "color": "#E69F00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "borders": [
+     {
+      "side": 4,
+      "color": "black"
+     }
+    ],
+    "terrain": [
+     {
+      "cost": 80,
+      "type": "mtnMid"
+     }
+    ],
+    "hexes": [
+     "H37"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "G",
+      "color": "#E69F00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "borders": [
+     {
+      "side": 1,
+      "color": "black"
+     },
+     {
+      "side": 2,
+      "color": "black"
+     },
+     {
+      "side": 6,
+      "color": "black"
+     }
+    ],
+    "terrain": [
+     {
+      "cost": 80,
+      "type": "mtnMid"
+     }
+    ],
+    "hexes": [
+     "I30"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "G",
+      "color": "#E69F00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "borders": [
+     {
+      "side": 3,
+      "color": "black"
+     },
+     {
+      "side": 4,
+      "color": "black"
+     }
+    ],
+    "terrain": [
+     {
+      "cost": 80,
+      "type": "mtnMid"
+     }
+    ],
+    "hexes": [
+     "I38"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "G",
+      "color": "#E69F00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "borders": [
+     {
+      "side": 3,
+      "color": "black"
+     },
+     {
+      "side": 4,
+      "color": "black"
+     }
+    ],
+    "hexes": [
+     "K40"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "G",
+      "color": "#E69F00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "hexes": [
+     "L37"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "G",
+      "color": "#E69F00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "borders": [
+     {
+      "side": 1,
+      "color": "black"
+     },
+     {
+      "side": 2,
+      "color": "black"
+     },
+     {
+      "side": 5,
+      "color": "black"
+     },
+     {
+      "side": 6,
+      "color": "black"
+     }
+    ],
+    "terrain": [
+     {
+      "cost": 60,
+      "type": "mtnLow"
+     }
+    ],
+    "hexes": [
+     "M28"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "G",
+      "color": "#E69F00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "borders": [
+     {
+      "side": 5,
+      "color": "black"
+     },
+     {
+      "side": 6,
+      "color": "black"
+     }
+    ],
+    "terrain": [
+     {
+      "cost": 60,
+      "type": "mtnLow"
+     }
+    ],
+    "hexes": [
+     "M30",
+     "M32",
+     "M34"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "G",
+      "color": "#E69F00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "borders": [
+     {
+      "side": 5,
+      "color": "black"
+     },
+     {
+      "side": 6,
+      "color": "black"
+     }
+    ],
+    "hexes": [
+     "M36",
+     "M40"
+    ]
+   },
+   {
+    "color": "plain",
+    "cities": [
+     {
+      "size": 1,
+      "name": {
+       "name": "Brekheim",
+       "straight": true,
+       "x": 26,
+       "y": 4
+      }
+     }
+    ],
+    "track": [
+     {
+      "side": 2
+     },
+     {
+      "side": 5
+     }
+    ],
+    "labels": [
+     {
+      "label": "G",
+      "color": "#E69F00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     },
+     {
+      "label": "B",
+      "color": "#000000",
+      "angle": 60,
+      "percent": 0.82,
+      "fontSize": 18
+     }
+    ],
+    "tokens": [
+     {
+      "label": "16"
+     }
+    ],
+    "values": [
+     {
+      "value": 20,
+      "angle": 0,
+      "percent": 0.78
+     }
+    ],
+    "hexes": [
+     "I36"
+    ],
+    "terrain": [
+     {
+      "type": "mtnHigh",
+      "cost": 40,
+      "angle": 270,
+      "percent": 0.72,
+      "size": "small"
+     }
+    ]
+   },
+   {
+    "color": "gray",
+    "track": [
+     {
+      "type": "gentle",
+      "side": 6
+     }
+    ],
+    "labels": [
+     {
+      "label": "G",
+      "color": "#E69F00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "hexes": [
+     "J37"
+    ]
+   },
+   {
+    "color": "yellow",
+    "cities": [
+     {
+      "size": 1,
+      "name": {
+       "name": "Kroddheim"
+      }
+     }
+    ],
+    "track": [
+     {
+      "side": 3
+     },
+     {
+      "side": 4
+     }
+    ],
+    "labels": [
+     {
+      "label": "G",
+      "color": "#E69F00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "tokens": [
+     {
+      "label": "17"
+     }
+    ],
+    "values": [
+     {
+      "value": 20,
+      "angle": 0,
+      "percent": 0.78
+     }
+    ],
+    "hexes": [
+     "K36"
+    ]
+   },
+   {
+    "color": "plain",
+    "cities": [
+     {
+      "size": 1,
+      "name": {
+       "name": "Baldrok"
+      }
+     }
+    ],
+    "labels": [
+     {
+      "label": "G",
+      "color": "#E69F00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "tokens": [
+     {
+      "label": "13"
+     }
+    ],
+    "hexes": [
+     "D33"
+    ]
+   },
+   {
+    "color": "plain",
+    "cities": [
+     {
+      "size": 1,
+      "name": {
+       "name": "Volheim"
+      }
+     }
+    ],
+    "labels": [
+     {
+      "label": "G",
+      "color": "#E69F00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "tokens": [
+     {
+      "label": "14"
+     }
+    ],
+    "hexes": [
+     "G34"
+    ]
+   },
+   {
+    "color": "plain",
+    "cities": [
+     {
+      "size": 1,
+      "name": {
+       "name": "Ragnheim"
+      }
+     }
+    ],
+    "labels": [
+     {
+      "label": "G",
+      "color": "#E69F00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "tokens": [
+     {
+      "label": "15"
+     }
+    ],
+    "hexes": [
+     "I32"
+    ]
+   },
+   {
+    "color": "plain",
+    "cities": [
+     {
+      "size": 1,
+      "name": {
+       "name": "Drakgeld"
+      }
+     }
+    ],
+    "labels": [
+     {
+      "label": "G",
+      "color": "#E69F00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "tokens": [
+     {
+      "label": "18"
+     }
+    ],
+    "hexes": [
+     "L33"
+    ]
+   },
+   {
+    "color": "plain",
+    "cities": [
+     {
+      "size": 1,
+      "name": {
+       "name": "Grimgeld"
+      }
+     }
+    ],
+    "labels": [
+     {
+      "label": "G",
+      "color": "#E69F00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "hexes": [
+     "L39"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "M",
+      "color": "#D55E00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "hexes": [
+     "N17",
+     "O12",
+     "O14",
+     "O18",
+     "O24",
+     "O28",
+     "O30",
+     "O34",
+     "O36",
+     "O40",
+     "P11",
+     "P15",
+     "P19",
+     "P21",
+     "P27",
+     "P31",
+     "P33",
+     "P35",
+     "P37",
+     "P39",
+     "P41",
+     "Q12",
+     "Q14",
+     "Q16",
+     "Q20",
+     "Q26",
+     "Q28",
+     "Q30",
+     "Q32",
+     "Q36",
+     "Q40",
+     "R17",
+     "R19",
+     "R29"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "M",
+      "color": "#D55E00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "borders": [
+     {
+      "side": 3,
+      "color": "black"
+     }
+    ],
+    "hexes": [
+     "N19"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "M",
+      "color": "#D55E00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "borders": [
+     {
+      "side": 2,
+      "color": "black"
+     },
+     {
+      "side": 3,
+      "color": "black"
+     }
+    ],
+    "hexes": [
+     "N21",
+     "N23",
+     "N27",
+     "N31",
+     "N33",
+     "N35",
+     "N39",
+     "N41"
+    ]
+   },
+   {
+    "color": "water",
+    "hexes": [
+     "N9",
+     "N11",
+     "N43",
+     "O8",
+     "O16",
+     "O42",
+     "P9",
+     "P17",
+     "P25",
+     "P43",
+     "Q10",
+     "Q22",
+     "Q24",
+     "Q42",
+     "R11",
+     "R13",
+     "R15",
+     "R35",
+     "R37",
+     "R39",
+     "R41",
+     "S16",
+     "S18",
+     "S20",
+     "S22",
+     "S24",
+     "S26",
+     "S28",
+     "S30",
+     "S32",
+     "S34"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "M",
+      "color": "#D55E00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "centerTowns": [
+     {
+      "name": {
+       "name": "Alsabel"
+      }
+     }
+    ],
+    "hexes": [
+     "N15"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "M",
+      "color": "#D55E00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "centerTowns": [
+     {
+      "name": {
+       "name": "Kesval"
+      }
+     }
+    ],
+    "hexes": [
+     "O38"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "M",
+      "color": "#D55E00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "centerTowns": [
+     {
+      "name": {
+       "name": "Aldeem"
+      }
+     }
+    ],
+    "hexes": [
+     "P13"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "M",
+      "color": "#D55E00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "centerTowns": [
+     {
+      "name": {
+       "name": "Tarsal"
+      }
+     }
+    ],
+    "hexes": [
+     "P29"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "M",
+      "color": "#D55E00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "centerTowns": [
+     {
+      "name": {
+       "name": "Naseem"
+      }
+     }
+    ],
+    "hexes": [
+     "Q18"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "M",
+      "color": "#D55E00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "centerTowns": [
+     {
+      "name": {
+       "name": "Alzavel"
+      }
+     }
+    ],
+    "hexes": [
+     "Q34"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "M",
+      "color": "#D55E00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "centerTowns": [
+     {
+      "name": {
+       "name": "Qadsal"
+      }
+     }
+    ],
+    "hexes": [
+     "R27"
+    ]
+   },
+   {
+    "color": "water",
+    "icons": [
+     {
+      "type": "bridge",
+      "noCircle": true,
+      "angle": 0
+     }
+    ],
+    "track": [
+     {
+      "type": "offboard",
+      "side": 1
+     },
+     {
+      "type": "offboard",
+      "side": 4
+     }
+    ],
+    "hexes": [
+     "R23"
+    ]
+   },
+   {
+    "color": "yellow",
+    "cities": [
+     {
+      "size": 1,
+      "name": {
+       "name": "Kalavar"
+      }
+     }
+    ],
+    "track": [
+     {
+      "side": 2
+     },
+     {
+      "side": 4
+     }
+    ],
+    "labels": [
+     {
+      "label": "M",
+      "color": "#D55E00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     },
+     {
+      "label": "V",
+      "color": "#000000",
+      "angle": 60,
+      "percent": 0.82,
+      "fontSize": 18
+     }
+    ],
+    "values": [
+     {
+      "value": 30,
+      "angle": 0,
+      "percent": 0.78
+     }
+    ],
+    "hexes": [
+     "R21"
+    ],
+    "tokens": [
+     {
+      "label": "29"
+     }
+    ]
+   },
+   {
+    "color": "plain",
+    "cities": [
+     {
+      "size": 1,
+      "name": {
+       "name": "Marsal"
+      }
+     }
+    ],
+    "labels": [
+     {
+      "label": "M",
+      "color": "#D55E00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "hexes": [
+     "R25"
+    ]
+   },
+   {
+    "color": "plain",
+    "cities": [
+     {
+      "size": 1,
+      "name": {
+       "name": "Alveem"
+      }
+     }
+    ],
+    "labels": [
+     {
+      "label": "M",
+      "color": "#D55E00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "hexes": [
+     "N13"
+    ],
+    "tokens": [
+     {
+      "label": "25"
+     }
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "M",
+      "color": "#D55E00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "centerTowns": [
+     {
+      "name": {
+       "name": "Marneem"
+      }
+     }
+    ],
+    "hexes": [
+     "O26"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "M",
+      "color": "#D55E00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "centerTowns": [
+     {
+      "name": {
+       "name": "Qadeem"
+      }
+     }
+    ],
+    "borders": [
+     {
+      "side": 2,
+      "color": "black"
+     },
+     {
+      "side": 3,
+      "color": "black"
+     }
+    ],
+    "hexes": [
+     "N25"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "M",
+      "color": "#D55E00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "hexes": [
+     "O22"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "M",
+      "color": "#D55E00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "cities": [
+     {
+      "size": 1,
+      "name": {
+       "name": "Tarvel"
+      }
+     }
+    ],
+    "hexes": [
+     "O20"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "M",
+      "color": "#D55E00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "cities": [
+     {
+      "size": 1,
+      "name": {
+       "name": "Karsal"
+      }
+     }
+    ],
+    "borders": [
+     {
+      "side": 2,
+      "color": "black"
+     },
+     {
+      "side": 3,
+      "color": "black"
+     }
+    ],
+    "hexes": [
+     "N29"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "M",
+      "color": "#D55E00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "cities": [
+     {
+      "size": 1,
+      "name": {
+       "name": "Medeem"
+      }
+     }
+    ],
+    "hexes": [
+     "P23"
+    ],
+    "tokens": [
+     {
+      "label": "28"
+     }
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "M",
+      "color": "#D55E00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "cities": [
+     {
+      "size": 1,
+      "name": {
+       "name": "Sabreem"
+      }
+     }
+    ],
+    "hexes": [
+     "O32"
+    ],
+    "tokens": [
+     {
+      "label": "27"
+     }
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "M",
+      "color": "#D55E00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "cities": [
+     {
+      "size": 1,
+      "name": {
+       "name": "Qalvel"
+      }
+     }
+    ],
+    "borders": [
+     {
+      "side": 2,
+      "color": "black"
+     },
+     {
+      "side": 3,
+      "color": "black"
+     }
+    ],
+    "hexes": [
+     "N37"
+    ],
+    "tokens": [
+     {
+      "label": "26"
+     }
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "M",
+      "color": "#D55E00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "cities": [
+     {
+      "size": 1,
+      "name": {
+       "name": "Nasval"
+      }
+     }
+    ],
+    "hexes": [
+     "Q38"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "M",
+      "color": "#D55E00",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "cities": [
+     {
+      "size": 1,
+      "name": {
+       "name": "Tazeem"
+      }
+     }
+    ],
+    "hexes": [
+     "R31"
+    ],
+    "tokens": [
+     {
+      "label": "30"
+     }
+    ]
+   },
+   {
+    "color": "offboard",
+    "track": [
+     {
+      "type": "offboard",
+      "side": 4
+     },
+     {
+      "type": "offboard",
+      "side": 5
+     }
+    ],
+    "offBoardRevenue": {
+     "name": {
+      "name": "Almareem"
+     },
+     "revenues": [
+      {
+       "color": "yellow",
+       "value": 30
+      },
+      {
+       "color": "green",
+       "value": 50
+      },
+      {
+       "color": "brown",
+       "value": 40
+      },
+      {
+       "color": "gray",
+       "value": 30
+      }
+     ]
+    },
+    "hexes": [
+     "O10"
+    ]
+   },
+   {
+    "color": "offboard",
+    "track": [
+     {
+      "type": "offboard",
+      "side": 1
+     },
+     {
+      "type": "offboard",
+      "side": 2
+     },
+     {
+      "type": "offboard",
+      "side": 3
+     }
+    ],
+    "offBoardRevenue": {
+     "name": {
+      "name": "Qasval"
+     },
+     "revenues": [
+      {
+       "color": "yellow",
+       "value": 30
+      },
+      {
+       "color": "green",
+       "value": 40
+      },
+      {
+       "color": "brown",
+       "value": 50
+      },
+      {
+       "color": "gray",
+       "value": 60
+      }
+     ]
+    },
+    "hexes": [
+     "R33"
+    ]
+   },
+   {
+    "color": "offboard",
+    "track": [
+     {
+      "type": "offboard",
+      "side": 1
+     },
+     {
+      "type": "offboard",
+      "side": 2
+     },
+     {
+      "type": "offboard",
+      "side": 3
+     },
+     {
+      "type": "offboard",
+      "side": 6
+     }
+    ],
+    "offBoardRevenue": {
+     "name": {
+      "name": "Tarseem"
+     },
+     "revenues": [
+      {
+       "color": "yellow",
+       "value": 20
+      },
+      {
+       "color": "green",
+       "value": 30
+      },
+      {
+       "color": "brown",
+       "value": 50
+      },
+      {
+       "color": "gray",
+       "value": 70
+      }
+     ]
+    },
+    "hexes": [
+     "M42"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "V",
+      "color": "#009E73",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "hexes": [
+     "C40",
+     "C42",
+     "C46",
+     "D41",
+     "D45",
+     "E46",
+     "E48",
+     "F43",
+     "F47",
+     "G42",
+     "G46",
+     "G48",
+     "H47",
+     "I42",
+     "J45",
+     "K46",
+     "K48",
+     "L47"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "V",
+      "color": "#009E73",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "borders": [
+     {
+      "side": 1,
+      "color": "black"
+     },
+     {
+      "side": 6,
+      "color": "black"
+     }
+    ],
+    "hexes": [
+     "C38",
+     "D39",
+     "I40",
+     "J41"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "V",
+      "color": "#009E73",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "borders": [
+     {
+      "side": 1,
+      "color": "black"
+     }
+    ],
+    "hexes": [
+     "E40",
+     "L43"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "V",
+      "color": "#009E73",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "borders": [
+     {
+      "side": 1,
+      "color": "black"
+     },
+     {
+      "side": 2,
+      "color": "black"
+     },
+     {
+      "side": 6,
+      "color": "black"
+     }
+    ],
+    "hexes": [
+     "F39",
+     "H39"
+    ]
+   },
+   {
+    "color": "water",
+    "hexes": [
+     "M44",
+     "M46"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "V",
+      "color": "#009E73",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "borders": [
+     {
+      "side": 1,
+      "color": "black"
+     }
+    ],
+    "terrain": [
+     {
+      "type": "river",
+      "cost": 20
+     }
+    ],
+    "hexes": [
+     "G40"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "V",
+      "color": "#009E73",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "terrain": [
+     {
+      "type": "river",
+      "cost": 20
+     }
+    ],
+    "hexes": [
+     "H41"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "V",
+      "color": "#009E73",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "terrain": [
+     {
+      "type": "river",
+      "cost": 20
+     }
+    ],
+    "hexes": [
+     "H43"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "V",
+      "color": "#009E73",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "terrain": [
+     {
+      "type": "river",
+      "cost": 20
+     }
+    ],
+    "hexes": [
+     "I46"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "V",
+      "color": "#009E73",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "terrain": [
+     {
+      "type": "river",
+      "cost": 20
+     }
+    ],
+    "hexes": [
+     "I48"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "V",
+      "color": "#009E73",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "centerTowns": [
+     {
+      "name": {
+       "name": "Volkov"
+      }
+     }
+    ],
+    "hexes": [
+     "C44"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "V",
+      "color": "#009E73",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "centerTowns": [
+     {
+      "name": {
+       "name": "Miresh"
+      }
+     }
+    ],
+    "hexes": [
+     "D47"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "V",
+      "color": "#009E73",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "centerTowns": [
+     {
+      "name": {
+       "name": "Zdanov"
+      }
+     }
+    ],
+    "hexes": [
+     "E42"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "V",
+      "color": "#009E73",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "centerTowns": [
+     {
+      "name": {
+       "name": "Radova"
+      }
+     }
+    ],
+    "hexes": [
+     "F45"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "V",
+      "color": "#009E73",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "centerTowns": [
+     {
+      "name": {
+       "name": "Peshov"
+      }
+     }
+    ],
+    "hexes": [
+     "H45"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "V",
+      "color": "#009E73",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "centerTowns": [
+     {
+      "name": {
+       "name": "Tomavar"
+      }
+     }
+    ],
+    "hexes": [
+     "K44"
+    ]
+   },
+   {
+    "color": "plain",
+    "cities": [
+     {
+      "size": 1,
+      "name": {
+       "name": "Danilov"
+      }
+     }
+    ],
+    "labels": [
+     {
+      "label": "V",
+      "color": "#009E73",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "tokens": [
+     {
+      "label": "19"
+     }
+    ],
+    "hexes": [
+     "D43"
+    ]
+   },
+   {
+    "color": "plain",
+    "cities": [
+     {
+      "size": 1,
+      "name": {
+       "name": "Tavesh"
+      }
+     }
+    ],
+    "labels": [
+     {
+      "label": "V",
+      "color": "#009E73",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "hexes": [
+     "E44"
+    ]
+   },
+   {
+    "color": "plain",
+    "cities": [
+     {
+      "size": 1,
+      "name": {
+       "name": "Bereshov"
+      }
+     }
+    ],
+    "labels": [
+     {
+      "label": "V",
+      "color": "#009E73",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "tokens": [
+     {
+      "label": "20"
+     }
+    ],
+    "hexes": [
+     "F41"
+    ]
+   },
+   {
+    "color": "plain",
+    "cities": [
+     {
+      "size": 1,
+      "name": {
+       "name": "Kremova"
+      }
+     }
+    ],
+    "labels": [
+     {
+      "label": "V",
+      "color": "#009E73",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "hexes": [
+     "G44"
+    ]
+   },
+   {
+    "color": "plain",
+    "cities": [
+     {
+      "size": 1,
+      "name": {
+       "name": "Varstgrad"
+      }
+     }
+    ],
+    "labels": [
+     {
+      "label": "V",
+      "color": "#009E73",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     },
+     {
+      "label": "R",
+      "color": "#000000",
+      "angle": 60,
+      "percent": 0.82,
+      "fontSize": 18
+     }
+    ],
+    "terrain": [
+     {
+      "type": "river",
+      "cost": 20
+     }
+    ],
+    "tokens": [
+     {
+      "label": "21"
+     }
+    ],
+    "hexes": [
+     "I44"
+    ]
+   },
+   {
+    "color": "plain",
+    "cities": [
+     {
+      "size": 1,
+      "name": {
+       "name": "Ranov"
+      }
+     }
+    ],
+    "labels": [
+     {
+      "label": "V",
+      "color": "#009E73",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "hexes": [
+     "J43"
+    ]
+   },
+   {
+    "color": "plain",
+    "cities": [
+     {
+      "size": 1,
+      "name": {
+       "name": "Miralova"
+      }
+     }
+    ],
+    "labels": [
+     {
+      "label": "V",
+      "color": "#009E73",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "tokens": [
+     {
+      "label": "22"
+     }
+    ],
+    "hexes": [
+     "J47"
+    ]
+   },
+   {
+    "color": "plain",
+    "cities": [
+     {
+      "size": 1,
+      "name": {
+       "name": "Zorvar"
+      }
+     }
+    ],
+    "labels": [
+     {
+      "label": "V",
+      "color": "#009E73",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "tokens": [
+     {
+      "label": "23"
+     }
+    ],
+    "borders": [
+     {
+      "side": 1,
+      "color": "black"
+     },
+     {
+      "side": 6,
+      "color": "black"
+     }
+    ],
+    "hexes": [
+     "K42"
+    ]
+   },
+   {
+    "color": "plain",
+    "cities": [
+     {
+      "size": 1,
+      "name": {
+       "name": "Ludova"
+      }
+     }
+    ],
+    "labels": [
+     {
+      "label": "V",
+      "color": "#009E73",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "tokens": [
+     {
+      "label": "24"
+     }
+    ],
+    "hexes": [
+     "L45"
+    ]
+   },
+   {
+    "color": "offboard",
+    "track": [
+     {
+      "type": "offboard",
+      "side": 1
+     },
+     {
+      "type": "offboard",
+      "side": 6
+     }
+    ],
+    "offBoardRevenue": {
+     "name": {
+      "name": "Novgorov"
+     },
+     "revenues": [
+      {
+       "color": "yellow",
+       "value": 40
+      },
+      {
+       "color": "green",
+       "value": 40
+      },
+      {
+       "color": "brown",
+       "value": 60
+      },
+      {
+       "color": "gray",
+       "value": 60
+      }
+     ]
+    },
+    "hexes": [
+     "C48"
+    ]
+   }
+  ]
+ }
 }

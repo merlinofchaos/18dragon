@@ -9,7 +9,7 @@
 # membership. Points are assigned in backlog.yaml during sprint planning.
 
 meta:
-  updated: "2026-07-24"
+  updated: "2026-07-29"  # sprint-06 (Varstova) complete — 5-region MAP COMPLETE; privates next
 
 # Unscheduled stories — id: status
 backlog:
@@ -67,3 +67,48 @@ sprints:
       C27: done
       C01: done
       C28: done
+  sprint-03:
+    status: complete
+    goal: >-
+      Caelimor (region N, the leftmost/NW mainland region) is laid out on the
+      board — its hexes with N permit letters, terrain (with costs), dits, and
+      cities (capital Draeven, some special-tiled). Placed incrementally; the full
+      5-region map skeleton stays deferred.
+    stories:
+      C29: done
+      C30: done
+      C31: done
+  sprint-04:
+    status: complete
+    goal: >-
+      Gördum (region D, the center-north mountains) is laid out on the board east
+      of Caelimor — its hexes with G permit letters, three graded bands of
+      mountain terrain (60/80/120gp) with named dits, and its (sparser) cities
+      including the capital Brekheim. Placed incrementally, tying into Caelimor's
+      eastern border.
+    stories:
+      C32: done
+      C33: done
+      C34: done
+  sprint-05:
+    status: complete
+    goal: >-
+      Muravel (region S, the southern plains) is laid out as a wide maritime band
+      below the existing regions — M permit letters, its enclosing coastline (sea
+      on all three outer sides, an interior west lake, an inlet south of Caelimor,
+      an M12-bridge approach to Verantum), light plains terrain with dits, and its
+      cities including the capital Kalavar. Extends the grid downward.
+    stories:
+      C35: done
+      C36: done
+      C37: done
+  sprint-06:
+    status: complete
+    goal: >-
+      Varstova (region E, the northeast hills) is laid out as a wedge east of
+      Gördum — V permit letters, hills terrain with dits, and its cities including
+      the capital Varstgrad — completing the five-region 18Dragon map.
+    stories:
+      C38: done
+      C39: done
+      C40: done

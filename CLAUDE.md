@@ -286,8 +286,9 @@ All positioning fields (`angle`, `percent`, `side`, `x`, `y`, `size`) are option
     "name": { "name": "Far Lands" },
     "revenues": [
       { "color": "yellow", "value": 30 },
+      { "color": "green", "value": 40 },
       { "color": "brown", "value": 50 },
-      { "color": "black", "textColor": "white", "value": "D100" }
+      { "color": "gray", "value": 60 }
     ]
   },
   "hexes": ["A22"]

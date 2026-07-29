@@ -32,7 +32,7 @@ epics:
     concept: "The physical board — regions, island, tiles, and on-board tracks."
     track: content
     prd: "prd-game.md 3, 11"
-    stories: [C01, C02, C15, C16, C27, C28]
+    stories: [C01, C02, C15, C16, C27, C28, C29, C30, C31, C32, C33, C34, C35, C36, C37, C38, C39, C40]
   "Companies":
     concept: "Majors, minors, and their charters/certificates."
     track: content
@@ -74,7 +74,7 @@ epics:
     concept: "The region-permit mechanic — rules, permit privates, and the letter overlay."
     track: mixed
     prd: "prd-game.md 6.1"
-    stories: [C04, C05, C07, D05, D06]
+    stories: [C04, C05, C07, D05, D06, C29, C32, C35, C38]
   "Scaling":
     concept: "Player-count scaling via the modular board and gated privates."
     track: content
