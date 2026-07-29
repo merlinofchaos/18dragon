@@ -69,7 +69,7 @@ epics:
     concept: "The island — its map, ruins/metro system, and special rendering."
     track: mixed
     prd: "prd-game.md 6.2"
-    stories: [C01, C08, C14, D07, C27, C28]
+    stories: [C01, C08, C14, D07, C27, C28, C41]
   "Permits":
     concept: "The region-permit mechanic — rules, permit privates, and the letter overlay."
     track: mixed

@@ -404,13 +404,6 @@
    {
     "color": "water",
     "hexes": [
-     "B11",
-     "B13",
-     "C6",
-     "C8",
-     "C14",
-     "D5",
-     "D15",
      "E4",
      "E16",
      "E18",
@@ -526,21 +519,13 @@
      }
     ],
     "hexes": [
-     "C10",
-     "C12",
-     "D7",
-     "D9",
-     "D11",
-     "D13",
      "E6",
      "E8",
-     "E10",
      "E12",
      "E14",
      "F5",
      "F7",
      "F9",
-     "F11",
      "F13",
      "F15",
      "G4",
@@ -550,7 +535,6 @@
      "H5",
      "I4",
      "I12",
-     "J3",
      "J5",
      "J13",
      "K6",
@@ -595,7 +579,9 @@
        "color": "gray",
        "value": 60
       }
-     ]
+     ],
+     "angle": 0,
+     "percent": 0.35
     },
     "hexes": [
      "H3"
@@ -688,6 +674,13 @@
       "percent": 0.85,
       "fontSize": 9,
       "permit": true
+     },
+     {
+      "label": "B",
+      "color": "#000000",
+      "angle": 60,
+      "percent": 0.82,
+      "fontSize": 18
      }
     ],
     "tokens": [
@@ -746,6 +739,13 @@
       "percent": 0.85,
       "fontSize": 9,
       "permit": true
+     },
+     {
+      "label": "B",
+      "color": "#000000",
+      "angle": 60,
+      "percent": 0.82,
+      "fontSize": 18
      }
     ],
     "tokens": [
@@ -814,11 +814,6 @@
       "label": "2",
       "x": 25,
       "y": -25
-     },
-     {
-      "label": "3",
-      "x": 25,
-      "y": 25
      }
     ],
     "hexes": [
@@ -1053,9 +1048,7 @@
      }
     ],
     "hexes": [
-     "J27",
      "K24",
-     "K26",
      "L23",
      "L25"
     ]
@@ -1570,6 +1563,13 @@
       "percent": 0.85,
       "fontSize": 9,
       "permit": true
+     },
+     {
+      "label": "K",
+      "color": "#000000",
+      "angle": 60,
+      "percent": 0.82,
+      "fontSize": 18
      }
     ],
     "tokens": [
@@ -1760,10 +1760,7 @@
    {
     "color": "water",
     "hexes": [
-     "C16",
-     "C18",
      "C20",
-     "D17",
      "D19",
      "G20",
      "H19",
@@ -2538,7 +2535,7 @@
       "permit": true
      },
      {
-      "label": "B",
+      "label": "H",
       "color": "#000000",
       "angle": 60,
       "percent": 0.82,
@@ -3169,6 +3166,13 @@
       "percent": 0.85,
       "fontSize": 9,
       "permit": true
+     },
+     {
+      "label": "B",
+      "color": "#000000",
+      "angle": 60,
+      "percent": 0.82,
+      "fontSize": 18
      }
     ],
     "hexes": [
@@ -3193,6 +3197,13 @@
       "percent": 0.85,
       "fontSize": 9,
       "permit": true
+     },
+     {
+      "label": "B",
+      "color": "#000000",
+      "angle": 60,
+      "percent": 0.82,
+      "fontSize": 18
      }
     ],
     "hexes": [
@@ -3517,7 +3528,9 @@
        "color": "gray",
        "value": 30
       }
-     ]
+     ],
+     "angle": 0,
+     "percent": 0.35
     },
     "hexes": [
      "O10"
@@ -3560,7 +3573,9 @@
        "color": "gray",
        "value": 60
       }
-     ]
+     ],
+     "angle": 0,
+     "percent": 0.35
     },
     "hexes": [
      "R33"
@@ -3607,7 +3622,9 @@
        "color": "gray",
        "value": 70
       }
-     ]
+     ],
+     "angle": 0,
+     "percent": 0.35
     },
     "hexes": [
      "M42"
@@ -4292,10 +4309,187 @@
        "color": "gray",
        "value": 60
       }
-     ]
+     ],
+     "angle": 0,
+     "percent": 0.35
     },
     "hexes": [
      "C48"
+    ]
+   },
+   {
+    "color": "water",
+    "hexes": [
+     "D5",
+     "D7",
+     "D9",
+     "D11",
+     "D13",
+     "D15"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "A",
+      "color": "#7B2D8B",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "cities": [
+     {
+      "size": 1,
+      "name": {
+       "name": "Portium"
+      }
+     }
+    ],
+    "hexes": [
+     "E10"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "A",
+      "color": "#7B2D8B",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "centerTowns": [
+     {
+      "name": {
+       "name": "Aquilium"
+      }
+     }
+    ],
+    "hexes": [
+     "F11"
+    ]
+   },
+   {
+    "color": "gray",
+    "cities": [
+     {
+      "size": 2,
+      "name": {
+       "name": "Litoria"
+      }
+     }
+    ],
+    "track": [
+     {
+      "side": 3
+     },
+     {
+      "side": 4
+     }
+    ],
+    "labels": [
+     {
+      "label": "A",
+      "color": "#7B2D8B",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "offBoardRevenue": {
+     "name": {
+      "name": ""
+     },
+     "revenues": [
+      {
+       "color": "yellow",
+       "value": 30
+      },
+      {
+       "color": "green",
+       "value": 40
+      },
+      {
+       "color": "brown",
+       "value": 50
+      },
+      {
+       "color": "gray",
+       "value": 60
+      }
+     ],
+     "angle": 0,
+     "percent": 0.62
+    },
+    "tokens": [
+     {
+      "label": "3",
+      "x": -25
+     }
+    ],
+    "hexes": [
+     "J3"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "N",
+      "color": "#56B4E9",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     },
+     {
+      "label": "P",
+      "color": "#000000",
+      "angle": 60,
+      "percent": 0.82,
+      "fontSize": 18
+     }
+    ],
+    "cities": [
+     {
+      "size": 1,
+      "name": {
+       "name": "Pendrael"
+      }
+     }
+    ],
+    "hexes": [
+     "J27"
+    ]
+   },
+   {
+    "color": "plain",
+    "labels": [
+     {
+      "label": "N",
+      "color": "#56B4E9",
+      "angle": 300,
+      "percent": 0.85,
+      "fontSize": 9,
+      "permit": true
+     }
+    ],
+    "centerTowns": [
+     {
+      "name": {
+       "name": "Wyndmor"
+      }
+     }
+    ],
+    "hexes": [
+     "K26"
     ]
    }
   ]

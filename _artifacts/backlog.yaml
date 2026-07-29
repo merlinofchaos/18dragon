@@ -278,6 +278,13 @@ stories:
     epics: ["World & Map"]
     points: 3
 
+  # --- Post-completion: fine-tuning the finished 5-region map (designer review). ---
+  C41:
+    title: "Map fine-tuning pass (post-completion tweaks)"
+    type: content
+    epics: ["World & Map", "Verantum"]
+    points: 3
+
 # Notes:
 # - Stickers (C24) are content track but produced via Silhouette Cameo, not
 #   18xxMaker (PRD section 11).

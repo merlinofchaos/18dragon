@@ -9,7 +9,7 @@
 # membership. Points are assigned in backlog.yaml during sprint planning.
 
 meta:
-  updated: "2026-07-29"  # sprint-06 (Varstova) complete — 5-region MAP COMPLETE; privates next
+  updated: "2026-07-29"  # sprint-07 (map polish, C41) active; privates track after
 
 # Unscheduled stories — id: status
 backlog:
@@ -102,6 +102,15 @@ sprints:
       C35: done
       C36: done
       C37: done
+  sprint-07:
+    status: active
+    goal: >-
+      The completed five-region map is fine-tuned per the designer's review —
+      Verantum shrunk from the north (rows C/D removed, sea reshaped) with a new
+      north-coast city+dit and a gray city at J3 (holding relocated home 3), and a
+      new special-tile city at Caelimor's J27 with a SW dit.
+    stories:
+      C41: done
   sprint-06:
     status: complete
     goal: >-
