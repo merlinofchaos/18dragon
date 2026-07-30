@@ -9,6 +9,11 @@
 <style>
   :root { color-scheme: light; }
   * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  
+  .gp { display: inline-flex; align-items: center; gap: 0.12em; white-space: nowrap; }
+  .gp-coin { width: 0.92em; height: 0.92em; flex: 0 0 auto; }
+  .gp-v { font-variant-numeric: tabular-nums; }
+
   body { margin: 0; background: #ccc; font-family: Georgia, "Times New Roman", serif; }
   .sheet-label { position: absolute; top: 9mm; left: 0; right: 0; text-align: center;
     font-family: system-ui, sans-serif; font-size: 8pt; color: #666; }
@@ -46,7 +51,7 @@
   .pnum { font-size: 17pt; font-weight: 800; line-height: 1;
     -webkit-text-stroke: 0.4mm #000; paint-order: stroke fill; }
   .p-y { color: #f4c518; } .p-g { color: #34992f; } .p-b { color: #9a6427; }
-  .coin { width: 8.5mm; height: 8.5mm; }
+  .money { font-size: 11pt; font-weight: 700; color: #2a2010; }
   .img { align-self: stretch; height: 92%; border: 0.2mm dashed #a99; border-radius: 0.6mm;
     background: repeating-linear-gradient(45deg,#0000 0 2mm,#0000000a 2mm 2.2mm); }
 
@@ -64,7 +69,7 @@
   .crev { justify-self: start; display: flex; flex-direction: column; align-items: center; line-height: 1; }
   .crev small { font-family: system-ui, sans-serif; font-size: 4pt; letter-spacing: .4px;
     text-transform: uppercase; color: #3a352c; margin-bottom: 0.3mm; }
-  .crev .coin { width: 6.5mm; height: 6.5mm; }
+  .crev .money { font-size: 8.5pt; }
   .owner { display: flex; flex-direction: column; align-items: center; gap: 0.5mm; }
   .own-a, .own-b { font-family: system-ui, sans-serif; letter-spacing: .4px; border-radius: 1mm;
     padding: 0.4mm 1.6mm; line-height: 1; white-space: nowrap; }
@@ -105,13 +110,7 @@
         <div class="img"></div>
         <div class="stat">
           <small>Revenue</small>
-          
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">5</text>
-      </svg>
+          <span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">5</span></span></span>
         </div>
       </div>
       <div class="foot">
@@ -133,13 +132,7 @@
         <div class="img"></div>
         <div class="stat">
           <small>Revenue</small>
-          
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">0</text>
-      </svg>
+          <span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">0</span></span></span>
         </div>
       </div>
       <div class="foot">
@@ -161,13 +154,7 @@
         <div class="img"></div>
         <div class="stat">
           <small>Revenue</small>
-          
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">0</text>
-      </svg>
+          <span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">0</span></span></span>
         </div>
       </div>
       <div class="foot">
@@ -189,13 +176,7 @@
         <div class="img"></div>
         <div class="stat">
           <small>Revenue</small>
-          
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">0</text>
-      </svg>
+          <span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">0</span></span></span>
         </div>
       </div>
       <div class="foot">
@@ -217,13 +198,7 @@
         <div class="img"></div>
         <div class="stat">
           <small>Revenue</small>
-          
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">10</text>
-      </svg>
+          <span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">10</span></span></span>
         </div>
       </div>
       <div class="foot">
@@ -245,13 +220,7 @@
         <div class="img"></div>
         <div class="stat">
           <small>Revenue</small>
-          
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">10</text>
-      </svg>
+          <span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">10</span></span></span>
         </div>
       </div>
       <div class="foot">
@@ -273,13 +242,7 @@
         <div class="img"></div>
         <div class="stat">
           <small>Revenue</small>
-          
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">10</text>
-      </svg>
+          <span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">10</span></span></span>
         </div>
       </div>
       <div class="foot">
@@ -301,13 +264,7 @@
         <div class="img"></div>
         <div class="stat">
           <small>Revenue</small>
-          
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">10</text>
-      </svg>
+          <span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">10</span></span></span>
         </div>
       </div>
       <div class="foot">
@@ -329,13 +286,7 @@
         <div class="img"></div>
         <div class="stat">
           <small>Revenue</small>
-          
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">10</text>
-      </svg>
+          <span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">10</span></span></span>
         </div>
       </div>
       <div class="foot">
@@ -357,13 +308,7 @@
         <div class="img"></div>
         <div class="stat">
           <small>Revenue</small>
-          
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">10</text>
-      </svg>
+          <span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">10</span></span></span>
         </div>
       </div>
       <div class="foot">
@@ -385,13 +330,7 @@
         <div class="img"></div>
         <div class="stat">
           <small>Revenue</small>
-          
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">10</text>
-      </svg>
+          <span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">10</span></span></span>
         </div>
       </div>
       <div class="foot">
@@ -413,13 +352,7 @@
         <div class="img"></div>
         <div class="stat">
           <small>Revenue</small>
-          
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">10</text>
-      </svg>
+          <span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">10</span></span></span>
         </div>
       </div>
       <div class="foot">
@@ -440,13 +373,7 @@
       <div class="title">The Aurelian Span</div>
       <div class="rules"><p>When bought into a company, place a special bridge tile on one of the 3 bridge locations. Other companies may run this track but must pay the owning company 10 from the route revenue.</p></div>
       <div class="foot">
-        <div class="crev"><small>Revenue</small>
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">0</text>
-      </svg></div>
+        <div class="crev"><small>Revenue</small><span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">0</span></span></span></div>
         <div class="owner"><span class="own-a">COMPANY-OWNED</span><span class="own-b">PRIVATE COMPANY</span></div>
         <div class="pid-wrap"><span class="cls">Minor/Major</span><span class="pid b-green">P10</span></div>
       </div>
@@ -458,13 +385,7 @@
       <div class="title">Halvard's Crossing</div>
       <div class="rules"><p>When bought into a company, place a special bridge tile on one of the 3 bridge locations. Other companies may run this track but must pay the owning company 10 from the route revenue.</p></div>
       <div class="foot">
-        <div class="crev"><small>Revenue</small>
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">0</text>
-      </svg></div>
+        <div class="crev"><small>Revenue</small><span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">0</span></span></span></div>
         <div class="owner"><span class="own-a">COMPANY-OWNED</span><span class="own-b">PRIVATE COMPANY</span></div>
         <div class="pid-wrap"><span class="cls">Minor/Major</span><span class="pid b-green">P11</span></div>
       </div>
@@ -474,15 +395,9 @@
       
       <div class="band">Hill/Mountain Discount</div>
       <div class="title">The Rockbreakers</div>
-      <div class="rules"><p>The owning company gets a 40gp discount when building on hill or mountain terrain. Stacks with other hill/mountain or mountain discounts.</p></div>
+      <div class="rules"><p>The owning company gets a <span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">40</span></span> discount when building on hill or mountain terrain. Stacks with other hill/mountain or mountain discounts.</p></div>
       <div class="foot">
-        <div class="crev"><small>Revenue</small>
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">0</text>
-      </svg></div>
+        <div class="crev"><small>Revenue</small><span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">0</span></span></span></div>
         <div class="owner"><span class="own-a">COMPANY-OWNED</span><span class="own-b">PRIVATE COMPANY</span></div>
         <div class="pid-wrap"><span class="cls">Minor/Major</span><span class="pid b-green">P12</span></div>
       </div>
@@ -494,13 +409,7 @@
       <div class="title">Brekheim Trackgeld</div>
       <div class="rules"><p>On buy-in the private immediately closes and its company gains a permanent permit for Gördum (region G).</p></div>
       <div class="foot">
-        <div class="crev"><small>Revenue</small>
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">0</text>
-      </svg></div>
+        <div class="crev"><small>Revenue</small><span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">0</span></span></span></div>
         <div class="owner"><span class="own-a">COMPANY-OWNED</span><span class="own-b">PRIVATE COMPANY</span></div>
         <div class="pid-wrap"><span class="cls">Minor/Major</span><span class="pid b-green">P7</span></div>
       </div>
@@ -512,13 +421,7 @@
       <div class="title">al-Kalavar Caravaneers</div>
       <div class="rules"><p>On buy-in the private immediately closes and its company gains a permanent permit for Muravel (region M).</p></div>
       <div class="foot">
-        <div class="crev"><small>Revenue</small>
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">0</text>
-      </svg></div>
+        <div class="crev"><small>Revenue</small><span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">0</span></span></span></div>
         <div class="owner"><span class="own-a">COMPANY-OWNED</span><span class="own-b">PRIVATE COMPANY</span></div>
         <div class="pid-wrap"><span class="cls">Minor/Major</span><span class="pid b-green">P8</span></div>
       </div>
@@ -530,13 +433,7 @@
       <div class="title">Varstov Railwrights' Artel</div>
       <div class="rules"><p>On buy-in the private immediately closes and its company gains a permanent permit for Varstova (region V).</p></div>
       <div class="foot">
-        <div class="crev"><small>Revenue</small>
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">0</text>
-      </svg></div>
+        <div class="crev"><small>Revenue</small><span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">0</span></span></span></div>
         <div class="owner"><span class="own-a">COMPANY-OWNED</span><span class="own-b">PRIVATE COMPANY</span></div>
         <div class="pid-wrap"><span class="cls">Minor/Major</span><span class="pid b-green">P9</span></div>
       </div>
@@ -548,13 +445,7 @@
       <div class="title">The Dampcart</div>
       <div class="train"><div class="tname">Permanent L-Train</div><small>permanent train card (reverse)</small></div>
       <div class="foot">
-        <div class="crev"><small>Revenue</small>
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">0</text>
-      </svg></div>
+        <div class="crev"><small>Revenue</small><span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">0</span></span></span></div>
         <div class="owner"><span class="own-a">COMPANY-OWNED</span><span class="own-b">PRIVATE COMPANY</span></div>
         <div class="pid-wrap"><span class="cls">Minor/Major</span><span class="pid b-green">P4</span></div>
       </div>
@@ -566,13 +457,7 @@
       <div class="title">Collegium Verantium</div>
       <div class="rules"><p>On buy-in the private immediately closes and its company gains a permanent permit for Verantum (region A) — as a minor's cert grants its home-region permit inside a major.</p></div>
       <div class="foot">
-        <div class="crev"><small>Revenue</small>
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">0</text>
-      </svg></div>
+        <div class="crev"><small>Revenue</small><span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">0</span></span></span></div>
         <div class="owner"><span class="own-a">COMPANY-OWNED</span><span class="own-b">PRIVATE COMPANY</span></div>
         <div class="pid-wrap"><span class="cls">Minor/Major</span><span class="pid b-green">P5</span></div>
       </div>
@@ -584,13 +469,7 @@
       <div class="title">Aeldun Wayfinders</div>
       <div class="rules"><p>On buy-in the private immediately closes and its company gains a permanent permit for Caelimor (region N).</p></div>
       <div class="foot">
-        <div class="crev"><small>Revenue</small>
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">0</text>
-      </svg></div>
+        <div class="crev"><small>Revenue</small><span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">0</span></span></span></div>
         <div class="owner"><span class="own-a">COMPANY-OWNED</span><span class="own-b">PRIVATE COMPANY</span></div>
         <div class="pid-wrap"><span class="cls">Minor/Major</span><span class="pid b-green">P6</span></div>
       </div>
@@ -602,13 +481,7 @@
       <div class="title">Eldrok Phlogiston Werk</div>
       <div class="train"><div class="tname">Permanent 5-Train</div><small>permanent train card (reverse)</small></div>
       <div class="foot">
-        <div class="crev"><small>Revenue</small>
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">0</text>
-      </svg></div>
+        <div class="crev"><small>Revenue</small><span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">0</span></span></span></div>
         <div class="owner"><span class="own-a">COMPANY-OWNED</span><span class="own-b">PRIVATE COMPANY</span></div>
         <div class="pid-wrap"><span class="cls">Major</span><span class="pid b-red">P1</span></div>
       </div>
@@ -620,13 +493,7 @@
       <div class="title">The Ironhaul</div>
       <div class="train"><div class="tname">Permanent 2-Train</div><small>permanent train card (reverse)</small></div>
       <div class="foot">
-        <div class="crev"><small>Revenue</small>
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">0</text>
-      </svg></div>
+        <div class="crev"><small>Revenue</small><span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">0</span></span></span></div>
         <div class="owner"><span class="own-a">COMPANY-OWNED</span><span class="own-b">PRIVATE COMPANY</span></div>
         <div class="pid-wrap"><span class="cls">Major</span><span class="pid b-red">P2</span></div>
       </div>
@@ -638,13 +505,7 @@
       <div class="title">The Deepdelver</div>
       <div class="train"><div class="tname">Permanent 2-Train</div><small>permanent train card (reverse)</small></div>
       <div class="foot">
-        <div class="crev"><small>Revenue</small>
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">0</text>
-      </svg></div>
+        <div class="crev"><small>Revenue</small><span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">0</span></span></span></div>
         <div class="owner"><span class="own-a">COMPANY-OWNED</span><span class="own-b">PRIVATE COMPANY</span></div>
         <div class="pid-wrap"><span class="cls">Major</span><span class="pid b-red">P3</span></div>
       </div>
@@ -667,13 +528,7 @@
         <div class="img"></div>
         <div class="stat">
           <small>Revenue</small>
-          
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">10</text>
-      </svg>
+          <span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">10</span></span></span>
         </div>
       </div>
       <div class="foot">
@@ -695,13 +550,7 @@
         <div class="img"></div>
         <div class="stat">
           <small>Revenue</small>
-          
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">10</text>
-      </svg>
+          <span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">10</span></span></span>
         </div>
       </div>
       <div class="foot">
@@ -723,13 +572,7 @@
         <div class="img"></div>
         <div class="stat">
           <small>Revenue</small>
-          
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">10</text>
-      </svg>
+          <span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">10</span></span></span>
         </div>
       </div>
       <div class="foot">
@@ -751,13 +594,7 @@
         <div class="img"></div>
         <div class="stat">
           <small>Revenue</small>
-          
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">10</text>
-      </svg>
+          <span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">10</span></span></span>
         </div>
       </div>
       <div class="foot">
@@ -779,13 +616,7 @@
         <div class="img"></div>
         <div class="stat">
           <small>Revenue</small>
-          
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">10</text>
-      </svg>
+          <span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">10</span></span></span>
         </div>
       </div>
       <div class="foot">
@@ -807,13 +638,7 @@
         <div class="img"></div>
         <div class="stat">
           <small>Revenue</small>
-          
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">10</text>
-      </svg>
+          <span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">10</span></span></span>
         </div>
       </div>
       <div class="foot">
@@ -835,13 +660,7 @@
         <div class="img"></div>
         <div class="stat">
           <small>Revenue</small>
-          
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">10</text>
-      </svg>
+          <span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">10</span></span></span>
         </div>
       </div>
       <div class="foot">
@@ -863,13 +682,7 @@
         <div class="img"></div>
         <div class="stat">
           <small>Revenue</small>
-          
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">10</text>
-      </svg>
+          <span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">10</span></span></span>
         </div>
       </div>
       <div class="foot">
@@ -891,13 +704,7 @@
         <div class="img"></div>
         <div class="stat">
           <small>Revenue</small>
-          
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">10</text>
-      </svg>
+          <span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">10</span></span></span>
         </div>
       </div>
       <div class="foot">
@@ -919,13 +726,7 @@
         <div class="img"></div>
         <div class="stat">
           <small>Revenue</small>
-          
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">10</text>
-      </svg>
+          <span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">10</span></span></span>
         </div>
       </div>
       <div class="foot">
@@ -947,13 +748,7 @@
         <div class="img"></div>
         <div class="stat">
           <small>Revenue</small>
-          
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">10</text>
-      </svg>
+          <span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">10</span></span></span>
         </div>
       </div>
       <div class="foot">
@@ -975,13 +770,7 @@
         <div class="img"></div>
         <div class="stat">
           <small>Revenue</small>
-          
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">10</text>
-      </svg>
+          <span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">10</span></span></span>
         </div>
       </div>
       <div class="foot">
@@ -1002,13 +791,7 @@
       <div class="title">Brekheim Locomotive Corporation</div>
       <div class="rules"><p>The owning company may close this private to place an exchange token in Brekheim, even if there is no slot available. Until used, it pays its revenue to the owning company.</p></div>
       <div class="foot">
-        <div class="crev"><small>Revenue</small>
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">10</text>
-      </svg></div>
+        <div class="crev"><small>Revenue</small><span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">10</span></span></span></div>
         <div class="owner"><span class="own-a">COMPANY-OWNED</span><span class="own-b">PRIVATE COMPANY</span></div>
         <div class="pid-wrap"><span class="cls">Major</span><span class="pid b-red">P22</span></div>
       </div>
@@ -1020,13 +803,7 @@
       <div class="title">Dustfall Company</div>
       <div class="rules"><p>Allows the owning company to place a plain yellow track tile directly on an undeveloped town hex location or upgrade a town tile of one color to a plain track tile of the next color. This closes the company and counts as the company's normal track laying step. All other normal track laying restrictions apply. Cannot be used in hexes with two small towns. Until used, it pays its revenue to the owning company.</p></div>
       <div class="foot">
-        <div class="crev"><small>Revenue</small>
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">10</text>
-      </svg></div>
+        <div class="crev"><small>Revenue</small><span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">10</span></span></span></div>
         <div class="owner"><span class="own-a">COMPANY-OWNED</span><span class="own-b">PRIVATE COMPANY</span></div>
         <div class="pid-wrap"><span class="cls">Minor/Major</span><span class="pid b-green">P23</span></div>
       </div>
@@ -1038,13 +815,7 @@
       <div class="title">The Hollowing</div>
       <div class="rules"><p>Allows the owning company to place a plain yellow track tile directly on an undeveloped town hex location or upgrade a town tile of one color to a plain track tile of the next color. This closes the company and counts as the company's normal track laying step. All other normal track laying restrictions apply. Cannot be used in hexes with two small towns. Until used, it pays its revenue to the owning company.</p></div>
       <div class="foot">
-        <div class="crev"><small>Revenue</small>
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">10</text>
-      </svg></div>
+        <div class="crev"><small>Revenue</small><span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">10</span></span></span></div>
         <div class="owner"><span class="own-a">COMPANY-OWNED</span><span class="own-b">PRIVATE COMPANY</span></div>
         <div class="pid-wrap"><span class="cls">Minor/Major</span><span class="pid b-green">P24</span></div>
       </div>
@@ -1056,13 +827,7 @@
       <div class="title">The Emberwain</div>
       <div class="rules"><p>May be attached to a 2-7 train; that train may make 1 additional stop.</p></div>
       <div class="foot">
-        <div class="crev"><small>Revenue</small>
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">0</text>
-      </svg></div>
+        <div class="crev"><small>Revenue</small><span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">0</span></span></span></div>
         <div class="owner"><span class="own-a">COMPANY-OWNED</span><span class="own-b">PRIVATE COMPANY</span></div>
         <div class="pid-wrap"><span class="cls">Major</span><span class="pid b-red">P19</span></div>
       </div>
@@ -1072,15 +837,9 @@
       
       <div class="band">City Route Bonus</div>
       <div class="title">Wands Delivery</div>
-      <div class="rules"><p>The owning company may close this private to place a $30 token in any city not in Verantum; any train that includes both Verantia and that city gains +30. Until used, it pays its revenue to the owning company.</p></div>
+      <div class="rules"><p>The owning company may close this private to place a <span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">30</span></span> token in any city not in Verantum; any train that includes both Verantia and that city gains +30. Until used, it pays its revenue to the owning company.</p></div>
       <div class="foot">
-        <div class="crev"><small>Revenue</small>
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">10</text>
-      </svg></div>
+        <div class="crev"><small>Revenue</small><span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">10</span></span></span></div>
         <div class="owner"><span class="own-a">COMPANY-OWNED</span><span class="own-b">PRIVATE COMPANY</span></div>
         <div class="pid-wrap"><span class="cls">Minor/Major</span><span class="pid b-green">P20</span></div>
       </div>
@@ -1092,13 +851,7 @@
       <div class="title">Verantum Recolonization</div>
       <div class="rules"><p>The owning company may close this private to upgrade a Verantum dit to a city of the same color (yellow if no track has been laid) and place an Exchange token there at no cost. This counts as the company's track lay. Until used, it pays its revenue to the owning company.</p></div>
       <div class="foot">
-        <div class="crev"><small>Revenue</small>
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">10</text>
-      </svg></div>
+        <div class="crev"><small>Revenue</small><span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">10</span></span></span></div>
         <div class="owner"><span class="own-a">COMPANY-OWNED</span><span class="own-b">PRIVATE COMPANY</span></div>
         <div class="pid-wrap"><span class="cls">Minor/Major</span><span class="pid b-green">P21</span></div>
       </div>
@@ -1110,13 +863,7 @@
       <div class="title">Merger Negotiations</div>
       <div class="rules"><p>While owned by a minor, the company may close this private to initiate a merger with another minor company, even with no connecting track. Until used, it pays its revenue to the owning company. If bought into a major it closes immediately for no effect (no dead certificate).</p></div>
       <div class="foot">
-        <div class="crev"><small>Revenue</small>
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">10</text>
-      </svg></div>
+        <div class="crev"><small>Revenue</small><span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">10</span></span></span></div>
         <div class="owner"><span class="own-a">COMPANY-OWNED</span><span class="own-b">PRIVATE COMPANY</span></div>
         <div class="pid-wrap"><span class="cls">Minor/Major</span><span class="pid b-green">P16</span></div>
       </div>
@@ -1128,13 +875,7 @@
       <div class="title">Phlogiston Mine</div>
       <div class="rules"><p>The owning company may close this private to place a +30 token on any mountain hex; any train running through that hex gains +30. Until used, it pays its revenue to the owning company.</p></div>
       <div class="foot">
-        <div class="crev"><small>Revenue</small>
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">10</text>
-      </svg></div>
+        <div class="crev"><small>Revenue</small><span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">10</span></span></span></div>
         <div class="owner"><span class="own-a">COMPANY-OWNED</span><span class="own-b">PRIVATE COMPANY</span></div>
         <div class="pid-wrap"><span class="cls">Minor/Major</span><span class="pid b-green">P17</span></div>
       </div>
@@ -1146,13 +887,7 @@
       <div class="title">The Firebox</div>
       <div class="rules"><p>May be attached to a 2-7 train; that train may make 1 additional stop.</p></div>
       <div class="foot">
-        <div class="crev"><small>Revenue</small>
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">0</text>
-      </svg></div>
+        <div class="crev"><small>Revenue</small><span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">0</span></span></span></div>
         <div class="owner"><span class="own-a">COMPANY-OWNED</span><span class="own-b">PRIVATE COMPANY</span></div>
         <div class="pid-wrap"><span class="cls">Major</span><span class="pid b-red">P18</span></div>
       </div>
@@ -1162,15 +897,9 @@
       
       <div class="band">Hill/Mountain Discount</div>
       <div class="title">The Cragmen</div>
-      <div class="rules"><p>The owning company gets a 40gp discount when building on hill or mountain terrain. Stacks with other hill/mountain or mountain discounts.</p></div>
+      <div class="rules"><p>The owning company gets a <span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">40</span></span> discount when building on hill or mountain terrain. Stacks with other hill/mountain or mountain discounts.</p></div>
       <div class="foot">
-        <div class="crev"><small>Revenue</small>
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">0</text>
-      </svg></div>
+        <div class="crev"><small>Revenue</small><span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">0</span></span></span></div>
         <div class="owner"><span class="own-a">COMPANY-OWNED</span><span class="own-b">PRIVATE COMPANY</span></div>
         <div class="pid-wrap"><span class="cls">Minor/Major</span><span class="pid b-green">P13</span></div>
       </div>
@@ -1180,15 +909,9 @@
       
       <div class="band">Mountain Discount</div>
       <div class="title">Durgrok Delvers</div>
-      <div class="rules"><p>The owning company gets an 80gp discount when building on mountain terrain. Stacks with other hill/mountain or mountain discounts.</p></div>
+      <div class="rules"><p>The owning company gets an <span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">80</span></span> discount when building on mountain terrain. Stacks with other hill/mountain or mountain discounts.</p></div>
       <div class="foot">
-        <div class="crev"><small>Revenue</small>
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">0</text>
-      </svg></div>
+        <div class="crev"><small>Revenue</small><span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">0</span></span></span></div>
         <div class="owner"><span class="own-a">COMPANY-OWNED</span><span class="own-b">PRIVATE COMPANY</span></div>
         <div class="pid-wrap"><span class="cls">Major</span><span class="pid b-red">P14</span></div>
       </div>
@@ -1198,15 +921,9 @@
       
       <div class="band">Mountain Discount</div>
       <div class="title">Stonebeard Hewers</div>
-      <div class="rules"><p>The owning company gets an 80gp discount when building on mountain terrain. Stacks with other hill/mountain or mountain discounts.</p></div>
+      <div class="rules"><p>The owning company gets an <span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">80</span></span> discount when building on mountain terrain. Stacks with other hill/mountain or mountain discounts.</p></div>
       <div class="foot">
-        <div class="crev"><small>Revenue</small>
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">0</text>
-      </svg></div>
+        <div class="crev"><small>Revenue</small><span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">0</span></span></span></div>
         <div class="owner"><span class="own-a">COMPANY-OWNED</span><span class="own-b">PRIVATE COMPANY</span></div>
         <div class="pid-wrap"><span class="cls">Major</span><span class="pid b-red">P15</span></div>
       </div>
@@ -1229,13 +946,7 @@
         <div class="img"></div>
         <div class="stat">
           <small>Revenue</small>
-          
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">10</text>
-      </svg>
+          <span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">10</span></span></span>
         </div>
       </div>
       <div class="foot">
@@ -1257,13 +968,7 @@
         <div class="img"></div>
         <div class="stat">
           <small>Revenue</small>
-          
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">10</text>
-      </svg>
+          <span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">10</span></span></span>
         </div>
       </div>
       <div class="foot">
@@ -1285,13 +990,7 @@
         <div class="img"></div>
         <div class="stat">
           <small>Revenue</small>
-          
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">10</text>
-      </svg>
+          <span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">10</span></span></span>
         </div>
       </div>
       <div class="foot">
@@ -1313,13 +1012,7 @@
         <div class="img"></div>
         <div class="stat">
           <small>Revenue</small>
-          
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">10</text>
-      </svg>
+          <span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">10</span></span></span>
         </div>
       </div>
       <div class="foot">
@@ -1341,13 +1034,7 @@
         <div class="img"></div>
         <div class="stat">
           <small>Revenue</small>
-          
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">10</text>
-      </svg>
+          <span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">10</span></span></span>
         </div>
       </div>
       <div class="foot">
@@ -1369,13 +1056,7 @@
         <div class="img"></div>
         <div class="stat">
           <small>Revenue</small>
-          
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">10</text>
-      </svg>
+          <span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">10</span></span></span>
         </div>
       </div>
       <div class="foot">
@@ -1396,13 +1077,7 @@
       <div class="title">The Concord Charter</div>
       <div class="rules"><p>Allows the owning company to move a token from the exchange token area of its charter to the available token area, or vice versa. Until used, it pays its revenue to the owning company; the company closes when its power is exercised.</p></div>
       <div class="foot">
-        <div class="crev"><small>Revenue</small>
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">10</text>
-      </svg></div>
+        <div class="crev"><small>Revenue</small><span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">10</span></span></span></div>
         <div class="owner"><span class="own-a">COMPANY-OWNED</span><span class="own-b">PRIVATE COMPANY</span></div>
         <div class="pid-wrap"><span class="cls">Minor/Major</span><span class="pid b-green">P28</span></div>
       </div>
@@ -1414,13 +1089,7 @@
       <div class="title">The Gilded Carriage</div>
       <div class="rules"><p>A 'Pullman' carriage train that can be added to another train owned by the company. It converts the train into a + train. Does not count against train limit and does not count as a train for the purposes of train ownership. Can't be sold to another company. Does not close. May include a maximum of [2 × the train size] number of towns.</p></div>
       <div class="foot">
-        <div class="crev"><small>Revenue</small>
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">0</text>
-      </svg></div>
+        <div class="crev"><small>Revenue</small><span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">0</span></span></span></div>
         <div class="owner"><span class="own-a">COMPANY-OWNED</span><span class="own-b">PRIVATE COMPANY</span></div>
         <div class="pid-wrap"><span class="cls">Major</span><span class="pid b-red">P29</span></div>
       </div>
@@ -1432,13 +1101,7 @@
       <div class="title">Wyvern Coachworks</div>
       <div class="rules"><p>A 'Pullman' carriage train that can be added to another train owned by the company. It converts the train into a + train. Does not count against train limit and does not count as a train for the purposes of train ownership. Can't be sold to another company. Does not close. May include a maximum of [2 × the train size] number of towns.</p></div>
       <div class="foot">
-        <div class="crev"><small>Revenue</small>
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">0</text>
-      </svg></div>
+        <div class="crev"><small>Revenue</small><span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">0</span></span></span></div>
         <div class="owner"><span class="own-a">COMPANY-OWNED</span><span class="own-b">PRIVATE COMPANY</span></div>
         <div class="pid-wrap"><span class="cls">Major</span><span class="pid b-red">P30</span></div>
       </div>
@@ -1450,13 +1113,7 @@
       <div class="title">The Surveyors</div>
       <div class="rules"><p>The owning company may close this private to lay an additional yellow tile (or two for major companies beginning in Phase 3), or make one additional tile upgrade, in its track laying step. All other normal track laying restrictions apply. Until used, it pays its revenue to the owning company.</p></div>
       <div class="foot">
-        <div class="crev"><small>Revenue</small>
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">10</text>
-      </svg></div>
+        <div class="crev"><small>Revenue</small><span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">10</span></span></span></div>
         <div class="owner"><span class="own-a">COMPANY-OWNED</span><span class="own-b">PRIVATE COMPANY</span></div>
         <div class="pid-wrap"><span class="cls">Minor/Major</span><span class="pid b-green">P25</span></div>
       </div>
@@ -1468,13 +1125,7 @@
       <div class="title">The Raven Post</div>
       <div class="rules"><p>After running trains, the owning company receives income into its treasury equal to one half of the base value of the start and end stations from one of the trains operated. Modifications to values (for E-trains or destination tokens) do not apply. An L-train may deliver mail within a single city. A company that owns more than one Mail Contract may not use more than one on any train.</p></div>
       <div class="foot">
-        <div class="crev"><small>Revenue</small>
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">0</text>
-      </svg></div>
+        <div class="crev"><small>Revenue</small><span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">0</span></span></span></div>
         <div class="owner"><span class="own-a">COMPANY-OWNED</span><span class="own-b">PRIVATE COMPANY</span></div>
         <div class="pid-wrap"><span class="cls">Major</span><span class="pid b-red">P26</span></div>
       </div>
@@ -1486,13 +1137,7 @@
       <div class="title">The Courier's Guild</div>
       <div class="rules"><p>After running trains, the owning company receives income into its treasury equal to one half of the base value of the start and end stations from one of the trains operated. Modifications to values (for E-trains or destination tokens) do not apply. An L-train may deliver mail within a single city. A company that owns more than one Mail Contract may not use more than one on any train.</p></div>
       <div class="foot">
-        <div class="crev"><small>Revenue</small>
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">0</text>
-      </svg></div>
+        <div class="crev"><small>Revenue</small><span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">0</span></span></span></div>
         <div class="owner"><span class="own-a">COMPANY-OWNED</span><span class="own-b">PRIVATE COMPANY</span></div>
         <div class="pid-wrap"><span class="cls">Major</span><span class="pid b-red">P27</span></div>
       </div>

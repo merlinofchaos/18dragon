@@ -11,6 +11,7 @@
 // Home/proof quality (card borders + margin crop marks are cut guides). Pro bleed = C44.
 
 import { readFileSync, writeFileSync } from "node:fs";
+import { gp, coinize, COIN_CSS } from "./cardkit.mjs";
 
 const [, , inPath = "privates.json", outPath = "private-cards.html", contentPath] =
   process.argv;
@@ -56,15 +57,6 @@ const cadenceText = (c) =>
 const phaseFill = (p) =>
   p <= 2 ? "p-y" : p <= 4 ? "p-g" : "p-b"; // yellow 1/2, green 3/4, brown 5
 
-// gold coin with the revenue value centered
-const coin = (v) => `
-      <svg class="coin" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" fill="#d9b23a" stroke="#8a6a12" stroke-width="5"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="#f4de92" stroke-width="3"/>
-        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle"
-          font-family="Georgia, serif" font-weight="700" font-size="46" fill="#4a3708">${esc(v)}</text>
-      </svg>`;
-
 const gate = (c) => `<span class="gate">${esc(c.players_required)}+</span>`;
 const pid = (c) =>
   `<div class="pid-wrap"><span class="cls">${esc(classText(c))}</span>` +
@@ -92,7 +84,7 @@ function faceHtml(c, side) {
         <div class="img"></div>
         <div class="stat">
           <small>Revenue</small>
-          ${coin(c.player_revenue)}
+          <span class="money">${gp(c.player_revenue)}</span>
         </div>
       </div>
       <div class="foot">
@@ -107,14 +99,14 @@ function faceHtml(c, side) {
   const isTrain = c.category === "perm-train" || c.id === "P1";
   const body = isTrain
     ? `<div class="train"><div class="tname">${esc(c.function_label)}</div><small>permanent train card (reverse)</small></div>`
-    : `<div class="rules"><p>${esc(c.rules_text)}</p></div>`;
+    : `<div class="rules"><p>${coinize(esc(c.rules_text))}</p></div>`;
   return `
     <div class="card ${tint} back">
       ${gate(c)}
       ${head}
       ${body}
       <div class="foot">
-        <div class="crev"><small>Revenue</small>${coin(c.company_revenue)}</div>
+        <div class="crev"><small>Revenue</small><span class="money">${gp(c.company_revenue)}</span></div>
         ${owner("COMPANY-OWNED")}
         ${pid(c)}
       </div>
@@ -184,6 +176,7 @@ pages.forEach((page, i) => {
 const style = `
   :root { color-scheme: light; }
   * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  ${COIN_CSS}
   body { margin: 0; background: #ccc; font-family: Georgia, "Times New Roman", serif; }
   .sheet-label { position: absolute; top: 9mm; left: 0; right: 0; text-align: center;
     font-family: system-ui, sans-serif; font-size: 8pt; color: #666; }
@@ -221,7 +214,7 @@ const style = `
   .pnum { font-size: 17pt; font-weight: 800; line-height: 1;
     -webkit-text-stroke: 0.4mm #000; paint-order: stroke fill; }
   .p-y { color: #f4c518; } .p-g { color: #34992f; } .p-b { color: #9a6427; }
-  .coin { width: 8.5mm; height: 8.5mm; }
+  .money { font-size: 11pt; font-weight: 700; color: #2a2010; }
   .img { align-self: stretch; height: 92%; border: 0.2mm dashed #a99; border-radius: 0.6mm;
     background: repeating-linear-gradient(45deg,#0000 0 2mm,#0000000a 2mm 2.2mm); }
 
@@ -239,7 +232,7 @@ const style = `
   .crev { justify-self: start; display: flex; flex-direction: column; align-items: center; line-height: 1; }
   .crev small { font-family: system-ui, sans-serif; font-size: 4pt; letter-spacing: .4px;
     text-transform: uppercase; color: #3a352c; margin-bottom: 0.3mm; }
-  .crev .coin { width: 6.5mm; height: 6.5mm; }
+  .crev .money { font-size: 8.5pt; }
   .owner { display: flex; flex-direction: column; align-items: center; gap: 0.5mm; }
   .own-a, .own-b { font-family: system-ui, sans-serif; letter-spacing: .4px; border-radius: 1mm;
     padding: 0.4mm 1.6mm; line-height: 1; white-space: nowrap; }

@@ -9,7 +9,7 @@
 # membership. Points are assigned in backlog.yaml during sprint planning.
 
 meta:
-  updated: "2026-07-29"  # sprint-08 complete (privates roster + cards); retro affirmed no workflow changes
+  updated: "2026-07-29"  # sprint-09 active (trains); sprint-08 complete
 
 # Unscheduled stories — id: status
 backlog:
@@ -33,7 +33,6 @@ backlog:
   C23: stub
   C24: stub
   C25: stub
-  C26: stub
   C44: stub
 
 # Real sprints — id: { status: planning|active|complete, goal: str, stories: { id: status } }
@@ -99,6 +98,15 @@ sprints:
       C35: done
       C36: done
       C37: done
+  sprint-09:
+    status: active
+    goal: >-
+      The train deck is a printable cut-and-play deck — all physical copies of the
+      L/2 (two-sided), 3, 4, 5, 6, 7, and E trains — rendered from a new trains.json
+      master via a shared card kit; the permanent/prize trains (2P/LP/5P/P+) are
+      rendered onto their private card backs, fully finishing the privates.
+    stories:
+      C26: ready
   sprint-08:
     status: complete
     goal: >-

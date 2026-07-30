@@ -195,10 +195,10 @@ stories:
     epics: ["Companies", "Game Components"]
     points: null
   C26:
-    title: "Train cards (verify roster + render)"
+    title: "Train cards — trains.json master + printable deck (+ perm-train private backs)"
     type: content
-    epics: ["Game Components"]
-    points: null
+    epics: ["Game Components", "Privates"]
+    points: 2
   C27:
     title: "Verantum island — cities & the 6 minor homes"
     type: content
