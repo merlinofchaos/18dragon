@@ -42,7 +42,7 @@ epics:
     concept: "The 30 privates — permit privates, the opener, and the rest."
     track: content
     prd: "prd-game.md 4.3"
-    stories: [C05, C10, C11a, C11b, C12, C42, C43]
+    stories: [C05, C10, C11a, C11b, C12, C42, C43, C44]
   "Rules & Balance":
     concept: "How 18Dragon plays and the numbers that keep it fair."
     track: content
@@ -57,7 +57,7 @@ epics:
     concept: "The 18xxMaker-produced pieces (section 11 manifest) beyond the map."
     track: content
     prd: "prd-game.md 11"
-    stories: [C15, C16, C17, C18, C19, C20, C21, C25, C26, C42, C43]
+    stories: [C15, C16, C17, C18, C19, C20, C21, C25, C26, C42, C43, C44]
   "Stickers":
     concept: "Token stickers produced via Silhouette Cameo (not 18xxMaker)."
     track: content

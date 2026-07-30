@@ -62,7 +62,7 @@ differ only by the region whose permit they grant.
 | Class | **Minor/Major** (green badge) |
 | Phase available | **1** |
 | Player revenue | **$10** each OR |
-| Cadence | **One Time** (the buy-in permit grant fires once) |
+| Cadence | **Ongoing** (pays $10 to its owner each OR; on buy-in it closes and grants the permit) |
 | Players required | **varies by region** — a permit is dropped with its region (§6.3): core permits **3+**, **Varstova 4+**, **Muravel 5+** (assigned in C12) |
 | Function label | **Region Permit** |
 
@@ -187,19 +187,21 @@ card. Bid-box seeding is a separate rules-track concern.*
 ## 18Dragon-Original Privates (C11a)
 
 The 13 privates whose text the designer authored directly (`author-privates.md`).
-All pay **$10** player revenue and **$0** company revenue unless noted. Players
-required is **3+** except the three gated here: **P11 Bridge → 5+**, **P15 Dwarven
-Mining → 4+**, **P19 Phlogiston Car → 5+** (C12). Function labels below are
-**proposed** — the exact top-band wording is a C42 layout detail.
+All pay **$10** player revenue. **Company revenue $0**, except the **close-to-act
+powers** (P16, P17, P20, P21, P22) which **pay $10 to the owning company until the
+power is used, then close** (the 1822 "pays until used" pattern). Players required
+is **3+** except the three gated here: **P11 Bridge → 5+**, **P15 Dwarven Mining →
+4+**, **P19 Phlogiston Car → 5+** (C12). Function labels below are **proposed** —
+the exact top-band wording is a C42 layout detail.
 
 | P# | In-game title | Function label | Class | Phase | Cadence | Players req. |
 |----|---------------|----------------|-------|-------|---------|--------------|
 | P10 | *The Aurelian Span* | Bridge Tile | Minor/Major (green) | 2 | One Time | 3+ |
 | P11 | *Halvard's Crossing* | Bridge Tile | Minor/Major (green) | 2 | One Time | **5+** |
-| P12 | *The Rockbreakers* | Mining Troupe | Minor/Major (green) | 1 | Ongoing | 3+ |
-| P13 | *The Cragmen* | Mining Troupe | Minor/Major (green) | 1 | Ongoing | 3+ |
-| P14 | *Durgrok Delvers* | Mining Troupe | **Major** (red) | 2 | Ongoing | 3+ |
-| P15 | *Stonebeard Hewers* | Mining Troupe | **Major** (red) | 2 | Ongoing | **4+** |
+| P12 | *The Rockbreakers* | Hill/Mountain Discount | Minor/Major (green) | 1 | Ongoing | 3+ |
+| P13 | *The Cragmen* | Hill/Mountain Discount | Minor/Major (green) | 1 | Ongoing | 3+ |
+| P14 | *Durgrok Delvers* | Mountain Discount | **Major** (red) | 2 | Ongoing | 3+ |
+| P15 | *Stonebeard Hewers* | Mountain Discount | **Major** (red) | 2 | Ongoing | **4+** |
 | P16 | Merger Negotiations | Force Merger | Minor/Major (green) | 2 | One Time | 3+ |
 | P17 | Phlogiston Mine | Mountain Route Bonus | Minor/Major (green) | 3 | One Time | 3+ |
 | P18 | *The Firebox* | Phlogiston Car | **Major** (red) | 3 | Ongoing | 3+ |
@@ -214,12 +216,14 @@ Mining → 4+**, **P19 Phlogiston Car → 5+** (C12). Function labels below are
   Minor/Major, Phase 2). When bought into a company, place a **special bridge tile**
   on one of the **3 bridge locations (M12, F19, R23)**. Other companies may run
   this track but must pay the owning company **10** from the route revenue.
-- **P12 / P13 — Mining Troupe** (*The Rockbreakers* / *The Cragmen*; Minor/Major,
-  Phase 1). The owning **company** gets a **40gp discount** when building on **hill
-  or mountain** terrain. Troupes may be used together (stack).
-- **P14 / P15 — Mining Troupe** (dwarven: *Durgrok Delvers* / *Stonebeard Hewers*;
-  **Major, Phase 2**). The owning company gets an **80gp discount** when building on
-  **mountain** terrain. Stacks with the other Troupes.
+- **P12 / P13 — Hill/Mountain Discount** (*The Rockbreakers* / *The Cragmen*;
+  Minor/Major, Phase 1). The owning **company** gets a **40gp discount** when
+  building on **hill or mountain** terrain. Stacks with other hill/mountain or
+  mountain discounts.
+- **P14 / P15 — Mountain Discount** (dwarven: *Durgrok Delvers* / *Stonebeard
+  Hewers*; **Major, Phase 2**). The owning company gets an **80gp discount** when
+  building on **mountain** terrain. Stacks with other hill/mountain or mountain
+  discounts.
 - **P16 — Merger Negotiations** (Minor/Major, Phase 2). While owned by a **minor**,
   the company may **close** this private to **initiate a merger with another minor
   company, even with no connecting track**. **If bought into a *major* it closes
@@ -237,16 +241,17 @@ the regular Troupes are **not** player-count-gated (see C12 steer below).*
 - **P18 / P19 — Phlogiston Car** (*The Firebox* / *The Emberwain*; $10 / **$0**;
   **Major**, Phase 3). May be attached to a **2–7 train**; that train may make **1
   additional stop**.
-- **P20 — Wands Delivery** (Minor/Major, Phase 3). When bought into a company, place
-  a **$30 token** in **any city not in Verantum**; any train that includes **both
-  Verantia and that city** gains **+30**.
+- **P20 — Wands Delivery** (Minor/Major, Phase 3; company rev $10 until used). The
+  owning company may **close** it to place a **$30 token** in **any city not in
+  Verantum**; any train that includes **both Verantia and that city** gains **+30**.
 - **P21 — Verantum Recolonization** ($10 / **$0**; Minor/Major, Phase 3). The owning
   company may **close** it to upgrade a Verantum **dit → city** of the same color
   (**yellow** if no track laid) and place an **Exchange token** there free; this
   **counts as the company's track lay**.
-- **P22 — Brekheim Locomotive Corporation** (**Major**, Phase 3). When bought into a
-  company, that company may **immediately place an exchange token in Brekheim, even
-  with no slot available**. *(Distinct from the P1 opener — do not confuse.)*
+- **P22 — Brekheim Locomotive Corporation** (**Major**, Phase 3; company rev $10
+  until used). The owning company may **close** it to place an **exchange token in
+  Brekheim, even with no slot available** (reworded to the close-to-act pattern).
+  *(Distinct from the P1 opener — do not confuse.)*
 
 ### Resolved (designer, 2026-07-29)
 
@@ -272,8 +277,10 @@ the regular Troupes are **not** player-count-gated (see C12 steer below).*
 
 The 11 privates that reuse 1822**PNW** / 1822**CA** effects. Rules text is quoted
 **verbatim from the engine source** (light 18Dragon adaptation only, each
-divergence noted). Player revenue **$10** unless noted; company revenue $0 /
-ability. Players required is **3+** except **P30 Pullman → 4+** (C12).
+divergence noted). Player revenue **$10** unless noted. Company revenue $0, except
+the **close-to-act powers** (P23, P24, P25, P28) which **pay $10 to the company
+until used, then close**. Players required is **3+** except **P30 Pullman → 4+**
+(C12).
 
 In-game names approved (designer, 2026-07-29). Function labels are the source's
 parenthetical.
@@ -311,10 +318,11 @@ parenthetical.
   tile of the next color. This closes the company and counts as the company's normal
   track laying step. All other normal track laying restrictions apply. Cannot be used
   in hexes with two small towns. …"*
-- **P25 — Extra Track Lay** (PNW P11 "Surveyors"; **Minor/Major, Phase 3**). *"The
-  owning company may lay an additional yellow tile (or two for major companies
-  beginning in Phase 3), or make one additional tile upgrade in its track laying
-  step. … All other normal track laying restrictions apply."*
+- **P25 — Extra Track Lay** (PNW P11 "Surveyors"; **Minor/Major, Phase 3**; company
+  rev $10 until used). The owning company may **close** it to lay an additional
+  yellow tile (or two for major companies from Phase 3), or make one additional tile
+  upgrade, in its track-laying step; all other normal track-laying restrictions
+  apply. Until used, it pays its revenue to the owning company.
 - **P26 / P27 — Mail Contract** (PNW P9 "USPS Mail Service"; **Major, Phase 3**).
   *"After running trains, the owning company receives income into its treasury equal
   to one half of the base value of the start and end stations from one of the trains

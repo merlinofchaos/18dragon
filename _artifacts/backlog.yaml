@@ -314,6 +314,15 @@ stories:
     epics: ["Privates", "Game Components"]
     points: 1
 
+  # --- Follow-up to C42 (designer, 2026-07-29): professional-print output —
+  # individual per-card files (front/back) with correct bleed + crop marks, beyond
+  # the home-print duplex sheets C42 produces. Not scheduled yet. ---
+  C44:
+    title: "Print-ready per-card files with bleed (pro printing)"
+    type: content
+    epics: ["Privates", "Game Components"]
+    points: null
+
 # Notes:
 # - Stickers (C24) are content track but produced via Silhouette Cameo, not
 #   18xxMaker (PRD section 11).

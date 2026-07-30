@@ -34,6 +34,7 @@ backlog:
   C24: stub
   C25: stub
   C26: stub
+  C44: stub
 
 # Real sprints — id: { status: planning|active|complete, goal: str, stories: { id: status } }
 sprints:
@@ -111,7 +112,7 @@ sprints:
       C11a: done
       C11b: done
       C12: done
-      C42: stub
+      C42: done
       C43: done
   sprint-07:
     status: complete
