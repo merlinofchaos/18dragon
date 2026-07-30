@@ -9,7 +9,7 @@
 # membership. Points are assigned in backlog.yaml during sprint planning.
 
 meta:
-  updated: "2026-07-29"  # sprint-09 active (trains); sprint-08 complete
+  updated: "2026-07-29"  # sprint-09 complete (trains + finished privates); retro affirmed
 
 # Unscheduled stories — id: status
 backlog:
@@ -99,7 +99,7 @@ sprints:
       C36: done
       C37: done
   sprint-09:
-    status: active
+    status: complete
     goal: >-
       The train deck is a printable cut-and-play deck — all physical copies of the
       L/2 (two-sided), 3, 4, 5, 6, 7, and E trains — rendered from a new trains.json

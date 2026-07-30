@@ -1,6 +1,6 @@
 # Sprint 09: Train cards (+ finish the privates)
 
-- **Status:** active
+- **Status:** complete
 - **Created:** 2026-07-29
 - **Goal:** The train deck is a printable **cut-and-play deck** — all physical
   copies of **L/2 (two-sided), 3, 4, 5, 6, 7, E** — rendered from a new
@@ -56,12 +56,41 @@ pro bleed (C44); the board/market/tiles/companies tracks.
 
 ## Retrospective
 
-<!-- Filled by agile-retro at sprint end. -->
+**Outcome: goal fully met.** C26 done — the train deck (83 cards, L/2 two-sided,
+3–E self-backed) renders from `trains.json`, and the 6 perm-train private backs now
+show real trains, closing out the privates.
 
 ### What went well
 
+- **Sprint-8 investments paid off immediately.** The `cardkit` shared module (coin
+  glyph + train-face renderer + phase palette) and the cookbook print recipe made
+  trains fast; the `trains.json` master mirrored `privates.json` cleanly. Building
+  the coin as a reusable currency glyph (mid-sprint) means costs/prose across all
+  future cards get it for free.
+- **The 2-sided machinery generalized** from privates → the L/2 train and the
+  perm-train private backs with no new plumbing.
+
 ### What didn't
+
+- Nothing counted as a failure. The card iterations (coin-as-glyph, banner pill,
+  no placeholder, 3–E backs, 80gp upgrade) were normal design-by-seeing review —
+  same accepted stance as sprint 8.
 
 ### Lessons / workflow adjustments
 
+- **Affirmed — no workflow change** (consistent with the sprint-8 call). Review-driven
+  refinement is the process working.
+- **Capture (standing cookbook rule):** added a `cardkit` pointer to
+  `docs/18xxmaker-cookbook.md` § Printing cards, so the next card stories
+  (C17 charters, C25 certs, C19 misc) reuse the coin glyph, train faces, and palette
+  rather than rebuilding them.
+
 ### Action items
+
+- **Rulebook divergence to record (C06/C23):** L→2 upgrade is **80gp** in 18Dragon
+  (1822 = 60).
+- **Carry-forward (unchanged):** C44 pro per-card bleed; the `BACK_OFFSET` duplex
+  nudge; both low-priority.
+- **Next sprint candidate:** the companies track — **C03 (10 majors) + C04 (30
+  minors)** — the design chunk that unblocks charters (C17), certs (C25), and
+  stickers (C24).

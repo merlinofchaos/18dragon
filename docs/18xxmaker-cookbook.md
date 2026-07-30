@@ -236,11 +236,20 @@ remove it**. If the symlink is missing, recreate it:
 
 ## Printing cards (standalone HTML generators — not 18xxMaker)
 
-For information-dense / two-sided cards (privates, and likely trains/charters/certs),
+For information-dense / two-sided cards (privates, trains, and likely charters/certs),
 18xxMaker's stock card renderer is too limited (one face only; fixed field set). We
-render from a data master (e.g. `privates.json`) via a small Node generator
-(`tools/gen-private-cards.mjs`) that emits a self-contained print HTML. Gotchas learned
-producing the private cards (sprint 8, C42):
+render from a data master (e.g. `privates.json`, `trains.json`) via a small Node
+generator (`tools/gen-*-cards.mjs`) that emits a self-contained print HTML.
+
+**Shared kit — `tools/cardkit.mjs`.** Reuse it for every card generator: the shiny
+gold **coin glyph** (`gp(value)` = coin + number; `coinize(text)` swaps `$NN`/`NNgp`
+in prose) + `COIN_CSS`; the **train-face renderer** (`trainFace`) + `TRAIN_CSS` +
+the phase-tier palette (yellow/green/brown/gray) — so the train deck and the private
+perm-train backs render identically. Sheet/duplex/crop machinery is currently copied
+between `gen-private-cards.mjs` and `gen-train-cards.mjs` (keep the layout constants
+in sync; factor into cardkit if a third card generator appears).
+
+Gotchas learned producing the private + train cards (sprints 8–9, C42/C26):
 
 - **Backgrounds don't print by default.** Browsers drop background colors/images unless
   forced. Put `-webkit-print-color-adjust: exact; print-color-adjust: exact;` on `*`
