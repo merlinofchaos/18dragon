@@ -72,12 +72,12 @@ stories:
     title: "Define 10 majors (names/abbrev/colors/tokens/region)"
     type: content
     epics: ["Companies"]
-    points: null
+    points: 3
   C04:
-    title: "Define 30 minors (6/region, home hexes, permits)"
+    title: "Define 30 minors (names, 6/region, home hexes 1–30, permits)"
     type: content
     epics: ["Companies", "Permits"]
-    points: null
+    points: 4
   C05:
     title: "Define the 5 region permit privates"
     type: content

@@ -9,13 +9,11 @@
 # membership. Points are assigned in backlog.yaml during sprint planning.
 
 meta:
-  updated: "2026-07-29"  # sprint-09 complete (trains + finished privates); retro affirmed
+  updated: "2026-07-30"  # sprint-10 active (companies: majors + minors); sprint-09 complete
 
 # Unscheduled stories — id: status
 backlog:
   C02: stub
-  C03: stub
-  C04: stub
   C06: stub
   C07: stub
   C08: stub
@@ -98,6 +96,16 @@ sprints:
       C35: done
       C36: done
       C37: done
+  sprint-10:
+    status: active
+    goal: >-
+      The 10 major companies and 30 minor companies are defined in a companies.json
+      master — majors (name, abbreviation, color, token count, home region) and
+      minors (name, home-hex number 1–30, region, home-region permit; a couple with
+      special powers) — ready to feed charters/certs/stickers and, later, the map.
+    stories:
+      C03: in-progress
+      C04: stub
   sprint-09:
     status: complete
     goal: >-
