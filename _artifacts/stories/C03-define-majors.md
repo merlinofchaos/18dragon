@@ -4,7 +4,7 @@
 - **Type:** content
 - **Epics:** Companies
 - **Sprint:** sprint-10
-- **Status:** review
+- **Status:** done
 - **Created:** 2026-07-30
 
 ## Story
@@ -108,8 +108,12 @@ claude-opus-4-8
 ### Completion Notes
 
 - Created `companies.json` (majors + empty minors array) with the 10 majors.
-- **Abbreviations (distinct, verified unique):** VIR, PAX (Verantum) · DKR, AEL
-  (Caelimor) · BRK, GML (Gördum) · KVR, SAB (Muravel) · ZOR, KRM (Varstova).
+- **Abbreviations (distinct, verified unique):** VR, PAX (Verantum) · DK, ACL
+  (Caelimor) · BR, GM (Gördum) · MK, SAB (Muravel) · ZNR, KR (Varstova).
+  (2 letters where clean; AE→ACL and the Kalavar major renamed to "Meridian Kalavar
+  Railway"/MK so no two K_ abbreviations remain.)
+- **Colors accepted provisionally** (designer 2026-07-30) — may adjust after
+  seeing the token stickers (C24).
 - **Names** region-themed (Roman / Celtic / Norse-dwarven / Mediterranean / Slavic).
 - **Tokens** 6 each (home + 4 + destination). **Destinations** picked from real map
   cities, spread **N=4, A=2, G=3, V=1** (SAB → Varstgrad gives Varstova one). Bonus

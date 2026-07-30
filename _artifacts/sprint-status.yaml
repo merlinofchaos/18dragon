@@ -104,7 +104,7 @@ sprints:
       minors (name, home-hex number 1–30, region, home-region permit; a couple with
       special powers) — ready to feed charters/certs/stickers and, later, the map.
     stories:
-      C03: in-progress
+      C03: done
       C04: stub
   sprint-09:
     status: complete

@@ -14,7 +14,7 @@ View of `sprints.sprint-10.stories` in `sprint-status.yaml` (canonical). Flesh e
 
 | Seq | ID | Title | Type | Points | Status |
 |-----|----|-------|------|--------|--------|
-| 1 | C03 | Define 10 majors (names/abbrev/colors/tokens/region) | content | 3 | stub |
+| 1 | C03 | Define 10 majors (names/abbrev/colors/tokens/region) | content | 3 | ✅ done |
 | 2 | C04 | Define 30 minors (names, 6/region, home hexes 1–30, permits) | content | 4 | stub |
 
 ## Scope notes
