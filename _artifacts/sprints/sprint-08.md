@@ -16,8 +16,12 @@ designer added the card-production story C42, and C11 was split into C11a+C11b m
 | 2 | C10 | Define opener private (phlogiston / 5P / bid box 1) | content | 1 | ✅ done |
 | 3 | C11a | Detail the 13 18Dragon-original privates (+ master P# numbering) | content | 2 | ready |
 | 4 | C11b | Detail the 11 externally-sourced privates (PNW/1822CA text) | content | 2 | ready |
-| 5 | C12 | Assign 4+/5+ player-count gates to privates | content | 2 | stub |
-| 6 | C42 | Produce the rendered private cards (2-sided, all 30) | content | 3 | stub |
+| 5 | C12 | Assign 4+/5+ player-count gates to privates | content | 2 | ✅ done |
+| 6 | C43 | Canonical privates.json (custom-schema data master) | content | 1 | ✅ done |
+| 7 | C42 | Produce the rendered private cards (2-sided, all 30) | content | 3 | stub |
+
+**C43 added mid-sprint** (designer request) — a tool-agnostic `privates.json` data
+master; sprint is now **13 points** across 7 stories.
 
 **C11 was split into C11a + C11b mid-sprint** (see In-flight changes) — sprint is now
 **12 points** across 6 stories.

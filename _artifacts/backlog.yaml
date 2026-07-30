@@ -305,6 +305,15 @@ stories:
     epics: ["Privates", "Game Components"]
     points: 3
 
+  # --- Privates data master: canonical machine-readable roster in the custom
+  # 18Dragon schema (tool-agnostic; feeds C42). Added by designer request during
+  # sprint 8. ---
+  C43:
+    title: "Canonical privates.json (custom-schema data master)"
+    type: content
+    epics: ["Privates", "Game Components"]
+    points: 1
+
 # Notes:
 # - Stickers (C24) are content track but produced via Silhouette Cameo, not
 #   18xxMaker (PRD section 11).

@@ -1,8 +1,9 @@
 # 18Dragon — Privates Roster (design documentation)
 
 The 30 private companies of 18Dragon, captured as design documentation. This is
-the source-of-truth roster the cards are produced from (**C42**). It is *not* the
-game JSON — wiring `18dragon.json`'s `privates` is a later components pass.
+the human-readable companion to **`privates.json`** (repo root) — the canonical,
+tool-agnostic data master (custom 18Dragon schema) that a renderer consumes. It is
+*not* the game JSON — wiring `18dragon.json`'s `privates` is a later components pass.
 
 Built incrementally across Sprint 8:
 **C05** region permits (this doc's first section) · **C10** the opener · **C11**
@@ -62,7 +63,7 @@ differ only by the region whose permit they grant.
 | Phase available | **1** |
 | Player revenue | **$10** each OR |
 | Cadence | **One Time** (the buy-in permit grant fires once) |
-| Players required | **3+** (all five permits are always in the game — one per region) |
+| Players required | **varies by region** — a permit is dropped with its region (§6.3): core permits **3+**, **Varstova 4+**, **Muravel 5+** (assigned in C12) |
 | Function label | **Region Permit** |
 
 **On buy-in:** the private **immediately closes** and its owning company gains a
@@ -75,13 +76,13 @@ never consumed, uncapped; a company may hold permits forB several regions.
 
 ### The five cards
 
-| P# | Region (letter) | In-game title | Function label | Class | Phase | Player rev. | Grants |
-|----|------|---------------|----------------|-------|-------|-------------|--------|
-| P5 | **Verantum** (A) | *Collegium Verantium* | Region Permit | Minor/Major | 1 | $10 | Verantum permit |
-| P6 | **Caelimor** (N) | *Aeldun Wayfinders* | Region Permit | Minor/Major | 1 | $10 | Caelimor permit |
-| P7 | **Gördum** (G) | *Brekheim Trackgeld* | Region Permit | Minor/Major | 1 | $10 | Gördum permit |
-| P8 | **Muravel** (M) | *al-Kalavar Caravaneers* | Region Permit | Minor/Major | 1 | $10 | Muravel permit |
-| P9 | **Varstova** (V) | *Varstov Railwrights' Artel* | Region Permit | Minor/Major | 1 | $10 | Varstova permit |
+| P# | Region (letter) | In-game title | Function label | Class | Phase | Player rev. | Players req. | Grants |
+|----|------|---------------|----------------|-------|-------|-------------|--------------|--------|
+| P5 | **Verantum** (A) | *Collegium Verantium* | Region Permit | Minor/Major | 1 | $10 | 3+ | Verantum permit |
+| P6 | **Caelimor** (N) | *Aeldun Wayfinders* | Region Permit | Minor/Major | 1 | $10 | 3+ | Caelimor permit |
+| P7 | **Gördum** (G) | *Brekheim Trackgeld* | Region Permit | Minor/Major | 1 | $10 | 3+ | Gördum permit |
+| P8 | **Muravel** (M) | *al-Kalavar Caravaneers* | Region Permit | Minor/Major | 1 | $10 | **5+** | Muravel permit |
+| P9 | **Varstova** (V) | *Varstov Railwrights' Artel* | Region Permit | Minor/Major | 1 | $10 | **4+** | Varstova permit |
 
 *In-game titles are proposals following each region's naming convention
 (world-bible §Naming Conventions) — the in-world chartering body, not the capital.
@@ -186,24 +187,25 @@ card. Bid-box seeding is a separate rules-track concern.*
 
 The 13 privates whose text the designer authored directly (`author-privates.md`).
 All pay **$10** player revenue and **$0** company revenue unless noted. Players
-required defaults to **3+** (C12 may raise the doubles). Function labels below are
+required is **3+** except the three gated here: **P11 Bridge → 5+**, **P15 Dwarven
+Mining → 4+**, **P19 Phlogiston Car → 5+** (C12). Function labels below are
 **proposed** — the exact top-band wording is a C42 layout detail.
 
-| P# | In-game title | Function label | Class | Phase | Cadence |
-|----|---------------|----------------|-------|-------|---------|
-| P10 | *The Aurelian Span* | Bridge Tile | Minor/Major (green) | 2 | One Time |
-| P11 | *Halvard's Crossing* | Bridge Tile | Minor/Major (green) | 2 | One Time |
-| P12 | *The Rockbreakers* | Mining Troupe | Minor/Major (green) | 1 | Ongoing |
-| P13 | *The Cragmen* | Mining Troupe | Minor/Major (green) | 1 | Ongoing |
-| P14 | *Durgrok Delvers* | Mining Troupe | **Major** (red) | 2 | Ongoing |
-| P15 | *Stonebeard Hewers* | Mining Troupe | **Major** (red) | 2 | Ongoing |
-| P16 | Merger Negotiations | Force Merger | Minor/Major (green) | 2 | One Time |
-| P17 | Phlogiston Mine | Mountain Route Bonus | Minor/Major (green) | 3 | One Time |
-| P18 | *The Firebox* | Phlogiston Car | **Major** (red) | 3 | Ongoing |
-| P19 | *The Emberwain* | Phlogiston Car | **Major** (red) | 3 | Ongoing |
-| P20 | Wands Delivery | City Route Bonus | Minor/Major (green) | 3 | One Time |
-| P21 | Verantum Recolonization | Dit → City | Minor/Major (green) | 3 | One Time |
-| P22 | Brekheim Locomotive Corporation | Free Brekheim Token | **Major** (red) | 3 | One Time |
+| P# | In-game title | Function label | Class | Phase | Cadence | Players req. |
+|----|---------------|----------------|-------|-------|---------|--------------|
+| P10 | *The Aurelian Span* | Bridge Tile | Minor/Major (green) | 2 | One Time | 3+ |
+| P11 | *Halvard's Crossing* | Bridge Tile | Minor/Major (green) | 2 | One Time | **5+** |
+| P12 | *The Rockbreakers* | Mining Troupe | Minor/Major (green) | 1 | Ongoing | 3+ |
+| P13 | *The Cragmen* | Mining Troupe | Minor/Major (green) | 1 | Ongoing | 3+ |
+| P14 | *Durgrok Delvers* | Mining Troupe | **Major** (red) | 2 | Ongoing | 3+ |
+| P15 | *Stonebeard Hewers* | Mining Troupe | **Major** (red) | 2 | Ongoing | **4+** |
+| P16 | Merger Negotiations | Force Merger | Minor/Major (green) | 2 | One Time | 3+ |
+| P17 | Phlogiston Mine | Mountain Route Bonus | Minor/Major (green) | 3 | One Time | 3+ |
+| P18 | *The Firebox* | Phlogiston Car | **Major** (red) | 3 | Ongoing | 3+ |
+| P19 | *The Emberwain* | Phlogiston Car | **Major** (red) | 3 | Ongoing | **5+** |
+| P20 | Wands Delivery | City Route Bonus | Minor/Major (green) | 3 | One Time | 3+ |
+| P21 | Verantum Recolonization | Dit → City | Minor/Major (green) | 3 | One Time | 3+ |
+| P22 | Brekheim Locomotive Corporation | Free Brekheim Token | **Major** (red) | 3 | One Time | 3+ |
 
 ### Company-owned rules text
 
@@ -270,24 +272,24 @@ the regular Troupes are **not** player-count-gated (see C12 steer below).*
 The 11 privates that reuse 1822**PNW** / 1822**CA** effects. Rules text is quoted
 **verbatim from the engine source** (light 18Dragon adaptation only, each
 divergence noted). Player revenue **$10** unless noted; company revenue $0 /
-ability. Players required **3+** (C12 may raise the doubles).
+ability. Players required is **3+** except **P30 Pullman → 4+** (C12).
 
 In-game names approved (designer, 2026-07-29). Function labels are the source's
 parenthetical.
 
-| P# | In-game title | Function label | Class | Phase | Player rev. | Cadence |
-|----|--------------------------|----------------|-------|-------|-------------|---------|
-| P2 | *The Ironhaul* | Permanent 2-Train | **Major** (red) | 2 | $0 | — (train) |
-| P3 | *The Deepdelver* | Permanent 2-Train | **Major** (red) | 2 | $0 | — (train) |
-| P4 | *The Dampcart* | Permanent L-Train | Minor/Major (green) | 1 | $0 | — (train) |
-| P23 | *Dustfall Company* | Remove Town | Minor/Major (green) | 1 | $10 | One Time |
-| P24 | *The Hollowing* | Remove Town | Minor/Major (green) | 1 | $10 | One Time |
-| P25 | *The Surveyors* | Extra Track Lay | Minor/Major (green) | 3 | $10 | One Time |
-| P26 | *The Raven Post* | Mail Contract | **Major** (red) | 3 | $10 | Each OR |
-| P27 | *The Courier's Guild* | Mail Contract | **Major** (red) | 3 | $10 | Each OR |
-| P28 | *The Concord Charter* | Station Token Swap | Minor/Major (green) | 3 | $10 | One Time |
-| P29 | *The Gilded Carriage* | Pullman | **Major** (red) | 5 | $10 | Each OR |
-| P30 | *Wyvern Coachworks* | Pullman | **Major** (red) | 5 | $10 | Each OR |
+| P# | In-game title | Function label | Class | Phase | Player rev. | Cadence | Players req. |
+|----|--------------------------|----------------|-------|-------|-------------|---------|--------------|
+| P2 | *The Ironhaul* | Permanent 2-Train | **Major** (red) | 2 | $0 | — (train) | 3+ |
+| P3 | *The Deepdelver* | Permanent 2-Train | **Major** (red) | 2 | $0 | — (train) | 3+ |
+| P4 | *The Dampcart* | Permanent L-Train | Minor/Major (green) | 1 | $0 | — (train) | 3+ |
+| P23 | *Dustfall Company* | Remove Town | Minor/Major (green) | 1 | $10 | One Time | 3+ |
+| P24 | *The Hollowing* | Remove Town | Minor/Major (green) | 1 | $10 | One Time | 3+ |
+| P25 | *The Surveyors* | Extra Track Lay | Minor/Major (green) | 3 | $10 | One Time | 3+ |
+| P26 | *The Raven Post* | Mail Contract | **Major** (red) | 3 | $10 | Each OR | 3+ |
+| P27 | *The Courier's Guild* | Mail Contract | **Major** (red) | 3 | $10 | Each OR | 3+ |
+| P28 | *The Concord Charter* | Station Token Swap | Minor/Major (green) | 3 | $10 | One Time | 3+ |
+| P29 | *The Gilded Carriage* | Pullman | **Major** (red) | 5 | $10 | Each OR | 3+ |
+| P30 | *Wyvern Coachworks* | Pullman | **Major** (red) | 5 | $10 | Each OR | **4+** |
 
 ### Company-owned rules text (verbatim from source)
 
@@ -360,3 +362,42 @@ parenthetical.
 | P28 | *The Concord Charter* | (Great Southern Railway) |
 | P29 | *The Gilded Carriage* | (Pullman) |
 | P30 | *Wyvern Coachworks* | (Fulton Car Works) |
+
+---
+
+## Player-count gates (C12)
+
+18Dragon scales the private pool with player count, tracking the modular board
+(PRD §6.3: **A/N/D core** at 3p, **+Varstova/E** at 4p, **+Muravel/S** at 5p; 6p
+shares the 5p region set). The **Players required** field on each card (`3+`/`4+`/
+`5+`) is how a 3- or 4-player setup physically pulls the excluded cards.
+
+**Two design rules:**
+1. **Permits follow their region.** A region's permit private is removed with the
+   region (§6.3), so **Varstova permit = 4+**, **Muravel permit = 5+**; the three
+   core permits + the opener are 3+.
+2. **Gate only duplicates.** Every gated *non-permit* private is a **2nd copy**;
+   its sibling stays 3+. No *ability* ever disappears at low counts — only a
+   redundant second copy. (Both regular Mining Troupes stay 3+ deliberately — the
+   expensive mountain core needs contestable build-discounts.)
+
+**The 6 gated privates** (3 at each level, incl. the two permits):
+
+| Gate | Privates |
+|------|----------|
+| **4+** | P9 Varstova permit · P15 Dwarven Mining (*Stonebeard Hewers*) · P30 Pullman (*Wyvern Coachworks*) |
+| **5+** | P8 Muravel permit · P11 Bridge (*Halvard's Crossing*) · P19 Phlogiston Car (*The Emberwain*) |
+
+*The 5+ Bridge is apt: the **3rd bridge site (R23) is in Muravel**, present only at
+5p — so the 2nd bridge private and its only location arrive together.*
+
+**Pool sizes** (all other 24 privates are 3+):
+
+| Players | Regions | Privates in play |
+|---------|---------|------------------|
+| 3 | A N D | **24** |
+| 4 | A N D E | **27** (+Varstova permit, Dwarven, Pullman) |
+| 5 | A N D E S | **30** (+Muravel permit, Bridge, Phlogiston Car) |
+| 6 | A N D E S | **30** (same region set as 5p) |
+
+*Balance (24/27/30) is provisional — a playtest tunable (§7).*

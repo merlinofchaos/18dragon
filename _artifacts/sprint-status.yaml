@@ -110,8 +110,9 @@ sprints:
       C10: done
       C11a: done
       C11b: done
-      C12: stub
+      C12: done
       C42: stub
+      C43: done
   sprint-07:
     status: complete
     goal: >-
