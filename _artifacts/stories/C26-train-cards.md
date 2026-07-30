@@ -4,7 +4,7 @@
 - **Type:** content
 - **Epics:** Game Components, Privates
 - **Sprint:** sprint-09
-- **Status:** ready
+- **Status:** done
 - **Created:** 2026-07-29
 
 ## Story
@@ -92,6 +92,34 @@ so that the trains are a finished component and the privates are fully closed ou
 
 ### Model Used
 
+claude-opus-4-8
+
 ### Completion Notes
 
+- **`trains.json`** master authored (deck trains + perm/prize trains flagged
+  `deck:false` with `on_private`). Roster verified = 1822.
+- **`cardkit`** gained a shared **train-face renderer** (`trainFace`) + `TRAIN_CSS`
+  + the phase-tier palette, used by both generators so the deck and the private
+  backs render identically. Coin glyph reused for costs.
+- **`tools/gen-train-cards.mjs`** → `train-cards.html`: 83 physical cards, US Letter
+  landscape duplex (12/page), L/2 two-sided, **3–E backs reprint the same face**
+  (designer call), crop marks + `print-color-adjust`.
+- **Privates finished:** `gen-private-cards.mjs` now renders the real train face on
+  the 6 perm-train backs (P1=5P, P2/P3=2P, P4=LP, P29/P30=P+), read from
+  `trains.json`.
+- **Design-review revisions:** RUSTED-BY/PERMANENT is an inset centered pill (not
+  full-width, off the bottom); no image placeholder; L→2 upgrade **80gp** (18Dragon
+  divergence from 1822's 60) shown with the coin glyph.
+- Artifacts: trains https://claude.ai/code/artifact/f6ea027e-2a27-467b-8d33-a4ca7e6a06cd
+  · privates (updated) https://claude.ai/code/artifact/79083cda-a535-47ff-a310-5efc7d579522
+- **Note for the rulebook sprint:** record the L→2 = 80gp divergence in C06/C23.
+- `18dragon.json` unchanged.
+
 ### Files Changed
+
+- `trains.json` (new) — train data master.
+- `tools/cardkit.mjs` — train-face renderer + TRAIN_CSS + palette.
+- `tools/gen-train-cards.mjs` (new) — train deck generator.
+- `train-cards.html` (new) — generated train deck.
+- `tools/gen-private-cards.mjs` — perm-train backs now render real trains.
+- `private-cards.html` — regenerated.

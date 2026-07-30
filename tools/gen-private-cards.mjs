@@ -11,7 +11,7 @@
 // Home/proof quality (card borders + margin crop marks are cut guides). Pro bleed = C44.
 
 import { readFileSync, writeFileSync } from "node:fs";
-import { gp, coinize, COIN_CSS } from "./cardkit.mjs";
+import { gp, coinize, COIN_CSS, trainFace, TRAIN_CSS } from "./cardkit.mjs";
 
 const [, , inPath = "privates.json", outPath = "private-cards.html", contentPath] =
   process.argv;
@@ -42,6 +42,18 @@ const esc = (s) =>
 
 const data = JSON.parse(readFileSync(inPath, "utf8"));
 const cards = data.privates;
+
+// Map private id -> its perm-train face (from trains.json deck:false trains). These
+// privates show the real train card on their back instead of a company face.
+const backTrain = {};
+try {
+  const trains = JSON.parse(readFileSync("trains.json", "utf8")).trains;
+  for (const t of trains) {
+    for (const pid of t.on_private || []) backTrain[pid] = t;
+  }
+} catch {
+  // trains.json not present yet — perm-train backs fall back to the text placeholder.
+}
 
 const isMinorBuyable = (c) => c.badge === "green";
 const classText = (c) =>
@@ -95,16 +107,16 @@ function faceHtml(c, side) {
     </div>`;
   }
 
-  // back / company-owned face
-  const isTrain = c.category === "perm-train" || c.id === "P1";
-  const body = isTrain
-    ? `<div class="train"><div class="tname">${esc(c.function_label)}</div><small>permanent train card (reverse)</small></div>`
-    : `<div class="rules"><p>${coinize(esc(c.rules_text))}</p></div>`;
+  // back / company-owned face. Perm-train privates show the real train card.
+  const train = backTrain[c.id];
+  if (train) {
+    return `<div class="card tcard">${trainFace(train)}</div>`;
+  }
   return `
     <div class="card ${tint} back">
       ${gate(c)}
       ${head}
-      ${body}
+      <div class="rules"><p>${coinize(esc(c.rules_text))}</p></div>
       <div class="foot">
         <div class="crev"><small>Revenue</small><span class="money">${gp(c.company_revenue)}</span></div>
         ${owner("COMPANY-OWNED")}
@@ -177,6 +189,7 @@ const style = `
   :root { color-scheme: light; }
   * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   ${COIN_CSS}
+  ${TRAIN_CSS}
   body { margin: 0; background: #ccc; font-family: Georgia, "Times New Roman", serif; }
   .sheet-label { position: absolute; top: 9mm; left: 0; right: 0; text-align: center;
     font-family: system-ui, sans-serif; font-size: 8pt; color: #666; }

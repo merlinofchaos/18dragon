@@ -1,0 +1,40 @@
+{
+  "_comment": "Canonical 18Dragon train data master. Tool-agnostic source for the train cards (tools/gen-train-cards.mjs). Roster matches base 1822 (see CLAUDE.md / 18dragon.json). 'deck' trains are physical deck cards; 'deck:false' trains render only on their private card backs (2P/LP/5P/P+). phase_color is the 18xx tile tier (yellow/green/brown/gray) used for the numeral + banner.",
+  "meta": {
+    "game": "18Dragon",
+    "currency": "gp",
+    "source": "18dragon.json trains (= 1822)",
+    "updated": "2026-07-29"
+  },
+  "schema": {
+    "name": "Train label shown as the big numeral (L, 2, 3, 4, 5, 6, 7, E, 2P, LP, 5P, P+).",
+    "phase_color": "18xx tile tier for the numeral/banner: yellow | green | brown | gray.",
+    "cost": "Purchase price in gp (0 = prize / not purchased).",
+    "rust": "Label of the train that rusts this one (null if permanent).",
+    "rust_color": "Tier color of the rusting train, for the RUSTED BY banner.",
+    "permanent": "true => gold PERMANENT banner instead of RUSTED BY.",
+    "quantity": "Physical copies.",
+    "deck": "true = a deck card; false = rendered only as a private back.",
+    "back": "For a two-sided deck card, the reverse face (L's back is the 2).",
+    "on_private": "For deck:false trains, the private id(s) whose back this is.",
+    "note": "Small extra line on the card."
+  },
+  "trains": [
+    {
+      "name": "L", "phase_color": "yellow", "cost": 60, "rust": "3", "rust_color": "green",
+      "permanent": false, "quantity": 22, "deck": true, "note": "Upgrades to 2 for 80gp",
+      "back": { "name": "2", "phase_color": "yellow", "cost": 120, "rust": "4", "rust_color": "green", "permanent": false }
+    },
+    { "name": "3", "phase_color": "green", "cost": 200, "rust": "6", "rust_color": "brown", "permanent": false, "quantity": 9, "deck": true },
+    { "name": "4", "phase_color": "green", "cost": 300, "rust": "7/E", "rust_color": "gray", "permanent": false, "quantity": 6, "deck": true },
+    { "name": "5", "phase_color": "brown", "cost": 500, "rust": null, "rust_color": null, "permanent": true, "quantity": 3, "deck": true },
+    { "name": "6", "phase_color": "brown", "cost": 600, "rust": null, "rust_color": null, "permanent": true, "quantity": 3, "deck": true },
+    { "name": "7", "phase_color": "gray", "cost": 750, "rust": null, "rust_color": null, "permanent": true, "quantity": 20, "deck": true },
+    { "name": "E", "phase_color": "gray", "cost": 1000, "rust": null, "rust_color": null, "permanent": true, "quantity": 20, "deck": true, "note": "Doubles city revenue (variant of 7)" },
+
+    { "name": "2P", "phase_color": "yellow", "cost": 0, "rust": null, "rust_color": null, "permanent": true, "quantity": 2, "deck": false, "on_private": ["P2", "P3"], "note": "Permanent 2-train" },
+    { "name": "LP", "phase_color": "yellow", "cost": 0, "rust": null, "rust_color": null, "permanent": true, "quantity": 1, "deck": false, "on_private": ["P4"], "note": "Permanent L-train" },
+    { "name": "5P", "phase_color": "brown", "cost": 500, "rust": null, "rust_color": null, "permanent": true, "quantity": 1, "deck": false, "on_private": ["P1"], "note": "Permanent 5-train" },
+    { "name": "P+", "phase_color": "gray", "cost": 0, "rust": null, "rust_color": null, "permanent": true, "quantity": 2, "deck": false, "on_private": ["P29", "P30"], "note": "Pullman (+train)" }
+  ]
+}

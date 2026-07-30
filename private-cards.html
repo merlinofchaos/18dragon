@@ -14,6 +14,29 @@
   .gp-coin { width: 0.92em; height: 0.92em; flex: 0 0 auto; }
   .gp-v { font-variant-numeric: tabular-nums; }
 
+  
+  .tcard { background: #fff; position: relative; display: flex; flex-direction: column; }
+  .tnum { position: absolute; top: 2mm; left: 3mm; font-size: 20pt; font-weight: 800;
+    line-height: 1; -webkit-text-stroke: 0.45mm #000; paint-order: stroke fill; }
+  .tnum.yellow { color: #f4c518; } .tnum.green { color: #34992f; }
+  .tnum.brown { color: #9a6427; } .tnum.gray { color: #7d7d7d; }
+  .tcost { position: absolute; top: 2.6mm; right: 3mm; font-size: 12pt; font-weight: 700; color: #2a2010; }
+  .tbottom { flex: 1; display: flex; flex-direction: column; align-items: center;
+    justify-content: flex-end; gap: 0.8mm; padding-bottom: 3.5mm; }
+  .tnote { text-align: center; font-family: system-ui, sans-serif; font-size: 4.4pt; color: #555; margin: 0 3mm; }
+  .tbanner { display: inline-block; font-family: system-ui, sans-serif; font-weight: 700; font-size: 6.5pt;
+    letter-spacing: .5px; text-transform: uppercase; padding: 0.9mm 3mm; border-radius: 1.2mm; }
+  .tbanner.perm { background: #f2cf4c; color: #141210; }
+  .tbanner.rust-yellow { background: #f2cf4c; color: #141210; }
+  .tbanner.rust-green { background: #3a7d1e; color: #fff; }
+  .tbanner.rust-brown { background: #8a5a2b; color: #fff; }
+  .tbanner.rust-gray { background: #6b6b6b; color: #fff; }
+  .tback { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 0.5mm; background: #f7f3e8; }
+  .tback-name { font-size: 10pt; font-weight: 700; color: #8a5a2b; letter-spacing: .5px; }
+  .tback-sub { font-family: system-ui, sans-serif; font-size: 5pt; letter-spacing: 2px;
+    text-transform: uppercase; color: #b08a4a; }
+
   body { margin: 0; background: #ccc; font-family: Georgia, "Times New Roman", serif; }
   .sheet-label { position: absolute; top: 9mm; left: 0; right: 0; text-align: center;
     font-family: system-ui, sans-serif; font-size: 8pt; color: #666; }
@@ -437,19 +460,7 @@
         <div class="owner"><span class="own-a">COMPANY-OWNED</span><span class="own-b">PRIVATE COMPANY</span></div>
         <div class="pid-wrap"><span class="cls">Minor/Major</span><span class="pid b-green">P9</span></div>
       </div>
-    </div>
-    <div class="card tint-green back">
-      <span class="gate">3+</span>
-      
-      <div class="band">Permanent L-Train</div>
-      <div class="title">The Dampcart</div>
-      <div class="train"><div class="tname">Permanent L-Train</div><small>permanent train card (reverse)</small></div>
-      <div class="foot">
-        <div class="crev"><small>Revenue</small><span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">0</span></span></span></div>
-        <div class="owner"><span class="own-a">COMPANY-OWNED</span><span class="own-b">PRIVATE COMPANY</span></div>
-        <div class="pid-wrap"><span class="cls">Minor/Major</span><span class="pid b-green">P4</span></div>
-      </div>
-    </div>
+    </div><div class="card tcard"><div class="tnum yellow">LP</div><div class="tbottom"><div class="tnote">Permanent L-train</div><span class="tbanner perm">Permanent</span></div></div>
     <div class="card tint-green back">
       <span class="gate">3+</span>
       
@@ -473,43 +484,7 @@
         <div class="owner"><span class="own-a">COMPANY-OWNED</span><span class="own-b">PRIVATE COMPANY</span></div>
         <div class="pid-wrap"><span class="cls">Minor/Major</span><span class="pid b-green">P6</span></div>
       </div>
-    </div>
-    <div class="card tint-red back">
-      <span class="gate">3+</span>
-      
-      <div class="band">Permanent 5-Train</div>
-      <div class="title">Eldrok Phlogiston Werk</div>
-      <div class="train"><div class="tname">Permanent 5-Train</div><small>permanent train card (reverse)</small></div>
-      <div class="foot">
-        <div class="crev"><small>Revenue</small><span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">0</span></span></span></div>
-        <div class="owner"><span class="own-a">COMPANY-OWNED</span><span class="own-b">PRIVATE COMPANY</span></div>
-        <div class="pid-wrap"><span class="cls">Major</span><span class="pid b-red">P1</span></div>
-      </div>
-    </div>
-    <div class="card tint-red back">
-      <span class="gate">3+</span>
-      
-      <div class="band">Permanent 2-Train</div>
-      <div class="title">The Ironhaul</div>
-      <div class="train"><div class="tname">Permanent 2-Train</div><small>permanent train card (reverse)</small></div>
-      <div class="foot">
-        <div class="crev"><small>Revenue</small><span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">0</span></span></span></div>
-        <div class="owner"><span class="own-a">COMPANY-OWNED</span><span class="own-b">PRIVATE COMPANY</span></div>
-        <div class="pid-wrap"><span class="cls">Major</span><span class="pid b-red">P2</span></div>
-      </div>
-    </div>
-    <div class="card tint-red back">
-      <span class="gate">3+</span>
-      
-      <div class="band">Permanent 2-Train</div>
-      <div class="title">The Deepdelver</div>
-      <div class="train"><div class="tname">Permanent 2-Train</div><small>permanent train card (reverse)</small></div>
-      <div class="foot">
-        <div class="crev"><small>Revenue</small><span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">0</span></span></span></div>
-        <div class="owner"><span class="own-a">COMPANY-OWNED</span><span class="own-b">PRIVATE COMPANY</span></div>
-        <div class="pid-wrap"><span class="cls">Major</span><span class="pid b-red">P3</span></div>
-      </div>
-    </div></div>
+    </div><div class="card tcard"><div class="tnum brown">5P</div><div class="tcost"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">500</span></span></div><div class="tbottom"><div class="tnote">Permanent 5-train</div><span class="tbanner perm">Permanent</span></div></div><div class="card tcard"><div class="tnum yellow">2P</div><div class="tbottom"><div class="tnote">Permanent 2-train</div><span class="tbanner perm">Permanent</span></div></div><div class="card tcard"><div class="tnum yellow">2P</div><div class="tbottom"><div class="tnote">Permanent 2-train</div><span class="tbanner perm">Permanent</span></div></div></div>
   </section>
   <section class="sheet">
     <div class="sheet-label">Sheet 2 — FRONT (player-owned)</div>
@@ -1081,31 +1056,7 @@
         <div class="owner"><span class="own-a">COMPANY-OWNED</span><span class="own-b">PRIVATE COMPANY</span></div>
         <div class="pid-wrap"><span class="cls">Minor/Major</span><span class="pid b-green">P28</span></div>
       </div>
-    </div>
-    <div class="card tint-red back">
-      <span class="gate">3+</span>
-      
-      <div class="band">Pullman</div>
-      <div class="title">The Gilded Carriage</div>
-      <div class="rules"><p>A 'Pullman' carriage train that can be added to another train owned by the company. It converts the train into a + train. Does not count against train limit and does not count as a train for the purposes of train ownership. Can't be sold to another company. Does not close. May include a maximum of [2 × the train size] number of towns.</p></div>
-      <div class="foot">
-        <div class="crev"><small>Revenue</small><span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">0</span></span></span></div>
-        <div class="owner"><span class="own-a">COMPANY-OWNED</span><span class="own-b">PRIVATE COMPANY</span></div>
-        <div class="pid-wrap"><span class="cls">Major</span><span class="pid b-red">P29</span></div>
-      </div>
-    </div>
-    <div class="card tint-red back">
-      <span class="gate">4+</span>
-      
-      <div class="band">Pullman</div>
-      <div class="title">Wyvern Coachworks</div>
-      <div class="rules"><p>A 'Pullman' carriage train that can be added to another train owned by the company. It converts the train into a + train. Does not count against train limit and does not count as a train for the purposes of train ownership. Can't be sold to another company. Does not close. May include a maximum of [2 × the train size] number of towns.</p></div>
-      <div class="foot">
-        <div class="crev"><small>Revenue</small><span class="money"><span class="gp"><svg class="gp-coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpcoin" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpcoin)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg><span class="gp-v">0</span></span></span></div>
-        <div class="owner"><span class="own-a">COMPANY-OWNED</span><span class="own-b">PRIVATE COMPANY</span></div>
-        <div class="pid-wrap"><span class="cls">Major</span><span class="pid b-red">P30</span></div>
-      </div>
-    </div>
+    </div><div class="card tcard"><div class="tnum gray">P+</div><div class="tbottom"><div class="tnote">Pullman (+train)</div><span class="tbanner perm">Permanent</span></div></div><div class="card tcard"><div class="tnum gray">P+</div><div class="tbottom"><div class="tnote">Pullman (+train)</div><span class="tbanner perm">Permanent</span></div></div>
     <div class="card tint-green back">
       <span class="gate">3+</span>
       

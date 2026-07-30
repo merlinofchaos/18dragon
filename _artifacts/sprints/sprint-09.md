@@ -14,7 +14,7 @@ View of `sprints.sprint-09.stories` in `sprint-status.yaml` (canonical). **2 poi
 
 | Seq | ID | Title | Type | Points | Status |
 |-----|----|-------|------|--------|--------|
-| 1 | C26 | Train cards — trains.json master + printable deck (+ perm-train private backs) | content | 2 | ready |
+| 1 | C26 | Train cards — trains.json master + printable deck (+ perm-train private backs) | content | 2 | ✅ done |
 
 ## Scope notes
 

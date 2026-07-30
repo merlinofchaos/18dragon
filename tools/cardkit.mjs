@@ -21,3 +21,51 @@ export const COIN_CSS = `
   .gp-coin { width: 0.92em; height: 0.92em; flex: 0 0 auto; }
   .gp-v { font-variant-numeric: tabular-nums; }
 `;
+
+const esc = (s) =>
+  String(s ?? "").replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
+
+// ---- shared train-card faces (used by the train deck AND private perm-train backs) ----
+// Inner HTML for a train face. `t` = a trains.json train (or its `back`):
+//   { name, phase_color: yellow|green|brown|gray, cost, rust, rust_color, permanent, note }
+export function trainFace(t) {
+  const cost = t.cost ? `<div class="tcost">${gp(t.cost)}</div>` : "";
+  const note = t.note ? `<div class="tnote">${coinize(esc(t.note))}</div>` : "";
+  const banner = t.permanent
+    ? `<span class="tbanner perm">Permanent</span>`
+    : `<span class="tbanner rust-${t.rust_color}">Rusted by ${esc(t.rust)}</span>`;
+  return (
+    `<div class="tnum ${t.phase_color}">${esc(t.name)}</div>${cost}` +
+    `<div class="tbottom">${note}${banner}</div>`
+  );
+}
+
+// Uniform reverse for non-two-sided deck cards, so duplex sheets print cleanly.
+export function trainBackUniform() {
+  return `<div class="tback"><span class="tback-name">18Dragon</span><span class="tback-sub">Train</span></div>`;
+}
+
+// Train-card styling. Include once in each generator's <style>.
+export const TRAIN_CSS = `
+  .tcard { background: #fff; position: relative; display: flex; flex-direction: column; }
+  .tnum { position: absolute; top: 2mm; left: 3mm; font-size: 20pt; font-weight: 800;
+    line-height: 1; -webkit-text-stroke: 0.45mm #000; paint-order: stroke fill; }
+  .tnum.yellow { color: #f4c518; } .tnum.green { color: #34992f; }
+  .tnum.brown { color: #9a6427; } .tnum.gray { color: #7d7d7d; }
+  .tcost { position: absolute; top: 2.6mm; right: 3mm; font-size: 12pt; font-weight: 700; color: #2a2010; }
+  .tbottom { flex: 1; display: flex; flex-direction: column; align-items: center;
+    justify-content: flex-end; gap: 0.8mm; padding-bottom: 3.5mm; }
+  .tnote { text-align: center; font-family: system-ui, sans-serif; font-size: 4.4pt; color: #555; margin: 0 3mm; }
+  .tbanner { display: inline-block; font-family: system-ui, sans-serif; font-weight: 700; font-size: 6.5pt;
+    letter-spacing: .5px; text-transform: uppercase; padding: 0.9mm 3mm; border-radius: 1.2mm; }
+  .tbanner.perm { background: #f2cf4c; color: #141210; }
+  .tbanner.rust-yellow { background: #f2cf4c; color: #141210; }
+  .tbanner.rust-green { background: #3a7d1e; color: #fff; }
+  .tbanner.rust-brown { background: #8a5a2b; color: #fff; }
+  .tbanner.rust-gray { background: #6b6b6b; color: #fff; }
+  .tback { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 0.5mm; background: #f7f3e8; }
+  .tback-name { font-size: 10pt; font-weight: 700; color: #8a5a2b; letter-spacing: .5px; }
+  .tback-sub { font-family: system-ui, sans-serif; font-size: 5pt; letter-spacing: 2px;
+    text-transform: uppercase; color: #b08a4a; }
+`;

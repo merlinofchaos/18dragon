@@ -106,7 +106,7 @@ sprints:
       master via a shared card kit; the permanent/prize trains (2P/LP/5P/P+) are
       rendered onto their private card backs, fully finishing the privates.
     stories:
-      C26: ready
+      C26: done
   sprint-08:
     status: complete
     goal: >-
