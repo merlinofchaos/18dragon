@@ -9,21 +9,17 @@
 # membership. Points are assigned in backlog.yaml during sprint planning.
 
 meta:
-  updated: "2026-07-29"  # sprint-07 (map polish, C41) active; privates track after
+  updated: "2026-07-29"  # sprint-08 active; C05/C10 done; C11 split into C11a+C11b
 
 # Unscheduled stories — id: status
 backlog:
   C02: stub
   C03: stub
   C04: stub
-  C05: stub
   C06: stub
   C07: stub
   C08: stub
   C09: stub
-  C10: stub
-  C11: stub
-  C12: stub
   C13: stub
   C14: stub
   C15: stub
@@ -102,8 +98,22 @@ sprints:
       C35: done
       C36: done
       C37: done
-  sprint-07:
+  sprint-08:
     status: active
+    goal: >-
+      The full 30-private roster is captured as design documentation (docs/) —
+      the 5 region-permit concessions, the bid-box-1 opener, the remaining
+      privates (with sourced rules text), and player-count gates — from the
+      designer's author-privates.md draft. JSON wiring deferred.
+    stories:
+      C05: done
+      C10: done
+      C11a: done
+      C11b: done
+      C12: stub
+      C42: stub
+  sprint-07:
+    status: complete
     goal: >-
       The completed five-region map is fine-tuned per the designer's review —
       Verantum shrunk from the north (rows C/D removed, sea reshaped) with a new

@@ -82,7 +82,7 @@ stories:
     title: "Define the 5 region permit privates"
     type: content
     epics: ["Privates", "Permits"]
-    points: null
+    points: 2
   C06:
     title: "Document 18Dragon divergences from 1822"
     type: content
@@ -107,17 +107,28 @@ stories:
     title: "Define opener private (phlogiston / 5P / bid box 1)"
     type: content
     epics: ["Privates", "Companies"]
-    points: null
-  C11:
-    title: "Detail the remaining privates (designer-known + fill gaps)"
+    points: 1
+  # C11 was split mid-sprint (2026-07-29) — 24 privates was too big for one
+  # reviewable unit. C11a = the 13 18Dragon-original privates (designer's own draft
+  # text, capture+tidy) + the master P1–P30 numbering table. C11b = the 11
+  # externally-sourced privates (exact PNW/1822CA text + noted divergences).
+  # (2026-07-29: designer swapped Coal Mine → Merger Negotiations in the 13, so
+  # C11a now also touches the Mergers epic.)
+  C11a:
+    title: "Detail the 13 18Dragon-original privates (+ master P# numbering)"
+    type: content
+    epics: ["Privates", "Mergers"]
+    points: 2
+  C11b:
+    title: "Detail the 11 externally-sourced privates (PNW/1822CA text)"
     type: content
     epics: ["Privates"]
-    points: null
+    points: 2
   C12:
     title: "Assign 4+/5+ player-count gates to privates"
     type: content
     epics: ["Privates", "Scaling"]
-    points: null
+    points: 2
   C13:
     title: "Specify the merger mechanic (rules writeup)"
     type: content
@@ -283,6 +294,15 @@ stories:
     title: "Map fine-tuning pass (post-completion tweaks)"
     type: content
     epics: ["World & Map", "Verantum"]
+    points: 3
+
+  # --- Privates deliverable: the rendered cards (the "finish" step after the
+  # roster is designed in C05/C10/C11/C12). Depends on the roster doc + resolving
+  # the card-rendering tool question (2-sided, info-dense — 18xxMaker may not suffice). ---
+  C42:
+    title: "Produce the rendered private cards (2-sided, all 30)"
+    type: content
+    epics: ["Privates", "Game Components"]
     points: 3
 
 # Notes:

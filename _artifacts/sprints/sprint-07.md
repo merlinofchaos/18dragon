@@ -1,6 +1,6 @@
 # Sprint 07: Map fine-tuning (post-completion polish)
 
-- **Status:** active
+- **Status:** complete
 - **Created:** 2026-07-29
 - **Goal:** The completed five-region map is fine-tuned per the designer's review — Verantum shrunk from the north (rows C/D removed, sea reshaped) with a new north-coast city+dit and a gray city at J3 (holding relocated home 3), and a new special-tile city at Caelimor's J27 with a SW dit.
 
