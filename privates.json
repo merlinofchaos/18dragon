@@ -38,7 +38,7 @@
       "cadence": null,
       "players_required": 3,
       "reverse": "the 5P train card (flip, not exchanged — no train taken from supply)",
-      "source": "PRD 4.3 + 1822PNW P1 'Olympian Hiawatha'. DIVERGENCE: PNW's is a normal 5-train; 18Dragon's is permanent (5P).",
+      "source": "PRD 4.3 + 1822PNW P1 'Olympian Hiawatha' (matches PNW: a 5-train is the first non-rusting train, so a 'normal' 5-train is permanent by nature — no divergence).",
       "rules_text": "Permanent 5-train (5P). Never rusts. Counts against the train limit. Acquiring it is an acquisition action, so a company may acquire it even at train limit; it must then discard any trains held in excess of the limit.",
       "extra": { "bid_box": 1, "permanent": true, "counts_train_limit": true, "flavor": "The dwarves of Brekheim who invented the phlogiston engine; Brekheim is flavor only." }
     },

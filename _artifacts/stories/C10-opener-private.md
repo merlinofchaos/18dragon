@@ -28,9 +28,9 @@ roster, ready to render as a card (C42) later.
      lingers with its owner — the classic 1822 early-tie-up-for-a-free-permanent-
      train pattern.
    - **Function label:** "Permanent 5-Train" (5P).
-3. **The 5-train (5P) behavior** (designer-confirmed — a blend of base-1822 and
-   PNW):
-   - The train is **permanent** (a 5P — never rusts).
+3. **The 5-train (5P) behavior** (designer-confirmed; matches PNW's P1):
+   - The train is **permanent** (a 5P — the 5-train is the first non-rusting train,
+     so this is inherent, not special).
    - **No train is taken from the supply.** On buy-in the private is **flipped**
      to its reverse, which **is** the 5P train card (per the card-anatomy
      permanent-train exception — the company-owned side is the train itself).
@@ -69,10 +69,10 @@ roster, ready to render as a card (C42) later.
 - **Sources:** PRD §4.3 (opener paragraph) + `author-privates.md` ("1 permanent 5
   — see PNW for text") + PNW `entities.rb` P1 "The Olympian Hiawatha" (`value:0,
   revenue:5`, "MAJOR, Phase 5", acquisition-action-even-at-limit + discard-excess
-  text). **Deliberate divergence from PNW:** PNW's P1 becomes a *normal* 5-train
-  (explicitly not special/permanent); 18Dragon's opener is a **permanent 5 (5P)**
-  per PRD — take PNW's *acquisition/train-limit wording* but keep the train
-  permanent. Confirmed by designer 2026-07-29.
+  text). **Matches PNW (no divergence):** a 5-train is the first non-rusting train,
+  so PNW's "normal 5-train" P1 *is* a permanent 5 (5P) — same as 18Dragon's opener.
+  Counts to train limit; acquisition action, allowed at limit, discard excess.
+  (Corrected 2026-07-29 — an earlier draft wrongly called this a divergence.)
 - **Class/revenue** match PNW exactly (Major-only, $5). The permit privates pay
   $10, but the opener is $5 — intentional, not a typo.
 - **Naming collision guard:** `author-privates.md` line 17 already has a
@@ -106,7 +106,10 @@ claude-opus-4-8
 
 - Added **The Opener (C10)** section to `docs/privates-roster.md`: in-game title
   *Eldrok Phlogiston Werk* (designer-chosen), fields table, the 5P-behavior
-  paragraph, the PNW-divergence note, and the scope-boundary line.
+  paragraph, a matches-PNW note, and the scope-boundary line.
+- *(Correction 2026-07-29: an earlier draft called the permanent-5 a "divergence
+  from PNW." It isn't — a 5-train is the first non-rusting train, so PNW's normal
+  5-train is already permanent. Fixed in the doc, privates.json, and here.)*
 - Fixed mechanics: bid box 1 always, Major-only (red), $5 player rev, phase-5
   buy-in gate, Players required 3+.
 - 5P: permanent, flip-not-take (reverse = the 5P train card), counts to train

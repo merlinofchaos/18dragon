@@ -128,11 +128,12 @@ taken from the supply**.
 - The phase-5 buy-in gate means the owning player's money is tied up early in
   exchange for a free permanent train later — the classic 1822 opener pattern.
 
-**Deliberate divergence from PNW.** PNW's opener (P1, "The Olympian Hiawatha")
-becomes a *normal* 5-train on acquisition (explicitly not a special/permanent
-train). 18Dragon keeps PNW's **acquisition/train-limit wording** (acquisition
-action, allowed at limit, discard excess) but makes the train **permanent (5P)**
-per PRD §4.3. Class (Major-only) and player revenue ($5) match PNW exactly.
+**Matches PNW (no divergence).** A 5-train is the **first train that does not
+rust** — so it is permanent by nature. PNW's P1 ("The Olympian Hiawatha") becomes
+a **normal 5-train** on acquisition, which is exactly 18Dragon's permanent 5 (5P):
+it counts against the train limit and is acquired via an acquisition action
+(allowed at limit, then discard excess). Class (Major-only) and player revenue
+($5) match PNW.
 
 **Out of scope for C10:** card layout (C42); the general auction/bid-box *refresh*
 mechanics (rules track — only "starts in box 1" is a property of this card).
