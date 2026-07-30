@@ -233,3 +233,42 @@ the designer views it) always reflects the live file — no copy step, and **nev
 remove it**. If the symlink is missing, recreate it:
 `ln -s /Users/earlmiles/Projects/18dragon/18dragon.json 18xx-maker/src/data/games/18dragon.json`
 (it's gitignored in the fork). Edits to the real file are live on reload.
+
+## Printing cards (standalone HTML generators — not 18xxMaker)
+
+For information-dense / two-sided cards (privates, and likely trains/charters/certs),
+18xxMaker's stock card renderer is too limited (one face only; fixed field set). We
+render from a data master (e.g. `privates.json`) via a small Node generator
+(`tools/gen-private-cards.mjs`) that emits a self-contained print HTML. Gotchas learned
+producing the private cards (sprint 8, C42):
+
+- **Backgrounds don't print by default.** Browsers drop background colors/images unless
+  forced. Put `-webkit-print-color-adjust: exact; print-color-adjust: exact;` on `*`
+  (or the cards) **and** tick Chrome's **More settings → Background graphics**.
+- **Print from the local `.html`, never the published Artifact.** The Artifact host wraps
+  the page in its own shell, overriding `@page` size/margins and background rules — it
+  will never print correctly. Keep a full standalone file (own `<!doctype>` + `@page`) at
+  the repo root for printing; publish a content-only twin only for on-screen review.
+- **Chrome print settings that preserve exact mm sizing:** Margins **None**, Scale
+  **100%** (turn OFF "Fit to page" — any shrink breaks card dimensions and cut alignment),
+  correct **Layout** (portrait/landscape), Paper **Letter**.
+- **Duplex back-page mirror axis** (so each reverse sits behind its front):
+
+  | Orientation | Flip / bind edge | Mirror |
+  |-------------|------------------|--------|
+  | Portrait    | Long edge        | columns (reverse each row) |
+  | Portrait    | Short edge       | rows (reverse row order)   |
+  | Landscape   | Long edge        | rows                       |
+  | Landscape   | Short edge       | columns                    |
+
+  Expose it as a `MIRROR` constant and **verify with a test print** (front + back, hold to
+  the light) — printer duplex defaults vary.
+- **Card-fit / margins:** side margin = `(page_w − cols×card_w) / 2`. Home printers need
+  ~0.5in (12.7mm) safe margins. 67×44mm cards: 3 columns need ~201mm → only ~7.5mm sides
+  on Letter **portrait** (too tight); **Letter landscape, 3×4 = 12/page** gives ~39mm
+  sides / ~20mm top-bottom. Do this math before picking cards-per-page.
+- **Keep card corners clear** if they'll be rounded later — inset corner elements (id
+  badge, player-count tag) ~3mm from the edges.
+- **Home-duplex registration drifts ~1–2mm** (mechanical). Inset content from card edges
+  so drift shifts only the cut border, not the text. True fix = pro print with bleed +
+  crop marks (expensive) or a printer-specific `BACK_OFFSET` nudge on the back sheets.

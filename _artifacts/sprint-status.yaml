@@ -9,7 +9,7 @@
 # membership. Points are assigned in backlog.yaml during sprint planning.
 
 meta:
-  updated: "2026-07-29"  # sprint-08 active; C05/C10 done; C11 split into C11a+C11b
+  updated: "2026-07-29"  # sprint-08 complete (privates roster + cards); retro affirmed no workflow changes
 
 # Unscheduled stories — id: status
 backlog:
@@ -100,7 +100,7 @@ sprints:
       C36: done
       C37: done
   sprint-08:
-    status: active
+    status: complete
     goal: >-
       The full 30-private roster is captured as design documentation (docs/) —
       the 5 region-permit concessions, the bid-box-1 opener, the remaining

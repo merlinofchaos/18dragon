@@ -1,6 +1,6 @@
 # Sprint 08: Privates roster (design doc)
 
-- **Status:** active
+- **Status:** complete
 - **Created:** 2026-07-29
 - **Goal:** The full 30-private roster is captured as **design documentation** (`docs/`) — the 5 region-permit concessions, the bid-box-1 opener, the remaining privates (with sourced rules text), and player-count gates — from the designer's `author-privates.md` draft, **then produced as the rendered 2-sided cards** (C42). Roster stories are design-doc-first; C42 turns the finished roster into the card deliverable.
 
@@ -92,12 +92,49 @@ exact PNW/1822CA text. **C42 is the remaining heavy production story** — if it
 
 ## Retrospective
 
-<!-- Filled by agile-retro at sprint end. -->
+**Outcome: goal fully met.** All 7 stories `done` — the complete 30-private roster
+as design docs (C05/C10/C11a/C11b/C12), the canonical `privates.json` data master
+(C43), and printable 2-sided cards (C42). Scope grew deliberately (5→7 stories,
+11→13 pts) via designer-driven additions (C11 split; C43 master), all absorbed
+without slippage.
 
 ### What went well
 
+- **Design-doc-first + a data master.** `privates.json` as the tool-agnostic source
+  of truth (with `18dragon.json` treated as "just a rendering") was the sprint's
+  best structural call — it made C42 possible without committing to a renderer.
+- **Verbatim external sourcing** (C11b: exact PNW/1822CA text) avoided paraphrase
+  drift; divergences were noted explicitly.
+- **Grounding the C42 tool decision** in the actual 18xxMaker card pipeline (which
+  can't do 2-sided) — so we built a standalone HTML generator instead of forcing it.
+
 ### What didn't
+
+- Nothing counted as a process failure. The things that *looked* like friction —
+  the designer refining cards on seeing them (revenue-until-used, cadence, discount
+  renames, P22), catching a wrong 5-train claim, and iterating the print layout —
+  are **the intended work of agile review**, not defects to engineer out.
 
 ### Lessons / workflow adjustments
 
+- **Affirmed — no workflow changes** (designer's call, 2026-07-29). The review-driven
+  refinement loop is working as intended; expect it to continue on component stories,
+  same as the map (retros 3 & 4). This matches the standing "designer designs by
+  seeing" acceptance.
+- **Knowledge capture (standing cookbook rule, not a workflow change):** logged the
+  card-printing gotchas to `docs/18xxmaker-cookbook.md` (§ Printing cards) —
+  `print-color-adjust`, print-from-local-not-Artifact, the duplex mirror-axis table,
+  Chrome print settings, card-fit math, corner clearance, duplex drift — so the
+  upcoming card stories (C26/C17/C25/C19) start ahead.
+
 ### Action items
+
+- **Carry-forward follow-ups** (already recorded, no new stories needed now):
+  - **C44** (backlog) — pro per-card files with bleed/crop marks. *Note: pro printing
+    is expensive; prefer improving the home-print result first.*
+  - **Back-offset knob** for C42's generator — a printer-specific `BACK_OFFSET` nudge
+    if home duplex drifts consistently (designer may try it).
+  - **Perm-train card backs** — once C26 produces train cards, embed the real train
+    card on P1/P2/P3/P4 backs (currently a placeholder).
+- **Next sprint candidates:** the companies track (C03 majors, C04 minors) and/or the
+  permit *mechanic* rules (C07) — pick at sprint-09 planning.
