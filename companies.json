@@ -3,7 +3,7 @@
   "meta": {
     "game": "18Dragon",
     "majors": 10,
-    "minors": 0,
+    "minors": 30,
     "updated": "2026-07-30"
   },
   "schema": {
@@ -80,5 +80,294 @@
       "destination": { "city": "Drakgeld", "region": "G", "hex": "L33" }
     }
   ],
-  "minors": []
+  "minors":   [
+    {
+      "number": 1,
+      "name": "Verantia Central Railway",
+      "region": "A",
+      "home_city": "Verantia",
+      "hex": "H9",
+      "permit": "Verantum",
+      "token": "white"
+    },
+    {
+      "number": 2,
+      "name": "Verantia Aqueduct Line",
+      "region": "A",
+      "home_city": "Verantia",
+      "hex": "H9",
+      "permit": "Verantum",
+      "token": "white"
+    },
+    {
+      "number": 3,
+      "name": "Litoria Coastal Railway",
+      "region": "A",
+      "home_city": "Litoria",
+      "hex": "J3",
+      "permit": "Verantum",
+      "token": "white"
+    },
+    {
+      "number": 4,
+      "name": "Corvium Viaduct Company",
+      "region": "A",
+      "home_city": "Corvium",
+      "hex": "F17",
+      "permit": "Verantum",
+      "token": "white",
+      "power": {
+        "trigger": "first operating turn",
+        "cost_gp": 40,
+        "targets": [
+          "P10",
+          "P11"
+        ],
+        "text": "On its first operating turn, this company may pay 40gp to take a Bridge Tile private (P10 The Aurelian Span or P11 Halvard's Crossing), provided that private is neither owned nor currently in a bid box."
+      }
+    },
+    {
+      "number": 5,
+      "name": "Ostia Harbor Line",
+      "region": "A",
+      "home_city": "Ostia",
+      "hex": "I14",
+      "permit": "Verantum",
+      "token": "white"
+    },
+    {
+      "number": 6,
+      "name": "Lavinia Southern Railway",
+      "region": "A",
+      "home_city": "Lavinia",
+      "hex": "L11",
+      "permit": "Verantum",
+      "token": "white"
+    },
+    {
+      "number": 7,
+      "name": "Braemael Moor Railway",
+      "region": "N",
+      "home_city": "Braemael",
+      "hex": "C24",
+      "permit": "Caelimor",
+      "token": "white"
+    },
+    {
+      "number": 8,
+      "name": "Dunmael Glen Line",
+      "region": "N",
+      "home_city": "Dunmael",
+      "hex": "E20",
+      "permit": "Caelimor",
+      "token": "white"
+    },
+    {
+      "number": 9,
+      "name": "Draeven Highland Railway",
+      "region": "N",
+      "home_city": "Draeven",
+      "hex": "F29",
+      "permit": "Caelimor",
+      "token": "white"
+    },
+    {
+      "number": 10,
+      "name": "Gwyndael Vale Rail",
+      "region": "N",
+      "home_city": "Gwyndael",
+      "hex": "H25",
+      "permit": "Caelimor",
+      "token": "white"
+    },
+    {
+      "number": 11,
+      "name": "Kaeldun Coast Railway",
+      "region": "N",
+      "home_city": "Kaeldun",
+      "hex": "K18",
+      "permit": "Caelimor",
+      "token": "white"
+    },
+    {
+      "number": 12,
+      "name": "Taeldun Border Line",
+      "region": "N",
+      "home_city": "Taeldun",
+      "hex": "M20",
+      "permit": "Caelimor",
+      "token": "white"
+    },
+    {
+      "number": 13,
+      "name": "Baldrok Deeprail",
+      "region": "G",
+      "home_city": "Baldrok",
+      "hex": "D33",
+      "permit": "Gördum",
+      "token": "white"
+    },
+    {
+      "number": 14,
+      "name": "Volheim Iron Railway",
+      "region": "G",
+      "home_city": "Volheim",
+      "hex": "G34",
+      "permit": "Gördum",
+      "token": "white"
+    },
+    {
+      "number": 15,
+      "name": "Ragnheim Mountain Line",
+      "region": "G",
+      "home_city": "Ragnheim",
+      "hex": "I32",
+      "permit": "Gördum",
+      "token": "white"
+    },
+    {
+      "number": 16,
+      "name": "Brekheim Forgeworks Rail",
+      "region": "G",
+      "home_city": "Brekheim",
+      "hex": "I36",
+      "permit": "Gördum",
+      "token": "white",
+      "power": {
+        "trigger": "first operating turn",
+        "cost_gp": 40,
+        "targets": [
+          "P14",
+          "P15"
+        ],
+        "text": "On its first operating turn, this company may pay 40gp to take a Mountain Discount (dwarven Mining Troupe) private (P14 Durgrok Delvers or P15 Stonebeard Hewers), provided that private is neither owned nor currently in a bid box."
+      }
+    },
+    {
+      "number": 17,
+      "name": "Kroddheim Ore Line",
+      "region": "G",
+      "home_city": "Kroddheim",
+      "hex": "K36",
+      "permit": "Gördum",
+      "token": "white"
+    },
+    {
+      "number": 18,
+      "name": "Drakgeld Deep Railway",
+      "region": "G",
+      "home_city": "Drakgeld",
+      "hex": "L33",
+      "permit": "Gördum",
+      "token": "white"
+    },
+    {
+      "number": 19,
+      "name": "Danilov Steppe Railway",
+      "region": "V",
+      "home_city": "Danilov",
+      "hex": "D43",
+      "permit": "Varstova",
+      "token": "white"
+    },
+    {
+      "number": 20,
+      "name": "Bereshov Northern Line",
+      "region": "V",
+      "home_city": "Bereshov",
+      "hex": "F41",
+      "permit": "Varstova",
+      "token": "white"
+    },
+    {
+      "number": 21,
+      "name": "Varstgrad City Railway",
+      "region": "V",
+      "home_city": "Varstgrad",
+      "hex": "I44",
+      "permit": "Varstova",
+      "token": "white"
+    },
+    {
+      "number": 22,
+      "name": "Miralova Valley Rail",
+      "region": "V",
+      "home_city": "Miralova",
+      "hex": "J47",
+      "permit": "Varstova",
+      "token": "white"
+    },
+    {
+      "number": 23,
+      "name": "Zorvar Frontier Line",
+      "region": "V",
+      "home_city": "Zorvar",
+      "hex": "K42",
+      "permit": "Varstova",
+      "token": "white"
+    },
+    {
+      "number": 24,
+      "name": "Ludova Highland Railway",
+      "region": "V",
+      "home_city": "Ludova",
+      "hex": "L45",
+      "permit": "Varstova",
+      "token": "white"
+    },
+    {
+      "number": 25,
+      "name": "Alveem Coastal Line",
+      "region": "M",
+      "home_city": "Alveem",
+      "hex": "N13",
+      "permit": "Muravel",
+      "token": "white"
+    },
+    {
+      "number": 26,
+      "name": "Qalvel Desert Railway",
+      "region": "M",
+      "home_city": "Qalvel",
+      "hex": "N37",
+      "permit": "Muravel",
+      "token": "white"
+    },
+    {
+      "number": 27,
+      "name": "Sabreem Caravan Railway",
+      "region": "M",
+      "home_city": "Sabreem",
+      "hex": "O32",
+      "permit": "Muravel",
+      "token": "white"
+    },
+    {
+      "number": 28,
+      "name": "Medeem Oasis Line",
+      "region": "M",
+      "home_city": "Medeem",
+      "hex": "P23",
+      "permit": "Muravel",
+      "token": "white"
+    },
+    {
+      "number": 29,
+      "name": "Kalavar Trade Line",
+      "region": "M",
+      "home_city": "Kalavar",
+      "hex": "R21",
+      "permit": "Muravel",
+      "token": "white"
+    },
+    {
+      "number": 30,
+      "name": "Tazeem Southern Railway",
+      "region": "M",
+      "home_city": "Tazeem",
+      "hex": "R31",
+      "permit": "Muravel",
+      "token": "white"
+    }
+  ]
 }
