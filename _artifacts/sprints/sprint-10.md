@@ -1,6 +1,6 @@
 # Sprint 10: Companies — majors + minors
 
-- **Status:** active
+- **Status:** complete
 - **Created:** 2026-07-30
 - **Goal:** The **10 majors** and **30 minors** are defined in a **`companies.json`**
   master — majors (name, abbrev, color, token count, home region) and minors (name,
@@ -63,12 +63,40 @@ map wiring of company home tokens/logos; the merger *mechanic* rules (C13).
 
 ## Retrospective
 
-<!-- Filled by agile-retro at sprint end. -->
+**Outcome: goal fully met.** C03 (10 majors) + C04 (30 minors) both done — the full
+company roster is in `companies.json`, ready to feed charters/certs/stickers.
 
 ### What went well
 
+- **`companies.json` master pattern held** (majors + minors in one file) — the same
+  master-first shape as privates/trains.
+- **Grounding design in extracted map data** made it concrete and cut work:
+  destinations picked from real cities; the 30 minor home-token numbers/regions/cities
+  pulled straight from the board (so C04 was assignment, not placement).
+- **The propose→approve loop shone on the abbreviations** (the designer's stated
+  priority): iterated VIR→VR, AE→ACL, KV→MK (rename), ZO→ZNR to a clean, distinct set.
+- **Designer domain knowledge → the two minor safety-valve powers** (#4 Corvium,
+  #16 Brekheim), captured with tightened wording.
+
 ### What didn't
+
+- **Real process miss (assistant):** C03 was set to `done` immediately after the
+  designer approved one small tweak — they had to say "you jumped ahead to done."
+  Not normal review; a genuine boundary error on my part.
 
 ### Lessons / workflow adjustments
 
+- **Codified the fix (real change):** added an explicit rule to `workflow.md` §Story
+  lifecycle — *the assistant stops at `review`; only the designer's explicit sign-off
+  moves a story to `done`* (don't self-advance after a sub-tweak). Also saved as a
+  memory so it sticks across sessions.
+- Otherwise the workflow held; no other changes.
+
 ### Action items
+
+- **Provisional items to revisit** (no new stories needed now):
+  - **Major color palette** — proposed colorblind-safe set; designer finalizes when
+    the token stickers render (C24).
+  - **L→2 = 80gp** (from sprint 9) still owed to the rulebook (C06/C23).
+- **Next sprint candidates** (unblocked by companies): **C17** charters · **C25**
+  certificates · **C24** token stickers.

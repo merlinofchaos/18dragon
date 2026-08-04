@@ -104,6 +104,12 @@ stub → ready → in-progress → review → done
 - **review** — implemented; awaiting the designer's sign-off.
 - **done** — accepted.
 
+> **The assistant stops at `review`; only the designer's explicit sign-off moves a
+> story to `done`.** Don't self-advance review → done after presenting (even right
+> after the designer approves one sub-tweak — they may still be reviewing). When
+> unsure, ask "mark this done?" *(Sprint-10: C03 was set to `done` prematurely; the
+> designer had to back it up.)*
+
 A story's current status and sprint live **only** in `sprint-status.yaml`. Skills
 update that file; any status shown in a story or sprint Markdown file is a
 snapshot rendered from it.
