@@ -68,6 +68,9 @@ stories:
     type: content
     epics: ["World & Map"]
     points: null
+    # DONE (2026-08-04): never run as a standalone story; the 5-region grid was
+    # built incrementally by the region passes (C01/C27–C41). Marked done in
+    # sprint-status to reflect the achieved outcome.
   C03:
     title: "Define 10 majors (names/abbrev/colors/tokens/region)"
     type: content
@@ -149,11 +152,17 @@ stories:
     type: content
     epics: ["World & Map", "Game Components"]
     points: null
-  C17:
-    title: "Major & minor charters"
+  # C17 split at sprint-11 planning — major and minor charters are different layouts.
+  C17a:
+    title: "Major charters (10 — shares, 6 tokens, destination)"
     type: content
     epics: ["Companies", "Game Components"]
-    points: null
+    points: 2
+  C17b:
+    title: "Minor charters (30 — simpler)"
+    type: content
+    epics: ["Companies", "Game Components"]
+    points: 2
   C18:
     title: "Bid boxes"
     type: content
@@ -321,6 +330,18 @@ stories:
     title: "Print-ready per-card files with bleed (pro printing)"
     type: content
     epics: ["Privates", "Game Components"]
+    points: null
+
+  # Follow-ups surfaced during the C17 charter mockup (2026-08-04):
+  C45:
+    title: "Auto-generate unique company logos (reused on tokens/charters/stickers/cards)"
+    type: content
+    epics: ["Companies", "Game Components"]
+    points: null
+  C46:
+    title: "Permit-block backs for the 5 permit privates (match the minor-charter permit)"
+    type: content
+    epics: ["Privates", "Permits"]
     points: null
 
 # Notes:

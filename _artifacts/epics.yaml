@@ -37,12 +37,12 @@ epics:
     concept: "Majors, minors, and their charters/certificates."
     track: content
     prd: "prd-game.md 4"
-    stories: [C03, C04, C10, C17, C25]
+    stories: [C03, C04, C10, C17a, C17b, C25, C45]
   "Privates":
     concept: "The 30 privates — permit privates, the opener, and the rest."
     track: content
     prd: "prd-game.md 4.3"
-    stories: [C05, C10, C11a, C11b, C12, C42, C43, C44, C26]
+    stories: [C05, C10, C11a, C11b, C12, C42, C43, C44, C26, C46]
   "Rules & Balance":
     concept: "How 18Dragon plays and the numbers that keep it fair."
     track: content
@@ -57,7 +57,7 @@ epics:
     concept: "The 18xxMaker-produced pieces (section 11 manifest) beyond the map."
     track: content
     prd: "prd-game.md 11"
-    stories: [C15, C16, C17, C18, C19, C20, C21, C25, C26, C42, C43, C44]
+    stories: [C15, C16, C17a, C17b, C18, C19, C20, C21, C25, C26, C42, C43, C44, C45]
     # C26 also finishes the perm-train private backs (Privates epic).
   "Stickers":
     concept: "Token stickers produced via Silhouette Cameo (not 18xxMaker)."
@@ -75,7 +75,7 @@ epics:
     concept: "The region-permit mechanic — rules, permit privates, and the letter overlay."
     track: mixed
     prd: "prd-game.md 6.1"
-    stories: [C04, C05, C07, D05, D06, C29, C32, C35, C38]
+    stories: [C04, C05, C07, D05, D06, C29, C32, C35, C38, C46]
   "Scaling":
     concept: "Player-count scaling via the modular board and gated privates."
     track: content

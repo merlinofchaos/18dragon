@@ -9,11 +9,13 @@
 # membership. Points are assigned in backlog.yaml during sprint planning.
 
 meta:
-  updated: "2026-08-04"  # sprint-10 complete (companies: 10 majors + 30 minors)
+  updated: "2026-08-04"  # sprint-11 active (charters); sprint-10 complete; C02 marked done
 
 # Unscheduled stories — id: status
 backlog:
-  C02: stub
+  # C02 (map skeleton) was never run standalone — its outcome (all 5 regions on the
+  # grid) was achieved incrementally by the region builds (C01/C27–C41). Done.
+  C02: done
   C06: stub
   C07: stub
   C08: stub
@@ -22,7 +24,6 @@ backlog:
   C14: stub
   C15: stub
   C16: stub
-  C17: stub
   C18: stub
   C19: stub
   C20: stub
@@ -32,6 +33,8 @@ backlog:
   C24: stub
   C25: stub
   C44: stub
+  C45: stub
+  C46: stub
 
 # Real sprints — id: { status: planning|active|complete, goal: str, stories: { id: status } }
 sprints:
@@ -96,6 +99,15 @@ sprints:
       C35: done
       C36: done
       C37: done
+  sprint-11:
+    status: active
+    goal: >-
+      The major and minor company charters are rendered as printable player mats
+      from companies.json (via cardkit) — token slots, share structure, destination,
+      permit, and the two minor safety-valve powers — for all 10 majors and 30 minors.
+    stories:
+      C17a: ready
+      C17b: ready
   sprint-10:
     status: complete
     goal: >-
