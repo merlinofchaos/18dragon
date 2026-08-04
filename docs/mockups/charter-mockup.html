@@ -1,0 +1,178 @@
+<style>
+  :root{ --ink:#1c1a17; --line:#2a2723; --paper:#fbf9f4; --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:#d8dbe0; color:var(--ink); font-family:var(--serif); }
+  .wrap{ max-width:900px; margin:0 auto; padding:28px 20px 60px; }
+  h1.k{ font-family:var(--serif); font-size:15px; letter-spacing:.1em; text-transform:uppercase; color:#3f3b35; margin:0 0 4px; }
+  .lede{ font-size:14px; color:#3f3b35; margin:0 0 20px; line-height:1.55; }
+  .note{ background:#fff8e6; border:1px solid #e4d08a; border-radius:8px; padding:12px 15px; margin:0 0 26px;
+    font-size:13px; line-height:1.6; color:#4a4436; }
+  .note b{ color:#7a5a10; }
+  .note ul{ margin:6px 0 0; padding-left:18px; } .note li{ margin:3px 0; }
+  .caption{ font-size:12px; letter-spacing:.09em; text-transform:uppercase; color:#54504a; margin:30px 0 8px; }
+  .caption span{ color:#948d80; text-transform:none; letter-spacing:0; }
+
+  .gp{ display:inline-flex; align-items:center; gap:.12em; white-space:nowrap; font-weight:700; }
+  .coin{ width:.95em; height:.95em; }
+
+  /* mat */
+  .mat{ background:var(--paper); border:2px solid var(--line); border-radius:10px; overflow:hidden; box-shadow:0 6px 20px rgba(0,0,0,.22); }
+  .major{ width:178mm; height:127mm; display:flex; flex-direction:column; }   /* 7in x 5in landscape */
+  .hdr{ padding:8px 16px; color:#fff; display:flex; align-items:center; justify-content:space-between; gap:16px; flex:0 0 auto; }
+  .hdr .nm{ font-size:30px; font-weight:800; text-shadow:0 1px 0 rgba(0,0,0,.28); }
+  .hdr .ab{ font-weight:800; font-size:18px; letter-spacing:.05em; background:rgba(255,255,255,.94); color:#111; border-radius:7px; padding:4px 12px; border:1px solid rgba(0,0,0,.15); }
+
+  .tok{ display:flex; align-items:stretch; border-top:2px solid var(--line); border-bottom:2px solid var(--line); flex:0 0 auto; }
+  .tok .cell{ padding:6px 14px; display:flex; align-items:center; gap:14px; border-right:1.5px solid #cfc8ba; }
+  .tok .cell:last-child{ border-right:0; }
+  .tcol{ display:flex; flex-direction:column; align-items:center; gap:2px; }
+  .tcol small{ font-size:11px; color:#5a554d; } .tcol small b{ color:#26221c; }
+  .disc{ width:38px; height:38px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    font-weight:800; font-size:12px; color:#fff; border:2px solid rgba(0,0,0,.28); }
+  .disc.ring{ background:#fff; color:#b0a99e; border:2px dashed #b3ada2; }
+  .logoNote{ font-size:9px; }
+  .sec-label{ writing-mode:vertical-rl; transform:rotate(180deg); font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:#5a554d; }
+  .exch{ display:flex; flex-direction:column; align-items:center; gap:5px; }
+  .exch .row{ display:flex; gap:10px; }
+  .exch .bracket{ font-size:11px; letter-spacing:.05em; text-transform:uppercase; color:#5a554d; }
+
+  .body{ display:grid; grid-template-columns:1.4fr 1fr; flex:1 1 auto; min-height:0; overflow:hidden; }
+  .body > div{ padding:8px 16px 5mm; overflow:hidden; }
+  .body .left{ border-right:2px solid var(--line); }
+  .sect{ font-size:21px; font-weight:800; text-align:center; margin:0 0 5px; }
+
+  table.tr{ width:100%; border-collapse:collapse; font-family:var(--serif); font-size:11.5px; }
+  table.tr th{ background:#efe9dc; border:1px solid #b9b2a2; padding:2px 6px; font-size:10.5px; }
+  table.tr td{ border:1px solid #cfc8ba; padding:2px 6px; text-align:center; }
+  table.tr td.notes{ text-align:left; font-size:10.5px; line-height:1.2; }
+  .ph{ font-weight:800; }
+  .yellow{ background:#f3d34e; } .green{ background:#5aa84b; color:#fff; }
+  .brown{ background:#c07a3c; color:#fff; } .gray{ background:#9a958c; color:#fff; }
+
+  ul.act{ font-size:11.5px; line-height:1.32; margin:3px 0 0; padding-left:17px; }
+  ul.act li{ margin:1px 0; }
+  .dest-note{ font-size:11px; color:#4a4436; margin-top:6px; background:#f0ece1; border-left:3px solid #b9b2a2; padding:5px 8px; }
+
+  /* minor 6in x 3in landscape */
+  .minor{ width:152mm; height:76mm; display:flex; flex-direction:column; }
+  .minor .top{ display:flex; align-items:stretch; flex:1 1 auto; min-height:0; }
+  .minor .numbadge{ width:52px; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:30px; color:#fff; border-right:2px solid var(--line); flex:0 0 auto; }
+  .minor .spine{ writing-mode:vertical-rl; transform:rotate(180deg); padding:6px 3px; font-weight:800; font-size:14px; text-align:center; border-right:1.5px solid #cfc8ba; flex:0 0 auto; display:flex; align-items:center; justify-content:center; }
+  .minor .mid{ flex:1 1 auto; padding:7px 10px; display:flex; flex-direction:column; gap:5px; min-width:0; }
+  .minor .start small{ font-size:10px; color:#5a554d; } .minor .start .city{ font-size:16px; font-weight:800; } .minor .start b{ color:#26221c; }
+  .minor table.tr{ font-size:10px; } .minor table.tr td, .minor table.tr th{ padding:1.5px 4px; }
+  /* permit block: certificate-ish, region colored */
+  .permit{ flex:0 0 auto; width:78px; border-left:2px solid var(--line); display:flex; flex-direction:column; align-items:center; justify-content:center; color:#fff; }
+  .permit .lbl{ font-size:12px; font-weight:800; letter-spacing:.12em; }
+  .permit .let{ font-size:46px; font-weight:800; line-height:1; text-shadow:0 1px 0 rgba(0,0,0,.3); }
+  .permit .rg{ font-size:9px; opacity:.9; }
+  .minor .power{ flex:0 0 auto; padding:6px 10px; border-top:2px solid var(--line); background:#fdf6e3; font-size:10.5px; line-height:1.4; }
+  .minor .power b{ color:#7a5a10; }
+</style>
+
+<div class="wrap">
+  <h1 class="k">18Dragon · Company Charters — Mockup v3</h1>
+  <p class="lede">Major mat sized <b>178 × 127 mm</b> (7×5in landscape); minor mat <b>152 × 76 mm</b> (6×3in). Serif throughout. From <code>companies.json</code>: VR (Verantia Imperial Railway) + minor #4 Corvium (with power).</p>
+
+  <div class="note">
+    <b>Applied from your notes:</b> serif font · major 7×5in / minor 6×3in · <b>3 exchange slots</b> · round destination token · cap notes back on phases 2/5/6 · dropped the "permanent" notes · <b>bold</b> home/dest hex positions · minor <b>PERMIT block</b> (cert-sized: region color + letter + "PERMIT"). Token math now reconciles: <b>home + 4 available + destination = the 6</b> (C03); exchange (3) come from acquiring minors.
+    <br><br>
+    <b>Captured as follow-ups:</b> (1) <b>auto-generated company logos</b> (like 18xxMaker) to replace the abbrev-in-token placeholder; (2) revisit the <b>5 permit privates</b> so their backs show this same PERMIT block.
+    <br><br>
+    <b>Note on size:</b> you wrote 127×178; I rendered it <b>landscape (178w×127h)</b> to match the reference orientation — say if you meant portrait.
+  </div>
+
+  <div class="caption">Major charter <span>— 178 × 127 mm</span></div>
+  <div class="mat major">
+    <div class="hdr" style="background:#0072B2;">
+      <div class="nm">Verantia Imperial Railway</div>
+      <div class="ab">VR</div>
+    </div>
+    <div class="tok">
+      <div class="cell">
+        <div class="tcol"><div class="disc" style="background:#0072B2;">VR</div><small>Home · <b>H9</b></small></div>
+        <div class="tcol"><div class="disc" style="background:#111;">★</div><small>Dest · <b>F29</b></small></div>
+      </div>
+      <div class="cell">
+        <span class="sec-label">Available</span>
+        <div class="tcol"><div class="disc" style="background:#0072B2;">VR</div><small><span class="gp"><svg class="coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpc" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpc)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg>100</span></small></div>
+        <div class="tcol"><div class="disc ring">–</div><small><span class="gp"><svg class="coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpc" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpc)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg>100</span></small></div>
+        <div class="tcol"><div class="disc ring">–</div><small><span class="gp"><svg class="coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpc" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpc)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg>100</span></small></div>
+        <div class="tcol"><div class="disc ring">–</div><small><span class="gp"><svg class="coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpc" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpc)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg>100</span></small></div>
+      </div>
+      <div class="cell" style="margin-left:auto;">
+        <div class="exch">
+          <div class="row">
+            <div class="disc" style="background:#0072B2;opacity:.5;">VR</div>
+            <div class="disc" style="background:#0072B2;opacity:.5;">VR</div>
+            <div class="disc" style="background:#0072B2;opacity:.5;">VR</div>
+          </div>
+          <div class="bracket">⌞ Exchange Tokens ⌟</div>
+        </div>
+      </div>
+    </div>
+    <div class="body">
+      <div class="left">
+        <div class="sect">Trains</div>
+        <table class="tr">
+          <tr><th>Phase</th><th>Limit</th><th>#</th><th>Cost</th><th>Rust</th><th>Notes</th></tr>
+          <tr><td class="ph yellow">1 / L</td><td>2/4</td><td>22</td><td><span class="gp"><svg class="coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpc" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpc)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg>60</span></td><td></td><td class="notes">Upgrades to 2 for <span class="gp"><svg class="coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpc" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpc)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg>80</span> · minors only</td></tr>
+          <tr><td class="ph yellow">2</td><td>2/4</td><td>(22)</td><td><span class="gp"><svg class="coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpc" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpc)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg>120</span></td><td></td><td class="notes">Majors form via merger · incremental cap · 1 yellow tile</td></tr>
+          <tr><td class="ph green">3</td><td>2/4</td><td>9</td><td><span class="gp"><svg class="coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpc" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpc)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg>200</span></td><td class="yellow ph">L</td><td class="notes">2 yellow tiles or 1 upgrade</td></tr>
+          <tr><td class="ph green">4</td><td>1/3</td><td>6</td><td><span class="gp"><svg class="coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpc" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpc)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg>300</span></td><td class="yellow ph">2</td><td class="notes"></td></tr>
+          <tr><td class="ph brown">5</td><td>1/2</td><td>3</td><td><span class="gp"><svg class="coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpc" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpc)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg>500</span></td><td></td><td class="notes">Majors may form directly · float on 50% (incremental cap)</td></tr>
+          <tr><td class="ph brown">6</td><td>1/2</td><td>3</td><td><span class="gp"><svg class="coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpc" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpc)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg>600</span></td><td class="green ph">3</td><td class="notes">Majors float on 50% · full capitalisation</td></tr>
+          <tr><td class="ph gray">7</td><td>1/2</td><td>20</td><td><span class="gp"><svg class="coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpc" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpc)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg>750</span></td><td class="green ph">4</td><td class="notes">gray tiles</td></tr>
+          <tr><td class="ph gray">E</td><td>1/2</td><td>20</td><td><span class="gp"><svg class="coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpc" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpc)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg>1000</span></td><td></td><td class="notes">doubles city revenue</td></tr>
+        </table>
+      </div>
+      <div class="right">
+        <div class="sect">Treasury</div>
+        <div style="font-weight:700;font-size:13px;">Operating Round Actions</div>
+        <ul class="act">
+          <li>First-turn housekeeping</li>
+          <li>Acquire private companies</li>
+          <li>Lay or upgrade track <span style="color:#7a5a10;">(new yellow needs the region permit)</span></li>
+          <li>Check for connection to destination</li>
+          <li>Place one station marker (<span class="gp"><svg class="coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpc" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpc)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg>100</span>)</li>
+          <li>Run trains</li>
+          <li>Pay, split, or withhold dividends</li>
+          <li>Buy trains</li>
+          <li>Acquire a minor</li>
+          <li>Issue or redeem shares</li>
+        </ul>
+        <div class="dest-note"><b>Destination:</b> Draeven (N). A Home→Destination run <b>doubles</b> Draeven's value.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="caption">Minor charter <span>— 152 × 76 mm (much smaller)</span></div>
+  <div class="mat minor">
+    <div class="top">
+      <div class="numbadge" style="background:#7B2D8B;">4</div>
+      <div class="spine">Corvium Viaduct Company</div>
+      <div class="mid">
+        <div class="start"><small>Starts at</small> <span class="city">Corvium</span> <small>· <b>F17</b></small></div>
+        <table class="tr">
+          <tr><th>Ph</th><th>Lim</th><th>#</th><th>Cost</th><th>Rust</th></tr>
+          <tr><td class="ph yellow">1/L</td><td>2/4</td><td>22</td><td><span class="gp"><svg class="coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpc" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpc)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg>60</span></td><td></td></tr>
+          <tr><td class="ph yellow">2</td><td>2/4</td><td>(22)</td><td><span class="gp"><svg class="coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpc" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpc)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg>120</span></td><td></td></tr>
+          <tr><td class="ph green">3</td><td>2/4</td><td>9</td><td><span class="gp"><svg class="coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpc" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpc)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg>200</span></td><td class="yellow ph">L</td></tr>
+          <tr><td class="ph green">4</td><td>1/3</td><td>6</td><td><span class="gp"><svg class="coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpc" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpc)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg>300</span></td><td class="yellow ph">2</td></tr>
+          <tr><td class="ph brown">5</td><td>1/2</td><td>3</td><td><span class="gp"><svg class="coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpc" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpc)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg>500</span></td><td></td></tr>
+          <tr><td class="ph brown">6</td><td>1/2</td><td>3</td><td><span class="gp"><svg class="coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpc" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpc)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg>600</span></td><td class="green ph">3</td></tr>
+          <tr><td class="ph gray">7</td><td>1/2</td><td>20</td><td><span class="gp"><svg class="coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpc" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpc)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg>750</span></td><td class="green ph">4</td></tr>
+          <tr><td class="ph gray">E</td><td>1/2</td><td>20</td><td><span class="gp"><svg class="coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpc" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpc)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg>1000</span></td><td></td></tr>
+        </table>
+      </div>
+      <div class="permit" style="background:#7B2D8B;">
+        <div class="lbl">PERMIT</div>
+        <div class="let">A</div>
+        <div class="rg">Verantum</div>
+      </div>
+    </div>
+    <div class="power"><b>⚙ Power:</b> On its first operating turn, may pay <span class="gp"><svg class="coin" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpc" x1="0.1" y1="0.05" x2="0.9" y2="0.95"><stop offset="0" stop-color="#fdeeae"/><stop offset="0.4" stop-color="#e8c556"/><stop offset="0.52" stop-color="#f6e08e"/><stop offset="0.62" stop-color="#d7ab34"/><stop offset="1" stop-color="#b28821"/></linearGradient></defs><circle cx="12" cy="12" r="11.2" fill="#9c7419"/><circle cx="12" cy="12" r="9.7" fill="url(#gpc)"/><circle cx="12" cy="12" r="9.7" fill="none" stroke="#fbe6ab" stroke-width="0.7" opacity="0.7"/><ellipse cx="8.6" cy="7.8" rx="4.4" ry="2.8" fill="#ffffff" opacity="0.25"/></svg>40</span> to take a Bridge Tile private (P10 or P11) if it is neither owned nor in a bid box.</div>
+  </div>
+
+  <p class="lede" style="margin-top:24px;">Plain minors (28 of 30) drop the power strip; the PERMIT block stays. Minor's home token is a single <b>white</b> marker (referred to by number).</p>
+</div>

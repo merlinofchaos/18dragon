@@ -343,6 +343,14 @@ stories:
     type: content
     epics: ["Privates", "Permits"]
     points: null
+  C47:
+    title: "No-edge / bleed print treatment for private + train card generators"
+    type: content
+    epics: ["Privates", "Game Components"]
+    points: null
+    # Charters (C17) print with no card border + crop marks + bleed for miscut
+    # tolerance. Retrofit the same to gen-private-cards.mjs and gen-train-cards.mjs
+    # (currently borders-as-cut-lines). Related to C44 (pro per-card bleed).
 
 # Notes:
 # - Stickers (C24) are content track but produced via Silhouette Cameo, not

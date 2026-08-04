@@ -1,0 +1,188 @@
+#!/usr/bin/env node
+// Generate 18Dragon company charters from companies.json (via cardkit).
+// Phase 1: MAJOR charters (C17a). Minor charters (C17b) are added next.
+//
+// Usage: node tools/gen-charters.mjs [companies.json] [out-major.html] [out-content.html]
+//
+// Major mat: 178 x 127 mm (7x5in landscape). US Letter PORTRAIT, 2 mats/page.
+// Design = docs/mockups/charter-mockup.html (approved). Serif, coin glyph.
+
+import { readFileSync, writeFileSync } from "node:fs";
+import { gp, COIN_CSS } from "./cardkit.mjs";
+
+const [, , inPath = "companies.json", outPath = "charters-major.html", contentPath] =
+  process.argv;
+
+const esc = (s) =>
+  String(s ?? "").replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
+
+const data = JSON.parse(readFileSync(inPath, "utf8"));
+const majors = data.majors;
+
+const REGION = { A: "Verantum", N: "Caelimor", G: "Gördum", M: "Muravel", V: "Varstova" };
+const REGION_COLOR = { A: "#7B2D8B", N: "#56B4E9", G: "#E69F00", M: "#D55E00", V: "#009E73" };
+
+// Shared phase/train reference table (identical on every charter).
+const PHASES = [
+  { ph: "1 / L", cls: "yellow", lim: "2/4", num: "22", cost: 60, rust: null, notes: () => `Upgrades to 2 for ${gp(80)} · minors only` },
+  { ph: "2", cls: "yellow", lim: "2/4", num: "(22)", cost: 120, rust: null, notes: () => "Majors form via merger · incremental cap · 1 yellow tile" },
+  { ph: "3", cls: "green", lim: "2/4", num: "9", cost: 200, rust: { t: "L", cls: "yellow" }, notes: () => "2 yellow tiles or 1 upgrade" },
+  { ph: "4", cls: "green", lim: "1/3", num: "6", cost: 300, rust: { t: "2", cls: "yellow" }, notes: () => "" },
+  { ph: "5", cls: "brown", lim: "1/2", num: "3", cost: 500, rust: null, notes: () => "Majors may form directly · float on 50% (incremental cap)" },
+  { ph: "6", cls: "brown", lim: "1/2", num: "3", cost: 600, rust: { t: "3", cls: "green" }, notes: () => "Majors float on 50% · full capitalisation" },
+  { ph: "7", cls: "gray", lim: "1/2", num: "20", cost: 750, rust: { t: "4", cls: "green" }, notes: () => "gray tiles" },
+  { ph: "E", cls: "gray", lim: "1/2", num: "20", cost: 1000, rust: null, notes: () => "" },
+];
+
+const OR_ACTIONS = [
+  "First-turn housekeeping",
+  "Acquire private companies",
+  `Lay or upgrade track <span class="hl">(new yellow requires region permit)</span>`,
+  "Check for connection to destination",
+  `Place one station marker (${gp(100)})`,
+  "Run trains",
+  "Pay, split, or withhold dividends",
+  "Buy trains",
+  "Acquire a minor",
+  "Issue or redeem shares",
+];
+
+function trainsTable() {
+  const rows = PHASES.map((p) => {
+    const rust = p.rust ? `<td class="ph ${p.rust.cls}">${p.rust.t}</td>` : "<td></td>";
+    return `<tr><td class="ph ${p.cls}">${p.ph}</td><td>${p.lim}</td><td>${p.num}</td>` +
+      `<td>${gp(p.cost)}</td>${rust}<td class="notes">${p.notes()}</td></tr>`;
+  }).join("");
+  return `<table class="tr"><tr><th>Phase</th><th>Limit</th><th>#</th><th>Cost</th><th>Rust</th><th>Notes</th></tr>${rows}</table>`;
+}
+
+// logo placeholder = abbrev (real auto-logos = C45)
+const disc = (m, extra = "") =>
+  `<div class="disc" style="background:${m.colors.primary};${extra}">${esc(m.abbrev)}</div>`;
+
+function majorMat(m) {
+  const avail = [disc(m), ...Array(m.tokens.available - 1).fill(`<div class="disc ring">–</div>`)]
+    .map((d) => `<div class="tcol">${d}<small>${gp(100)}</small></div>`)
+    .join("");
+  const exch = Array(m.tokens.exchange).fill(disc(m, "opacity:.5;")).join("");
+  const dest = m.destination;
+  return `
+  <div class="mat major">
+    <div class="hdr" style="background:${m.colors.primary};">
+      <div class="nm">${esc(m.name)}</div><div class="ab">${esc(m.abbrev)}</div>
+    </div>
+    <div class="tok">
+      <div class="cell">
+        <div class="rglabel" style="color:${REGION_COLOR[m.region]};"><b>${esc(m.region)}</b> ${esc(REGION[m.region])}</div>
+        <div class="tcol">${disc(m)}<small>Home</small></div>
+        <div class="tcol"><div class="disc dest">★</div><small>Dest · <b>${esc(dest.hex)}</b></small></div>
+      </div>
+      <div class="cell"><span class="sec-label">Available</span>${avail}</div>
+      <div class="cell" style="margin-left:auto;">
+        <div class="exch"><div class="row">${exch}</div><div class="bracket">⌞ Exchange Tokens ⌟</div></div>
+      </div>
+    </div>
+    <div class="body">
+      <div class="left"><div class="sect">Trains</div>${trainsTable()}</div>
+      <div class="right">
+        <div class="sect">Treasury</div>
+        <div class="orh">Operating Round Actions</div>
+        <ul class="act">${OR_ACTIONS.map((a) => `<li>${a}</li>`).join("")}</ul>
+        <div class="dest-note"><b>Destination:</b> ${esc(dest.city)} (${esc(dest.region)}). A Home→Destination run <b>doubles</b> ${esc(dest.city)}'s value.</div>
+      </div>
+    </div>
+  </div>`;
+}
+
+// ---- print-cut layout: 2 mats stacked & touching per US Letter portrait page,
+// square corners, no printed border, crop marks in the margins ----
+const PAGE_W = 216, PAGE_H = 279, MAT_W = 178, MAT_H = 127, PER = 2;
+const ML = (PAGE_W - MAT_W) / 2;
+const BLOCK_H = MAT_H * PER;
+const MT = (PAGE_H - BLOCK_H) / 2;
+
+function cropMarks() {
+  const T = 4; // tick length mm
+  let m = "";
+  // horizontal trim lines: top, each mat boundary, bottom
+  for (let r = 0; r <= PER; r++) {
+    const y = MT + r * MAT_H;
+    m += `<div class="crop h" style="top:${y}mm;left:${ML - T - 1}mm"></div>`;
+    m += `<div class="crop h" style="top:${y}mm;left:${ML + MAT_W + 1}mm"></div>`;
+  }
+  // vertical trim lines: left, right — ticks at top & bottom of the block
+  for (const x of [ML, ML + MAT_W]) {
+    m += `<div class="crop v" style="left:${x}mm;top:${MT - T - 1}mm"></div>`;
+    m += `<div class="crop v" style="left:${x}mm;top:${MT + BLOCK_H + 1}mm"></div>`;
+  }
+  return m;
+}
+
+const pages = [];
+for (let i = 0; i < majors.length; i += PER) {
+  const stack = majors.slice(i, i + PER).map(majorMat).join("");
+  pages.push(`<section class="page">${cropMarks()}<div class="stack">${stack}</div></section>`);
+}
+
+const style = `
+  :root{ --ink:#1c1a17; --line:#2a2723; --paper:#fbf9f4;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif; }
+  *{ box-sizing:border-box; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  ${COIN_CSS}
+  body{ margin:0; background:#c9ccd2; color:var(--ink); font-family:var(--serif); }
+  .page{ position:relative; width:216mm; height:279mm; background:#fff; margin:8mm auto; box-shadow:0 2px 10px rgba(0,0,0,.25); }
+  .stack{ position:absolute; top:${MT}mm; left:${ML}mm; display:flex; flex-direction:column; }
+  .crop{ position:absolute; background:#000; }
+  .crop.v{ width:0.15mm; height:4mm; } .crop.h{ height:0.15mm; width:4mm; }
+  /* no printed border / rounded corners — cut on the crop marks */
+  .mat{ background:var(--paper); overflow:hidden; }
+  .major{ width:178mm; height:127mm; display:flex; flex-direction:column; }
+  .hdr{ padding:8px 16px; color:#fff; display:flex; align-items:center; justify-content:space-between; gap:16px; flex:0 0 auto; }
+  .hdr .nm{ font-size:30px; font-weight:800; text-shadow:0 1px 0 rgba(0,0,0,.28); }
+  .hdr .ab{ font-weight:800; font-size:18px; letter-spacing:.05em; background:rgba(255,255,255,.94); color:#111; border-radius:7px; padding:4px 12px; border:1px solid rgba(0,0,0,.15); }
+  .tok{ display:flex; align-items:stretch; border-top:2px solid var(--line); border-bottom:2px solid var(--line); flex:0 0 auto; }
+  .tok .cell{ padding:6px 14px; display:flex; align-items:center; gap:14px; border-right:1.5px solid #cfc8ba; }
+  .tok .cell:last-child{ border-right:0; }
+  .tcol{ display:flex; flex-direction:column; align-items:center; gap:2px; }
+  .tcol small{ font-size:11px; color:#5a554d; } .tcol small b{ color:#26221c; }
+  .disc{ width:38px; height:38px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    font-weight:800; font-size:12px; color:#fff; border:2px solid rgba(0,0,0,.28); }
+  .disc.ring{ background:#fff; color:#b0a99e; border:2px dashed #b3ada2; }
+  .disc.dest{ background:#111; }
+  .rglabel{ writing-mode:vertical-rl; transform:rotate(180deg); font-weight:700; font-size:11px; letter-spacing:.02em;
+    white-space:nowrap; align-self:center; padding-left:1mm; } .rglabel b{ font-size:15px; }
+  .sec-label{ writing-mode:vertical-rl; transform:rotate(180deg); font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:#5a554d; }
+  .exch{ display:flex; flex-direction:column; align-items:center; gap:5px; }
+  .exch .row{ display:flex; gap:10px; }
+  .exch .bracket{ font-size:11px; letter-spacing:.05em; text-transform:uppercase; color:#5a554d; }
+  .body{ display:grid; grid-template-columns:1.4fr 1fr; flex:1 1 auto; min-height:0; overflow:hidden; }
+  .body > div{ padding:8px 16px 5mm; overflow:hidden; }
+  .body .left{ border-right:2px solid var(--line); }
+  .sect{ font-size:21px; font-weight:800; text-align:center; margin:0 0 5px; }
+  .orh{ font-weight:700; font-size:13px; }
+  table.tr{ width:100%; border-collapse:collapse; font-family:var(--serif); font-size:11.5px; }
+  table.tr th{ background:#efe9dc; border:1px solid #b9b2a2; padding:2px 6px; font-size:10.5px; }
+  table.tr td{ border:1px solid #cfc8ba; padding:2px 6px; text-align:center; }
+  table.tr td.notes{ text-align:left; font-size:10.5px; line-height:1.2; }
+  .ph{ font-weight:800; }
+  .yellow{ background:#f3d34e; } .green{ background:#5aa84b; color:#fff; }
+  .brown{ background:#c07a3c; color:#fff; } .gray{ background:#9a958c; color:#fff; }
+  ul.act{ font-size:11.5px; line-height:1.32; margin:3px 0 0; padding-left:17px; }
+  ul.act li{ margin:1px 0; } .hl{ color:#7a5a10; }
+  .dest-note{ font-size:11px; color:#4a4436; margin-top:6px; background:#f0ece1; border-left:3px solid #b9b2a2; padding:5px 8px; }
+  @media print{
+    body{ background:#fff; }
+    .page{ margin:0; box-shadow:none; page-break-after:always; }
+    @page{ size:letter portrait; margin:0; }
+  }
+`;
+
+const content = `<style>${style}</style>\n<main>${pages.join("\n")}\n</main>\n`;
+const standalone = `<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>18Dragon — Major Charters</title></head>
+<body>\n${content}</body></html>\n`;
+
+writeFileSync(outPath, standalone);
+if (contentPath) writeFileSync(contentPath, content);
+console.log(`Wrote ${outPath}: ${majors.length} major charters, ${pages.length} pages (2/page, 178x127mm).`);

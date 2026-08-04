@@ -35,6 +35,7 @@ backlog:
   C44: stub
   C45: stub
   C46: stub
+  C47: stub
 
 # Real sprints — id: { status: planning|active|complete, goal: str, stories: { id: status } }
 sprints:
@@ -106,7 +107,7 @@ sprints:
       from companies.json (via cardkit) — token slots, share structure, destination,
       permit, and the two minor safety-valve powers — for all 10 majors and 30 minors.
     stories:
-      C17a: ready
+      C17a: done
       C17b: ready
   sprint-10:
     status: complete

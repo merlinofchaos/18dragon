@@ -18,7 +18,7 @@ chart, and any special power — ready to print.
 ## Locked design (mockup approved 2026-08-04)
 
 Reference: the 1822-style minor charter. Confirmed via the mockup
-(`scratchpad/charter-mockup.html`, v3, minor mat).
+(`docs/mockups/charter-mockup.html`, v3, minor mat).
 
 ## Acceptance Criteria
 
@@ -60,7 +60,7 @@ Reference: the 1822-style minor charter. Confirmed via the mockup
   phase-table + coin helpers. Sequence C17a → C17b.
 - **PERMIT block** foreshadows **C46** (the 5 permit-private backs use the same
   block) — keep the block a reusable component in `cardkit`.
-- **Mockup is the spec:** `scratchpad/charter-mockup.html` v3 (minor mat).
+- **Mockup is the spec:** `docs/mockups/charter-mockup.html` v3 (minor mat).
 
 ## Validation
 
@@ -71,7 +71,7 @@ Reference: the 1822-style minor charter. Confirmed via the mockup
 ## References
 
 - [Source: companies.json] (minors)
-- [Source: scratchpad/charter-mockup.html] (approved layout)
+- [Source: docs/mockups/charter-mockup.html] (approved layout)
 - [Source: tools/cardkit.mjs], [Source: docs/18xxmaker-cookbook.md#Printing cards]
 
 ## Work Log

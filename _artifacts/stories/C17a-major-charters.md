@@ -4,7 +4,7 @@
 - **Type:** content
 - **Epics:** Companies, Game Components
 - **Sprint:** sprint-11
-- **Status:** ready
+- **Status:** done
 - **Created:** 2026-08-04
 
 ## Story
@@ -18,7 +18,7 @@ reference — ready to print.
 ## Locked design (mockup approved 2026-08-04)
 
 Reference: the 1822-style major charter. Layout confirmed via the mockup
-(`scratchpad/charter-mockup.html`, v3).
+(`docs/mockups/charter-mockup.html`, v3).
 
 ## Acceptance Criteria
 
@@ -66,7 +66,7 @@ Reference: the 1822-style major charter. Layout confirmed via the mockup
   across all majors — same table on every charter).
 - **`cardkit`:** coin glyph; add a shared phase-color palette + the trains-table
   builder if useful (minor charter C17b reuses it).
-- **Mockup is the spec:** `scratchpad/charter-mockup.html` v3 (major mat). Match it.
+- **Mockup is the spec:** `docs/mockups/charter-mockup.html` v3 (major mat). Match it.
 - Sequence: C17a first (sets the charter design), then **C17b** (minors).
 
 ## Validation
@@ -78,13 +78,40 @@ Reference: the 1822-style major charter. Layout confirmed via the mockup
 ## References
 
 - [Source: companies.json] (majors), [Source: 18dragon.json] (phases/trains)
-- [Source: scratchpad/charter-mockup.html] (approved layout)
+- [Source: docs/mockups/charter-mockup.html] (approved layout)
 - [Source: docs/18xxmaker-cookbook.md#Printing cards], [Source: tools/cardkit.mjs]
 
 ## Work Log
 
 ### Model Used
 
+claude-opus-4-8
+
 ### Completion Notes
 
+- Built `tools/gen-charters.mjs` (reuses `cardkit` coin) → `charters-major.html`:
+  10 major mats, **178×127mm**, US Letter portrait **2/page** (5 pages),
+  `print-color-adjust`. Matches the approved mockup.
+- Updated `companies.json` major `tokens` → `{home:1, available:4, destination:1,
+  exchange:3}` (+ schema note).
+- Each mat: region-color header + name + abbrev badge · token row (home · dest
+  (round, hex) · available ×4 @🪙100 · exchange ×3) · phase/trains table (phase +
+  rust colored, cap notes) · Treasury OR-actions ("Acquire a minor") · destination
+  ×2 callout.
+- **Home hex resolved:** majors have **no fixed home hex** (formed by merger), so the
+  Home token shows **"Home"** (no hex). The **charter region** is shown as a
+  **rotated (CCW) region label** ("A Verantum", region-colored) left of the token
+  pair. Destination keeps its hex.
+- **Review tweaks applied:** print-cut layout (no border/rounded corners, 2 mats
+  stacked+touching per Letter page, crop marks); OR-action → "new yellow requires
+  region permit"; removed "doubles city revenue" from the E phase note (it's a train
+  property, not a phase note).
+- **Logo = abbrev placeholder** until C45 auto-logos.
+- Artifact: https://claude.ai/code/artifact/cbe768cc-e80d-4549-901e-6a13f250810f
+- `18dragon.json` unchanged.
+
 ### Files Changed
+
+- `tools/gen-charters.mjs` (new) — charter generator (majors).
+- `charters-major.html` (new) — generated major charters.
+- `companies.json` — major `tokens` structure (available/exchange).

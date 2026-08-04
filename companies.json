@@ -12,7 +12,7 @@
       "name": "Region-themed old-timey railroad name (fantasy twist).",
       "region": "Home region letter (A/N/G/M/V).",
       "colors": "{ primary, secondary } two-tone token scheme (colorblind-safe). PROPOSED — designer to finalize.",
-      "tokens": "{ total:6, home:1, regular:4, destination:1 }.",
+      "tokens": "{ home:1, available:4, destination:1, exchange:3 } — home+available+destination = the 6 own tokens (C03); exchange slots fill by acquiring minors.",
       "destination": "{ city, region, hex } fixed destination; Home->Destination run doubles the destination city's value.",
       "home_hex": "none — majors form by merging two minors (PRD 5.1)."
     },
@@ -22,61 +22,61 @@
     {
       "abbrev": "VR", "name": "Verantia Imperial Railway", "region": "A",
       "colors": { "primary": "#0072B2", "secondary": "#ffffff" },
-      "tokens": { "total": 6, "home": 1, "regular": 4, "destination": 1 },
+      "tokens": { "home": 1, "available": 4, "destination": 1, "exchange": 3 },
       "destination": { "city": "Draeven", "region": "N", "hex": "F29" }
     },
     {
       "abbrev": "PAX", "name": "Pax Verana Line", "region": "A",
       "colors": { "primary": "#D55E00", "secondary": "#ffffff" },
-      "tokens": { "total": 6, "home": 1, "regular": 4, "destination": 1 },
+      "tokens": { "home": 1, "available": 4, "destination": 1, "exchange": 3 },
       "destination": { "city": "Pendrael", "region": "N", "hex": "J27" }
     },
     {
       "abbrev": "DK", "name": "Draeven & Kaeldun Railway", "region": "N",
       "colors": { "primary": "#009E73", "secondary": "#14120f" },
-      "tokens": { "total": 6, "home": 1, "regular": 4, "destination": 1 },
+      "tokens": { "home": 1, "available": 4, "destination": 1, "exchange": 3 },
       "destination": { "city": "Verantia", "region": "A", "hex": "H9" }
     },
     {
       "abbrev": "ACL", "name": "Aeldun Coastal Line", "region": "N",
       "colors": { "primary": "#CC79A7", "secondary": "#14120f" },
-      "tokens": { "total": 6, "home": 1, "regular": 4, "destination": 1 },
+      "tokens": { "home": 1, "available": 4, "destination": 1, "exchange": 3 },
       "destination": { "city": "Brekheim", "region": "G", "hex": "I36" }
     },
     {
       "abbrev": "BR", "name": "Brekheim Railgeld", "region": "G",
       "colors": { "primary": "#56B4E9", "secondary": "#14120f" },
-      "tokens": { "total": 6, "home": 1, "regular": 4, "destination": 1 },
+      "tokens": { "home": 1, "available": 4, "destination": 1, "exchange": 3 },
       "destination": { "city": "Kaeldun", "region": "N", "hex": "K18" }
     },
     {
       "abbrev": "GM", "name": "Grimgeld Mountain Line", "region": "G",
       "colors": { "primary": "#882255", "secondary": "#ffffff" },
-      "tokens": { "total": 6, "home": 1, "regular": 4, "destination": 1 },
+      "tokens": { "home": 1, "available": 4, "destination": 1, "exchange": 3 },
       "destination": { "city": "Dunmael", "region": "N", "hex": "E20" }
     },
     {
       "abbrev": "MK", "name": "Meridian Kalavar Railway", "region": "M",
       "colors": { "primary": "#E69F00", "secondary": "#14120f" },
-      "tokens": { "total": 6, "home": 1, "regular": 4, "destination": 1 },
+      "tokens": { "home": 1, "available": 4, "destination": 1, "exchange": 3 },
       "destination": { "city": "Corvium", "region": "A", "hex": "F17" }
     },
     {
       "abbrev": "SAB", "name": "al-Sabreem Line", "region": "M",
       "colors": { "primary": "#44AA99", "secondary": "#14120f" },
-      "tokens": { "total": 6, "home": 1, "regular": 4, "destination": 1 },
+      "tokens": { "home": 1, "available": 4, "destination": 1, "exchange": 3 },
       "destination": { "city": "Varstgrad", "region": "V", "hex": "I44" }
     },
     {
       "abbrev": "ZNR", "name": "Zorvar Northern Railway", "region": "V",
       "colors": { "primary": "#F0E442", "secondary": "#14120f" },
-      "tokens": { "total": 6, "home": 1, "regular": 4, "destination": 1 },
+      "tokens": { "home": 1, "available": 4, "destination": 1, "exchange": 3 },
       "destination": { "city": "Baldrok", "region": "G", "hex": "D33" }
     },
     {
       "abbrev": "KR", "name": "Kremova Railway", "region": "V",
       "colors": { "primary": "#999933", "secondary": "#14120f" },
-      "tokens": { "total": 6, "home": 1, "regular": 4, "destination": 1 },
+      "tokens": { "home": 1, "available": 4, "destination": 1, "exchange": 3 },
       "destination": { "city": "Drakgeld", "region": "G", "hex": "L33" }
     }
   ],
