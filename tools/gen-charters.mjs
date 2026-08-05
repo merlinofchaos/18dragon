@@ -2,7 +2,7 @@
 // Generate 18Dragon company charters from companies.json (via cardkit).
 // Phase 1: MAJOR charters (C17a). Minor charters (C17b) are added next.
 //
-// Usage: node tools/gen-charters.mjs [companies.json] [out-major.html] [out-content.html]
+// Usage: node tools/gen-charters.mjs [data/companies.json] [print/charters-major.html] [out-content.html]
 //
 // Major mat: 178 x 127 mm (7x5in landscape). US Letter PORTRAIT, 2 mats/page.
 // Design = docs/mockups/charter-mockup.html (approved). Serif, coin glyph.
@@ -10,8 +10,8 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { gp, coinize, COIN_CSS, companyLogo, LOGO_CSS } from "./cardkit.mjs";
 
-const [, , inPath = "companies.json", outMajor = "charters-major.html", contentMajor,
-  outMinor = "charters-minor.html", contentMinor] = process.argv;
+const [, , inPath = "data/companies.json", outMajor = "print/charters-major.html", contentMajor,
+  outMinor = "print/charters-minor.html", contentMinor] = process.argv;
 
 const esc = (s) =>
   String(s ?? "").replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");

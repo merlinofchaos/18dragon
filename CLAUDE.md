@@ -11,6 +11,21 @@ It is a variant of **1822** (not 1830). The game file is `18dragon.json` in this
 - Bank: 12,000 gp
 - Source of truth for 1822 rules/data: `/Users/earlmiles/Projects/18xx/lib/engine/game/g_1822/`
 
+### Repository layout
+
+- `18dragon.json` — the **18xxMaker game file** (root; loaded via File > Open). A
+  *rendering* of the design, not the source of truth.
+- `data/` — **tool-agnostic JSON masters** the component generators read:
+  `companies.json` (10 majors + 30 minors), `privates.json` (30 privates),
+  `trains.json` (train roster).
+- `tools/` — component generators. JS decks (`gen-*.mjs`) + shared `cardkit.mjs`;
+  `stickers.py` (token stickers). Each reads a `data/` master and writes to `print/`.
+- `print/` — **generated components** (committed): `certs-*.html`, `charters-*.html`,
+  `private-cards.html`, `train-cards.html`, `stickers.{png,_cut.svg,_print_and_cut.svg}`.
+  Rebuild by running the generator with no args (defaults point at `data/` → `print/`).
+- `docs/` — deliverable documentation, mockups, reference images (incl. the doodle map).
+- `_artifacts/` — agile planning/tracking (backlog, epics, sprints, stories).
+
 ## 18xxMaker
 
 ### App location
@@ -389,7 +404,7 @@ keeps only 18xxMaker schema/technical reference.
 - [ ] Private company / concession roster
 
 ### Implementation pending
-- [ ] `map.hexes` — full map (doodle photo: `18xx_Dragon doodle map.jpg`)
+- [ ] `map.hexes` — full map (doodle photo: `docs/18xx_Dragon doodle map.jpg`)
 - [ ] `companies` — major company definitions
 - [ ] `privates` — private companies and concessions
 - [ ] Verify/adjust `players` cert limits and capital for 18Dragon variant rules

@@ -197,7 +197,7 @@ stories:
     title: "Token sticker designs (station/market/revenue/destination/misc)"
     type: content
     epics: ["Stickers"]
-    points: null
+    points: 4
   # C25 split at sprint-12 planning — major vs minor cert structure differ.
   C25a:
     title: "Major certificates (9/major — president 20% + 8×10%)"

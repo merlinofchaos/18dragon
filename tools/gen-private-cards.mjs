@@ -2,8 +2,8 @@
 // Generate printable 2-sided private cards for 18Dragon from privates.json.
 //
 // Usage:
-//   node tools/gen-private-cards.mjs [privates.json] [out-standalone.html] [out-content.html]
-// Defaults: privates.json -> private-cards.html (+ content-only file if a 3rd arg given).
+//   node tools/gen-private-cards.mjs [data/privates.json] [out-standalone.html] [out-content.html]
+// Defaults: data/privates.json -> print/private-cards.html (+ content-only file if a 3rd arg given).
 //
 // US Letter portrait, 67x44mm landscape cards. Grid COLS x ROWS per page.
 // 30 cards -> N front sheets + N back sheets, interleaved F1,B1,F2,B2 for auto-duplex.
@@ -13,7 +13,7 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { gp, coinize, COIN_CSS, trainFace, TRAIN_CSS } from "./cardkit.mjs";
 
-const [, , inPath = "privates.json", outPath = "private-cards.html", contentPath] =
+const [, , inPath = "data/privates.json", outPath = "print/private-cards.html", contentPath] =
   process.argv;
 
 // ---- layout config (all tunable) ----
@@ -47,7 +47,7 @@ const cards = data.privates;
 // privates show the real train card on their back instead of a company face.
 const backTrain = {};
 try {
-  const trains = JSON.parse(readFileSync("trains.json", "utf8")).trains;
+  const trains = JSON.parse(readFileSync("data/trains.json", "utf8")).trains;
   for (const t of trains) {
     for (const pid of t.on_private || []) backTrain[pid] = t;
   }

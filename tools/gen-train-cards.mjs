@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Generate the printable 18Dragon train deck from trains.json.
 //
-// Usage: node tools/gen-train-cards.mjs [trains.json] [out.html] [out-content.html]
+// Usage: node tools/gen-train-cards.mjs [data/trains.json] [print/train-cards.html] [out-content.html]
 //
 // US Letter LANDSCAPE, 3x4 = 12 cards/page, 67x44mm, duplex (long-edge -> mirror rows).
 // Deck trains only (L/2, 3, 4, 5, 6, 7, E); all physical copies. The L card is
@@ -12,7 +12,7 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { COIN_CSS, TRAIN_CSS, trainFace } from "./cardkit.mjs";
 
-const [, , inPath = "trains.json", outPath = "train-cards.html", contentPath] =
+const [, , inPath = "data/trains.json", outPath = "print/train-cards.html", contentPath] =
   process.argv;
 
 // ---- layout (matches the private deck) ----

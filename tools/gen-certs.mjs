@@ -3,7 +3,7 @@
 // Major certs (C25a): 1 President's 20%/2-share + 8 regular 10%/1-share per major.
 // Minor certs (C25b): 1 per minor, single card = Two Shares / 50%.
 //
-// Usage: node tools/gen-certs.mjs [companies.json] [certs-major.html] [maj-content] [certs-minor.html] [min-content]
+// Usage: node tools/gen-certs.mjs [data/companies.json] [print/certs-major.html] [maj-content] [print/certs-minor.html] [min-content]
 //
 // Card 89x55mm; US Letter portrait, 2x4 = 8/page grid, print-cut (no border, crop marks).
 // Design = docs/mockups/cert-mockup.html (approved v8).
@@ -11,9 +11,9 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { companyLogo, LOGO_CSS } from "./cardkit.mjs";
 
-const [, , inPath = "companies.json",
-  outMajor = "certs-major.html", cMajor,
-  outMinor = "certs-minor.html", cMinor] = process.argv;
+const [, , inPath = "data/companies.json",
+  outMajor = "print/certs-major.html", cMajor,
+  outMinor = "print/certs-minor.html", cMinor] = process.argv;
 
 const esc = (s) =>
   String(s ?? "").replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
