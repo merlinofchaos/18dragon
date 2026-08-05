@@ -238,8 +238,10 @@ remove it**. If the symlink is missing, recreate it:
 
 For information-dense / two-sided cards (privates, trains, and likely charters/certs),
 18xxMaker's stock card renderer is too limited (one face only; fixed field set). We
-render from a data master (e.g. `privates.json`, `trains.json`) via a small Node
-generator (`tools/gen-*-cards.mjs`) that emits a self-contained print HTML.
+render from a data master in **`data/`** (e.g. `data/privates.json`,
+`data/trains.json`) via a small Node generator (`tools/gen-*-cards.mjs`) that emits a
+self-contained print HTML **into the committed `print/` dir** (a plain no-arg run
+regenerates in place; never write decks to the scratchpad).
 
 **Shared kit — `tools/cardkit.mjs`.** Reuse it for every card generator: the shiny
 gold **coin glyph** (`gp(value)` = coin + number; `coinize(text)` swaps `$NN`/`NNgp`
@@ -254,10 +256,13 @@ Gotchas learned producing the private + train cards (sprints 8–9, C42/C26):
 - **Backgrounds don't print by default.** Browsers drop background colors/images unless
   forced. Put `-webkit-print-color-adjust: exact; print-color-adjust: exact;` on `*`
   (or the cards) **and** tick Chrome's **More settings → Background graphics**.
-- **Print from the local `.html`, never the published Artifact.** The Artifact host wraps
-  the page in its own shell, overriding `@page` size/margins and background rules — it
-  will never print correctly. Keep a full standalone file (own `<!doctype>` + `@page`) at
-  the repo root for printing; publish a content-only twin only for on-screen review.
+- **Review AND print from the local file — don't publish a claude.ai artifact.** The
+  designer can open anything under `print/` directly, so point at the path for review;
+  uploading artifacts for local files just wastes time (and a stale published copy once
+  caused a "I don't see the change" detour — sprint-13). The Artifact host also wraps the
+  page in its own shell, overriding `@page` size/margins and background rules, so it never
+  prints correctly anyway. Keep a full standalone file (own `<!doctype>` + `@page`) in
+  `print/`.
 - **Chrome print settings that preserve exact mm sizing:** Margins **None**, Scale
   **100%** (turn OFF "Fit to page" — any shrink breaks card dimensions and cut alignment),
   correct **Layout** (portrait/landscape), Paper **Letter**.

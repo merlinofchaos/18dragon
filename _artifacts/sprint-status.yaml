@@ -9,7 +9,7 @@
 # membership. Points are assigned in backlog.yaml during sprint planning.
 
 meta:
-  updated: "2026-08-05"  # sprint-13 C24 stickers -> review (single combined Print&Cut sheet)
+  updated: "2026-08-05"  # sprint-13 complete (C24 stickers done); repo reorg data/+print/
 
 # Unscheduled stories — id: status
 backlog:
@@ -99,7 +99,7 @@ sprints:
       C36: done
       C37: done
   sprint-13:
-    status: active
+    status: complete
     goal: >-
       Token stickers are generated for Silhouette Cameo Print & Cut from
       companies.json — major company tokens (home/available/destination/exchange in
@@ -107,7 +107,7 @@ sprints:
       tokens (market/par/revenue/dits) — via a generalized stickers.py that reads our
       JSON instead of a hardcoded roster.
     stories:
-      C24: review
+      C24: done
   sprint-12:
     status: complete
     goal: >-

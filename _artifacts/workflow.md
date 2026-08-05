@@ -132,8 +132,29 @@ status → `review` in `sprint-status.yaml`).
 error/crash (if touched) · design decisions recorded · story closed out (status →
 `review` in `sprint-status.yaml`).
 
+## Component generation & review
+
+Physical components (cards, mats, charters, certs, stickers) are produced by small
+generators in `tools/` that read a **tool-agnostic JSON master** and write a
+printable deck.
+
+- **Masters live in `data/`** (`companies.json`, `privates.json`, `trains.json`).
+  `18dragon.json` (the 18xxMaker game file) stays at the repo root and is a
+  *rendering*, not a master.
+- **Generators write to the committed `print/` dir — never the scratchpad.** Each
+  generator's defaults point `data/ → print/`, so a plain no-arg run regenerates the
+  deck in place. *(Sprint-13: sticker output first went to the scratchpad and the root
+  got crowded, forcing a mid-sprint reorg.)*
+- **Review local deliverables by their file path, not a claude.ai artifact.** When
+  the output is a file the designer can open directly (anything under `print/`, a
+  rendered page, an image), point at the path. Reserve published artifacts for
+  genuinely shareable or remote-only cases. *(Sprint-13: repeatedly uploading review
+  artifacts for local files wasted time — and a stale published copy caused a "I don't
+  see the change" detour.)*
+
 ## Key paths
 
 - Fork: `/Users/earlmiles/Projects/18xx-maker` — branch `18dragon` · `pnpm start` → http://localhost:3000
-- Game file: `/Users/earlmiles/Projects/18dragon/18dragon.json`
+- Game file (18xxMaker rendering): `/Users/earlmiles/Projects/18dragon/18dragon.json`
+- Component masters: `data/*.json` → generators in `tools/` → committed decks in `print/`
 - 1822 source of truth: `/Users/earlmiles/Projects/18xx/lib/engine/game/g_1822/`

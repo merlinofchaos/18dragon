@@ -4,7 +4,7 @@
 - **Type:** content
 - **Epics:** Stickers
 - **Sprint:** sprint-13
-- **Status:** review
+- **Status:** done
 - **Created:** 2026-08-05
 
 ## Story
