@@ -281,3 +281,20 @@ Gotchas learned producing the private + train cards (sprints 8–9, C42/C26):
 - **Home-duplex registration drifts ~1–2mm** (mechanical). Inset content from card edges
   so drift shifts only the cut border, not the text. True fix = pro print with bleed +
   crop marks (expensive) or a printer-specific `BACK_OFFSET` nudge on the back sheets.
+
+### Mockup-first for a new card/mat format (sprint 11, C17)
+
+Before writing a generator for a **new** printed format (charter mat, cert, sticker
+sheet), build a **static HTML mockup** of one or two examples and iterate it to the
+designer's approval **first** — then build the generator to the locked spec. On the
+charters this caught size/orientation, the token structure, the permit block, the
+region label, and the print-cut treatment before any generator code existed; the
+generator then built cleanly in one pass. Save the approved mockup in the repo
+(`docs/mockups/`) so it survives the scratchpad wipe and stays the reference. The
+designer explicitly values this ("I've had great luck with mockups and wireframes
+before doing real work").
+
+**Print-cut layout for larger mats:** no printed border / rounded corners (cut on
+the marks), mats stacked & touching per page, crop ticks in the margins — same idea
+as the card decks. See `tools/gen-charters.mjs` (generic `makePages(items, matFn,
+matW, matH, per)` serves both the 178×127mm major and 152×76mm minor mats).

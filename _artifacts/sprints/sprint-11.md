@@ -1,6 +1,6 @@
 # Sprint 11: Company charters
 
-- **Status:** active
+- **Status:** complete
 - **Created:** 2026-08-04
 - **Goal:** The **major and minor charters** are rendered as printable player mats
   from **`companies.json`** (via `cardkit`) — token slots, share structure,
@@ -50,12 +50,40 @@ company/logo map wiring, and the merger/share *mechanics* (rules track).
 
 ## Retrospective
 
-<!-- Filled by agile-retro at sprint end. -->
+**Outcome: goal fully met.** C17a (10 major charters) + C17b (30 minor charters)
+both done — `tools/gen-charters.mjs` emits both decks from `companies.json`.
 
 ### What went well
 
+- **Mockup-first was the win.** Building a static HTML mockup and iterating it to
+  approval *before* writing the generator let the designer shape size, orientation,
+  token structure, the permit block, the region label, and the print-cut treatment
+  through fast rounds — then the generator built cleanly in one pass. The designer
+  explicitly values this approach.
+- **`cardkit` + `companies.json` paid off again** — coin glyph/coinize reused; the
+  master fed both charter types directly.
+- **The C17a/C17b split** (by layout difference) held; a generic `makePages()` now
+  serves both mat sizes.
+
 ### What didn't
+
+- Nothing failed. Items that surfaced mid-mockup — majors have no fixed home hex
+  (→ rotated region label), the token-count reconciliation, phase-note vs
+  train-note — were all caught in the mockup/review loop. Process working.
 
 ### Lessons / workflow adjustments
 
+- **Codified the mockup-first pattern (real change):** added a "Mockup-first for a
+  new card/mat format" recipe to `docs/18xxmaker-cookbook.md` (build + approve a
+  static mockup before the generator; save it in `docs/mockups/`). Also captured the
+  print-cut layout notes there.
+
 ### Action items
+
+- **Follow-ups already logged:** **C45** (auto company logos — replaces the
+  abbrev-in-token placeholder), **C46** (permit-block backs on the 5 permit
+  privates), **C47** (no-edge/bleed for the private + train card generators).
+- **Provisional:** major **color palette** still pending the designer's final call
+  at stickers (**C24**).
+- **Next sprint candidates:** **C25** certificates · **C24** token stickers ·
+  or the board mats (**C16/C18/C21**) + the board-size question.

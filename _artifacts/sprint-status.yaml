@@ -9,7 +9,7 @@
 # membership. Points are assigned in backlog.yaml during sprint planning.
 
 meta:
-  updated: "2026-08-04"  # sprint-11 active (charters); sprint-10 complete; C02 marked done
+  updated: "2026-08-04"  # sprint-11 complete (charters); mockup-first codified in cookbook
 
 # Unscheduled stories — id: status
 backlog:
@@ -101,7 +101,7 @@ sprints:
       C36: done
       C37: done
   sprint-11:
-    status: active
+    status: complete
     goal: >-
       The major and minor company charters are rendered as printable player mats
       from companies.json (via cardkit) — token slots, share structure, destination,
