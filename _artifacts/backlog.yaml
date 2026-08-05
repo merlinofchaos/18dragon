@@ -198,11 +198,17 @@ stories:
     type: content
     epics: ["Stickers"]
     points: null
-  C25:
-    title: "Certificates (major shares + minor certs)"
+  # C25 split at sprint-12 planning — major vs minor cert structure differ.
+  C25a:
+    title: "Major certificates (9/major — president 20% + 8×10%)"
     type: content
     epics: ["Companies", "Game Components"]
-    points: null
+    points: 2
+  C25b:
+    title: "Minor certificates (30 — single 2-share / 50% card each)"
+    type: content
+    epics: ["Companies", "Game Components"]
+    points: 1
   C26:
     title: "Train cards — trains.json master + printable deck (+ perm-train private backs)"
     type: content

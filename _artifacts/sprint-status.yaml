@@ -31,7 +31,6 @@ backlog:
   C22: stub
   C23: stub
   C24: stub
-  C25: stub
   C44: stub
   C45: stub
   C46: stub
@@ -100,6 +99,15 @@ sprints:
       C35: done
       C36: done
       C37: done
+  sprint-12:
+    status: active
+    goal: >-
+      The certificates are rendered as a printable deck from companies.json — major
+      certs (per major: 1 President's 20%/2-share + 8 regular 10%/1-share) and the 30
+      single-100% minor certs — matching the designer's cert reference (mockup-first).
+    stories:
+      C25a: ready
+      C25b: ready
   sprint-11:
     status: complete
     goal: >-
