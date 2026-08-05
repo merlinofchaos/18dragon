@@ -1,6 +1,6 @@
 # Sprint 12: Certificates
 
-- **Status:** active
+- **Status:** complete
 - **Created:** 2026-08-04
 - **Goal:** The certificates are a printable deck from **`companies.json`** (via
   `cardkit`) — **major** certs (per major: 1 President's 20%/2-share + 8 regular
@@ -48,12 +48,39 @@ abbrev placeholder until **C45**; whether a market/par value appears on the cert
 
 ## Retrospective
 
-<!-- Filled by agile-retro at sprint end. -->
+**Outcome: goal fully met.** C25a (90 major certs) + C25b (30 minor certs) both
+done — `tools/gen-certs.mjs` emits both decks from `companies.json`.
 
 ### What went well
 
+- **Mockup-first again** — many quick cert iterations (stripes, logo count, minor
+  PNW band, permit block, sizes) converged to a locked spec before the generator.
+- **Shared `companyLogo()` extraction** (designer's "use the same code" push) —
+  factored into `cardkit`, now used by charters + certs (+ later stickers), and
+  `gen-charters.mjs` refactored onto it so they can never drift. Good reuse payoff.
+- **Print-cut + generic-generator patterns reused** cleanly.
+
 ### What didn't
+
+- Normal design churn during the mockup (minor 100→50%, stripes-encode-shares then
+  not, president 1→2 logos). That's the mockup doing its job, not a failure.
+- **Tooling papercut:** the cert commit's `printf` message truncated on `%` (50%)
+  and dropped the co-author trailer; had to `--amend -F`. Recurring shell-quoting
+  pain (also apostrophes in heredocs earlier).
 
 ### Lessons / workflow adjustments
 
+- **Commit messages via file + `git commit -F`** (real change) — codified as a
+  memory (`reference-git-commit-messages`). Stop building messages inline with
+  `printf`/heredoc; apostrophes and `%` break them (silently).
+- Fixed a stale note: the minor cert is **Two Shares / 50%**, not 100% (corrected
+  in the stories; sprint goal here left as historical).
+
 ### Action items
+
+- **Follow-ups still open:** **C45** auto-logos (replaces the `companyLogo()`
+  placeholder), **C46** permit-block private backs, **C47** no-edge/bleed for the
+  card generators, **C44** pro per-card bleed.
+- **Next sprint candidates:** **C24** token stickers (needs the final major colors;
+  Silhouette Cameo) · the **board mats** (C16/C18/C21) + board-size question ·
+  **C15** hex tiles.

@@ -9,7 +9,7 @@
 # membership. Points are assigned in backlog.yaml during sprint planning.
 
 meta:
-  updated: "2026-08-04"  # sprint-11 complete (charters); mockup-first codified in cookbook
+  updated: "2026-08-05"  # sprint-12 complete (certificates); commit-msg-file rule codified
 
 # Unscheduled stories — id: status
 backlog:
@@ -100,7 +100,7 @@ sprints:
       C36: done
       C37: done
   sprint-12:
-    status: active
+    status: complete
     goal: >-
       The certificates are rendered as a printable deck from companies.json — major
       certs (per major: 1 President's 20%/2-share + 8 regular 10%/1-share) and the 30
