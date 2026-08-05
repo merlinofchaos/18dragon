@@ -4,7 +4,7 @@
 - **Type:** content
 - **Epics:** Companies, Game Components
 - **Sprint:** sprint-12
-- **Status:** ready
+- **Status:** done
 - **Created:** 2026-08-04
 
 ## Story
@@ -71,6 +71,21 @@ so that the shares (1 President's + 8 regular per major) are a physical deck.
 
 ### Model Used
 
+claude-opus-4-8
+
 ### Completion Notes
 
+- Built `tools/gen-certs.mjs` → `certs-major.html`: **90** major certs (per major:
+  1 president w/ banner + 2 logos + 20%/Two Shares; 8 regular w/ 1 logo +
+  10%/One Share), 89×55mm, print-cut grid (2×4/page, crop marks, no border).
+- **Shared `companyLogo()`** added to `cardkit`; `gen-charters.mjs` refactored to
+  use it too (charters regenerated, verified) — so charters/certs/stickers match.
+- Matches the approved mockup; centered names, baseline-aligned foot.
+- Artifact: https://claude.ai/code/artifact/54569d82-0460-49f4-9c92-568725eb721b
+- `18dragon.json` unchanged.
+
 ### Files Changed
+
+- `tools/cardkit.mjs` — shared `companyLogo()` + `LOGO_CSS`.
+- `tools/gen-certs.mjs` (new) — cert generator.
+- `certs-major.html` (new); `tools/gen-charters.mjs` + `charters-*.html` (use shared logo).

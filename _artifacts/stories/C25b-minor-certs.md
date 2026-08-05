@@ -4,7 +4,7 @@
 - **Type:** content
 - **Epics:** Companies, Game Components
 - **Sprint:** sprint-12
-- **Status:** ready
+- **Status:** done
 - **Created:** 2026-08-04
 
 ## Story
@@ -67,6 +67,18 @@ so that each minor's ownership share is a physical card.
 
 ### Model Used
 
+claude-opus-4-8
+
 ### Completion Notes
 
+- Same `tools/gen-certs.mjs` also emits `certs-minor.html`: **30** minor certs —
+  PNW-style band (gray + region color + gray, black-outlined) + number badge
+  (2-digit numbers auto-scaled) + centered name + **permit block** (region color,
+  letter, "Permit · region") + "Two Shares · 50%", 89×55mm print-cut.
+- Artifact: https://claude.ai/code/artifact/8105bef6-29f6-4480-8a3e-d0ebd4eea6bf
+- `18dragon.json` unchanged.
+
 ### Files Changed
+
+- `tools/gen-certs.mjs` — minor cert face (with C25a).
+- `certs-minor.html` (new) — generated minor certs.

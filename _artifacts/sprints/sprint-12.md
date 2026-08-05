@@ -13,8 +13,8 @@ View of `sprints.sprint-12.stories` in `sprint-status.yaml` (canonical). **3 poi
 
 | Seq | ID | Title | Type | Points | Status |
 |-----|----|-------|------|--------|--------|
-| 1 | C25a | Major certificates (9/major — president 20% + 8×10%) | content | 2 | ready |
-| 2 | C25b | Minor certificates (30 — single 2-share / 50% card) | content | 1 | ready |
+| 1 | C25a | Major certificates (9/major — president 20% + 8×10%) | content | 2 | ✅ done |
+| 2 | C25b | Minor certificates (30 — single 2-share / 50% card) | content | 1 | ✅ done |
 
 ## Scope notes
 

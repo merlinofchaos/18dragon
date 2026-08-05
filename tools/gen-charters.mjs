@@ -8,7 +8,7 @@
 // Design = docs/mockups/charter-mockup.html (approved). Serif, coin glyph.
 
 import { readFileSync, writeFileSync } from "node:fs";
-import { gp, coinize, COIN_CSS } from "./cardkit.mjs";
+import { gp, coinize, COIN_CSS, companyLogo, LOGO_CSS } from "./cardkit.mjs";
 
 const [, , inPath = "companies.json", outMajor = "charters-major.html", contentMajor,
   outMinor = "charters-minor.html", contentMinor] = process.argv;
@@ -57,9 +57,8 @@ function trainsTable() {
   return `<table class="tr"><tr><th>Phase</th><th>Limit</th><th>#</th><th>Cost</th><th>Rust</th><th>Notes</th></tr>${rows}</table>`;
 }
 
-// logo placeholder = abbrev (real auto-logos = C45)
-const disc = (m, extra = "") =>
-  `<div class="disc" style="background:${m.colors.primary};${extra}">${esc(m.abbrev)}</div>`;
+// shared company logo (cardkit) — same code as certs/stickers; C45 makes it real
+const disc = (m, extra = "") => companyLogo(m, extra);
 
 function majorMat(m) {
   const avail = [disc(m), ...Array(m.tokens.available - 1).fill(`<div class="disc ring">–</div>`)]
@@ -171,6 +170,8 @@ const style = `
   .tok .cell:last-child{ border-right:0; }
   .tcol{ display:flex; flex-direction:column; align-items:center; gap:2px; }
   .tcol small{ font-size:11px; color:#5a554d; } .tcol small b{ color:#26221c; }
+  ${LOGO_CSS}
+  .clogo{ width:38px; height:38px; font-size:12px; }
   .disc{ width:38px; height:38px; border-radius:50%; display:flex; align-items:center; justify-content:center;
     font-weight:800; font-size:12px; color:#fff; border:2px solid rgba(0,0,0,.28); }
   .disc.ring{ background:#fff; color:#b0a99e; border:2px dashed #b3ada2; }

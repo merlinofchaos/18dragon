@@ -25,6 +25,16 @@ export const COIN_CSS = `
 const esc = (s) =>
   String(s ?? "").replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
 
+// ---- shared company logo (charters, certs, and later stickers use the SAME code) ----
+// Placeholder = a company-color disc with the abbrev; C45 replaces the inner with a
+// real generated logo. Size it via the `.clogo` rule in each generator's CSS.
+export const companyLogo = (m, extra = "") =>
+  `<span class="clogo" style="background:${m.colors.primary};${extra}">${esc(m.abbrev)}</span>`;
+export const LOGO_CSS = `
+  .clogo{ box-sizing:border-box; border-radius:50%; color:#fff; border:2px solid rgba(0,0,0,.28);
+    display:flex; align-items:center; justify-content:center; font-weight:800; }
+`;
+
 // ---- shared train-card faces (used by the train deck AND private perm-train backs) ----
 // Inner HTML for a train face. `t` = a trains.json train (or its `back`):
 //   { name, phase_color: yellow|green|brown|gray, cost, rust, rust_color, permanent, note }

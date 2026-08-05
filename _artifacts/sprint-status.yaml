@@ -106,8 +106,8 @@ sprints:
       certs (per major: 1 President's 20%/2-share + 8 regular 10%/1-share) and the 30
       single-100% minor certs — matching the designer's cert reference (mockup-first).
     stories:
-      C25a: ready
-      C25b: ready
+      C25a: done
+      C25b: done
   sprint-11:
     status: complete
     goal: >-
