@@ -108,7 +108,7 @@ sprints:
       permit, and the two minor safety-valve powers — for all 10 majors and 30 minors.
     stories:
       C17a: done
-      C17b: ready
+      C17b: done
   sprint-10:
     status: complete
     goal: >-

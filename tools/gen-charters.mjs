@@ -8,16 +8,17 @@
 // Design = docs/mockups/charter-mockup.html (approved). Serif, coin glyph.
 
 import { readFileSync, writeFileSync } from "node:fs";
-import { gp, COIN_CSS } from "./cardkit.mjs";
+import { gp, coinize, COIN_CSS } from "./cardkit.mjs";
 
-const [, , inPath = "companies.json", outPath = "charters-major.html", contentPath] =
-  process.argv;
+const [, , inPath = "companies.json", outMajor = "charters-major.html", contentMajor,
+  outMinor = "charters-minor.html", contentMinor] = process.argv;
 
 const esc = (s) =>
   String(s ?? "").replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
 
 const data = JSON.parse(readFileSync(inPath, "utf8"));
 const majors = data.majors;
+const minors = data.minors || [];
 
 const REGION = { A: "Verantum", N: "Caelimor", G: "Gördum", M: "Muravel", V: "Varstova" };
 const REGION_COLOR = { A: "#7B2D8B", N: "#56B4E9", G: "#E69F00", M: "#D55E00", V: "#009E73" };
@@ -94,35 +95,60 @@ function majorMat(m) {
   </div>`;
 }
 
-// ---- print-cut layout: 2 mats stacked & touching per US Letter portrait page,
+// ---- minor charter (152x76mm) ----
+function minorTrainsTable() {
+  const rows = PHASES.map((p) => {
+    const rust = p.rust ? `<td class="ph ${p.rust.cls}">${p.rust.t}</td>` : "<td></td>";
+    return `<tr><td class="ph ${p.cls}">${p.ph}</td><td>${p.lim}</td><td>${p.num}</td><td>${gp(p.cost)}</td>${rust}</tr>`;
+  }).join("");
+  return `<table class="tr mini"><tr><th>Ph</th><th>Lim</th><th>#</th><th>Cost</th><th>Rust</th></tr>${rows}</table>`;
+}
+function minorMat(m) {
+  const rc = REGION_COLOR[m.region];
+  const power = m.power
+    ? `<div class="power"><b>⚙ Power:</b> ${coinize(esc(m.power.text))}</div>` : "";
+  return `
+  <div class="mat minor">
+    <div class="top">
+      <div class="numbadge" style="background:${rc};">${esc(m.number)}</div>
+      <div class="spine">${esc(m.name)}</div>
+      <div class="mid">
+        <div class="start"><small>Starts at</small> <span class="city">${esc(m.home_city)}</span> <small>· <b>${esc(m.hex)}</b></small></div>
+        ${minorTrainsTable()}
+      </div>
+      <div class="permit" style="background:${rc};">
+        <div class="lbl">PERMIT</div><div class="let">${esc(m.region)}</div><div class="rg">${esc(REGION[m.region])}</div>
+      </div>
+    </div>
+    ${power}
+  </div>`;
+}
+
+// ---- print-cut layout: N mats stacked & touching per US Letter portrait page,
 // square corners, no printed border, crop marks in the margins ----
-const PAGE_W = 216, PAGE_H = 279, MAT_W = 178, MAT_H = 127, PER = 2;
-const ML = (PAGE_W - MAT_W) / 2;
-const BLOCK_H = MAT_H * PER;
-const MT = (PAGE_H - BLOCK_H) / 2;
-
-function cropMarks() {
-  const T = 4; // tick length mm
-  let m = "";
-  // horizontal trim lines: top, each mat boundary, bottom
-  for (let r = 0; r <= PER; r++) {
-    const y = MT + r * MAT_H;
-    m += `<div class="crop h" style="top:${y}mm;left:${ML - T - 1}mm"></div>`;
-    m += `<div class="crop h" style="top:${y}mm;left:${ML + MAT_W + 1}mm"></div>`;
+const PAGE_W = 216, PAGE_H = 279, T = 4;
+function makePages(items, matFn, matW, matH, per) {
+  const ml = (PAGE_W - matW) / 2, blockH = matH * per, mt = (PAGE_H - blockH) / 2;
+  const crop = () => {
+    let s = "";
+    for (let r = 0; r <= per; r++) {
+      const y = mt + r * matH;
+      s += `<div class="crop h" style="top:${y}mm;left:${ml - T - 1}mm"></div><div class="crop h" style="top:${y}mm;left:${ml + matW + 1}mm"></div>`;
+    }
+    for (const x of [ml, ml + matW]) {
+      s += `<div class="crop v" style="left:${x}mm;top:${mt - T - 1}mm"></div><div class="crop v" style="left:${x}mm;top:${mt + blockH + 1}mm"></div>`;
+    }
+    return s;
+  };
+  const pages = [];
+  for (let i = 0; i < items.length; i += per) {
+    const stack = items.slice(i, i + per).map(matFn).join("");
+    pages.push(`<section class="page">${crop()}<div class="stack" style="top:${mt}mm;left:${ml}mm">${stack}</div></section>`);
   }
-  // vertical trim lines: left, right — ticks at top & bottom of the block
-  for (const x of [ML, ML + MAT_W]) {
-    m += `<div class="crop v" style="left:${x}mm;top:${MT - T - 1}mm"></div>`;
-    m += `<div class="crop v" style="left:${x}mm;top:${MT + BLOCK_H + 1}mm"></div>`;
-  }
-  return m;
+  return pages.join("\n");
 }
-
-const pages = [];
-for (let i = 0; i < majors.length; i += PER) {
-  const stack = majors.slice(i, i + PER).map(majorMat).join("");
-  pages.push(`<section class="page">${cropMarks()}<div class="stack">${stack}</div></section>`);
-}
+const majorPages = makePages(majors, majorMat, 178, 127, 2);
+const minorPages = makePages(minors, minorMat, 152, 76, 3);
 
 const style = `
   :root{ --ink:#1c1a17; --line:#2a2723; --paper:#fbf9f4;
@@ -131,7 +157,7 @@ const style = `
   ${COIN_CSS}
   body{ margin:0; background:#c9ccd2; color:var(--ink); font-family:var(--serif); }
   .page{ position:relative; width:216mm; height:279mm; background:#fff; margin:8mm auto; box-shadow:0 2px 10px rgba(0,0,0,.25); }
-  .stack{ position:absolute; top:${MT}mm; left:${ML}mm; display:flex; flex-direction:column; }
+  .stack{ position:absolute; display:flex; flex-direction:column; }
   .crop{ position:absolute; background:#000; }
   .crop.v{ width:0.15mm; height:4mm; } .crop.h{ height:0.15mm; width:4mm; }
   /* no printed border / rounded corners — cut on the crop marks */
@@ -170,6 +196,21 @@ const style = `
   ul.act{ font-size:11.5px; line-height:1.32; margin:3px 0 0; padding-left:17px; }
   ul.act li{ margin:1px 0; } .hl{ color:#7a5a10; }
   .dest-note{ font-size:11px; color:#4a4436; margin-top:6px; background:#f0ece1; border-left:3px solid #b9b2a2; padding:5px 8px; }
+
+  /* minor 152x76mm */
+  .minor{ width:152mm; height:76mm; display:flex; flex-direction:column; }
+  .minor .top{ display:flex; align-items:stretch; flex:1 1 auto; min-height:0; }
+  .minor .numbadge{ width:52px; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:30px; color:#fff; border-right:2px solid var(--line); flex:0 0 auto; }
+  .minor .spine{ writing-mode:vertical-rl; transform:rotate(180deg); padding:6px 3px; font-weight:800; font-size:14px; text-align:center; border-right:1.5px solid #cfc8ba; flex:0 0 auto; display:flex; align-items:center; justify-content:center; }
+  .minor .mid{ flex:1 1 auto; padding:7px 10px; display:flex; flex-direction:column; gap:5px; min-width:0; }
+  .minor .start small{ font-size:10px; color:#5a554d; } .minor .start .city{ font-size:16px; font-weight:800; } .minor .start b{ color:#26221c; }
+  table.tr.mini{ font-size:10px; } table.tr.mini td, table.tr.mini th{ padding:1.5px 4px; }
+  .minor .permit{ flex:0 0 auto; width:78px; border-left:2px solid var(--line); display:flex; flex-direction:column; align-items:center; justify-content:center; color:#fff; }
+  .minor .permit .lbl{ font-size:12px; font-weight:800; letter-spacing:.12em; }
+  .minor .permit .let{ font-size:46px; font-weight:800; line-height:1; text-shadow:0 1px 0 rgba(0,0,0,.3); }
+  .minor .permit .rg{ font-size:9px; opacity:.9; }
+  .minor .power{ flex:0 0 auto; padding:6px 10px; border-top:2px solid var(--line); background:#fdf6e3; font-size:10.5px; line-height:1.4; }
+  .minor .power b{ color:#7a5a10; }
   @media print{
     body{ background:#fff; }
     .page{ margin:0; box-shadow:none; page-break-after:always; }
@@ -177,12 +218,24 @@ const style = `
   }
 `;
 
-const content = `<style>${style}</style>\n<main>${pages.join("\n")}\n</main>\n`;
-const standalone = `<!doctype html>
+function emit(title, pagesHtml) {
+  const content = `<style>${style}</style>\n<main>${pagesHtml}\n</main>\n`;
+  const standalone = `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>18Dragon — Major Charters</title></head>
+<title>18Dragon — ${title}</title></head>
 <body>\n${content}</body></html>\n`;
+  return { content, standalone };
+}
 
-writeFileSync(outPath, standalone);
-if (contentPath) writeFileSync(contentPath, content);
-console.log(`Wrote ${outPath}: ${majors.length} major charters, ${pages.length} pages (2/page, 178x127mm).`);
+const maj = emit("Major Charters", majorPages);
+writeFileSync(outMajor, maj.standalone);
+if (contentMajor) writeFileSync(contentMajor, maj.content);
+
+const min = emit("Minor Charters", minorPages);
+writeFileSync(outMinor, min.standalone);
+if (contentMinor) writeFileSync(contentMinor, min.content);
+
+console.log(
+  `Wrote ${outMajor}: ${majors.length} major charters (2/page, 178x127mm); ` +
+    `${outMinor}: ${minors.length} minor charters (3/page, 152x76mm).`,
+);

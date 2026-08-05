@@ -15,7 +15,7 @@ View of `sprints.sprint-11.stories` in `sprint-status.yaml` (canonical). Flesh w
 | Seq | ID | Title | Type | Points | Status |
 |-----|----|-------|------|--------|--------|
 | 1 | C17a | Major charters (10 — shares, 6 tokens, destination) | content | 2 | ✅ done |
-| 2 | C17b | Minor charters (30 — simpler) | content | 2 | ready |
+| 2 | C17b | Minor charters (30 — simpler) | content | 2 | ✅ done |
 
 **C17 split into C17a + C17b at planning** (major vs minor layouts differ). Sequence
 C17a → C17b (majors set the charter design; minors are the simpler variant).

@@ -4,7 +4,7 @@
 - **Type:** content
 - **Epics:** Companies, Game Components
 - **Sprint:** sprint-11
-- **Status:** ready
+- **Status:** done
 - **Created:** 2026-08-04
 
 ## Story
@@ -78,6 +78,22 @@ Reference: the 1822-style minor charter. Confirmed via the mockup
 
 ### Model Used
 
+claude-opus-4-8
+
 ### Completion Notes
 
+- Extended `tools/gen-charters.mjs` to also emit **`charters-minor.html`**: 30 minor
+  mats, **152×76mm**, US Letter portrait **3/page**, same print-cut layout as the
+  majors (no border, crop marks). Generic `makePages()` now serves both sizes.
+- Each mat: region-colored **number badge** · **spine name** · "Starts at" city +
+  bold hex · compact **phase chart** · **PERMIT block** (region color + letter +
+  "PERMIT" + region name). **Power strip** only on **#4** and **#16** (coin glyph in
+  the text via `coinize`).
+- Checks: 30 mats, 30 permit blocks, 2 power strips.
+- Artifact: https://claude.ai/code/artifact/35fa7cbb-c5e7-408e-9837-a3351a1f9e83
+- `18dragon.json` unchanged.
+
 ### Files Changed
+
+- `tools/gen-charters.mjs` — added minor mats + generic page layout; emits both files.
+- `charters-minor.html` (new) — generated minor charters.
