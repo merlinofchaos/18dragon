@@ -146,7 +146,7 @@ stories:
     title: "Define track tile set + tile manifest"
     type: content
     epics: ["World & Map", "Game Components"]
-    points: null
+    points: 5
   C16:
     title: "Phase/round track on the board"
     type: content

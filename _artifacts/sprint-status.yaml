@@ -9,7 +9,7 @@
 # membership. Points are assigned in backlog.yaml during sprint planning.
 
 meta:
-  updated: "2026-08-05"  # sprint-13 complete (C24 stickers done); repo reorg data/+print/
+  updated: "2026-08-05"  # sprint-14 planned (C15 hex tile set); sprint-13 complete
 
 # Unscheduled stories — id: status
 backlog:
@@ -22,7 +22,6 @@ backlog:
   C09: stub
   C13: stub
   C14: stub
-  C15: stub
   C16: stub
   C18: stub
   C19: stub
@@ -98,6 +97,17 @@ sprints:
       C35: done
       C36: done
       C37: done
+  sprint-14:
+    status: active
+    goal: >-
+      The complete 18Dragon track-tile set is defined and renders in 18xxMaker —
+      standard numbered track tiles (1822-based counts), the custom capital/city
+      upgrade tiles for the labeled special cities (B/D/H/K/P/R/V + capitals), and
+      the Verantum ruins tiles — as the tiles/upgrades sections of 18dragon.json
+      plus a manifest. Ruins tile-lay rules (PRD §6.2 open question) are elicited
+      and recorded as C15's first task.
+    stories:
+      C15: stub
   sprint-13:
     status: complete
     goal: >-
