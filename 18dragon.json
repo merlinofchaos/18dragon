@@ -436,11 +436,11 @@
       "labels": [
         {
           "label": "B",
-          "angle": 330,
-          "percent": 0.82,
-          "fontSize": 32,
+          "x": -46,
+          "y": -44,
           "fontFamily": "Arial, Helvetica, sans-serif",
-          "fontWeight": "bold"
+          "fontWeight": "bold",
+          "fontSize": 30
         }
       ],
       "cities": [
@@ -469,11 +469,11 @@
       "labels": [
         {
           "label": "B",
-          "angle": 330,
-          "percent": 0.82,
-          "fontSize": 32,
+          "x": -46,
+          "y": -44,
           "fontFamily": "Arial, Helvetica, sans-serif",
-          "fontWeight": "bold"
+          "fontWeight": "bold",
+          "fontSize": 30
         }
       ],
       "cities": [
@@ -509,11 +509,11 @@
       "labels": [
         {
           "label": "B",
-          "angle": 330,
-          "percent": 0.82,
-          "fontSize": 32,
+          "x": -46,
+          "y": -44,
           "fontFamily": "Arial, Helvetica, sans-serif",
-          "fontWeight": "bold"
+          "fontWeight": "bold",
+          "fontSize": 30
         }
       ],
       "cities": [
@@ -555,11 +555,11 @@
       "labels": [
         {
           "label": "B",
-          "angle": 330,
-          "percent": 0.82,
-          "fontSize": 32,
+          "x": -46,
+          "y": -44,
           "fontFamily": "Arial, Helvetica, sans-serif",
-          "fontWeight": "bold"
+          "fontWeight": "bold",
+          "fontSize": 30
         }
       ],
       "cities": [
@@ -602,11 +602,11 @@
       "labels": [
         {
           "label": "K",
-          "angle": 330,
-          "percent": 0.82,
-          "fontSize": 32,
+          "x": -46,
+          "y": -44,
           "fontFamily": "Arial, Helvetica, sans-serif",
-          "fontWeight": "bold"
+          "fontWeight": "bold",
+          "fontSize": 30
         }
       ],
       "cities": [
@@ -635,11 +635,11 @@
       "labels": [
         {
           "label": "K",
-          "angle": 330,
-          "percent": 0.82,
-          "fontSize": 32,
+          "x": -46,
+          "y": -44,
           "fontFamily": "Arial, Helvetica, sans-serif",
-          "fontWeight": "bold"
+          "fontWeight": "bold",
+          "fontSize": 30
         }
       ],
       "cities": [
@@ -675,11 +675,11 @@
       "labels": [
         {
           "label": "K",
-          "angle": 330,
-          "percent": 0.82,
-          "fontSize": 32,
+          "x": -46,
+          "y": -44,
           "fontFamily": "Arial, Helvetica, sans-serif",
-          "fontWeight": "bold"
+          "fontWeight": "bold",
+          "fontSize": 30
         }
       ],
       "cities": [
@@ -721,11 +721,11 @@
       "labels": [
         {
           "label": "K",
-          "angle": 330,
-          "percent": 0.82,
-          "fontSize": 32,
+          "x": -46,
+          "y": -44,
           "fontFamily": "Arial, Helvetica, sans-serif",
-          "fontWeight": "bold"
+          "fontWeight": "bold",
+          "fontSize": 30
         }
       ],
       "cities": [
@@ -768,11 +768,11 @@
       "labels": [
         {
           "label": "P",
-          "angle": 330,
-          "percent": 0.82,
-          "fontSize": 32,
+          "x": -46,
+          "y": -44,
           "fontFamily": "Arial, Helvetica, sans-serif",
-          "fontWeight": "bold"
+          "fontWeight": "bold",
+          "fontSize": 30
         }
       ],
       "cities": [
@@ -801,11 +801,11 @@
       "labels": [
         {
           "label": "P",
-          "angle": 330,
-          "percent": 0.82,
-          "fontSize": 32,
+          "x": -46,
+          "y": -44,
           "fontFamily": "Arial, Helvetica, sans-serif",
-          "fontWeight": "bold"
+          "fontWeight": "bold",
+          "fontSize": 30
         }
       ],
       "cities": [
@@ -841,11 +841,11 @@
       "labels": [
         {
           "label": "P",
-          "angle": 330,
-          "percent": 0.82,
-          "fontSize": 32,
+          "x": -46,
+          "y": -44,
           "fontFamily": "Arial, Helvetica, sans-serif",
-          "fontWeight": "bold"
+          "fontWeight": "bold",
+          "fontSize": 30
         }
       ],
       "cities": [
@@ -887,11 +887,11 @@
       "labels": [
         {
           "label": "P",
-          "angle": 330,
-          "percent": 0.82,
-          "fontSize": 32,
+          "x": -46,
+          "y": -44,
           "fontFamily": "Arial, Helvetica, sans-serif",
-          "fontWeight": "bold"
+          "fontWeight": "bold",
+          "fontSize": 30
         }
       ],
       "cities": [
@@ -934,11 +934,11 @@
       "labels": [
         {
           "label": "D",
-          "angle": 330,
-          "percent": 0.82,
-          "fontSize": 32,
+          "x": -46,
+          "y": -44,
           "fontFamily": "Arial, Helvetica, sans-serif",
-          "fontWeight": "bold"
+          "fontWeight": "bold",
+          "fontSize": 30
         }
       ],
       "cities": [
@@ -969,11 +969,11 @@
       "labels": [
         {
           "label": "D",
-          "angle": 330,
-          "percent": 0.82,
-          "fontSize": 32,
+          "x": -46,
+          "y": -44,
           "fontFamily": "Arial, Helvetica, sans-serif",
-          "fontWeight": "bold"
+          "fontWeight": "bold",
+          "fontSize": 30
         }
       ],
       "cities": [
@@ -1009,11 +1009,11 @@
       "labels": [
         {
           "label": "D",
-          "angle": 330,
-          "percent": 0.82,
-          "fontSize": 32,
+          "x": -46,
+          "y": -44,
           "fontFamily": "Arial, Helvetica, sans-serif",
-          "fontWeight": "bold"
+          "fontWeight": "bold",
+          "fontSize": 30
         }
       ],
       "cities": [
@@ -1055,11 +1055,11 @@
       "labels": [
         {
           "label": "D",
-          "angle": 330,
-          "percent": 0.82,
-          "fontSize": 32,
+          "x": -46,
+          "y": -44,
           "fontFamily": "Arial, Helvetica, sans-serif",
-          "fontWeight": "bold"
+          "fontWeight": "bold",
+          "fontSize": 30
         }
       ],
       "cities": [
@@ -1102,11 +1102,11 @@
       "labels": [
         {
           "label": "R",
-          "angle": 330,
-          "percent": 0.82,
-          "fontSize": 32,
+          "x": -46,
+          "y": -44,
           "fontFamily": "Arial, Helvetica, sans-serif",
-          "fontWeight": "bold"
+          "fontWeight": "bold",
+          "fontSize": 30
         }
       ],
       "cities": [
@@ -1137,11 +1137,11 @@
       "labels": [
         {
           "label": "R",
-          "angle": 330,
-          "percent": 0.82,
-          "fontSize": 32,
+          "x": -46,
+          "y": -44,
           "fontFamily": "Arial, Helvetica, sans-serif",
-          "fontWeight": "bold"
+          "fontWeight": "bold",
+          "fontSize": 30
         }
       ],
       "cities": [
@@ -1177,11 +1177,11 @@
       "labels": [
         {
           "label": "R",
-          "angle": 330,
-          "percent": 0.82,
-          "fontSize": 32,
+          "x": -46,
+          "y": -44,
           "fontFamily": "Arial, Helvetica, sans-serif",
-          "fontWeight": "bold"
+          "fontWeight": "bold",
+          "fontSize": 30
         }
       ],
       "cities": [
@@ -1223,11 +1223,11 @@
       "labels": [
         {
           "label": "R",
-          "angle": 330,
-          "percent": 0.82,
-          "fontSize": 32,
+          "x": -46,
+          "y": -44,
           "fontFamily": "Arial, Helvetica, sans-serif",
-          "fontWeight": "bold"
+          "fontWeight": "bold",
+          "fontSize": 30
         }
       ],
       "cities": [
@@ -1270,11 +1270,11 @@
       "labels": [
         {
           "label": "V",
-          "angle": 330,
-          "percent": 0.82,
-          "fontSize": 32,
+          "x": -46,
+          "y": -44,
           "fontFamily": "Arial, Helvetica, sans-serif",
-          "fontWeight": "bold"
+          "fontWeight": "bold",
+          "fontSize": 30
         }
       ],
       "cities": [
@@ -1305,11 +1305,11 @@
       "labels": [
         {
           "label": "V",
-          "angle": 330,
-          "percent": 0.82,
-          "fontSize": 32,
+          "x": -46,
+          "y": -44,
           "fontFamily": "Arial, Helvetica, sans-serif",
-          "fontWeight": "bold"
+          "fontWeight": "bold",
+          "fontSize": 30
         }
       ],
       "cities": [
@@ -1345,11 +1345,11 @@
       "labels": [
         {
           "label": "V",
-          "angle": 330,
-          "percent": 0.82,
-          "fontSize": 32,
+          "x": -46,
+          "y": -44,
           "fontFamily": "Arial, Helvetica, sans-serif",
-          "fontWeight": "bold"
+          "fontWeight": "bold",
+          "fontSize": 30
         }
       ],
       "cities": [
@@ -1391,11 +1391,11 @@
       "labels": [
         {
           "label": "V",
-          "angle": 330,
-          "percent": 0.82,
-          "fontSize": 32,
+          "x": -46,
+          "y": -44,
           "fontFamily": "Arial, Helvetica, sans-serif",
-          "fontWeight": "bold"
+          "fontWeight": "bold",
+          "fontSize": 30
         }
       ],
       "cities": [
@@ -1438,11 +1438,11 @@
       "labels": [
         {
           "label": "H",
-          "angle": 330,
-          "percent": 0.82,
-          "fontSize": 32,
+          "x": -46,
+          "y": -44,
           "fontFamily": "Arial, Helvetica, sans-serif",
-          "fontWeight": "bold"
+          "fontWeight": "bold",
+          "fontSize": 30
         }
       ],
       "cities": [
@@ -1473,11 +1473,11 @@
       "labels": [
         {
           "label": "H",
-          "angle": 330,
-          "percent": 0.82,
-          "fontSize": 32,
+          "x": -46,
+          "y": -44,
           "fontFamily": "Arial, Helvetica, sans-serif",
-          "fontWeight": "bold"
+          "fontWeight": "bold",
+          "fontSize": 30
         }
       ],
       "cities": [
@@ -1513,11 +1513,11 @@
       "labels": [
         {
           "label": "H",
-          "angle": 330,
-          "percent": 0.82,
-          "fontSize": 32,
+          "x": -46,
+          "y": -44,
           "fontFamily": "Arial, Helvetica, sans-serif",
-          "fontWeight": "bold"
+          "fontWeight": "bold",
+          "fontSize": 30
         }
       ],
       "cities": [
@@ -1559,11 +1559,11 @@
       "labels": [
         {
           "label": "H",
-          "angle": 330,
-          "percent": 0.82,
-          "fontSize": 32,
+          "x": -46,
+          "y": -44,
           "fontFamily": "Arial, Helvetica, sans-serif",
-          "fontWeight": "bold"
+          "fontWeight": "bold",
+          "fontSize": 30
         }
       ],
       "cities": [
@@ -1602,78 +1602,95 @@
     "X01": {
       "quantity": 6,
       "color": "yellow",
-      "towns": [
+      "track": [
         {
-          "angle": 0,
-          "percent": 0.5
+          "side": 1,
+          "type": "stub"
         }
       ],
       "values": [
         {
           "value": 10,
-          "angle": 0,
-          "percent": 0.32
+          "x": 26,
+          "y": -2
         }
       ],
-      "track": [
+      "shapes": [
         {
-          "side": 1
+          "type": "art",
+          "art": "downarrow",
+          "x": 0,
+          "y": -6,
+          "width": 26
         }
       ]
     },
     "X02": {
       "quantity": 3,
       "color": "green",
-      "towns": [
+      "track": [
         {
-          "angle": 0,
-          "percent": 0.5
+          "side": 1,
+          "type": "stub"
         }
       ],
       "values": [
         {
           "value": 20,
-          "angle": 0,
-          "percent": 0.32
+          "x": 26,
+          "y": -2
         }
       ],
-      "track": [
+      "shapes": [
         {
-          "side": 1
+          "type": "art",
+          "art": "downarrow",
+          "x": 0,
+          "y": -6,
+          "width": 26
         }
       ]
     },
     "X03": {
       "quantity": 3,
       "color": "green",
-      "towns": [
+      "track": [
         {
-          "angle": 0,
-          "percent": 0.5
+          "side": 1,
+          "type": "stub"
         },
         {
-          "angle": 180,
-          "percent": 0.5
+          "side": 4,
+          "type": "stub"
         }
       ],
       "values": [
         {
           "value": 10,
-          "angle": 0,
-          "percent": 0.32
+          "x": 26,
+          "y": -2
         },
         {
           "value": 10,
-          "angle": 180,
-          "percent": 0.32
+          "x": -26,
+          "y": 2
         }
       ],
-      "track": [
+      "shapes": [
         {
-          "side": 1
+          "type": "art",
+          "art": "downarrow",
+          "x": 0,
+          "y": -6,
+          "width": 22
         },
         {
-          "side": 4
+          "type": "art",
+          "art": "downarrow",
+          "x": 0,
+          "y": 6,
+          "width": 22,
+          "rotation": 180
         }
       ]
     }
