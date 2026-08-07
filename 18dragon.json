@@ -400,8 +400,6 @@
     ]
   },
   "tiles": {
-    "1": 1,
-    "2": 1,
     "3": 6,
     "4": 6,
     "5": 6,
@@ -409,11 +407,8 @@
     "7": 20,
     "8": 20,
     "9": 20,
-    "55": 1,
-    "56": 1,
     "57": 6,
     "58": 6,
-    "69": 1,
     "14": 6,
     "15": 6,
     "80": 6,
@@ -434,15 +429,18 @@
     "546": 8,
     "611": 4,
     "60": 2,
-    "B-y": {
+    "B01": {
       "quantity": 4,
       "color": "yellow",
       "rotations": 3,
       "labels": [
         {
           "label": "B",
-          "angle": 60,
-          "percent": 0.8
+          "angle": 330,
+          "percent": 0.82,
+          "fontSize": 32,
+          "fontFamily": "Arial, Helvetica, sans-serif",
+          "fontWeight": "bold"
         }
       ],
       "cities": [
@@ -464,15 +462,18 @@
         }
       ]
     },
-    "B-g": {
+    "B02": {
       "quantity": 4,
       "color": "green",
       "rotations": 3,
       "labels": [
         {
           "label": "B",
-          "angle": 60,
-          "percent": 0.8
+          "angle": 330,
+          "percent": 0.82,
+          "fontSize": 32,
+          "fontFamily": "Arial, Helvetica, sans-serif",
+          "fontWeight": "bold"
         }
       ],
       "cities": [
@@ -502,14 +503,17 @@
         }
       ]
     },
-    "B-b": {
+    "B03": {
       "quantity": 4,
       "color": "brown",
       "labels": [
         {
           "label": "B",
-          "angle": 60,
-          "percent": 0.8
+          "angle": 330,
+          "percent": 0.82,
+          "fontSize": 32,
+          "fontFamily": "Arial, Helvetica, sans-serif",
+          "fontWeight": "bold"
         }
       ],
       "cities": [
@@ -545,14 +549,17 @@
         }
       ]
     },
-    "B-x": {
+    "B04": {
       "quantity": 4,
       "color": "gray",
       "labels": [
         {
           "label": "B",
-          "angle": 60,
-          "percent": 0.8
+          "angle": 330,
+          "percent": 0.82,
+          "fontSize": 32,
+          "fontFamily": "Arial, Helvetica, sans-serif",
+          "fontWeight": "bold"
         }
       ],
       "cities": [
@@ -588,15 +595,18 @@
         }
       ]
     },
-    "K-y": {
+    "K01": {
       "quantity": 2,
       "color": "yellow",
       "rotations": 3,
       "labels": [
         {
           "label": "K",
-          "angle": 60,
-          "percent": 0.8
+          "angle": 330,
+          "percent": 0.82,
+          "fontSize": 32,
+          "fontFamily": "Arial, Helvetica, sans-serif",
+          "fontWeight": "bold"
         }
       ],
       "cities": [
@@ -618,15 +628,18 @@
         }
       ]
     },
-    "K-g": {
+    "K02": {
       "quantity": 2,
       "color": "green",
       "rotations": 3,
       "labels": [
         {
           "label": "K",
-          "angle": 60,
-          "percent": 0.8
+          "angle": 330,
+          "percent": 0.82,
+          "fontSize": 32,
+          "fontFamily": "Arial, Helvetica, sans-serif",
+          "fontWeight": "bold"
         }
       ],
       "cities": [
@@ -656,14 +669,17 @@
         }
       ]
     },
-    "K-b": {
+    "K03": {
       "quantity": 2,
       "color": "brown",
       "labels": [
         {
           "label": "K",
-          "angle": 60,
-          "percent": 0.8
+          "angle": 330,
+          "percent": 0.82,
+          "fontSize": 32,
+          "fontFamily": "Arial, Helvetica, sans-serif",
+          "fontWeight": "bold"
         }
       ],
       "cities": [
@@ -699,14 +715,17 @@
         }
       ]
     },
-    "K-x": {
+    "K04": {
       "quantity": 2,
       "color": "gray",
       "labels": [
         {
           "label": "K",
-          "angle": 60,
-          "percent": 0.8
+          "angle": 330,
+          "percent": 0.82,
+          "fontSize": 32,
+          "fontFamily": "Arial, Helvetica, sans-serif",
+          "fontWeight": "bold"
         }
       ],
       "cities": [
@@ -742,15 +761,18 @@
         }
       ]
     },
-    "P-y": {
+    "P01": {
       "quantity": 1,
       "color": "yellow",
       "rotations": 3,
       "labels": [
         {
           "label": "P",
-          "angle": 60,
-          "percent": 0.8
+          "angle": 330,
+          "percent": 0.82,
+          "fontSize": 32,
+          "fontFamily": "Arial, Helvetica, sans-serif",
+          "fontWeight": "bold"
         }
       ],
       "cities": [
@@ -772,15 +794,18 @@
         }
       ]
     },
-    "P-g": {
+    "P02": {
       "quantity": 1,
       "color": "green",
       "rotations": 3,
       "labels": [
         {
           "label": "P",
-          "angle": 60,
-          "percent": 0.8
+          "angle": 330,
+          "percent": 0.82,
+          "fontSize": 32,
+          "fontFamily": "Arial, Helvetica, sans-serif",
+          "fontWeight": "bold"
         }
       ],
       "cities": [
@@ -810,14 +835,17 @@
         }
       ]
     },
-    "P-b": {
+    "P03": {
       "quantity": 1,
       "color": "brown",
       "labels": [
         {
           "label": "P",
-          "angle": 60,
-          "percent": 0.8
+          "angle": 330,
+          "percent": 0.82,
+          "fontSize": 32,
+          "fontFamily": "Arial, Helvetica, sans-serif",
+          "fontWeight": "bold"
         }
       ],
       "cities": [
@@ -853,14 +881,17 @@
         }
       ]
     },
-    "P-x": {
+    "P04": {
       "quantity": 1,
       "color": "gray",
       "labels": [
         {
           "label": "P",
-          "angle": 60,
-          "percent": 0.8
+          "angle": 330,
+          "percent": 0.82,
+          "fontSize": 32,
+          "fontFamily": "Arial, Helvetica, sans-serif",
+          "fontWeight": "bold"
         }
       ],
       "cities": [
@@ -896,15 +927,18 @@
         }
       ]
     },
-    "D-y": {
+    "D01": {
       "quantity": 1,
       "color": "yellow",
       "rotations": 3,
       "labels": [
         {
           "label": "D",
-          "angle": 60,
-          "percent": 0.8
+          "angle": 330,
+          "percent": 0.82,
+          "fontSize": 32,
+          "fontFamily": "Arial, Helvetica, sans-serif",
+          "fontWeight": "bold"
         }
       ],
       "cities": [
@@ -928,15 +962,18 @@
         }
       ]
     },
-    "D-g": {
+    "D02": {
       "quantity": 1,
       "color": "green",
       "rotations": 3,
       "labels": [
         {
           "label": "D",
-          "angle": 60,
-          "percent": 0.8
+          "angle": 330,
+          "percent": 0.82,
+          "fontSize": 32,
+          "fontFamily": "Arial, Helvetica, sans-serif",
+          "fontWeight": "bold"
         }
       ],
       "cities": [
@@ -966,14 +1003,17 @@
         }
       ]
     },
-    "D-b": {
+    "D03": {
       "quantity": 1,
       "color": "brown",
       "labels": [
         {
           "label": "D",
-          "angle": 60,
-          "percent": 0.8
+          "angle": 330,
+          "percent": 0.82,
+          "fontSize": 32,
+          "fontFamily": "Arial, Helvetica, sans-serif",
+          "fontWeight": "bold"
         }
       ],
       "cities": [
@@ -1009,14 +1049,17 @@
         }
       ]
     },
-    "D-x": {
+    "D04": {
       "quantity": 1,
       "color": "gray",
       "labels": [
         {
           "label": "D",
-          "angle": 60,
-          "percent": 0.8
+          "angle": 330,
+          "percent": 0.82,
+          "fontSize": 32,
+          "fontFamily": "Arial, Helvetica, sans-serif",
+          "fontWeight": "bold"
         }
       ],
       "cities": [
@@ -1052,15 +1095,18 @@
         }
       ]
     },
-    "R-y": {
+    "R01": {
       "quantity": 1,
       "color": "yellow",
       "rotations": 3,
       "labels": [
         {
           "label": "R",
-          "angle": 60,
-          "percent": 0.8
+          "angle": 330,
+          "percent": 0.82,
+          "fontSize": 32,
+          "fontFamily": "Arial, Helvetica, sans-serif",
+          "fontWeight": "bold"
         }
       ],
       "cities": [
@@ -1084,15 +1130,18 @@
         }
       ]
     },
-    "R-g": {
+    "R02": {
       "quantity": 1,
       "color": "green",
       "rotations": 3,
       "labels": [
         {
           "label": "R",
-          "angle": 60,
-          "percent": 0.8
+          "angle": 330,
+          "percent": 0.82,
+          "fontSize": 32,
+          "fontFamily": "Arial, Helvetica, sans-serif",
+          "fontWeight": "bold"
         }
       ],
       "cities": [
@@ -1122,14 +1171,17 @@
         }
       ]
     },
-    "R-b": {
+    "R03": {
       "quantity": 1,
       "color": "brown",
       "labels": [
         {
           "label": "R",
-          "angle": 60,
-          "percent": 0.8
+          "angle": 330,
+          "percent": 0.82,
+          "fontSize": 32,
+          "fontFamily": "Arial, Helvetica, sans-serif",
+          "fontWeight": "bold"
         }
       ],
       "cities": [
@@ -1165,14 +1217,17 @@
         }
       ]
     },
-    "R-x": {
+    "R04": {
       "quantity": 1,
       "color": "gray",
       "labels": [
         {
           "label": "R",
-          "angle": 60,
-          "percent": 0.8
+          "angle": 330,
+          "percent": 0.82,
+          "fontSize": 32,
+          "fontFamily": "Arial, Helvetica, sans-serif",
+          "fontWeight": "bold"
         }
       ],
       "cities": [
@@ -1208,15 +1263,18 @@
         }
       ]
     },
-    "V-y": {
+    "V01": {
       "quantity": 1,
       "color": "yellow",
       "rotations": 3,
       "labels": [
         {
           "label": "V",
-          "angle": 60,
-          "percent": 0.8
+          "angle": 330,
+          "percent": 0.82,
+          "fontSize": 32,
+          "fontFamily": "Arial, Helvetica, sans-serif",
+          "fontWeight": "bold"
         }
       ],
       "cities": [
@@ -1240,15 +1298,18 @@
         }
       ]
     },
-    "V-g": {
+    "V02": {
       "quantity": 1,
       "color": "green",
       "rotations": 3,
       "labels": [
         {
           "label": "V",
-          "angle": 60,
-          "percent": 0.8
+          "angle": 330,
+          "percent": 0.82,
+          "fontSize": 32,
+          "fontFamily": "Arial, Helvetica, sans-serif",
+          "fontWeight": "bold"
         }
       ],
       "cities": [
@@ -1278,14 +1339,17 @@
         }
       ]
     },
-    "V-b": {
+    "V03": {
       "quantity": 1,
       "color": "brown",
       "labels": [
         {
           "label": "V",
-          "angle": 60,
-          "percent": 0.8
+          "angle": 330,
+          "percent": 0.82,
+          "fontSize": 32,
+          "fontFamily": "Arial, Helvetica, sans-serif",
+          "fontWeight": "bold"
         }
       ],
       "cities": [
@@ -1321,14 +1385,17 @@
         }
       ]
     },
-    "V-x": {
+    "V04": {
       "quantity": 1,
       "color": "gray",
       "labels": [
         {
           "label": "V",
-          "angle": 60,
-          "percent": 0.8
+          "angle": 330,
+          "percent": 0.82,
+          "fontSize": 32,
+          "fontFamily": "Arial, Helvetica, sans-serif",
+          "fontWeight": "bold"
         }
       ],
       "cities": [
@@ -1364,15 +1431,18 @@
         }
       ]
     },
-    "H-y": {
+    "H01": {
       "quantity": 1,
       "color": "yellow",
       "rotations": 3,
       "labels": [
         {
           "label": "H",
-          "angle": 60,
-          "percent": 0.8
+          "angle": 330,
+          "percent": 0.82,
+          "fontSize": 32,
+          "fontFamily": "Arial, Helvetica, sans-serif",
+          "fontWeight": "bold"
         }
       ],
       "cities": [
@@ -1396,15 +1466,18 @@
         }
       ]
     },
-    "H-g": {
+    "H02": {
       "quantity": 1,
       "color": "green",
       "rotations": 3,
       "labels": [
         {
           "label": "H",
-          "angle": 60,
-          "percent": 0.8
+          "angle": 330,
+          "percent": 0.82,
+          "fontSize": 32,
+          "fontFamily": "Arial, Helvetica, sans-serif",
+          "fontWeight": "bold"
         }
       ],
       "cities": [
@@ -1434,14 +1507,17 @@
         }
       ]
     },
-    "H-b": {
+    "H03": {
       "quantity": 1,
       "color": "brown",
       "labels": [
         {
           "label": "H",
-          "angle": 60,
-          "percent": 0.8
+          "angle": 330,
+          "percent": 0.82,
+          "fontSize": 32,
+          "fontFamily": "Arial, Helvetica, sans-serif",
+          "fontWeight": "bold"
         }
       ],
       "cities": [
@@ -1477,14 +1553,17 @@
         }
       ]
     },
-    "H-x": {
+    "H04": {
       "quantity": 1,
       "color": "gray",
       "labels": [
         {
           "label": "H",
-          "angle": 60,
-          "percent": 0.8
+          "angle": 330,
+          "percent": 0.82,
+          "fontSize": 32,
+          "fontFamily": "Arial, Helvetica, sans-serif",
+          "fontWeight": "bold"
         }
       ],
       "cities": [
@@ -1520,16 +1599,9 @@
         }
       ]
     },
-    "RUINS-y": {
+    "X01": {
       "quantity": 6,
       "color": "yellow",
-      "labels": [
-        {
-          "label": "R",
-          "angle": 90,
-          "percent": 0.85
-        }
-      ],
       "towns": [
         {
           "angle": 0,
@@ -1549,16 +1621,9 @@
         }
       ]
     },
-    "RUINS-g1": {
+    "X02": {
       "quantity": 3,
       "color": "green",
-      "labels": [
-        {
-          "label": "R",
-          "angle": 90,
-          "percent": 0.85
-        }
-      ],
       "towns": [
         {
           "angle": 0,
@@ -1578,16 +1643,9 @@
         }
       ]
     },
-    "RUINS-g2": {
+    "X03": {
       "quantity": 3,
       "color": "green",
-      "labels": [
-        {
-          "label": "R",
-          "angle": 90,
-          "percent": 0.85
-        }
-      ],
       "towns": [
         {
           "angle": 0,
