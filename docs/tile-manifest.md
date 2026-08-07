@@ -1,13 +1,11 @@
 # 18Dragon — Tile Manifest
 
-Generated from `18dragon.json` `tiles`. Physical print counts (D09 renderer).
-Double-dit tiles omitted. Y cities (Pendrael, Sabreem, Bereshov) are pre-placed
-yellow on the map and upgrade via standard Y tiles (207/208 green, 622 gray).
+From `18dragon.json` `tiles`; physical print counts (D09 renderer). Double-dits omitted.
+Y cities (Pendrael, Sabreem, Bereshov) are pre-placed yellow on the map; upgrade via 207/208 (green) & 622 (gray).
 
-**Totals:** 56 types · 253 physical.
+**Totals:** 55 types · 252 physical.
 
-## Standard track tiles (1822, minus double-dits)
-
+## Standard track tiles
 | Tile | Qty |
 |------|-----|
 | 3 | 6 |
@@ -40,10 +38,9 @@ yellow on the map and upgrade via standard Y tiles (207/208 green, 622 gray).
 | 611 | 4 |
 | 60 | 2 |
 
-## Special-city tiles (B01…V04)
+## Special-city tiles
 
-B-family (B/K) 30/40/50/60; capitals (D/R/V) 30/50/70/90; Brekheim (H) …/100.
-Yellow: B has curve+straight; H/R straight; D has none (pre-placed). Brown/gray splat.
+B/K = 30/40/50/60; capitals D/R/V = 30/50/70/90; Brekheim H …/100. Yellow: B curve+straight; H/R straight; D & V none (pre-placed yellow on map). Brown/gray splat.
 
 | Tile | Color | Letter | Value | Slots | Qty | Cities |
 |------|-------|--------|-------|-------|-----|--------|
@@ -67,22 +64,17 @@ Yellow: B has curve+straight; H/R straight; D has none (pre-placed). Brown/gray 
 | D01 | green | D | 50 | 2 | 1 | Draeven |
 | D02 | brown | D | 70 | 3 | 1 | Draeven |
 | D03 | gray | D | 90 | 3 | 1 | Draeven |
-| V01 | yellow | V | 30 | 2 | 1 | Kalavar |
-| V02 | green | V | 50 | 2 | 1 | Kalavar |
-| V03 | brown | V | 70 | 3 | 1 | Kalavar |
-| V04 | gray | V | 90 | 3 | 1 | Kalavar |
+| V01 | green | V | 50 | 2 | 1 | Kalavar |
+| V02 | brown | V | 70 | 3 | 1 | Kalavar |
+| V03 | gray | V | 90 | 3 | 1 | Kalavar |
 
-## Verantum ruins tiles — X01–X03
-
-Dead-end stub (~33% in, flat) + a `+N` bonus badge + down arrow.
-
+## Verantum ruins tiles
 | Tile | Color | Bonus | Qty | Note |
 |------|-------|-------|-----|------|
 | X01 | yellow | +10 | 6 | single dead-end |
-| X02 | green | +20 | 3 | value upgrade |
+| X02 | green | +20 | 3 | single dead-end |
 | X03 | green | +10/+10 | 3 | two dead-ends |
 
 ## Open / tweak-phase
+- Ruins: exact stub/badge/arrow spacing; per-city slot/splat; Kroddheim K36; ruins lay-rules (deferred).
 
-- **Kalavar (V) yellow tile** — V01 exists, but Kalavar is pre-placed yellow (like Draeven); drop it?
-- Ruins arrow placement relative to the +N badge; per-city slot/splat; Kroddheim K36; ruins lay-rules (deferred).
