@@ -50,6 +50,11 @@ stories:
   # marker (D07) already signals that ruins tile-lays are allowed on the hex.
   # Placement follows normal tile rules (track must connect, etc.), covered by the
   # rulebook — no per-hex board annotation needed.
+  D09:
+    title: "Cameo Print & Cut hex-tile sheet renderer (reuse Tile.jsx headlessly)"
+    type: dev
+    epics: ["Tile Printing"]
+    points: 5
 
   # --- CONTENT (game material, components & rules) ---
   # Board split (2026-07-24, sprint-2 planning): each region = a geography pass +

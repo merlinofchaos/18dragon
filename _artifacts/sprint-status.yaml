@@ -9,7 +9,7 @@
 # membership. Points are assigned in backlog.yaml during sprint planning.
 
 meta:
-  updated: "2026-08-05"  # sprint-14 planned (C15 hex tile set); sprint-13 complete
+  updated: "2026-08-07"  # sprint-14: +D09 Cameo tile-sheet renderer (reuse Tile.jsx headless)
 
 # Unscheduled stories — id: status
 backlog:
@@ -105,9 +105,12 @@ sprints:
       upgrade tiles for the labeled special cities (B/D/H/K/P/R/V + capitals), and
       the Verantum ruins tiles — as the tiles/upgrades sections of 18dragon.json
       plus a manifest. Ruins tile-lay rules (PRD §6.2 open question) are elicited
-      and recorded as C15's first task.
+      and recorded as C15's first task. D09 makes those tiles printable: a custom
+      Silhouette Cameo Print & Cut renderer that reuses 18xxMaker's Tile.jsx art
+      headlessly and owns the sheet/cut-path/registration output.
     stories:
-      C15: stub
+      C15: ready
+      D09: ready
   sprint-13:
     status: complete
     goal: >-

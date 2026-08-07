@@ -26,6 +26,13 @@ epics:
     track: dev
     prd: null
     stories: [D01, D05]
+  "Tile Printing":
+    concept: "Print physical hex tiles on the Silhouette Cameo — reuse 18xxMaker's
+      tile art headlessly, own the Print & Cut sheet (no-cut zones, hex cut paths,
+      registration marks, PNG + cut SVG output)."
+    track: dev
+    prd: "prd-game.md 11"
+    stories: [D09]
 
   # --- Content (game material, components & rules) ---
   "World & Map":

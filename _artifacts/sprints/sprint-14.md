@@ -2,19 +2,20 @@
 
 - **Status:** active
 - **Created:** 2026-08-05
-- **Goal:** The complete 18Dragon track-tile set is defined and renders in
-  18xxMaker — standard numbered track tiles (with 1822-based counts), the custom
-  capital/city upgrade tiles for the labeled special cities, and the Verantum
-  ruins tiles — captured as the `tiles`/`upgrades` sections of `18dragon.json`
-  plus a tile manifest, loading without schema error.
+- **Goal:** The complete 18Dragon track-tile set is defined **and printable** —
+  C15 captures the tiles (standard + special-city + ruins) as the
+  `tiles`/`upgrades` of `18dragon.json` + a manifest; D09 makes them physical via a
+  custom **Silhouette Cameo Print & Cut** renderer that reuses 18xxMaker's `Tile.jsx`
+  art headlessly and owns the sheet / hex cut paths / registration output.
 
 ## Committed stories
 
-View of `sprints.sprint-14.stories` in `sprint-status.yaml` (canonical). **5 points.**
+View of `sprints.sprint-14.stories` in `sprint-status.yaml` (canonical). **10 points.**
 
 | Seq | ID | Title | Type | Points | Status |
 |-----|----|-------|------|--------|--------|
-| 1 | C15 | Define track tile set + tile manifest | content | 5 | stub → flesh first |
+| 1 | C15 | Define track tile set + tile manifest | content | 5 | ready |
+| 2 | D09 | Cameo Print & Cut hex-tile sheet renderer (reuse Tile.jsx headless) | dev | 5 | ready |
 
 ## Scope notes
 
@@ -53,6 +54,20 @@ large, split it out to a rules story mid-sprint (agile-party course-correction).
 **C15 is still a `stub`** — flesh it with `agile-story` first (which is also where
 the special-city progressions and ruins rules get elicited from the designer),
 then implement with `agile-content`.
+
+**Printing (D09) — added mid-planning.** 18xxMaker's built-in tile output can't
+feed the Silhouette Cameo: its `die`/`smallDie`/`Cutlines` path targets
+pin-registered **cutting dies**, not the Cameo's camera-registered **Print & Cut**,
+and it doesn't emit a clean cut-path `.svg`. Decision (with the designer): build a
+**custom renderer that reuses `Tile.jsx` headlessly** (so we don't re-draw
+track/city/label geometry) and owns the Cameo sheet — no-cut-zone placement, hex cut
+paths, registration marks, and PNG + cut-SVG + combined output (the `stickers.py`
+convention). Carries one unknown — the headless `Tile.jsx → static SVG` bridge — so
+D09 leads with a **spike**; if the spike fails, stop and reconsider rather than
+sliding into a full redraw.
+
+**Sequencing:** C15 (tile defs) feeds D09 (renders them). D09's spike can start in
+parallel on a sample tile, but D09's full run needs C15's tiles in `18dragon.json`.
 
 **Deliberately out of scope:** the phase/round track (C16), board mats
 (C16/C18/C21), misc cards (C19), the permit mechanic + rulebook (C07/C22/C23).
