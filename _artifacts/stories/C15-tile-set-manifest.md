@@ -4,7 +4,7 @@
 - **Type:** content
 - **Epics:** World & Map, Game Components
 - **Sprint:** sprint-14
-- **Status:** ready
+- **Status:** review
 - **Created:** 2026-08-07
 
 ## Story
@@ -139,6 +139,39 @@ first-class, not cleanup.
 
 ### Model Used
 
+claude-opus-4-8
+
 ### Completion Notes
 
+- **18xxMaker tile format** (differs from the Ruby engine): `18dragon.json.tiles` is
+  `{id: count}` for built-in tiles, or an inline **hex definition** (with `quantity`,
+  `color`, `cities`, `track`, `labels`, `values`) for custom tiles — no `code`/`upgrades`.
+- **Standard tiles:** 34 types / 203 physical, the 1822 manifest (`g_1822/map.rb`),
+  counts as 1822; `7/8/9` set to a physical **20** (1822 = unlimited). All ids exist
+  in the renderer's tile defs.
+- **Special-city tiles:** 28 custom, per-label families sharing value tiers —
+  B-family (B/K/P) 30/40/50/60, capital-family (D/R/V) 30/50/70/90, Brekheim (H)
+  …/**100** gray. Slots B-family 1→2→2→2, capitals 2→2→3→3, **Brekheim →4 gray**;
+  brown/gray = splat (6 legs). Generated from standard city-tile templates.
+- **Ruins tiles:** 3 custom (RUINS-y +10, RUINS-g1 +20, RUINS-g2 +10/+10) — modelled
+  as valued towns; the backward-arrow dead-end **visual needs a pass** (noted).
+- **Validated:** `18dragon.json` parses and **renders in 18xxMaker** — the D09
+  tile-sheet renderer produced all 259 tiles across 6 sheets, no errors (also fixed a
+  D09 bug: it read `count` not `quantity` for custom tiles). Rendered proof in
+  `samples/tiles-18dragon/`.
+- **First pass — the designer tweaks by seeing:** slot counts, splat blocking where
+  geometry won't allow 6 legs, Kroddheim K36 classification, and the ruins visual are
+  the expected tweak-phase items (AC 7).
+
+### Open for the tweak phase
+
+- Per-city slot tuning (some B/K/P → 3 slots); splat vs blocked brown per capital.
+- Kroddheim K36 (unlabeled yellow city) — classify as normal or B-family.
+- Ruins tiles' dead-end/backward-arrow **visual** (currently valued towns).
+- `7/8/9` physical count (placeholder 20).
+
 ### Files Changed
+
+- `18dragon.json` — new `tiles` section (34 standard + 28 special-city + 3 ruins)
+- `docs/tile-manifest.md` — the tile manifest (counts, colors, cities)
+- `bin/tile-sheet.mjs` (fork, `18dragon`) — quantity-vs-count fix (committed there)

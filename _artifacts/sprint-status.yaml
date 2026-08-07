@@ -109,7 +109,7 @@ sprints:
       Silhouette Cameo Print & Cut renderer that reuses 18xxMaker's Tile.jsx art
       headlessly and owns the sheet/cut-path/registration output.
     stories:
-      C15: ready
+      C15: review
       D09: review
   sprint-13:
     status: complete
