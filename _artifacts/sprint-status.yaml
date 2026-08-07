@@ -110,7 +110,7 @@ sprints:
       headlessly and owns the sheet/cut-path/registration output.
     stories:
       C15: ready
-      D09: ready
+      D09: review
   sprint-13:
     status: complete
     goal: >-
