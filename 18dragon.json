@@ -1402,7 +1402,8 @@
       "track": [
         {
           "side": 1,
-          "type": "stub"
+          "type": "straight",
+          "end": 0.5
         }
       ],
       "routeBonuses": [
@@ -1428,7 +1429,8 @@
       "track": [
         {
           "side": 1,
-          "type": "stub"
+          "type": "straight",
+          "end": 0.5
         }
       ],
       "routeBonuses": [
@@ -1454,11 +1456,13 @@
       "track": [
         {
           "side": 1,
-          "type": "stub"
+          "type": "straight",
+          "end": 0.5
         },
         {
           "side": 4,
-          "type": "stub"
+          "type": "straight",
+          "end": 0.5
         }
       ],
       "routeBonuses": [
