@@ -578,11 +578,11 @@
       "labels": [
         {
           "label": "B",
-          "x": -62,
+          "x": -68,
           "y": 0,
           "fontFamily": "Arial, Helvetica, sans-serif",
           "fontWeight": "bold",
-          "fontSize": 28
+          "fontSize": 26
         }
       ],
       "cities": [
@@ -618,11 +618,11 @@
       "labels": [
         {
           "label": "B",
-          "x": -62,
+          "x": -68,
           "y": 0,
           "fontFamily": "Arial, Helvetica, sans-serif",
           "fontWeight": "bold",
-          "fontSize": 28
+          "fontSize": 26
         }
       ],
       "cities": [
@@ -729,11 +729,11 @@
       "labels": [
         {
           "label": "K",
-          "x": -62,
+          "x": -68,
           "y": 0,
           "fontFamily": "Arial, Helvetica, sans-serif",
           "fontWeight": "bold",
-          "fontSize": 28
+          "fontSize": 26
         }
       ],
       "cities": [
@@ -766,11 +766,11 @@
       "labels": [
         {
           "label": "K",
-          "x": -62,
+          "x": -68,
           "y": 0,
           "fontFamily": "Arial, Helvetica, sans-serif",
           "fontWeight": "bold",
-          "fontSize": 28
+          "fontSize": 26
         }
       ],
       "cities": [
@@ -925,11 +925,11 @@
       "labels": [
         {
           "label": "H",
-          "x": -62,
+          "x": -68,
           "y": 0,
           "fontFamily": "Arial, Helvetica, sans-serif",
           "fontWeight": "bold",
-          "fontSize": 28
+          "fontSize": 26
         }
       ],
       "cities": [
