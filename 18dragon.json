@@ -496,14 +496,14 @@
       ]
     },
     "B03": {
-      "quantity": 4,
+      "quantity": 2,
       "color": "green",
       "rotations": 3,
       "labels": [
         {
           "label": "B",
           "x": -36,
-          "y": -38,
+          "y": -52,
           "fontFamily": "Arial, Helvetica, sans-serif",
           "fontWeight": "bold",
           "fontSize": 30
@@ -526,17 +526,52 @@
           "side": 1
         },
         {
+          "side": 4
+        },
+        {
           "side": 2
+        }
+      ]
+    },
+    "B04": {
+      "quantity": 2,
+      "color": "green",
+      "rotations": 3,
+      "labels": [
+        {
+          "label": "B",
+          "x": -36,
+          "y": -52,
+          "fontFamily": "Arial, Helvetica, sans-serif",
+          "fontWeight": "bold",
+          "fontSize": 30
+        }
+      ],
+      "cities": [
+        {
+          "size": 2
+        }
+      ],
+      "values": [
+        {
+          "angle": 210,
+          "percent": 0.8,
+          "value": 40
+        }
+      ],
+      "track": [
+        {
+          "side": 1
         },
         {
           "side": 4
         },
         {
-          "side": 5
+          "side": 3
         }
       ]
     },
-    "B04": {
+    "B05": {
       "quantity": 4,
       "color": "brown",
       "labels": [
@@ -582,7 +617,7 @@
         }
       ]
     },
-    "B05": {
+    "B06": {
       "quantity": 4,
       "color": "gray",
       "labels": [
@@ -669,7 +704,7 @@
         {
           "label": "K",
           "x": -36,
-          "y": -38,
+          "y": -52,
           "fontFamily": "Arial, Helvetica, sans-serif",
           "fontWeight": "bold",
           "fontSize": 30
@@ -689,16 +724,13 @@
       ],
       "track": [
         {
-          "side": 1
-        },
-        {
           "side": 2
         },
         {
-          "side": 4
+          "side": 3
         },
         {
-          "side": 5
+          "side": 4
         }
       ]
     },
@@ -837,7 +869,7 @@
         {
           "label": "H",
           "x": -36,
-          "y": -38,
+          "y": -52,
           "fontFamily": "Arial, Helvetica, sans-serif",
           "fontWeight": "bold",
           "fontSize": 30
@@ -1005,7 +1037,7 @@
         {
           "label": "R",
           "x": -36,
-          "y": -38,
+          "y": -52,
           "fontFamily": "Arial, Helvetica, sans-serif",
           "fontWeight": "bold",
           "fontSize": 30
@@ -1029,6 +1061,9 @@
         },
         {
           "side": 2
+        },
+        {
+          "side": 3
         },
         {
           "side": 4
@@ -1138,7 +1173,7 @@
         {
           "label": "D",
           "x": -36,
-          "y": -38,
+          "y": -52,
           "fontFamily": "Arial, Helvetica, sans-serif",
           "fontWeight": "bold",
           "fontSize": 30
@@ -1271,7 +1306,7 @@
         {
           "label": "V",
           "x": -36,
-          "y": -38,
+          "y": -52,
           "fontFamily": "Arial, Helvetica, sans-serif",
           "fontWeight": "bold",
           "fontSize": 30
@@ -1294,13 +1329,10 @@
           "side": 1
         },
         {
-          "side": 2
-        },
-        {
           "side": 4
         },
         {
-          "side": 5
+          "side": 3
         }
       ]
     },
@@ -4495,16 +4527,16 @@
             "size": 2,
             "name": {
               "name": "Sabreem"
-            }
+            },
+            "companies": [
+              {
+                "label": "27"
+              }
+            ]
           }
         ],
         "hexes": [
           "O32"
-        ],
-        "tokens": [
-          {
-            "label": "27"
-          }
         ],
         "values": [
           {
@@ -5189,7 +5221,12 @@
             "size": 2,
             "name": {
               "name": "Bereshov"
-            }
+            },
+            "companies": [
+              {
+                "label": "20"
+              }
+            ]
           }
         ],
         "labels": [
@@ -5207,11 +5244,6 @@
             "angle": 60,
             "percent": 0.82,
             "fontSize": 18
-          }
-        ],
-        "tokens": [
-          {
-            "label": "20"
           }
         ],
         "hexes": [
