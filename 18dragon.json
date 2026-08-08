@@ -578,11 +578,11 @@
       "labels": [
         {
           "label": "B",
-          "x": -36,
-          "y": -38,
+          "x": -62,
+          "y": 0,
           "fontFamily": "Arial, Helvetica, sans-serif",
           "fontWeight": "bold",
-          "fontSize": 30
+          "fontSize": 28
         }
       ],
       "cities": [
@@ -602,9 +602,6 @@
           "side": 1
         },
         {
-          "side": 2
-        },
-        {
           "side": 3
         },
         {
@@ -612,9 +609,6 @@
         },
         {
           "side": 5
-        },
-        {
-          "side": 6
         }
       ]
     },
@@ -624,11 +618,11 @@
       "labels": [
         {
           "label": "B",
-          "x": -36,
-          "y": -38,
+          "x": -62,
+          "y": 0,
           "fontFamily": "Arial, Helvetica, sans-serif",
           "fontWeight": "bold",
-          "fontSize": 30
+          "fontSize": 28
         }
       ],
       "cities": [
@@ -648,9 +642,6 @@
           "side": 1
         },
         {
-          "side": 2
-        },
-        {
           "side": 3
         },
         {
@@ -658,9 +649,6 @@
         },
         {
           "side": 5
-        },
-        {
-          "side": 6
         }
       ]
     },
@@ -741,11 +729,11 @@
       "labels": [
         {
           "label": "K",
-          "x": -36,
-          "y": -38,
+          "x": -62,
+          "y": 0,
           "fontFamily": "Arial, Helvetica, sans-serif",
           "fontWeight": "bold",
-          "fontSize": 30
+          "fontSize": 28
         }
       ],
       "cities": [
@@ -762,9 +750,6 @@
       ],
       "track": [
         {
-          "side": 1
-        },
-        {
           "side": 2
         },
         {
@@ -772,12 +757,6 @@
         },
         {
           "side": 4
-        },
-        {
-          "side": 5
-        },
-        {
-          "side": 6
         }
       ]
     },
@@ -787,11 +766,11 @@
       "labels": [
         {
           "label": "K",
-          "x": -36,
-          "y": -38,
+          "x": -62,
+          "y": 0,
           "fontFamily": "Arial, Helvetica, sans-serif",
           "fontWeight": "bold",
-          "fontSize": 30
+          "fontSize": 28
         }
       ],
       "cities": [
@@ -808,9 +787,6 @@
       ],
       "track": [
         {
-          "side": 1
-        },
-        {
           "side": 2
         },
         {
@@ -818,12 +794,6 @@
         },
         {
           "side": 4
-        },
-        {
-          "side": 5
-        },
-        {
-          "side": 6
         }
       ]
     },
@@ -909,11 +879,11 @@
       "labels": [
         {
           "label": "H",
-          "x": -36,
-          "y": -38,
+          "x": -62,
+          "y": 0,
           "fontFamily": "Arial, Helvetica, sans-serif",
           "fontWeight": "bold",
-          "fontSize": 30
+          "fontSize": 28
         }
       ],
       "cities": [
@@ -955,11 +925,11 @@
       "labels": [
         {
           "label": "H",
-          "x": -36,
-          "y": -38,
+          "x": -62,
+          "y": 0,
           "fontFamily": "Arial, Helvetica, sans-serif",
           "fontWeight": "bold",
-          "fontSize": 30
+          "fontSize": 28
         }
       ],
       "cities": [
@@ -1080,11 +1050,11 @@
       "labels": [
         {
           "label": "R",
-          "x": -36,
-          "y": -38,
+          "x": -62,
+          "y": 0,
           "fontFamily": "Arial, Helvetica, sans-serif",
           "fontWeight": "bold",
-          "fontSize": 30
+          "fontSize": 28
         }
       ],
       "cities": [
@@ -1126,11 +1096,11 @@
       "labels": [
         {
           "label": "R",
-          "x": -36,
-          "y": -38,
+          "x": -62,
+          "y": 0,
           "fontFamily": "Arial, Helvetica, sans-serif",
           "fontWeight": "bold",
-          "fontSize": 30
+          "fontSize": 28
         }
       ],
       "cities": [
@@ -1213,11 +1183,11 @@
       "labels": [
         {
           "label": "D",
-          "x": -36,
-          "y": -38,
+          "x": -62,
+          "y": 0,
           "fontFamily": "Arial, Helvetica, sans-serif",
           "fontWeight": "bold",
-          "fontSize": 30
+          "fontSize": 28
         }
       ],
       "cities": [
@@ -1259,11 +1229,11 @@
       "labels": [
         {
           "label": "D",
-          "x": -36,
-          "y": -38,
+          "x": -62,
+          "y": 0,
           "fontFamily": "Arial, Helvetica, sans-serif",
           "fontWeight": "bold",
-          "fontSize": 30
+          "fontSize": 28
         }
       ],
       "cities": [
@@ -1343,11 +1313,11 @@
       "labels": [
         {
           "label": "V",
-          "x": -36,
-          "y": -38,
+          "x": -62,
+          "y": 0,
           "fontFamily": "Arial, Helvetica, sans-serif",
           "fontWeight": "bold",
-          "fontSize": 30
+          "fontSize": 28
         }
       ],
       "cities": [
@@ -1389,11 +1359,11 @@
       "labels": [
         {
           "label": "V",
-          "x": -36,
-          "y": -38,
+          "x": -62,
+          "y": 0,
           "fontFamily": "Arial, Helvetica, sans-serif",
           "fontWeight": "bold",
-          "fontSize": 30
+          "fontSize": 28
         }
       ],
       "cities": [

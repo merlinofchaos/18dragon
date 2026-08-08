@@ -1,9 +1,8 @@
 # 18Dragon — Tile Manifest
 
-From `18dragon.json` `tiles`; physical print counts. Double-dits omitted.
-Y cities (Pendrael, Sabreem, Bereshov) pre-placed yellow on the map (upgrade via 207/208 green, 622 gray).
+From `18dragon.json` `tiles`. Double-dits omitted; Y cities pre-placed yellow (upgrade via 207/208/622).
 
-**Totals:** 56 types · 249 physical.
+**Totals:** 57 types · 254 physical.
 
 ## Standard track tiles
 | Tile | Qty |
@@ -36,12 +35,12 @@ Y cities (Pendrael, Sabreem, Bereshov) pre-placed yellow on the map (upgrade via
 | 545 | 6 |
 | 546 | 8 |
 | 611 | 4 |
+| 448 | 5 |
 | 60 | 2 |
 
 ## Special-city tiles
 
-B/K = 30/40/50/60; capitals D/R/V = 30/50/70/90; Brekheim H …/100. Track per designer
-(B green: 2 straight+3rd-exit configs; K green: 3 clustered; R green: 5 legs; V green: 3 legs).
+B/K = 30/40/50/60; capitals D/R/V = 30/50/70/90; Brekheim H …/100. B upgrades to chicken-foot (619); K stays 3 legs; capitals splat.
 
 | Tile | Color | Letter | Value | Slots | Qty | Legs |
 |------|-------|--------|-------|-------|-----|------|
@@ -49,12 +48,12 @@ B/K = 30/40/50/60; capitals D/R/V = 30/50/70/90; Brekheim H …/100. Track per d
 | B02 | yellow | B | 30 | 1 | 4 | 2 |
 | B03 | green | B | 40 | 2 | 2 | 3 |
 | B04 | green | B | 40 | 2 | 2 | 3 |
-| B05 | brown | B | 50 | 2 | 4 | 6 |
-| B06 | gray | B | 60 | 2 | 4 | 6 |
+| B05 | brown | B | 50 | 2 | 4 | 4 |
+| B06 | gray | B | 60 | 2 | 4 | 4 |
 | K01 | yellow | K | 30 | 1 | 2 | 2 |
 | K02 | green | K | 40 | 2 | 2 | 3 |
-| K03 | brown | K | 50 | 2 | 2 | 6 |
-| K04 | gray | K | 60 | 2 | 2 | 6 |
+| K03 | brown | K | 50 | 2 | 2 | 3 |
+| K04 | gray | K | 60 | 2 | 2 | 3 |
 | H01 | yellow | H | 30 | 2 | 1 | 2 |
 | H02 | green | H | 50 | 2 | 1 | 4 |
 | H03 | brown | H | 70 | 3 | 1 | 6 |
