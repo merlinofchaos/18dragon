@@ -3725,7 +3725,8 @@
           {
             "size": 1,
             "name": {
-              "name": "Kroddheim"
+              "name": "Kroddheim",
+              "reverse": true
             }
           }
         ],
@@ -4233,7 +4234,8 @@
           {
             "size": 1,
             "name": {
-              "name": "Kalavar"
+              "name": "Kalavar",
+              "reverse": true
             }
           }
         ],
@@ -4257,8 +4259,8 @@
           {
             "label": "V",
             "color": "#000000",
-            "angle": 240,
-            "percent": 0.6,
+            "angle": 60,
+            "percent": 0.82,
             "fontSize": 18
           }
         ],
@@ -4518,8 +4520,8 @@
           {
             "label": "Y",
             "color": "#000000",
-            "angle": 180,
-            "percent": 0.72,
+            "angle": 60,
+            "percent": 0.82,
             "fontSize": 18
           }
         ],
@@ -4527,7 +4529,8 @@
           {
             "size": 2,
             "name": {
-              "name": "Sabreem"
+              "name": "Sabreem",
+              "reverse": true
             },
             "companies": [
               {
@@ -5221,7 +5224,8 @@
           {
             "size": 2,
             "name": {
-              "name": "Bereshov"
+              "name": "Bereshov",
+              "reverse": true
             },
             "companies": [
               {
@@ -5242,8 +5246,8 @@
           {
             "label": "Y",
             "color": "#000000",
-            "angle": 180,
-            "percent": 0.72,
+            "angle": 60,
+            "percent": 0.82,
             "fontSize": 18
           }
         ],
@@ -5561,7 +5565,8 @@
           {
             "size": 2,
             "name": {
-              "name": "Litoria"
+              "name": "Litoria",
+              "y": -22
             }
           }
         ],
@@ -5632,8 +5637,8 @@
           {
             "label": "Y",
             "color": "#000000",
-            "angle": 180,
-            "percent": 0.72,
+            "angle": 60,
+            "percent": 0.82,
             "fontSize": 18
           }
         ],
@@ -5641,7 +5646,8 @@
           {
             "size": 2,
             "name": {
-              "name": "Pendrael"
+              "name": "Pendrael",
+              "reverse": true
             }
           }
         ],
