@@ -428,6 +428,7 @@
     "545": 6,
     "546": 8,
     "611": 4,
+    "448": 5,
     "60": 2,
     "B01": {
       "quantity": 4,
@@ -4256,8 +4257,8 @@
           {
             "label": "V",
             "color": "#000000",
-            "angle": 60,
-            "percent": 0.82,
+            "angle": 150,
+            "percent": 0.72,
             "fontSize": 18
           }
         ],
@@ -4517,8 +4518,8 @@
           {
             "label": "Y",
             "color": "#000000",
-            "angle": 60,
-            "percent": 0.82,
+            "angle": 150,
+            "percent": 0.72,
             "fontSize": 18
           }
         ],
@@ -5241,8 +5242,8 @@
           {
             "label": "Y",
             "color": "#000000",
-            "angle": 60,
-            "percent": 0.82,
+            "angle": 150,
+            "percent": 0.72,
             "fontSize": 18
           }
         ],
@@ -5631,8 +5632,8 @@
           {
             "label": "Y",
             "color": "#000000",
-            "angle": 60,
-            "percent": 0.82,
+            "angle": 150,
+            "percent": 0.72,
             "fontSize": 18
           }
         ],
