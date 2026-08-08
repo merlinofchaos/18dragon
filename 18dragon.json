@@ -1409,16 +1409,16 @@
       "routeBonuses": [
         {
           "value": "+10",
-          "x": -8,
-          "y": -52
+          "x": 0,
+          "y": -38
         }
       ],
       "shapes": [
         {
           "type": "art",
           "art": "downarrow",
-          "x": 28,
-          "y": -52,
+          "x": 0,
+          "y": -60,
           "width": 20
         }
       ]
@@ -1436,16 +1436,16 @@
       "routeBonuses": [
         {
           "value": "+20",
-          "x": -8,
-          "y": -52
+          "x": 0,
+          "y": -38
         }
       ],
       "shapes": [
         {
           "type": "art",
           "art": "downarrow",
-          "x": 28,
-          "y": -52,
+          "x": 0,
+          "y": -60,
           "width": 20
         }
       ]
@@ -1468,29 +1468,29 @@
       "routeBonuses": [
         {
           "value": "+10",
-          "x": -36,
-          "y": -30
+          "x": -32,
+          "y": -28
         },
         {
           "value": "+10",
-          "x": 36,
-          "y": 30
+          "x": 32,
+          "y": 28
         }
       ],
       "shapes": [
         {
           "type": "art",
           "art": "downarrow",
-          "x": -8,
-          "y": -30,
+          "x": -58,
+          "y": -28,
           "width": 18,
           "rotation": 180
         },
         {
           "type": "art",
           "art": "downarrow",
-          "x": 8,
-          "y": 30,
+          "x": 58,
+          "y": 28,
           "width": 18
         }
       ]
