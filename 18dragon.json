@@ -1403,23 +1403,23 @@
         {
           "side": 1,
           "type": "straight",
-          "end": 0.5
+          "end": 0.3
         }
       ],
       "routeBonuses": [
         {
           "value": "+10",
-          "x": 0,
-          "y": -6
+          "x": 35,
+          "y": 14
         }
       ],
       "shapes": [
         {
           "type": "art",
           "art": "downarrow",
-          "x": 0,
-          "y": -38,
-          "width": 20
+          "x": 35,
+          "y": 38,
+          "width": 18
         }
       ]
     },
@@ -1430,23 +1430,23 @@
         {
           "side": 1,
           "type": "straight",
-          "end": 0.5
+          "end": 0.3
         }
       ],
       "routeBonuses": [
         {
           "value": "+20",
-          "x": 0,
-          "y": -6
+          "x": 35,
+          "y": 14
         }
       ],
       "shapes": [
         {
           "type": "art",
           "art": "downarrow",
-          "x": 0,
-          "y": -38,
-          "width": 20
+          "x": 35,
+          "y": 38,
+          "width": 18
         }
       ]
     },
