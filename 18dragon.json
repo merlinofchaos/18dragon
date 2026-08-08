@@ -4257,8 +4257,8 @@
           {
             "label": "V",
             "color": "#000000",
-            "angle": 150,
-            "percent": 0.72,
+            "angle": 240,
+            "percent": 0.6,
             "fontSize": 18
           }
         ],
@@ -4518,7 +4518,7 @@
           {
             "label": "Y",
             "color": "#000000",
-            "angle": 150,
+            "angle": 180,
             "percent": 0.72,
             "fontSize": 18
           }
@@ -5242,7 +5242,7 @@
           {
             "label": "Y",
             "color": "#000000",
-            "angle": 150,
+            "angle": 180,
             "percent": 0.72,
             "fontSize": 18
           }
@@ -5632,7 +5632,7 @@
           {
             "label": "Y",
             "color": "#000000",
-            "angle": 150,
+            "angle": 180,
             "percent": 0.72,
             "fontSize": 18
           }
