@@ -1457,41 +1457,43 @@
         {
           "side": 4,
           "type": "straight",
-          "end": 0.35
+          "end": 0.3
         },
         {
           "side": 1,
           "type": "straight",
-          "end": 0.35
+          "end": 0.3
         }
       ],
       "routeBonuses": [
         {
           "value": "+10",
-          "x": -22,
-          "y": -28
+          "size": 10,
+          "x": -40,
+          "y": -18
         },
         {
           "value": "+10",
-          "x": 22,
-          "y": 28
+          "size": 10,
+          "x": 40,
+          "y": 18
         }
       ],
       "shapes": [
         {
           "type": "art",
           "art": "downarrow",
-          "x": -52,
-          "y": -28,
-          "width": 18,
+          "x": -18,
+          "y": -40,
+          "width": 16,
           "rotation": 180
         },
         {
           "type": "art",
           "art": "downarrow",
-          "x": 52,
-          "y": 28,
-          "width": 18
+          "x": 18,
+          "y": 40,
+          "width": 16
         }
       ]
     }
