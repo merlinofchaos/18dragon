@@ -940,8 +940,9 @@
       "values": [
         {
           "angle": 210,
-          "percent": 0.8,
-          "value": 100
+          "percent": 0.9,
+          "value": 100,
+          "fontSize": 10
         }
       ],
       "track": [
