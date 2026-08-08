@@ -1424,7 +1424,7 @@
       ]
     },
     "X02": {
-      "quantity": 3,
+      "quantity": 2,
       "color": "green",
       "track": [
         {
@@ -1451,29 +1451,29 @@
       ]
     },
     "X03": {
-      "quantity": 3,
+      "quantity": 1,
       "color": "green",
       "track": [
         {
-          "side": 1,
-          "type": "straight",
-          "end": 0.5
-        },
-        {
           "side": 4,
           "type": "straight",
-          "end": 0.5
+          "end": 0.35
+        },
+        {
+          "side": 1,
+          "type": "straight",
+          "end": 0.35
         }
       ],
       "routeBonuses": [
         {
           "value": "+10",
-          "x": -8,
-          "y": -20
+          "x": -36,
+          "y": -30
         },
         {
           "value": "+10",
-          "x": -8,
+          "x": 36,
           "y": 30
         }
       ],
@@ -1481,14 +1481,15 @@
         {
           "type": "art",
           "art": "downarrow",
-          "x": 30,
-          "y": -20,
-          "width": 18
+          "x": -8,
+          "y": -30,
+          "width": 18,
+          "rotation": 180
         },
         {
           "type": "art",
           "art": "downarrow",
-          "x": 30,
+          "x": 8,
           "y": 30,
           "width": 18
         }

@@ -72,8 +72,8 @@ B/K = 30/40/50/60; capitals D/R/V = 30/50/70/90; Brekheim H …/100. Yellow: B c
 | Tile | Color | Bonus | Qty | Note |
 |------|-------|-------|-----|------|
 | X01 | yellow | +10 | 6 | single dead-end |
-| X02 | green | +20 | 3 | single dead-end |
-| X03 | green | +10/+10 | 3 | two dead-ends |
+| X02 | green | +20 | 2 | value upgrade |
+| X03 | green | +10/+10 | 1 | two dead-ends (don't touch) |
 
 ## Open / tweak-phase
 - Ruins: exact stub/badge/arrow spacing; per-city slot/splat; Kroddheim K36; ruins lay-rules (deferred).
