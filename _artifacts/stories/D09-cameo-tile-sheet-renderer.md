@@ -198,6 +198,10 @@ them at print setup and the no-cut zones reserve their space — the same workfl
 **Committed on the fork `18dragon`:** `bin/spike-tile-svg.mjs` (spike) +
 `bin/tile-sheet.mjs` (renderer).
 
+**Output location:** the real 18Dragon sheets are generated to the committed
+`print/tiles/` dir — `node bin/tile-sheet.mjs 18dragon <repo>/print/tiles --inch 1.0`
+(1" flat-to-flat). `samples/` holds only throwaway test renders (gitignored).
+
 **Still open:** point `tile-sheet.mjs` at 18Dragon's real tiles once **C15** lands
 (the tool reads any game's `tiles`); write the real run to the 18Dragon `print/`;
 designer Silhouette **round-trip** verification (AC 7).
