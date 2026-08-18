@@ -4,7 +4,7 @@
 - **Type:** content
 - **Epics:** World & Map, Game Components
 - **Sprint:** sprint-14
-- **Status:** review
+- **Status:** done
 - **Created:** 2026-08-07
 
 ## Story
@@ -158,7 +158,7 @@ claude-opus-4-8
 - **Validated:** `18dragon.json` parses and **renders in 18xxMaker** — the D09
   tile-sheet renderer produced all 259 tiles across 6 sheets, no errors (also fixed a
   D09 bug: it read `count` not `quantity` for custom tiles). Rendered proof in
-  `samples/tiles-18dragon/`.
+  `print/tiles/` (the committed deliverable; not `samples/`).
 - **First pass — the designer tweaks by seeing:** slot counts, splat blocking where
   geometry won't allow 6 legs, Kroddheim K36 classification, and the ruins visual are
   the expected tweak-phase items (AC 7).

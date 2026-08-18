@@ -9,10 +9,13 @@
 // the private cards (crop marks, print-color-adjust). Perm/prize trains (2P/LP/5P/P+)
 // are NOT here — they render on their private backs (gen-private-cards.mjs).
 
-import { readFileSync, writeFileSync } from "node:fs";
-import { COIN_CSS, TRAIN_CSS, trainFace } from "./cardkit.mjs";
+import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
+import { dirname } from "node:path";
+import { COIN_CSS, TRAIN_CSS, trainFace, FONT_FACE, CARD_ROOT_CSS } from "./cardkit.mjs";
 
-const [, , inPath = "data/trains.json", outPath = "print/train-cards.html", contentPath] =
+// Standalone/preview output only — the printable train deck is part of the unified
+// print/cards-duplex.html from gen-cards.mjs. Default writes to the gitignored preview/.
+const [, , inPath = "data/trains.json", outPath = "preview/train-cards.html", contentPath] =
   process.argv;
 
 // ---- layout (matches the private deck) ----
@@ -40,8 +43,9 @@ for (const t of deck) {
 }
 
 // Back of L = the 2; back of 3-E = the same face reprinted (designer 2026-07-29).
-const faceCard = (t) => `<div class="card tcard">${trainFace(t)}</div>`;
-const backCard = (t) => `<div class="card tcard">${trainFace(t.back ?? t)}</div>`;
+// trainFace() returns a full 67×44 `.tc` card, so it IS the grid cell (no wrapper).
+const faceCard = (t) => trainFace(t);
+const backCard = (t) => trainFace(t.back ?? t);
 
 function chunk(arr, n) {
   const out = [];
@@ -77,7 +81,7 @@ function cropMarks() {
 function sheetHtml(cells, label, kind) {
   const inner = cells
     .map((t) => {
-      if (!t) return `<div class="card blank"></div>`;
+      if (!t) return `<div class="blank"></div>`;
       return kind === "front" ? faceCard(t) : backCard(t);
     })
     .join("");
@@ -103,9 +107,11 @@ pages.forEach((page, i) => {
 const style = `
   :root { color-scheme: light; }
   * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  ${FONT_FACE}
+  ${CARD_ROOT_CSS}
   ${COIN_CSS}
   ${TRAIN_CSS}
-  body { margin: 0; background: #ccc; font-family: Georgia, "Times New Roman", serif; }
+  body { margin: 0; background: #ccc; font-family: var(--serif); }
   .sheet-label { position: absolute; top: 9mm; left: 0; right: 0; text-align: center;
     font-family: system-ui, sans-serif; font-size: 8pt; color: #666; }
   .sheet { position: relative; width: ${PAGE_W}mm; height: ${PAGE_H}mm; background: #fff;
@@ -115,9 +121,7 @@ const style = `
   .crop.h { height: 0.15mm; width: 4mm; }
   .grid { display: grid; width: ${GRID_W}mm;
     grid-template-columns: repeat(${COLS}, ${CARD_W}mm); grid-auto-rows: ${CARD_H}mm; }
-  .card { width: ${CARD_W}mm; height: ${CARD_H}mm; border: 0.2mm solid #000;
-    overflow: hidden; }
-  .card.blank { border: 0.2mm dashed #bbb; }
+  .blank { width: ${CARD_W}mm; height: ${CARD_H}mm; }
   @media print {
     body { background: #fff; }
     .sheet-label { display: none; }
@@ -139,6 +143,7 @@ ${content}</body>
 </html>
 `;
 
+mkdirSync(dirname(outPath), { recursive: true });
 writeFileSync(outPath, standalone);
 if (contentPath) writeFileSync(contentPath, content);
 

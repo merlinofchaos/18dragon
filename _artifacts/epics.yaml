@@ -32,7 +32,7 @@ epics:
       registration marks, PNG + cut SVG output)."
     track: dev
     prd: "prd-game.md 11"
-    stories: [D09]
+    stories: [D09, D10]
 
   # --- Content (game material, components & rules) ---
   "World & Map":

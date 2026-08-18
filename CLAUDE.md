@@ -7,7 +7,7 @@ It is a variant of **1822** (not 1830). The game file is `18dragon.json` in this
 
 - Currency: `#gp` (gold pieces — may be renamed after world design)
 - Subtitle: "Railways in a Fantasy Land"
-- Players: 2–7
+- Players: 3–6 (18Dragon-specific; not 1822's 2–7 — see PRD §2 / §6.3)
 - Bank: 12,000 gp
 - Source of truth for 1822 rules/data: `/Users/earlmiles/Projects/18xx/lib/engine/game/g_1822/`
 
@@ -331,15 +331,32 @@ Key fields: `name`, `price`, `revenue`, `description`, `hex` (optional home hex 
 Defines the market pool display and rules notes. Uses `color`, `note`, `icon` fields.
 
 ### `rounds`
-Round tracker entries. Each has `name` and `color`. Listed in reverse order
-(last round first) as this is how the tracker reads:
+Round tracker entries. Each has `name` and `color`. **Array order is
+tracker-type-dependent** (the `map.roundTracker` / `stock.display.roundTracker`
+`type` field) — verified by rendering (sprint-15/C16):
+- **`type: "round"`** (circular ring) and **`type: "row"`/`"col"`** (plain):
+  **forward play order** — `SR` first. The renderer places `rounds[0]` first and
+  draws arrows in array order, so forward order makes the ring/row read
+  `SR → OR1 → … `. 1861 (SR/OR/MR structure, `"round"`) uses
+  `[SR, OR1, MR, OR2, MR]`; 1858 uses `[SR, OR1, OR2]`.
+- **`type: "row-reverse"`/`"col-reverse"`** only: **reverse order** (last round
+  first) — these types flip the index. 1889 (`"row"`... but authored reverse) is
+  the outlier; prefer forward + a non-reverse type.
+
+18Dragon uses a `"round"` map tracker with **forward** order, all circles white
+(the designer dropped per-round colors — they didn't match play reality):
 ```json
 [
-  { "name": "OR2", "color": "brown" },
-  { "name": "OR1", "color": "green" },
-  { "name": "SR",  "color": "white" }
+  { "name": "SR",  "color": "white" },
+  { "name": "OR1", "color": "white" },
+  { "name": "MR",  "color": "white" },
+  { "name": "OR2", "color": "white" },
+  { "name": "MR",  "color": "white" }
 ]
 ```
+> Earlier this note said "reverse order (last round first)" unconditionally —
+> that's only true for the `-reverse` types; a `"round"` tracker rendered the
+> reverse array with its arrows running **backwards**. Always render to confirm.
 
 ### `turns`
 Describes the turn sequence for display on reference cards.
@@ -407,7 +424,9 @@ keeps only 18xxMaker schema/technical reference.
 - [ ] `map.hexes` — full map (doodle photo: `docs/18xx_Dragon doodle map.jpg`)
 - [ ] `companies` — major company definitions
 - [ ] `privates` — private companies and concessions
-- [ ] Verify/adjust `players` cert limits and capital for 18Dragon variant rules
+- [x] Verify/adjust `players` cert limits and capital for 18Dragon variant rules
+      — set to PRD §2/§6.3 values (3–6p; cert 16/16/16/13, cash 375/375/375/300);
+      provisional pending playtest (§7)
 - [ ] Verify/adjust `stock.market` values if diverging from 1822
 - [ ] Verify/adjust `phases` if any 18Dragon-specific rule changes apply
 - [ ] Choose final currency name/symbol (currently `#gp`)

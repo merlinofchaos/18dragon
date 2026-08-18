@@ -41,8 +41,11 @@ a subject.
 
 ## Rules
 
-- A retro that changes nothing is a failed retro — either affirm the workflow is
-  working (say so) or make a specific adjustment.
+- A retro must produce a genuine **assessment** — but not necessarily a change.
+  Affirm what's working (and say why), or fix what actually got in the way. Do
+  **not** manufacture a workflow change to justify the ceremony: change that isn't
+  earned by a real problem can make things worse. "It went well, keep doing X" is a
+  valid, complete outcome.
 - Keep `sprint-status.yaml` consistent: unfinished stories must not be left
   pointing at a completed sprint.
 - Blame-free, systems-focused, specific.

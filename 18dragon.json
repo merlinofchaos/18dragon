@@ -16,33 +16,23 @@
   "bank": 12000,
   "players": [
     {
-      "number": 2,
-      "certLimit": 40,
-      "capital": 1000
-    },
-    {
       "number": 3,
-      "certLimit": 26,
-      "capital": 700
+      "certLimit": 16,
+      "capital": 375
     },
     {
       "number": 4,
-      "certLimit": 20,
-      "capital": 525
+      "certLimit": 16,
+      "capital": 375
     },
     {
       "number": 5,
       "certLimit": 16,
-      "capital": 420
+      "capital": 375
     },
     {
       "number": 6,
       "certLimit": 13,
-      "capital": 350
-    },
-    {
-      "number": 7,
-      "certLimit": 11,
       "capital": 300
     }
   ],
@@ -188,7 +178,8 @@
       "limit": "2/4",
       "tiles": "yellow",
       "rounds": 1,
-      "on": ""
+      "on": "",
+      "notes": "Single OR; no Merger round"
     },
     {
       "name": "2",
@@ -198,24 +189,21 @@
       "on": [
         "2",
         "3"
-      ],
-      "notes": "Concessions may be converted"
+      ]
     },
     {
       "name": "3",
       "limit": "2/4",
       "tiles": "green",
       "rounds": 2,
-      "on": "3",
-      "notes": "Concessions may be converted"
+      "on": "3"
     },
     {
       "name": "4",
       "limit": "1/3",
       "tiles": "green",
       "rounds": 2,
-      "on": "4",
-      "notes": "Concessions may be converted"
+      "on": "4"
     },
     {
       "name": "5",
@@ -223,7 +211,7 @@
       "tiles": "brown",
       "rounds": 2,
       "on": "5",
-      "notes": "Concessions close. Minors may be acquired from bidbox for 200gp"
+      "notes": "Minors may be acquired from bidbox for 200gp"
     },
     {
       "name": "6",
@@ -265,15 +253,23 @@
   ],
   "rounds": [
     {
-      "name": "OR2",
-      "color": "brown"
+      "name": "SR",
+      "color": "white"
     },
     {
       "name": "OR1",
-      "color": "green"
+      "color": "white"
     },
     {
-      "name": "SR",
+      "name": "MR",
+      "color": "white"
+    },
+    {
+      "name": "OR2",
+      "color": "white"
+    },
+    {
+      "name": "MR",
       "color": "white"
     }
   ],
@@ -1501,6 +1497,18 @@
     }
   },
   "map": {
+    "roundTracker": {
+      "type": "round",
+      "x": 265,
+      "y": 1775
+    },
+    "players": {
+      "x": 10,
+      "y": 2000,
+      "cellWidth": 120,
+      "rowHeight": 60,
+      "fontSize": 30
+    },
     "hexes": [
       {
         "color": "water",

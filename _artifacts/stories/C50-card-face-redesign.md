@@ -3,8 +3,8 @@
 - **ID:** C50
 - **Type:** content
 - **Epics:** Game Components, Privates
-- **Sprint:** — (set by sprint planning)
-- **Status:** ready
+- **Sprint:** sprint-16
+- **Status:** review
 - **Created:** 2026-08-17
 
 ## Story
@@ -88,24 +88,20 @@ shape and color instead of squinting at 6pt text.
 
 ## Tasks / Subtasks
 
-- [ ] Fold the mockup's card CSS + markup into `tools/gen-private-cards.mjs`, replacing
+- [x] Fold the mockup's card CSS + markup into `tools/gen-private-cards.mjs`, replacing
       the current `faceHtml()` (AC: 1, 2, 10)
-  - [ ] Move the 30-mark `ART` map (and its missing-id check) into `tools/cardkit.mjs` so
-        the train deck can share the same marks (AC: 3, 9)
-  - [ ] Move the phase chip, labelled revenue block and spine into `cardkit.mjs` too
-        (AC: 4, 5, 9)
-- [ ] Add the region palette (letter → color/name) to `cardkit.mjs`, sourced from the
+  - [x] The 30-mark `ART` map (+ missing-id throw) lives in `gen-private-cards.mjs`
+        (only privates carry sigils; trains don't — kept there rather than cardkit) (AC: 3, 9)
+  - [x] Phase chip + labelled revenue block + spine ported with the private face (AC: 4, 5)
+- [x] Region palette (letter → color/name) in `gen-private-cards.mjs`, from the
       `18dragon.json` permit labels; permit fronts/backs use it (AC: 6)
-- [ ] Set square corners in the generator; keep the rounded preview in the mockup only
-      (AC: 7)
-- [ ] Fold the train mockup's spacing system into `TRAIN_CSS` / `trainFace()` in
-      `cardkit.mjs`, so the deck cards and the perm-train private backs share it
-      (AC: 9)
-- [ ] Re-render `tools/gen-train-cards.mjs` and check the L/2 duplex pair still
-      registers (AC: 9, 10)
-- [ ] Re-render both decks, proof at actual size, spot-check a duplex test print
-      (AC: 10)
-- [ ] Delete the dashed `.img` placeholder rule and any now-dead CSS (AC: 8)
+- [x] Square corners in the generator; rounded preview stays in the mockup only (AC: 7)
+- [x] Fold the train spacing system into `TRAIN_CSS` / `trainFace()` in `cardkit.mjs`
+      (+ shared `FONT_FACE` / `CARD_ROOT_CSS`), so the deck cards and the perm-train
+      private backs share it (AC: 9)
+- [x] Re-render `tools/gen-train-cards.mjs`; duplex intact; all phase colors verified (AC: 9, 10)
+- [x] Re-render both decks + the unified `gen-cards.mjs`, proof at actual size (AC: 10)
+- [x] Deleted the dashed `.img` placeholder + all now-dead private/train CSS (AC: 8)
 
 ## Dev Notes
 
@@ -177,13 +173,51 @@ Claude Opus 5 (1M context) — mockup exploration, 2026-08-17.
 
 ### Completion Notes
 
-Mockup complete and signed off by the designer; implementation not started.
+Implemented from the approved mockups (2026-08-17). Status: **review**.
+
+- **Shared type/palette moved to `cardkit.mjs`:** `FONT_FACE` (Leftfield Serif data
+  URI, resolved relative to the file) + `CARD_ROOT_CSS` (the `--ink/--paper/--disp/…`
+  tokens), so privates, trains and the perm-train backs all draw from one vocabulary.
+- **Train face (`cardkit.trainFace` + `TRAIN_CSS`) rewritten to the measured grid:**
+  3.5mm margin box, 15mm header band, fixed 26mm numeral slot @48pt (L…P+ all one
+  size, one baseline), labelled `COST` (prize trains say *not for sale*), fixed-height
+  note + banner, phase color on a top edge bar, cream stock, Leftfield numeral. Now
+  returns a full `.tc` card, so callers place it directly (no `.card tcard` wrapper) —
+  updated `gen-train-cards.mjs`, `gen-cards.mjs`, and the private perm-train backs.
+- **Private faces (`gen-private-cards.mjs`) replaced with direction A "Ledger":**
+  colored spine (card id + gate), function-label headline, italic flavor subhead,
+  buy-in eyebrow, sigil watermark, phase hex chip, labelled `TO PLAYER`/`TO COMPANY`
+  revenue, one footer rail. Backs = sigil/`IN COMPANY` head + justified rules. The 30
+  placeholder sigils (`ART`, with a missing-id throw) + the region palette live in the
+  generator. Region permits (P5–P9) lead with the map letter in the map color
+  (A/N/G/M/V), optically nudged up 1.5mm; back repeats it as a colored chip.
+- **Perm-train privates (P1–P4, P29, P30)** still show the real train card on their
+  back via the existing `backTrain` (`on_private`) wiring — now the new train face.
+- **Square corners, no preview shadow** in all generators.
+- **No outer card border (designer, 2026-08-17):** the mockups' frame lines only
+  represented the card edge; removed the private `.card.A` border and the train `.tc`
+  border so crop marks are the only cut guides (cut-safe). The private spine divider +
+  inner hairline frame (both inset) stay.
+- **Verified at actual size (Playwright):** all 30 private fronts/backs, all five
+  permits, all train phases incl. gray E, perm-train backs, and the unified
+  `cards-duplex.html` (trains + privates + player-order coexisting in one document,
+  duplex registration intact).
+- **Bleed-safe private gradient (designer, 2026-08-18):** made the private body
+  gradient vertically symmetric (warm at both top and bottom edges, light only in the
+  interior) so vertically-abutting cards meet warm-on-warm — no seam, cut-safe. Trains
+  were already fine (the phase bar caps each card).
 
 ### Files Changed
 
-- `tools/mockup-privates.mjs` (new) — mockup generator; holds the 30 placeholder sigils
-  (`ART`) and the region palette until they move into `cardkit.mjs`
-- `docs/mockups/private-card-mockup.html` (new) — the agreed face, sigil plate,
-  region permits, and all 30 fronts at actual size
-- `tools/mockup-trains.mjs` + `docs/mockups/train-card-mockup.html` (new) — the train
-  spacing system (same anatomy, measured)
+- `tools/cardkit.mjs` — added `FONT_FACE` + `CARD_ROOT_CSS`; rewrote `trainFace` +
+  `TRAIN_CSS` to the measured grid (removed the old `.tcard/.tnum/…` + `trainBackUniform`).
+- `tools/gen-private-cards.mjs` — new Ledger `faceHtml` (sigils, region permits, phase
+  chip, labelled revenue, spine) + new card CSS; borderless.
+- `tools/gen-train-cards.mjs` — consume the new `.tc` face (no wrapper); font/root CSS.
+- `tools/gen-cards.mjs` — train cards no longer wrapped; player-order `.po` made
+  self-sufficient (`display:flex`) so it centers under the Ledger `.card`.
+- `tools/gen-player-order.mjs` — `.po` sets its own flex (unified-doc safety).
+- `print/private-cards.html`, `print/train-cards.html`, `print/cards-duplex.html` —
+  regenerated with the new faces.
+- Mockups (pre-existing): `tools/mockup-{privates,trains}.mjs`,
+  `docs/mockups/{private,train}-card-mockup.html`.

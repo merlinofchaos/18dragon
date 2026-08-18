@@ -56,6 +56,16 @@ stories:
     epics: ["Tile Printing"]
     points: 5
 
+  D10:
+    title: "Tile-sheet cut/crop guide marks for hand-cutting"
+    type: dev
+    epics: ["Tile Printing"]
+    points: null
+    # Contingency (raised sprint-14 close): if the Kraft blade can't be tuned to cut
+    # laminated tiles cleanly, D09 sheets need printed crop/guide marks at hex edges
+    # so the designer can hand-cut accurately. Hold until the blade test resolves —
+    # may be unneeded if the Kraft blade works. See D09 + sprint-14 retro.
+
   # --- CONTENT (game material, components & rules) ---
   # Board split (2026-07-24, sprint-2 planning): each region = a geography pass +
   # a cities pass (finer granularity). Verantum is done via C01 + C27 + C28.
@@ -156,7 +166,7 @@ stories:
     title: "Phase/round track on the board"
     type: content
     epics: ["World & Map", "Game Components"]
-    points: null
+    points: 2
   # C17 split at sprint-11 planning — major and minor charters are different layouts.
   C17a:
     title: "Major charters (10 — shares, 6 tokens, destination)"
@@ -169,20 +179,33 @@ stories:
     epics: ["Companies", "Game Components"]
     points: 2
   C18:
-    title: "Bid boxes"
+    title: "Combined board mat — stock market + bid boxes"
     type: content
     epics: ["Game Components"]
-    points: null
+    points: 5
   C19:
-    title: "Misc cards (player-order, reference)"
+    title: "Player-order cards"
     type: content
     epics: ["Game Components"]
-    points: null
+    points: 3
+    # "reference cards" dropped 2026-08-17 (designer) — an unneeded assumption; no reference
+    # deck. C19 is the player-order deck only.
+    # Designed 2026-08-17. Mockup: docs/mockups/player-order-mockup.html
+    # via tools/mockup-player-order.mjs. Decisions: six cards 1-6, PORTRAIT 44x67 (the only
+    # portrait card in the game — identifiable by orientation alone); the number is the card
+    # (Leftfield Serif 300pt, ink ~50mm); ONE uniform back on all six so a face-down row
+    # deals out random; square corners in print. Centering is measured, not eyeballed — the
+    # NUDGE table in the mockup (up 9.4mm, vertical only) MUST come across to the
+    # generator; CSS line-box centering is visibly wrong at this size. Horizontally the
+    # digits are left on the box, NOT ink-centered — ink-centering the "1" shifted it
+    # visibly right of its neighbours (designer, 2026-08-17).
+    # Two alternates (foot caption; number repeated upside-down) were dropped.
+    # REFERENCE-card half is still undesigned — story stays a stub until it is.
   C20:
     title: "Add Merger round to the rounds tracker (JSON)"
     type: content
     epics: ["Game Components", "Rules & Balance"]
-    points: null
+    points: 1
   C21:
     title: "Finalize stock market (verify vs PRD)"
     type: content
@@ -362,6 +385,44 @@ stories:
     # Charters (C17) print with no card border + crop marks + bleed for miscut
     # tolerance. Retrofit the same to gen-private-cards.mjs and gen-train-cards.mjs
     # (currently borders-as-cut-lines). Related to C44 (pro per-card bleed).
+
+  C48:
+    title: "Resize cert deck to 67×44mm (adapt the existing design)"
+    type: content
+    epics: ["Game Components"]
+    points: 2
+    # BUG found during C18: gen-certs.mjs makes certs at 89×55mm, but privates,
+    # trains, AND the bid-box centers are all 67×44mm — all cards must match. 89×55
+    # was baked into gen-certs when C25 was written. The cert *design* is liked
+    # (mockup-driven), so this is ADAPT-DOWN, not a redesign: fit the band/logos/text
+    # to 67×44 + new grid. Source of truth: 67×44 (gen-private-cards / gen-train-cards).
+    # Prereq for C49 (unified printing).
+
+  C49:
+    title: "Unified card-deck printing — certs + trains + privates on shared sheets"
+    type: content
+    epics: ["Game Components"]
+    points: 5
+    # Print certs + trains + privates (all 67×44) together on combined US-Letter
+    # sheets to kill wasted pages. Handle the single-sided (certs) vs double-sided
+    # (trains/privates) mix — e.g. group all fronts then all backs, certs get a blank
+    # back (or fill those back slots). Likely a shared cardkit pagination. Uses the
+    # CURRENT train/private art (look redesign = C50, later). C19 misc cards join this
+    # once authored. Depends on C48.
+
+  C50:
+    title: "Redesign train + private card faces (mockup-driven)"
+    type: content
+    epics: ["Game Components", "Privates"]
+    points: 5
+    # Trains/privates are the right SIZE (67×44) but their faces don't look as good as
+    # the mockup-driven certs. Do a mockup-first quality pass to match. Independent of
+    # C49's print plumbing (sheets re-render after). Designer chose "unify now, redesign
+    # later" (2026-08-17).
+    # Faces agreed 2026-08-17. Mockups: docs/mockups/private-card-mockup.html
+    # (direction A "Ledger" + 30 sigils) and docs/mockups/train-card-mockup.html
+    # (spacing pass, same anatomy) via tools/mockup-{privates,trains}.mjs.
+    # Full decision record + ACs: _artifacts/stories/C50-card-face-redesign.md
 
 # Notes:
 # - Stickers (C24) are content track but produced via Silhouette Cameo, not

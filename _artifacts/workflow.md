@@ -151,10 +151,46 @@ printable deck.
   genuinely shareable or remote-only cases. *(Sprint-13: repeatedly uploading review
   artifacts for local files wasted time — and a stale published copy caused a "I don't
   see the change" detour.)*
+- **Verify visual output at adequate resolution before presenting — never ship a
+  layout with a defect you can see, and never guess coordinates from a thumbnail.**
+  For anything rendered (tiles, map, cards), render it large enough to actually
+  inspect the element in question and look before saying it's good. Build/keep a
+  **render-and-inspect loop** for the medium rather than eyeballing sheet crops or
+  reasoning about coordinates blind:
+  - **One tile, close up:** `node bin/render-tile.mjs <slug> <id>` (fork) → 4×
+    screenshot of a single tile. Small sheet crops hide overlaps — the badge/value
+    atoms are wider than they look.
+  - **The map, and where a label lands:** `node bin/render-map.mjs <slug> [City…]`
+    (fork) → full-board render + the pixel center of each named city's text, so a
+    crop is placed by *seeing*, not guessing.
+
+  *(Sprint-14: repeatedly presented tiles with visible letter/value/track overlap as
+  "clean" — judged from low-res crops — and moved map labels to guessed coordinates
+  (Kalavar's letter landed under the track). Both were caught only when the designer
+  looked. Render at real resolution and verify first.)*
+- **Cross-check a shared dimension against the single source of truth before
+  building on it.** Card size, hex size, token size — when a new component reuses a
+  dimension, confirm it against the existing generators/`data/` masters, don't trust
+  the first value you find. *(Sprint-15: the bid-box center was sized to `gen-certs`'
+  89×55, but privates/trains — and the true card — are 67×44. That one wrong constant
+  silently inflated the whole board mat and wasn't caught until the designer printed
+  and **measured**. All decks are 67×44.)*
+- **Mockup-first for a new visual component.** Iterate a standalone `docs/mockups/`
+  file (fast: fonts, spacing, rotation, colors) until it's right, *then* wire it into
+  the generator. *(Sprint-15: the bid box and certs look good because they were
+  mocked; trains/privates weren't, and it shows — hence C50.)*
+- **Verify print deliverables from an actual PDF at true size — and beware
+  multi-page `page.pdf`.** On-screen ≠ print. Generate the PDF and check real size
+  (sips-rasterize + measure, or measure against a known element). **A stacked
+  multi-page HTML scales down (~68%) in headless `page.pdf` and some browser
+  prints** — render **single-page** files for true-size output. *(Sprint-15/C18: the
+  board mat printed at ~68% until we split it into single-page files; the combined
+  file is preview-only.)*
 
 ## Key paths
 
 - Fork: `/Users/earlmiles/Projects/18xx-maker` — branch `18dragon` · `pnpm start` → http://localhost:3000
+- Render-and-inspect tools (fork, need `pnpm build`): `bin/render-tile.mjs`, `bin/render-map.mjs`; tile sheets: `bin/tile-sheet.mjs`
 - Game file (18xxMaker rendering): `/Users/earlmiles/Projects/18dragon/18dragon.json`
 - Component masters: `data/*.json` → generators in `tools/` → committed decks in `print/`
 - 1822 source of truth: `/Users/earlmiles/Projects/18xx/lib/engine/game/g_1822/`

@@ -10,3 +10,10 @@
 # Python bytecode
 __pycache__/
 *.pyc
+
+# Sample/scratch renders (regenerable, not deliverables)
+/samples/
+
+# Standalone per-deck card previews (the deliverable is the unified print/cards-*.html
+# from gen-cards.mjs; the per-deck generators write here for isolated preview only)
+/preview/

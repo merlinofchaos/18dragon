@@ -1,6 +1,6 @@
 # Sprint 14: Hex tile set + manifest
 
-- **Status:** active
+- **Status:** complete
 - **Created:** 2026-08-05
 - **Goal:** The complete 18Dragon track-tile set is defined **and printable** —
   C15 captures the tiles (standard + special-city + ruins) as the
@@ -14,8 +14,8 @@ View of `sprints.sprint-14.stories` in `sprint-status.yaml` (canonical). **10 po
 
 | Seq | ID | Title | Type | Points | Status |
 |-----|----|-------|------|--------|--------|
-| 1 | C15 | Define track tile set + tile manifest | content | 5 | ready |
-| 2 | D09 | Cameo Print & Cut hex-tile sheet renderer (reuse Tile.jsx headless) | dev | 5 | ready |
+| 1 | C15 | Define track tile set + tile manifest | content | 5 | done |
+| 2 | D09 | Cameo Print & Cut hex-tile sheet renderer (reuse Tile.jsx headless) | dev | 5 | review |
 
 ## Scope notes
 
@@ -78,12 +78,68 @@ parallel on a sample tile, but D09's full run needs C15's tiles in `18dragon.jso
 
 ## Retrospective
 
-<!-- Filled by agile-retro at sprint end. -->
+**Goal met.** The full 18Dragon tile set is defined and renders in 18xxMaker
+(**C15 → done**), and there's a working custom Cameo Print & Cut renderer that
+reuses `Tile.jsx` headlessly and produced the 6 real sheets (**D09 → review**,
+pending only the designer's physical cut test on the Silhouette). Both stories
+came in on their committed scope; no slip.
 
 ### What went well
 
+- **D09's architecture bet paid off.** Reusing 18xxMaker's own `Tile.jsx` via its
+  `pnpm print` backbone (headless Playwright over the built site) meant we never
+  re-drew track/city/label geometry. The **spike-first** move de-risked the one
+  unknown (the `Tile.jsx → static SVG` bridge) before the big build — keep leading
+  risky dev stories with a spike.
+- **The two stories validated each other.** Rendering C15's *real* tiles through
+  D09 proved both at once — and flushed out a D09 bug (`inventory()` read `count`,
+  but 18xxMaker custom tiles use `quantity`, so every custom tile rendered 6×).
+  Integration-testing the pair beat testing each in isolation.
+- **The trihexagonal cut layout converged on a real constraint.** Iterating to
+  color-blocks-with-seam-gaps + full bleed + merged-colinear straight cuts came
+  directly from the physical requirement (long straight blade passes on chipboard).
+- **Design-by-seeing worked once the tooling existed.** The per-family track/value/
+  slot tweak pass (AC 7) went fast when the designer could refine against a real
+  render.
+
 ### What didn't
+
+- **Shipped visual defects and called them "clean."** The core failure: repeatedly
+  presented tiles with visible letter/value/track overlap as good — judging from
+  small, low-res sheet crops and underestimating atom widths (the `+N` badge is
+  ~50 units). The designer had to catch each one. *"I don't like that you looked at
+  them, saw the overlap, and called it good."*
+- **Guessed map-label coordinates blind.** Moved city labels/names to invented
+  coordinates (Kalavar's letter landed under the track) instead of rendering and
+  placing by sight — a full round-trip wasted before a working map-render loop
+  existed.
+- **Output landed in `samples/` again.** The tiles first went to `samples/` rather
+  than the committed `print/` — the same class of mistake as sprint-13's
+  generator-output lesson, which existed but wasn't applied to a *rendered* (vs
+  generated) deliverable.
 
 ### Lessons / workflow adjustments
 
+1. **Verify visual output at adequate resolution before presenting; build a
+   render-and-inspect loop instead of guessing coordinates.** *(Codified.)* Added a
+   bullet to `workflow.md` § Component generation & review, and committed two
+   reusable tools to the fork so the loop is standing, not rebuilt each time:
+   `bin/render-tile.mjs` (one tile at 4×) and `bin/render-map.mjs` (full board +
+   named-city pixel centers). Fork commit `5eee08d0`.
+2. **The `print/` vs `samples/` rule applies to rendered deliverables too, not just
+   `tools/` generators.** The existing bullet was framed around generators; the
+   real deliverable was a *render*. The render-verify bullet now sits alongside it
+   so "point at the committed path, verified" reads as one habit.
+3. **Spike-first for risky dev stories — affirmed, keep doing it.** D09 is the
+   model: isolate the one unknown, prove it, then build.
+
 ### Action items
+
+- **[designer]** Physical **Silhouette cut test** of a `print/tiles/` sheet — the
+  D09 acceptance gate. D09 stays `review` until it passes; then → `done`.
+- **[deferred]** Ruins tile-**lay rules** (PRD §6.2: which hexes, cost, the ≥1
+  plain-track constraint, the emergent 2nd city) — explicitly out of C15's scope
+  (tiles only). Surfaces as its own rules story later.
+- **[carry]** C15 tweak-phase leftovers noted in the story: some B/K/P cities'
+  final slot counts, Kroddheim K36 classification, and `7/8/9` physical count
+  (placeholder 20) — revisit at playtest.

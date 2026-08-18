@@ -9,7 +9,7 @@
 # membership. Points are assigned in backlog.yaml during sprint planning.
 
 meta:
-  updated: "2026-08-07"  # sprint-14: +D09 Cameo tile-sheet renderer (reuse Tile.jsx headless)
+  updated: "2026-08-17"  # sprint-14 retro complete; sprint-15 planned (table pieces: C20/C16/C18/C19)
 
 # Unscheduled stories — id: status
 backlog:
@@ -22,10 +22,6 @@ backlog:
   C09: stub
   C13: stub
   C14: stub
-  C16: stub
-  C18: stub
-  C19: stub
-  C20: stub
   C21: stub
   C22: stub
   C23: stub
@@ -33,9 +29,38 @@ backlog:
   C45: stub
   C46: stub
   C47: stub
+  D10: stub  # crop/guide marks for hand-cutting — contingency if Kraft blade won't cut laminate
 
 # Real sprints — id: { status: planning|active|complete, goal: str, stories: { id: status } }
 sprints:
+  sprint-16:
+    status: active
+    goal: >-
+      The card decks — certs, trains, privates — are all 67×44mm and print together
+      on shared US-Letter sheets to kill wasted pages, handling the single-sided
+      (certs) vs double-sided (trains/privates) mix. C48 resizes the cert deck to
+      67×44 (adapting the liked design), C49 wires the unified printing, and C19
+      authors the misc cards (player-order + reference) to join the shared print.
+      Train/private face redesign (C50) is deliberately deferred — unify now,
+      improve the look later.
+    stories:
+      C48: done
+      C49: done
+      C19: done
+      C50: review  # pulled in mid-sprint 2026-08-17 (designer): implemented the agreed mockups
+  sprint-15:
+    status: complete
+    goal: >-
+      The board's remaining printable table pieces are complete — the phase/round
+      track, the bid boxes, the misc (player-order + reference) cards, and the
+      Merger round in the rounds tracker — so the physical table setup is finished.
+      All four start as stubs; each is fleshed with agile-story (eliciting the
+      designer's mental model) before agile-content. C20 is unblocked (PRD §5.1
+      fixes the merger-round placement; the merger mechanic C13 is out of scope).
+    stories:
+      C20: done
+      C16: done
+      C18: done
   sprint-01:
     status: complete
     goal: >-
@@ -98,7 +123,7 @@ sprints:
       C36: done
       C37: done
   sprint-14:
-    status: active
+    status: complete
     goal: >-
       The complete 18Dragon track-tile set is defined and renders in 18xxMaker —
       standard numbered track tiles (1822-based counts), the custom capital/city
@@ -109,7 +134,7 @@ sprints:
       Silhouette Cameo Print & Cut renderer that reuses 18xxMaker's Tile.jsx art
       headlessly and owns the sheet/cut-path/registration output.
     stories:
-      C15: review
+      C15: done
       D09: review
   sprint-13:
     status: complete
