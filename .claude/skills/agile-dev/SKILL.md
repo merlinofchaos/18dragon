@@ -45,7 +45,10 @@ See `_artifacts/workflow.md`.
    add **Completion Notes** + model used. Set this story's status to `review` in
    `_artifacts/sprint-status.yaml`; update the story file's `Status:` snapshot.
 6. **Report** what changed and how to see it. Do not commit unless asked; if
-   asked, commit on `18dragon`.
+   asked, commit on `18dragon`. **The fork enforces `commitlint`** — the message
+   must be a conventional commit (`feat|fix|chore|docs|refactor|perf|test|build|
+   ci|style|revert: subject`), or the commit is rejected. (A pre-commit hook also
+   runs prettier/eslint/tests.)
 
 ## Rules
 

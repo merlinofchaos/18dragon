@@ -9,7 +9,7 @@
 # membership. Points are assigned in backlog.yaml during sprint planning.
 
 meta:
-  updated: "2026-08-18"  # sprint-16 complete + retro (card decks: C48/C49/C19/C50 all done)
+  updated: "2026-08-18"  # sprint-17 complete + retro (token pieces: C51/C52/C53 all done)
 
 # Unscheduled stories — id: status
 backlog:
@@ -34,7 +34,7 @@ backlog:
 # Real sprints — id: { status: planning|active|complete, goal: str, stories: { id: status } }
 sprints:
   sprint-17:
-    status: active
+    status: complete
     goal: >-
       The physical token pieces are producible — 3D-printable STLs for the token discs
       (standard tokens + share-price markers) at the correct real-world dimensions, and

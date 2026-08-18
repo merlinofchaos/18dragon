@@ -1,6 +1,6 @@
 # Sprint 17: Token pieces — STLs + corrected stickers
 
-- **Status:** active
+- **Status:** complete
 - **Created:** 2026-08-18
 - **Goal:** The physical token pieces are producible — **3D-printable STLs** for the
   token pieces at the **correct real-world dimensions**, the **Cameo stickers corrected
@@ -53,16 +53,52 @@ together in a later batch, not split out here.)
 
 ## In-flight changes
 
-<!-- Course-corrections made during the sprint (usually via agile-party PM). -->
+- **2026-08-18 — C53 reclassified content → dev.** The round-tracker circle size isn't a
+  game-file field; it's `config.tokens.marketTokenSize` (fork default). The designer chose
+  to bump the global value, making C53 a fork change verified by the map render.
 
 ## Retrospective
 
-<!-- Filled by agile-retro at sprint end. -->
+*(2026-08-18. Blame-free, systems-focused.)*
+
+**Outcome: goal fully met.** All three stories `done`. The token pieces are producible —
+STL masters (station 10×10 cyl, market/round 12×5 disc, bid cube 8mm), the Cameo stickers
+corrected to the real sizes (station 9mm / market 11mm cut), and the map round tracker
+enlarged to hold the 12mm marker. 10 points delivered.
 
 ### What went well
 
+- **Pinning the shared dimensions first (C51) paid off.** C52 (STL diameters) and C53
+  (tracker fit) both consumed the same 10mm/12mm spec, so nothing drifted between the
+  sticker, the printed piece, and the board slot.
+- **STL tooling stayed dependency-free** (pure-Node binary-STL writer) and geometry was
+  **validated programmatically** — watertight (every edge shared exactly twice), exact
+  bounding boxes, outward normals — real confidence without opening a slicer.
+- **Scope grew intelligently.** C53 came from the designer's own observation at planning;
+  the "it's a fork config, not a game field" reality was caught during investigation
+  (before building), and the round-marker STL was recognized as the same 12×5 disc as the
+  market token (one master serves both).
+
 ### What didn't
+
+- **C53's spacing was a multi-render dial-in** (tracker down → too close to chart → up …).
+  Inherent to eyeball-positioning: the map's mm-per-unit print scale isn't pinned, and the
+  tracker is wedged between the hex edge and the player chart. A few extra render loops,
+  not a process fault.
+- **The fork's commitlint rejected the first commit** — it enforces conventional-commit
+  `type:` prefixes; my `18Dragon: …` message failed until reworded to `chore: …`.
 
 ### Lessons / workflow adjustments
 
+- **Fork commits use conventional-commit messages (real change made).** Added a note to
+  the `agile-dev` skill's commit step: 18xx-maker enforces commitlint
+  (`feat|fix|chore|docs|refactor|…: subject`), so fork commits must use that format.
+  Prevents the retry recurring.
+- **Affirmed keepers:** pin the shared physical dimensions once and have every consumer
+  (sticker / STL / board slot) read from that; validate generated geometry programmatically
+  when a visual/slicer check isn't handy.
+
 ### Action items
+
+- None outstanding — all stories `done`, nothing slipped. `agile-dev` updated with the
+  fork-commit note.
