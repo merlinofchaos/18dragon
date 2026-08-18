@@ -4,7 +4,7 @@
 - **Type:** content
 - **Epics:** Game Components, Privates
 - **Sprint:** sprint-16
-- **Status:** review
+- **Status:** done
 - **Created:** 2026-08-17
 
 ## Story

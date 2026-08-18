@@ -1,6 +1,6 @@
 # Sprint 16: Card decks — one size, print together
 
-- **Status:** active
+- **Status:** complete
 - **Created:** 2026-08-17
 - **Goal:** The card decks — certs, trains, privates — are all **67×44mm** and
   **print together** on shared US-Letter sheets to kill wasted pages, handling the
@@ -16,7 +16,7 @@ View of `sprints.sprint-16.stories` in `sprint-status.yaml` (canonical). **10 po
 | 1 | C48 | Resize cert deck to 67×44 (adapt existing design) | content | 2 | done |
 | 2 | C49 | Unified card-deck printing — certs + trains + privates | content | 5 | done |
 | 3 | C19 | Player-order cards | content | 3 | done |
-| 4 | C50 | Redesign train + private card faces (mockup-driven) | content | 5 | review |
+| 4 | C50 | Redesign train + private card faces (mockup-driven) | content | 5 | done |
 
 *(C50 pulled in mid-sprint 2026-08-17 — see In-flight changes.)*
 
@@ -59,12 +59,48 @@ re-render after C50 lands.
 
 ## Retrospective
 
-<!-- Filled by agile-retro at sprint end. -->
+*(2026-08-18. Blame-free, systems-focused.)*
+
+**Outcome: goal fully met, and exceeded.** All four stories `done`. The decks are one
+size (67×44) and print together (`print/cards-single.html` + `print/cards-duplex.html`),
+and **C50 — the face redesign explicitly deferred at planning — was pulled in mid-sprint
+and finished too.** 10 committed points + C50's 5 = 15 delivered.
 
 ### What went well
 
+- **Mockup-first paid off hard.** C50's private/train faces were already mocked and
+  signed off, so implementation was mostly mechanical (fold the CSS/markup in, verify).
+  This is exactly the sprint-15 lesson working as intended — the biggest, riskiest-
+  looking story became the smoothest because the design was settled first.
+- **The C49 architecture composed cleanly.** Exporting each deck's faces + guarding the
+  generators' file-writes meant C50's face swap and C19's player-order pooling slotted
+  in without fighting each other — one generator, three card types, one document.
+- **A consistent print/cut principle landed across every deck:** crop-marks-only (no
+  card-edge borders), bleed-symmetric gradients. It started as a one-off note and is now
+  uniform — certs, trains, privates, player-order all cut the same safe way.
+- **Course-corrections were cheap and healthy.** C19 losing its "reference" half,
+  C19 going portrait→landscape to match the family, C50 getting pulled forward, the
+  gradient/border tuning — all designer-driven refinements that the mockup-first +
+  modular-generator setup absorbed without drama. This is design-by-seeing working, not
+  process slipping.
+
 ### What didn't
+
+- Nothing that got in the way of shipping. The `print/` directory accumulated a few
+  superseded files across the batch (old per-deck decks, the combined board-mat); tidied
+  in one deliberate end-of-sprint cleanup pass (segments moved to
+  `print/board-mat-segments/`, standalone previews redirected to a gitignored `preview/`,
+  board mat merged to a single `board-mat.pdf`). Normal batch hygiene, not a snag.
 
 ### Lessons / workflow adjustments
 
+- **No workflow change — affirming what works.** The friction this sprint was normal
+  design iteration, not process getting in the way, so no adjustment is earned (a change
+  that isn't earned can make things worse). **Keep doing:** mockup-first for visual
+  components; the export-faces + guarded-write generator pattern; verifying every deck at
+  true size before calling it done; and the crop-marks-only / bleed-symmetric print
+  principle as the default for all printed components.
+
 ### Action items
+
+- None required — all stories `done`, nothing slipped, no process fix outstanding.

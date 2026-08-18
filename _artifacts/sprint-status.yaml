@@ -9,7 +9,7 @@
 # membership. Points are assigned in backlog.yaml during sprint planning.
 
 meta:
-  updated: "2026-08-17"  # sprint-14 retro complete; sprint-15 planned (table pieces: C20/C16/C18/C19)
+  updated: "2026-08-18"  # sprint-16 complete + retro (card decks: C48/C49/C19/C50 all done)
 
 # Unscheduled stories — id: status
 backlog:
@@ -34,7 +34,7 @@ backlog:
 # Real sprints — id: { status: planning|active|complete, goal: str, stories: { id: status } }
 sprints:
   sprint-16:
-    status: active
+    status: complete
     goal: >-
       The card decks — certs, trains, privates — are all 67×44mm and print together
       on shared US-Letter sheets to kill wasted pages, handling the single-sided
@@ -47,7 +47,7 @@ sprints:
       C48: done
       C49: done
       C19: done
-      C50: review  # pulled in mid-sprint 2026-08-17 (designer): implemented the agreed mockups
+      C50: done  # pulled in mid-sprint 2026-08-17 (designer): implemented the agreed mockups
   sprint-15:
     status: complete
     goal: >-
