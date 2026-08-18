@@ -4,8 +4,9 @@
 // continuous ~490x260mm board meant to print as 3 hinged letter segments.
 //
 // Usage: node tools/gen-board-mat.mjs [18dragon.json] [print/board-mat.html]
-//   Emits the 3 single-page segments print/board-mat-{1,2,3}.html (the 2nd arg only
-//   supplies the base name/dir; no combined file is written — see the note below).
+//   Emits the 3 single-page segments to print/board-mat-segments/board-mat-{1,2,3}.html
+//   (the 2nd arg only supplies the base name/dir; no combined file is written). Render
+//   each to PDF and run tools/merge-board-mat.sh to build print/board-mat.pdf.
 //
 // Bid box = the approved design: perimeter bid track (+5) facing outward, start
 // corner in a white disc on black, Leftfield-Serif numbers with per-position
@@ -13,7 +14,8 @@
 //   minor track 100..195, private 0..95 (same 7x5 box, values -100).
 // Market = one long row of 28 price cells (17mm wide x 80mm tall, ~6 tokens).
 
-import { readFileSync, writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
+import { dirname, basename } from "node:path";
 
 const [, , inPath = "18dragon.json", outPath = "print/board-mat.html"] = process.argv;
 const game = JSON.parse(readFileSync(inPath, "utf8"));
@@ -229,17 +231,19 @@ const HEAD = `<!doctype html><html><head><meta charset="utf-8">
   .mk.yl-l{ border-left:1.4mm solid #e8c000; }
 </style></head>`;
 
-// Single-page files — one segment each. These print/PDF at TRUE size; a combined
-// multi-page file scales down in some browsers' print + in headless page.pdf, so we
-// don't emit one. Deliverable: render each -N.html to -N.pdf, then merge with pdfunite:
-//   pdfunite print/board-mat-1.pdf print/board-mat-2.pdf print/board-mat-3.pdf print/board-mat.pdf
-// (or run tools/merge-board-mat.sh). board-mat.pdf is the single file you print.
-const base = outPath.replace(/\.html$/, "");
+// Single-page files — one segment each — go in a segments/ subdir to keep print/
+// uncluttered. These print/PDF at TRUE size; a combined multi-page file scales down
+// in some browsers' print + in headless page.pdf, so we don't emit one. Deliverable:
+// render each segment .html to .pdf, then merge with pdfunite (or run
+// tools/merge-board-mat.sh) into print/board-mat.pdf — the single file you print.
+const stem = basename(outPath).replace(/\.html$/, ""); // "board-mat"
+const segDir = `${dirname(outPath)}/${stem}-segments`;
+mkdirSync(segDir, { recursive: true });
 [0, 1, 2].forEach((i) =>
-  writeFileSync(`${base}-${i + 1}.html`, `${HEAD}<body>${section(i)}</body></html>`),
+  writeFileSync(`${segDir}/${stem}-${i + 1}.html`, `${HEAD}<body>${section(i)}</body></html>`),
 );
 console.log(
-  `wrote ${base}-{1,2,3}.html (print, single-page, true size); ` +
+  `wrote ${segDir}/${stem}-{1,2,3}.html (print, single-page, true size); ` +
     `seg ${SEG_W.toFixed(1)}x${BOARD_H.toFixed(1)}mm + ${BLEED}mm bleed + crop marks (board ${BOARD_W}x${BOARD_H.toFixed(1)}mm). ` +
-    `Render each to PDF, then merge: pdfunite ${base}-1.pdf ${base}-2.pdf ${base}-3.pdf ${base}.pdf`,
+    `Render each to PDF, then merge with tools/merge-board-mat.sh -> ${dirname(outPath)}/${stem}.pdf`,
 );
