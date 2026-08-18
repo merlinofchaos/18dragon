@@ -57,7 +57,7 @@ h2{ font-size:15px; letter-spacing:.09em; text-transform:uppercase; color:#332f2
   <section>
     <h2>The face</h2>
     <p class="blurb">Nothing to read, nothing to align, nothing to get wrong.</p>
-    <div class="row"><div class="po"><span class="n" style="transform:translate(1.33mm,-9.4mm)">1</span></div><div class="po"><span class="n" style="transform:translate(0mm,-9.4mm)">2</span></div><div class="po"><span class="n" style="transform:translate(0mm,-9.4mm)">3</span></div><div class="po"><span class="n" style="transform:translate(0mm,-9.4mm)">4</span></div><div class="po"><span class="n" style="transform:translate(0mm,-9.4mm)">5</span></div><div class="po"><span class="n" style="transform:translate(0mm,-9.4mm)">6</span></div></div>
+    <div class="row"><div class="po"><span class="n" style="transform:translate(0mm,-9.4mm)">1</span></div><div class="po"><span class="n" style="transform:translate(0mm,-9.4mm)">2</span></div><div class="po"><span class="n" style="transform:translate(0mm,-9.4mm)">3</span></div><div class="po"><span class="n" style="transform:translate(0mm,-9.4mm)">4</span></div><div class="po"><span class="n" style="transform:translate(0mm,-9.4mm)">5</span></div><div class="po"><span class="n" style="transform:translate(0mm,-9.4mm)">6</span></div></div>
   </section>
 
   <section>
@@ -97,7 +97,9 @@ h2{ font-size:15px; letter-spacing:.09em; text-transform:uppercase; color:#332f2
     sits about 9.4mm low in its line box at this size, and "1" carries an asymmetric side
     bearing — so the digits are pushed up 9.4mm and the "1" right 1.33mm (see <code>NUDGE</code> in
     <code>tools/mockup-player-order.mjs</code>). Centering on the line box, which is what CSS
-    does by default, is visibly wrong at this size. <b>Carry the table into the generator.</b>
+    does by default, is visibly wrong at this size. <b>Carry the table into the generator.</b> Horizontally the digits are
+    left alone: ink-centering the "1" shifted it visibly right of its neighbours, so the
+    font's own side bearing wins.
   </div>
 
   <div class="note-box">

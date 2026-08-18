@@ -25,9 +25,11 @@ const SEATS = [1, 2, 3, 4, 5, 6];
 // Leftfield Serif sits ~9.4mm low in its line box at this size, and "1" carries an
 // asymmetric side bearing. [dx, dy] in mm. Re-measure if the size changes.
 const NUDGE = {
-  // dy is one value for every digit (they are all cap-height, no descenders); only
-  // "1" needs a horizontal correction, for its asymmetric side bearing.
-  1: [1.33, -9.4],
+  // dy is one value for every digit (they are all cap-height, no descenders).
+  // Horizontal: NO correction, on the box not the ink. Centering "1" on its ink box
+  // pushed it 1.33mm right of where the other digits sit and the designer could see
+  // it (2026-08-17) — the font's own side bearing is the better reference here.
+  1: [0, -9.4],
   2: [0, -9.4],
   3: [0, -9.4],
   4: [0, -9.4],
@@ -130,7 +132,9 @@ const html = `<!doctype html><html lang="en"><head><meta charset="utf-8">
     sits about 9.4mm low in its line box at this size, and "1" carries an asymmetric side
     bearing — so the digits are pushed up 9.4mm and the "1" right 1.33mm (see <code>NUDGE</code> in
     <code>tools/mockup-player-order.mjs</code>). Centering on the line box, which is what CSS
-    does by default, is visibly wrong at this size. <b>Carry the table into the generator.</b>
+    does by default, is visibly wrong at this size. <b>Carry the table into the generator.</b> Horizontally the digits are
+    left alone: ink-centering the "1" shifted it visibly right of its neighbours, so the
+    font's own side bearing wins.
   </div>
 
   <div class="note-box">
