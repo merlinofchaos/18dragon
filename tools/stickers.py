@@ -58,6 +58,11 @@ def major_tokens(m):
 def market_tokens(m):
     return [(m["abbrev"], m["colors"]["primary"], "#ffffff", "logo", D_LARGE)]
 
+def revenue_tokens(m):
+    # Revenue-tracker sticker: the market-token FRONT only (no red->black back),
+    # 12mm, majors only. Same logo disc as the market marker.
+    return market_tokens(m)
+
 def minor_market_tokens(mn):
     return [(str(mn["number"]), "#ffffff", "#111111", "minor", D_LARGE)]
 
@@ -76,8 +81,9 @@ def all_tokens():
 
     10mm station stickers: 6/major (4 logo + home + dest), 30 minor numbers, +30gp.
     12mm market stickers: per company one share-price marker FRONT + a red->black BACK,
-    plus the round marker. They share a single Letter sheet via the mixed-size band
-    packer in paginate().
+    plus the round marker; each MAJOR also gets a FRONT-only revenue-tracker sticker
+    right after its market marker (grouped, for easier application). They share a single
+    Letter sheet via the mixed-size band packer in paginate().
     """
     out = []
     for m in COMPANIES["majors"]:
@@ -87,7 +93,8 @@ def all_tokens():
     out += MISC
     for m in COMPANIES["majors"]:
         for t in market_tokens(m):
-            out += [t, _back(t)]
+            out += [t, _back(t)]     # market marker: front + red->black back
+        out += revenue_tokens(m)     # revenue tracker: front only, grouped w/ the market marker
     for mn in COMPANIES["minors"]:
         for t in minor_market_tokens(mn):
             out += [t, _back(t)]
@@ -185,7 +192,7 @@ def draw_token(img, draw, cx, cy, tok):
 
     if variant == "round":
         ic = ROUND_ICON
-        s = int(2 * cut_r * 0.62)
+        s = int(2 * cut_r * 0.80)  # fill more of the (now 12mm) circle
         ic = ic.resize((s, s), Image.LANCZOS)
         img.alpha_composite(ic, (int(cx - s / 2), int(cy - s / 2)))
         return
