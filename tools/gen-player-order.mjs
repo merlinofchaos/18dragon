@@ -109,7 +109,7 @@ body{ margin:0; background:#ccc; color:#1c1a17; font-family:"Helvetica Neue",Ari
 /* no card border — crop marks are the only cut guides */
 .card{ width:${CARD_W}mm; height:${CARD_H}mm; position:relative; overflow:hidden; display:flex; flex-direction:column; }
 ${PLAYER_ORDER_CARD_CSS}
-@media print{ body{ background:#fff; } .sheet-label{ display:none; } .sheet{ margin:0; box-shadow:none; page-break-after:always; } @page{ size:letter landscape; margin:0; } }
+@media print{ body{ background:#fff; } .sheet-label{ display:none; } .sheet{ margin:0; box-shadow:none; break-after:page; } .sheet:last-child{ break-after:auto; } @page{ size:letter landscape; margin:0; } }
 `;
 
 export function playerOrderHtml() {

@@ -342,7 +342,8 @@ export const PRIVATE_STYLE = `
     body { background: #fff; }
     .sheet-label { display: none; }
     .card.blank { border: none; }
-    .sheet { margin: 0; box-shadow: none; page-break-after: always; }
+    .sheet { margin: 0; box-shadow: none; break-after: page; }
+    .sheet:last-child { break-after: auto; }
     @page { size: letter ${ORIENT}; margin: 0; }
   }
 `;

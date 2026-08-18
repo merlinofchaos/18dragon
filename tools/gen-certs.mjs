@@ -65,7 +65,9 @@ export function minorCert(mn) {
 
 // ---- print-cut grid: 3x4 = 12 cards / US Letter LANDSCAPE (safe margins;
 //      matches gen-private/train orientation for the C49 unified print) ----
-const PAGE_W = 279, PAGE_H = 216, COLS = 3, ROWS = 4, CW = 67, CH = 44, T = 4;
+// US Letter landscape, EXACT: 216mm is 0.1mm TALLER than the page (215.9) and made
+// every sheet spill onto a blank following page.
+const PAGE_W = 279.4, PAGE_H = 215.9, COLS = 3, ROWS = 4, CW = 67, CH = 44, T = 4;
 const ML = (PAGE_W - COLS * CW) / 2, GW = COLS * CW, GH = ROWS * CH, MT = (PAGE_H - GH) / 2;
 function cropMarks() {
   let s = "";
@@ -130,7 +132,7 @@ export const CERT_STYLE = `
   .permitbar .pl{ font-size:13px; line-height:1; }
   .foot{ display:flex; justify-content:space-between; align-items:baseline; }
   .foot .shares{ font-size:11px; } .foot .pct{ font-size:16px; font-weight:800; }
-  @media print{ body{ background:#fff; } .page{ margin:0; box-shadow:none; page-break-after:always; } @page{ size:letter landscape; margin:0; } }
+  @media print{ body{ background:#fff; } .page{ margin:0; box-shadow:none; break-after:page; } .page:last-child{ break-after:auto; } @page{ size:letter landscape; margin:0; } }
 `;
 
 function emit(title, pagesHtml) {

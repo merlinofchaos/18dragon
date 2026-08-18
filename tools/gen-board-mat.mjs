@@ -149,7 +149,7 @@ const boardInner =
 //      crop marks at the four trim corners. Internal edges bleed into the
 //      neighbor's content; outer edges bleed white. ----
 const BLEED = 3;
-const PAGE_W = 216, PAGE_H = 279;
+const PAGE_W = 215.9, PAGE_H = 279.4; // US Letter, EXACT (216x279 overflowed -> blank pages)
 const trimL = (PAGE_W - SEG_W) / 2;
 const trimT = (PAGE_H - BOARD_H) / 2;
 
@@ -189,7 +189,8 @@ const HEAD = `<!doctype html><html><head><meta charset="utf-8">
   *{ box-sizing:border-box; }
   body{ margin:0; background:#fff; font-family:"Leftfield Serif",Georgia,serif; color:#000; }
   .page{ position:relative; width:${PAGE_W}mm; height:${PAGE_H}mm; background:#fff; overflow:hidden;
-    page-break-after:always; }
+    break-after:page; }
+  .page:last-child{ break-after:auto; }
   /* on-screen preview only — never printed */
   @media screen{
     body{ background:#c8c5bf; }

@@ -214,7 +214,7 @@ const style = `
   .minor .power b{ color:#7a5a10; }
   @media print{
     body{ background:#fff; }
-    .page{ margin:0; box-shadow:none; page-break-after:always; }
+    .page{ margin:0; box-shadow:none; break-after:page; } .page:last-child{ break-after:auto; }
     @page{ size:letter portrait; margin:0; }
   }
 `;

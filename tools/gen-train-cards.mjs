@@ -125,7 +125,8 @@ const style = `
   @media print {
     body { background: #fff; }
     .sheet-label { display: none; }
-    .sheet { margin: 0; box-shadow: none; page-break-after: always; }
+    .sheet { margin: 0; box-shadow: none; break-after: page; }
+    .sheet:last-child { break-after: auto; }
     @page { size: letter ${ORIENT}; margin: 0; }
   }
 `;
