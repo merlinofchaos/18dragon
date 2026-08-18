@@ -30,7 +30,7 @@
     { "name": "5", "phase_color": "brown", "cost": 500, "rust": null, "rust_color": null, "permanent": true, "quantity": 3, "deck": true },
     { "name": "6", "phase_color": "brown", "cost": 600, "rust": null, "rust_color": null, "permanent": true, "quantity": 3, "deck": true },
     { "name": "7", "phase_color": "gray", "cost": 750, "rust": null, "rust_color": null, "permanent": true, "quantity": 20, "deck": true },
-    { "name": "E", "phase_color": "gray", "cost": 1000, "rust": null, "rust_color": null, "permanent": true, "quantity": 20, "deck": true, "note": "Doubles city revenue (variant of 7)" },
+    { "name": "E", "phase_color": "gray", "cost": 1000, "rust": null, "rust_color": null, "permanent": true, "quantity": 20, "deck": true, "note": "Doubles city revenue" },
 
     { "name": "2P", "phase_color": "yellow", "cost": 0, "rust": null, "rust_color": null, "permanent": true, "quantity": 2, "deck": false, "on_private": ["P2", "P3"], "note": "Permanent 2-train" },
     { "name": "LP", "phase_color": "yellow", "cost": 0, "rust": null, "rust_color": null, "permanent": true, "quantity": 1, "deck": false, "on_private": ["P4"], "note": "Permanent L-train" },
