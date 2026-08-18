@@ -424,6 +424,40 @@ stories:
     # (spacing pass, same anatomy) via tools/mockup-{privates,trains}.mjs.
     # Full decision record + ACs: _artifacts/stories/C50-card-face-redesign.md
 
+  C51:
+    title: "Resize stickers to the real token dimensions"
+    type: content
+    epics: ["Game Components"]
+    points: 3
+    # Real token dims (designer 2026-08-18): STATION tokens 10mm dia x 10mm tall
+    # cylinders; MARKET tokens (and the round marker) 12mm dia x 5mm discs; bid cubes
+    # 8mm (no sticker). stickers.py is currently 12mm station-type stickers (major
+    # logo/home/dest + 30 minor numbers + misc) + 15mm share-price markers, REVEAL 0.5mm.
+    # Resize: station-type 12 -> 10mm, share-price 15 -> 12mm (REVEAL unchanged);
+    # confirm where "misc" belongs. Fix tools/stickers.py + regenerate print/stickers.*.
+    # Shared spec with C52 (STLs) and C53 (round tracker).
+
+  C52:
+    title: "Token-piece STL generator (3D-printable)"
+    type: content
+    epics: ["Game Components"]
+    points: 5
+    # ONE MASTER STL per piece type (designer duplicates on the print bed, no plated set):
+    #   station token  10mm dia x 10mm  cylinder
+    #   market/round   12mm dia x 5mm   disc  (one STL serves market markers + round marker)
+    #   bid cube       8mm cube         (no sticker)
+    # Sticker seats FLAT (no recess). New tooling (tools/gen-token-stls.* — simple
+    # cylinder/cube tessellation to STL, no OpenSCAD needed). Depends on C51 dims.
+
+  C53:
+    title: "Enlarge board round tracker to fit the 12mm marker"
+    type: content
+    epics: ["World & Map", "Game Components"]
+    points: 2
+    # The round marker is a 12mm disc, so the round-tracker circles on the map (C16;
+    # map.roundTracker in 18dragon.json) need enlarging to physically hold it. Adjust the
+    # tracker size, verify the 18xxMaker render. Depends on C51 (marker dim = 12mm).
+
 # Notes:
 # - Stickers (C24) are content track but produced via Silhouette Cameo, not
 #   18xxMaker (PRD section 11).

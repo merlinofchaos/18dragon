@@ -33,6 +33,18 @@ backlog:
 
 # Real sprints — id: { status: planning|active|complete, goal: str, stories: { id: status } }
 sprints:
+  sprint-17:
+    status: active
+    goal: >-
+      The physical token pieces are producible — 3D-printable STLs for the token discs
+      (standard tokens + share-price markers) at the correct real-world dimensions, and
+      the Cameo stickers corrected to match (fixing the earlier wrong sizes). Tokens +
+      stickers share one dimension spec. C51 pins the dimensions and fixes the stickers;
+      C52 generates the STLs to that spec.
+    stories:
+      C51: stub
+      C52: stub
+      C53: stub
   sprint-16:
     status: complete
     goal: >-
