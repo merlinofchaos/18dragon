@@ -42,8 +42,8 @@ sprints:
       stickers share one dimension spec. C51 pins the dimensions and fixes the stickers;
       C52 generates the STLs to that spec.
     stories:
-      C51: stub
-      C52: stub
+      C51: done
+      C52: done
       C53: stub
   sprint-16:
     status: complete

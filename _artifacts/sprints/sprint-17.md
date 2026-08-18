@@ -24,8 +24,8 @@ View of `sprints.sprint-17.stories` in `sprint-status.yaml` (canonical). **10 po
 
 | Seq | ID | Title | Type | Points | Status |
 |-----|----|-------|------|--------|--------|
-| 1 | C51 | Resize stickers to the real token dimensions | content | 3 | stub |
-| 2 | C52 | Token-piece STL generator (3D-printable) | content | 5 | stub |
+| 1 | C51 | Resize stickers to the real token dimensions | content | 3 | done |
+| 2 | C52 | Token-piece STL generator (3D-printable) | content | 5 | done |
 | 3 | C53 | Enlarge board round tracker to fit the 12mm marker | content | 2 | stub |
 
 ## Scope notes

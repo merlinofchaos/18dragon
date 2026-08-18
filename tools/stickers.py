@@ -24,12 +24,11 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 COMPANIES = json.load(open(os.path.join(ROOT, "data", "companies.json")))
 
-# ---- geometry knobs (mm), from the reference ----
-D_SMALL = 12.0          # station / home / destination / minor / misc
-D_LARGE = 15.0          # market marker
+# ---- geometry knobs (mm), matched to the physical token pieces (C51/C52) ----
+D_SMALL = 10.0          # station token (10mm dia x 10mm cyl): logo/home/dest/minor/+30gp
+D_LARGE = 12.0          # market token & round marker (12mm dia x 5mm disc)
 REVEAL  = 0.5           # sticker radius this much smaller than the token
 BLEED   = 0.6           # art extends this far past the cut edge (kills halos)
-DISC_STROKE_MM = 0.35   # thin neutral outline around the logo disc
 STAR_STROKE_MM = 0.25
 SHEET_W, SHEET_H = 215.9, 279.4     # US Letter portrait
 PITCH_PAD = 1.2
@@ -66,7 +65,7 @@ def minor_tokens(mn):
     return [(str(mn["number"]), "#ffffff", "#111111", "minor", D_SMALL)]
 
 MISC = [("+30gp", COIN_GOLD, "#3a2c08", "plus30", D_SMALL)] * 2 \
-     + [("", "#ffffff", "#111111", "round", D_SMALL)]
+     + [("", "#ffffff", "#111111", "round", D_LARGE)]  # round marker rides the 12mm disc
 
 def _back(t):
     l, disc, ink, v, d = t
@@ -75,9 +74,10 @@ def _back(t):
 def all_tokens():
     """The full 18Dragon sticker inventory, one flat list (mixed diameters).
 
-    12mm tokens: 6/major (4 logo + home + dest), 30 minor numbers, misc.
-    15mm markers: per company one share-price marker FRONT + a red->black BACK.
-    They share a single Letter sheet via the mixed-size band packer in paginate().
+    10mm station stickers: 6/major (4 logo + home + dest), 30 minor numbers, +30gp.
+    12mm market stickers: per company one share-price marker FRONT + a red->black BACK,
+    plus the round marker. They share a single Letter sheet via the mixed-size band
+    packer in paginate().
     """
     out = []
     for m in COMPANIES["majors"]:
@@ -179,11 +179,9 @@ def draw_token(img, draw, cx, cy, tok):
     scale = MM2PX * SS
     r_art = (d / 2 + BLEED) * scale
     cut_r = (d / 2 - REVEAL) * scale
-    stroke = max(1, round(DISC_STROKE_MM * scale))
-
-    # bleed disc (art past the cut edge) then the visible disc with a thin outline
+    # solid disc, art bleeding past the cut edge — NO outline at the cut line, so a
+    # slightly inaccurate cut never exposes an edge circle (designer, 2026-08-18).
     _disc(draw, cx, cy, r_art, disc)
-    _disc(draw, cx, cy, cut_r, disc, outline="#111111", w=stroke)
 
     if variant == "round":
         ic = ROUND_ICON
