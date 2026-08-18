@@ -44,7 +44,7 @@ sprints:
     stories:
       C51: done
       C52: done
-      C53: stub
+      C53: done
   sprint-16:
     status: complete
     goal: >-

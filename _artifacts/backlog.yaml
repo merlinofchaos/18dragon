@@ -451,12 +451,14 @@ stories:
 
   C53:
     title: "Enlarge board round tracker to fit the 12mm marker"
-    type: content
+    type: dev
     epics: ["World & Map", "Game Components"]
     points: 2
-    # The round marker is a 12mm disc, so the round-tracker circles on the map (C16;
-    # map.roundTracker in 18dragon.json) need enlarging to physically hold it. Adjust the
-    # tracker size, verify the 18xxMaker render. Depends on C51 (marker dim = 12mm).
+    # The round marker is a 12mm disc, so the map round tracker (C16) must hold it. The
+    # size is NOT a game-file field — it's config.tokens.marketTokenSize (fork default 50).
+    # Designer chose (2026-08-18) to bump the global value (18Dragon doesn't use 18xxMaker's
+    # digital market tokens; 12mm is right anyway). Reclassified content -> dev: it's a fork
+    # config change (src/defaults.json) verified by the map render. Depends on C51.
 
 # Notes:
 # - Stickers (C24) are content track but produced via Silhouette Cameo, not

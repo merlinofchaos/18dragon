@@ -1500,11 +1500,11 @@
     "roundTracker": {
       "type": "round",
       "x": 265,
-      "y": 1775
+      "y": 1945
     },
     "players": {
       "x": 10,
-      "y": 2000,
+      "y": 2260,
       "cellWidth": 120,
       "rowHeight": 60,
       "fontSize": 30
