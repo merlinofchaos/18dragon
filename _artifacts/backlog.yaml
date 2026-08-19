@@ -105,17 +105,17 @@ stories:
     title: "Document 18Dragon divergences from 1822"
     type: content
     epics: ["Rules & Balance"]
-    points: null
+    points: 2
   C07:
     title: "Specify the region-permit mechanic"
     type: content
     epics: ["Rules & Balance", "Permits"]
-    points: null
+    points: 2
   C08:
     title: "Specify Verantum ruins/metro value system"
     type: content
     epics: ["Rules & Balance", "Verantum"]
-    points: null
+    points: 3
   C09:
     title: "Set and validate balance targets"
     type: content
@@ -151,12 +151,12 @@ stories:
     title: "Specify the merger mechanic (rules writeup)"
     type: content
     epics: ["Rules & Balance", "Mergers"]
-    points: null
+    points: 3
   C14:
     title: "Resolve PRD open questions (section 9)"
     type: content
     epics: ["Rules & Balance", "Mergers", "Verantum"]
-    points: null
+    points: 1
   C15:
     title: "Define track tile set + tile manifest"
     type: content

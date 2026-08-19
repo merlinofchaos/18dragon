@@ -191,6 +191,13 @@ following **1822PNW** with these changes:
   shares the player receives. Round **up** → the player pays the company the
   difference; round **down** → the company pays the player.
 
+- **Capitalisation is formation-based, not phase-based** *(C06, 2026-08-18)*.
+  1822 gates capitalisation by phase (incremental in 2–5, full in 6–7). 18Dragon
+  keys it to **how the company came to be**: a **merged** company always takes
+  **incremental** capitalisation; **full (100%)** capitalisation applies only to a
+  company floated during a **stock round**.
+- **Acquiring a minor from a bid box** keeps 1822's **200gp** price *(C06)*.
+
 > **Divergence from 1822:** concessions removed entirely; mergers are the sole
 > path to majors. Implication for § 4: **majors are region-associated** (a pool
 > per region; a merger needs an available major for the home minor's region).
@@ -199,8 +206,13 @@ following **1822PNW** with these changes:
 
 The **1822 auction/bidbox** system, unchanged. Each stock round, items are bid via
 the bidboxes as in 1822. **Items are minors and privates** (no concessions); the
-**opener private** always occupies **bid box 1** at game start (§ 4.3). No change
-to the auction mechanics itself — only the item mix (concessions removed).
+**opener private** always occupies **bid box 1** at game start (§ 4.3). The bid
+boxes are therefore **4 minor + 3 private** (1822's 3 concession boxes are gone).
+
+- **Bid cubes: a flat 4 per player at every count** *(C06, 2026-08-18; provisional
+  — § 7)*, replacing 1822's 6 / 5 / 4 / 3 / 3 by player count. This and the item
+  mix are the only changes to the auction; the bidding mechanics themselves are
+  unchanged.
 
 ### 5.3 Trains & phases
 
@@ -226,8 +238,10 @@ Follows **PNW**: each **Stock Round** → the phase's **Operating Rounds**, with
 single OR (starting packet) has no merger round. OR counts per phase come from the
 phases table (1 in phase 1, 2 in phases 2–7).
 
-- **No Choices round.** 1822's choices round existed largely for concession
-  conversion; with no concessions, 18Dragon drops it.
+- *(Correction 2026-08-18, C06: base 1822 has **no** separate "Choices round" —
+  concession conversion happens inside the Stock Round (§4.6–4.7). With concessions
+  gone there is simply nothing of the sort to carry over; the earlier "drops the
+  choices round" note was an error and is removed.)*
 - *Reconcile:* the `rounds` tracker in `18dragon.json` (OR1/OR2/SR) should add the
   **Merger** round (content task).
 

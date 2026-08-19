@@ -9,19 +9,14 @@
 # membership. Points are assigned in backlog.yaml during sprint planning.
 
 meta:
-  updated: "2026-08-18"  # sprint-17 complete + retro (token pieces: C51/C52/C53 all done)
+  updated: "2026-08-18"  # sprint-18 planned (signature mechanics: C06/C07/C08/C13/C14)
 
 # Unscheduled stories — id: status
 backlog:
   # C02 (map skeleton) was never run standalone — its outcome (all 5 regions on the
   # grid) was achieved incrementally by the region builds (C01/C27–C41). Done.
   C02: done
-  C06: stub
-  C07: stub
-  C08: stub
   C09: stub
-  C13: stub
-  C14: stub
   C21: stub
   C22: stub
   C23: stub
@@ -33,6 +28,22 @@ backlog:
 
 # Real sprints — id: { status: planning|active|complete, goal: str, stories: { id: status } }
 sprints:
+  sprint-18:
+    status: active
+    goal: >-
+      The signature 18Dragon mechanics are fully specified in docs/ — the 1822
+      divergences, the region-permit gate, the Verantum ruins/metro value system,
+      and the merger mechanic — with every PRD §9 open question resolved. This is
+      the design substrate the rulebook (C22/C23) gets authored from; no rulebook
+      prose is written here. The §9 open questions are owned by these stories:
+      Verantum questions resolve inside C08, merger questions inside C13, and C14
+      closes out the general ones + marks §9 resolved. Sequence C06→C07→C08→C13→C14.
+    stories:
+      C06: done
+      C07: stub
+      C08: stub
+      C13: stub
+      C14: stub
   sprint-17:
     status: complete
     goal: >-
