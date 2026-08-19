@@ -17,7 +17,7 @@ logo disc. Misc = two "+30gp" + a round marker (round.png, as in stickers_friend
 Tokens per major = 6 (1 home + 1 destination + 4 regular) + 1 market marker.
 """
 
-import json, math, os, base64
+import json, math, os, re, base64
 from PIL import Image, ImageDraw, ImageFont
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -69,8 +69,13 @@ def minor_market_tokens(mn):
 def minor_tokens(mn):
     return [(str(mn["number"]), "#ffffff", "#111111", "minor", D_SMALL)]
 
-MISC = [("+30gp", COIN_GOLD, "#3a2c08", "plus30", D_SMALL)] * 2 \
-     + [("", "#ffffff", "#111111", "round", D_LARGE)]  # round marker rides the 12mm disc
+# The two +30gp bonus tokens belong to different privates and are otherwise identical,
+# so each carries the sigil of its private (the same mark that is on the card): a wand
+# for the city-route bonus (P20, Wands Delivery) and a miner's pick for the mountain-route
+# bonus (P17, Phlogiston Mine). Without them the two are indistinguishable in play.
+MISC = [("+30gp", COIN_GOLD, "#3a2c08", "plus30_wand", D_SMALL),
+        ("+30gp", COIN_GOLD, "#3a2c08", "plus30_pick", D_SMALL),
+        ("", "#ffffff", "#111111", "round", D_LARGE)]  # round marker rides the 12mm disc
 
 def _back(t):
     l, disc, ink, v, d = t
@@ -164,6 +169,75 @@ def _star(cx, cy, r_out, r_in, rot=-90):
         p.append((cx + r * math.cos(a), cy + r * math.sin(a)))
     return p
 
+# ---- sigils (24x24 viewBox path data, lifted from the private cards so the token and
+#      its card carry the same mark). Stroked, round caps/joins — no fills. ----
+SIGIL = {
+    # P20 Wands Delivery: wand + two sparkles
+    "wand": "M4.4 19.6L15 9 M17.6 6.4l-2.4 2.4 "
+            "M19 2.6l.9 2.1 2.1.9-2.1.9-.9 2.1-.9-2.1-2.1-.9 2.1-.9z "
+            "M8.4 4.2l.7 1.6 1.6.7-1.6.7-.7 1.6-.7-1.6-1.6-.7 1.6-.7z",
+    # P17 Phlogiston Mine: one miner's pick (half of the crossed pair on P14's card,
+    # which is too busy to read at 10mm)
+    "pick": "M3.4 5.4c3-1.7 7-1.7 10 0 M8.4 5.8L17.6 20",
+}
+
+def _path_polylines(d, steps=14):
+    """Minimal SVG path reader — M/m L/l H/h V/v C/c Z/z only, which is all the sigils
+    use. Returns a list of polylines in path units."""
+    toks = re.findall(r"[MmLlHhVvCcZz]|-?\d*\.?\d+", d)
+    out, cur, x, y, sx, sy, i, cmd = [], [], 0.0, 0.0, 0.0, 0.0, 0, None
+    def num():
+        nonlocal i
+        v = float(toks[i]); i += 1; return v
+    while i < len(toks):
+        if re.match(r"[A-Za-z]", toks[i]):
+            cmd = toks[i]; i += 1
+            if cmd in "Mm":
+                if len(cur) > 1: out.append(cur)
+                x, y = (num(), num()) if cmd == "M" else (x + num(), y + num())
+                sx, sy = x, y; cur = [(x, y)]
+                cmd = "L" if cmd == "M" else "l"
+                continue
+            if cmd in "Zz":
+                cur.append((sx, sy)); out.append(cur); cur = [(sx, sy)]; x, y = sx, sy
+                continue
+        if cmd in "Ll":
+            nx, ny = (num(), num()) if cmd == "L" else (x + num(), y + num())
+        elif cmd in "Hh":
+            nx, ny = (num(), y) if cmd == "H" else (x + num(), y)
+        elif cmd in "Vv":
+            nx, ny = (x, num()) if cmd == "V" else (x, y + num())
+        elif cmd in "Cc":
+            a, b, c, e, f, g = (num(), num(), num(), num(), num(), num())
+            if cmd == "c":
+                a, b, c, e, f, g = x + a, y + b, x + c, y + e, x + f, y + g
+            for k in range(1, steps + 1):
+                t = k / steps; u = 1 - t
+                cur.append((u**3 * x + 3 * u * u * t * a + 3 * u * t * t * c + t**3 * f,
+                            u**3 * y + 3 * u * u * t * b + 3 * u * t * t * e + t**3 * g))
+            x, y = f, g
+            continue
+        else:
+            i += 1; continue
+        cur.append((nx, ny)); x, y = nx, ny
+    if len(cur) > 1: out.append(cur)
+    return out
+
+def _draw_sigil(draw, name, cx, cy, size, color, stroke):
+    """Stroke a sigil centred on (cx, cy), scaled so its longest side is `size` px."""
+    polys = _path_polylines(SIGIL[name])
+    pts = [p for pl in polys for p in pl]
+    x0 = min(p[0] for p in pts); x1 = max(p[0] for p in pts)
+    y0 = min(p[1] for p in pts); y1 = max(p[1] for p in pts)
+    k = size / max(x1 - x0, y1 - y0)
+    ox, oy = cx - k * (x0 + x1) / 2, cy - k * (y0 + y1) / 2
+    w = max(2, int(stroke))
+    for pl in polys:
+        pl = [(ox + k * px, oy + k * py) for px, py in pl]
+        draw.line(pl, fill=color, width=w, joint="curve")
+        for px, py in (pl[0], pl[-1]):      # round caps
+            draw.ellipse([px - w / 2, py - w / 2, px + w / 2, py + w / 2], fill=color)
+
 def _strikeout(img, cx, cy, d, scale):
     """Diagonal red->black semi-transparent bar (market-marker back)."""
     L = int(2 * (d / 2 + BLEED) * scale * 1.04)
@@ -218,6 +292,18 @@ def draw_token(img, draw, cx, cy, tok):
     if variant == "dest":
         bh = cut_r * 0.33
         draw.rectangle([cx - r_art, cy - bh, cx + r_art, cy + bh], fill="#111111")
+
+    # +30gp bonus tokens: the private's sigil rides above the value so the two are
+    # tellable apart at a glance on the map.
+    if variant.startswith("plus30_"):
+        _draw_sigil(draw, variant.split("_")[1], cx, cy - cut_r * 0.54,
+                    cut_r * 0.58, ink, 0.34 * scale)
+        # The sigil only has to tell the two tokens apart, so it stays small and the
+        # value gets the room. Width is capped so the corners of the type box — set low
+        # in the circle, descender included — still clear the cut edge.
+        f = _fit_font(label, 2 * cut_r * 0.68, cut_r * 0.72)
+        draw.text((cx, cy + cut_r * 0.30), label, font=f, fill=ink, anchor="mm")
+        return
 
     # abbrev / number: centered, same size on every token (logo is not moved/resized)
     f = _fit_font(label, 2 * cut_r * 0.74, 2 * cut_r * 0.58)
