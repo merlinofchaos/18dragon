@@ -29,8 +29,13 @@
     { "name": "4", "phase_color": "green", "cost": 300, "rust": "7/E", "rust_color": "gray", "permanent": false, "quantity": 6, "deck": true },
     { "name": "5", "phase_color": "brown", "cost": 500, "rust": null, "rust_color": null, "permanent": true, "quantity": 3, "deck": true },
     { "name": "6", "phase_color": "brown", "cost": 600, "rust": null, "rust_color": null, "permanent": true, "quantity": 3, "deck": true },
-    { "name": "7", "phase_color": "gray", "cost": 750, "rust": null, "rust_color": null, "permanent": true, "quantity": 20, "deck": true },
-    { "name": "E", "phase_color": "gray", "cost": 1000, "rust": null, "rust_color": null, "permanent": true, "quantity": 20, "deck": true, "note": "Doubles city revenue" },
+    {
+      "name": "7", "phase_color": "gray", "cost": 750, "rust": null, "rust_color": null,
+      "permanent": true, "quantity": 20, "deck": true,
+      "back": { "name": "E", "phase_color": "gray", "cost": 1000, "rust": null, "rust_color": null, "permanent": true, "note": "Doubles city revenue" }
+    },
+    { "name": "E", "phase_color": "gray", "cost": 1000, "rust": null, "rust_color": null, "permanent": true, "quantity": 20, "deck": false, "note": "Doubles city revenue",
+      "note_deck": "Shares a card with the 7 — 7 on the front, E on the back (like L/2)" },
 
     { "name": "2P", "phase_color": "yellow", "cost": 0, "rust": null, "rust_color": null, "permanent": true, "quantity": 2, "deck": false, "on_private": ["P2", "P3"], "note": "Permanent 2-train" },
     { "name": "LP", "phase_color": "yellow", "cost": 0, "rust": null, "rust_color": null, "permanent": true, "quantity": 1, "deck": false, "on_private": ["P4"], "note": "Permanent L-train" },

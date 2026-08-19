@@ -72,7 +72,7 @@ const anatomy = (t) => `
 
 // ------------------------------------------------------------------ page ----
 const DECK = trains.filter((t) => t.deck);
-const PRIZE = trains.filter((t) => !t.deck);
+const PRIZE = trains.filter((t) => !t.deck && t.on_private);
 const L = byName["L"];
 
 const cell = (t, label) => `<figure class="cellf"><figcaption>${esc(label)}</figcaption>${face(t)}</figure>`;

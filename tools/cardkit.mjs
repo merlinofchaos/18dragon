@@ -84,11 +84,11 @@ export function trainFace(t) {
 // Train-card styling (C50). Include once per doc; needs FONT_FACE + CARD_ROOT_CSS +
 // COIN_CSS alongside it. Square corners, no preview shadow — this is the print face.
 export const TRAIN_CSS = `
-  /* No outer card border — crop marks are the only cut guides (the mockup's frame was
-     just showing the card edge). The phase top-bar stays. */
+  /* No outer card border — crop marks are the only cut guides. The phase top-bar stays.
+     Padding is 4.5mm so nothing sits inside the 6.5mm corner-rounder arc (C54). */
   .tc{ width:67mm; height:44mm; position:relative; overflow:hidden;
     background:linear-gradient(180deg,#fffdf6 0%,var(--paper) 55%,var(--paper-2) 100%);
-    color:var(--ink); font-family:var(--serif); padding:3.5mm; display:flex; flex-direction:column; }
+    color:var(--ink); font-family:var(--serif); padding:4.5mm; display:flex; flex-direction:column; }
   /* phase color rides a top edge bar + the numeral; nothing else is tinted */
   .tc::before{ content:""; position:absolute; left:0; right:0; top:0; height:1.6mm; background:var(--pc); }
   .c-yellow{ --pc:#f0cf5c; --pcx:#c69b12; }
@@ -99,19 +99,19 @@ export const TRAIN_CSS = `
   .tc .num{ font-family:var(--disp); font-size:48pt; line-height:.72; color:var(--pcx);
     -webkit-text-stroke:0.35mm #1c1a17; paint-order:stroke fill; width:26mm; display:block; }
   .tc .cost{ display:flex; flex-direction:column; align-items:flex-end; line-height:1; }
-  .tc .cost i{ font-family:var(--sans); font-style:normal; font-size:3.6pt; letter-spacing:.12em;
-    color:#6a6357; margin-bottom:.7mm; }
-  .tc .cost b{ font-family:var(--disp); font-weight:400; font-size:13pt; line-height:.72; }
+  .tc .cost i{ font-family:var(--sans); font-style:normal; font-size:5pt; letter-spacing:.12em;
+    color:#6a6357; margin-bottom:.8mm; }
+  .tc .cost b{ font-family:var(--disp); font-weight:400; font-size:18pt; line-height:.72; }
   .tc .cost .gp-coin{ width:.78em; height:.78em; }
-  .tc .cost .nofee{ font-family:var(--sans); font-size:4.6pt; letter-spacing:.1em;
+  .tc .cost .nofee{ font-family:var(--sans); font-size:6pt; letter-spacing:.08em;
     text-transform:uppercase; color:#6a6357; padding-bottom:1.2mm; }
   .tc .mid{ flex:1; }
-  .tc .foot{ display:flex; flex-direction:column; align-items:center; gap:1.5mm; }
-  .tc .note{ width:44mm; min-height:3.4mm; text-align:center; font-size:5.4pt; line-height:1.25;
-    color:#4b4438; text-wrap:balance; }
-  .tc .banner{ height:5.6mm; min-width:24mm; padding:0 3mm; border-radius:1mm; display:inline-flex;
-    align-items:center; justify-content:center; font-family:var(--sans); font-weight:700; font-size:6.4pt;
-    letter-spacing:.06em; text-transform:uppercase; white-space:nowrap; }
+  .tc .foot{ display:flex; flex-direction:column; align-items:center; gap:1.6mm; }
+  .tc .note{ width:52mm; min-height:3.6mm; text-align:center; font-size:7pt; line-height:1.25;
+    color:#453f34; text-wrap:balance; }
+  .tc .banner{ height:7.2mm; min-width:30mm; padding:0 3.4mm; border-radius:1.2mm; display:inline-flex;
+    align-items:center; justify-content:center; font-family:var(--sans); font-weight:700; font-size:8.5pt;
+    letter-spacing:.05em; text-transform:uppercase; white-space:nowrap; }
   .tc .banner.perm{ background:#1c1a17; color:#f2cf4c; }
   .tc .banner.rust-green{ background:#3a7d1e; color:#fff; }
   .tc .banner.rust-brown{ background:#8a5a2b; color:#fff; }

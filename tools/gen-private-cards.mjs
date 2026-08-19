@@ -125,6 +125,51 @@ const phaseCls = (p) => (p <= 2 ? "ph-y" : p <= 4 ? "ph-g" : "ph-b");
 const phaseChip = (c) =>
   `<span class="phblk"><i>PHASE</i><span class="ph ${phaseCls(c.phase)}">${c.phase}</span></span>`;
 const revBlock = (v, label) => `<span class="rev"><i>${label}</i><b>${gp(v)}</b></span>`;
+// Type autoscale (C54). The card is 67x44mm and the corner-rounder eats 6.5mm at each
+// corner, so the type box is fixed and small. Rather than set one size that fits the
+// worst case, each face picks a size by MEASURED fit: the title is set at TITLE_PT
+// unless it is genuinely too wide for its slot, and only then does it step down.
+const step = (n, steps) => steps.find(([max]) => n <= max)[1];
+const TITLE_PT = 20;
+// Slot the title may occupy, in mm. The permit faces are a little narrower: a solid
+// region medallion sits at the right of the card where the plain faces carry only a
+// faint watermark the title is free to cross. 36mm still clears the medallion — it is a
+// circle centred lower than the title, so at the title's band it is barely inset.
+const TITLE_MM = { plain: 48, permit: 36 };
+// Advance widths of the display face (Leftfield Serif) at TITLE_PT, in mm, measured off
+// the rendered font — summing these predicts a title's true width to within 1%, where a
+// flat per-character average was out by up to 15% and shrank titles that fit fine.
+// Regenerate if the face or TITLE_PT changes; unlisted characters fall back to the
+// widest measured glyph.
+const CHAR_MM = {
+  " ": 1.0046, "-": 1.9224, "/": 2.6458, "2": 2.1828, "5": 2.1332, "→": 7.0569,
+  B: 2.4267, C: 2.0836, D: 2.4143, E: 2.4061, F: 2.3234, G: 2.1952, H: 2.5756,
+  L: 2.0753, M: 3.1213, P: 2.4639, R: 2.6417, S: 2.1539, T: 2.2366, V: 2.435,
+  a: 2.4433, c: 2.0836, d: 2.4143, e: 2.4061, g: 2.1952, h: 2.5756, i: 1.1451,
+  k: 2.6045, l: 2.0836, m: 3.1213, n: 2.5756, o: 2.373, p: 2.4639, r: 2.6417,
+  s: 2.1621, t: 2.2366, u: 2.5756, v: 2.4433, w: 3.6504, x: 2.7616, y: 2.5011,
+  "ö": 2.373,
+};
+const WIDEST_MM = Math.max(...Object.values(CHAR_MM));
+// Kerning pulls the set line ~0.5-2% tighter than the sum of advances; 0.99 keeps the
+// estimate honest without shrinking a title that would in fact have fit.
+const KERN = 0.99;
+const titleWidth = (t, pt) =>
+  [...String(t)].reduce((w, ch) => w + (CHAR_MM[ch] ?? WIDEST_MM), 0) * KERN * (pt / TITLE_PT);
+// Largest half-point size (<= TITLE_PT) whose single line fits the slot, floor 12pt.
+const fnSize = (t, kind = "plain") => {
+  const fit = (TITLE_PT * TITLE_MM[kind]) / titleWidth(t, TITLE_PT);
+  return Math.min(TITLE_PT, Math.max(12, Math.floor(fit * 2) / 2));
+};
+// …and how many lines that size needs, so the title BLOCK can be reserved at a fixed
+// height. A shrunk title must not shift the name/rail under it — the card's title always
+// starts at the same place, whatever size it ended up at.
+const fnLines = (t, kind = "plain") =>
+  titleWidth(t, fnSize(t, kind)) > TITLE_MM[kind] ? 2 : 1;
+// company-side rules text: default 7.4pt (was 5.3pt), dropping for the two long
+// town-tile privates (P23/P24, ~410 chars) so they still fit the box.
+const rtSize = (t) => step(String(t).length, [[150, 7.6], [230, 7.2], [300, 6.8], [360, 6.4], [Infinity, 6]]);
+
 // keep rules text quiet on a small card (no coin glyph, just "10gp")
 const rulesText = (c) => esc(c.rules_text).replace(/\$(\d+)/g, "$1gp");
 
@@ -139,7 +184,7 @@ export function faceHtml(c, side) {
   <div class="body">
     <div class="regmark"><span class="rl">${esc(c.extra.region)}</span></div>
     <div class="eyebrow">${classShort(c)}</div>
-    <div class="fn reg">${esc(regionName(c))} Permit</div>
+    <div class="fn reg" style="font-size:${fnSize(regionName(c) + " Permit", "permit")}pt">${esc(regionName(c))} Permit</div>
     <div class="nm">${esc(c.name)}</div>
     <div class="rail">
       ${phaseChip(c)}
@@ -155,7 +200,7 @@ export function faceHtml(c, side) {
   <div class="body">
     ${sigil(c, "wm")}
     <div class="eyebrow">${classShort(c)}</div>
-    <div class="fn">${esc(c.function_label)}</div>
+    <div class="fn" style="font-size:${fnSize(c.function_label)}pt">${esc(c.function_label)}</div>
     <div class="nm">${esc(c.name)}</div>
     <div class="rail">
       ${phaseChip(c)}
@@ -170,12 +215,14 @@ export function faceHtml(c, side) {
   const train = backTrain[c.id];
   if (train) return trainFace(train);
 
+  // The company side drops the coloured spine and runs on lighter paper so the two
+  // sides are tellable apart across the table (C54); the id survives as a small chip.
+  const bfn = isPermit(c) ? regionName(c) + " Permit" : c.function_label;
   return `
 <div class="card A back ${accent(c)}"${isPermit(c) ? ` style="--reg:${region(c).color}"` : ""}>
-  <div class="spine"><span class="sid">${esc(c.id)}</span><span class="gate">${esc(c.players_required)}+</span></div>
   <div class="body">
-    <div class="bhead">${isPermit(c) ? `<span class="rchip" style="background:${region(c).color}">${esc(c.extra.region)}</span>` : sigil(c, "in")}<span class="bfn">${isPermit(c) ? esc(regionName(c)) + " Permit" : esc(c.function_label)}</span><span class="bown">IN COMPANY</span></div>
-    <div class="rtext">${rulesText(c)}</div>
+    <div class="bhead">${isPermit(c) ? `<span class="rchip" style="background:${region(c).color}">${esc(c.extra.region)}</span>` : sigil(c, "in")}<span class="bfn">${esc(bfn)}</span><span class="bid">${esc(c.id)}</span><span class="bown">IN COMPANY</span></div>
+    <div class="rtext" style="font-size:${rtSize(c.rules_text)}pt">${rulesText(c)}</div>
     <div class="rail tight">
       <span class="cad">${cadence(c) || "—"}</span>
       ${revBlock(c.company_revenue, "TO COMPANY")}
@@ -244,6 +291,16 @@ pages.forEach((page, i) => {
   );
 });
 
+// Title reserve: the tallest title block anywhere in the deck, applied to EVERY card so
+// the name and rail below it sit at the same height on all 30. Data-driven — add a title
+// long enough to wrap and the whole deck picks up the two-line reserve together.
+const FN_LINES = Math.max(
+  ...cards.map((c) =>
+    isPermit(c) ? fnLines(regionName(c) + " Permit", "permit") : fnLines(c.function_label),
+  ),
+);
+const FN_H = (FN_LINES * TITLE_PT * 1.02 * 25.4) / 72; // mm
+
 export const PRIVATE_STYLE = `
   :root { color-scheme: light; }
   * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
@@ -270,6 +327,8 @@ export const PRIVATE_STYLE = `
   .card{ width:${CARD_W}mm; height:${CARD_H}mm; position:relative; overflow:hidden;
     background:var(--paper); color:var(--ink); font-family:var(--serif); }
   .card.blank{ background:none; }
+  /* the company side runs lighter than --paper (#f6f1e3) so the two sides read apart */
+  :root{ --paper-back:#fdfbf4; }
   .acc-green{ --acc:#3f6b34; --acc-dk:#2c4b24; --acc-lt:#e4eeda; }
   .acc-red{   --acc:#8e2b22; --acc-dk:#6a1e18; --acc-lt:#f5e2de; }
 
@@ -292,12 +351,16 @@ export const PRIVATE_STYLE = `
   .cad{ font-family:var(--sans); font-size:5pt; letter-spacing:.11em; text-transform:uppercase; color:#5d564a; }
 
   /* ---------- A · Ledger ---------- */
-  /* No outer card border — crop marks are the only cut guides (the mockup's frame was
-     just showing the card edge). The spine divider + inner hairline frame stay. */
+  /* No outer card border — crop marks are the only cut guides. Everything that must
+     survive the corner rounder (C54) stays clear of a 6.5mm radius arc at each corner:
+     the spine's id/gate are padded 7.5mm in from top and bottom, and the body's own
+     padding keeps the eyebrow and the bottom rail out of the arcs. There is deliberately
+     NO hairline frame around the card content — any rectangle inset far enough to clear
+     a 6.5mm arc sits too far in to look like a frame, so the type sets on bare paper. */
   .card.A{ display:flex; }
   .card.A .spine{ flex:0 0 6.2mm; background:var(--acc); color:#fff; position:relative;
     display:flex; flex-direction:column; align-items:center; justify-content:space-between;
-    padding:2mm 0; border-right:0.3mm solid var(--acc-dk); }
+    padding:7.5mm 0; border-right:0.3mm solid var(--acc-dk); }
   .card.A .sid{ font-family:var(--disp); font-size:11pt; writing-mode:vertical-rl; transform:rotate(180deg); }
   .card.A .gate{ font-family:var(--sans); font-size:5pt; font-weight:700; letter-spacing:.05em;
     background:rgba(255,255,255,.9); color:var(--acc-dk); border-radius:.8mm; padding:.2mm 1mm; }
@@ -305,38 +368,46 @@ export const PRIVATE_STYLE = `
      only in the interior), so vertically-abutting cards meet at a matching colour and a
      slightly inaccurate cut leaves no mismatched strip. (The body's top/bottom are the
      card edges; a vertical gradient is uniform across x, so left/right already match.) */
-  .card.A .body{ flex:1; position:relative; padding:2.6mm 3.4mm 2.4mm; display:flex; flex-direction:column;
-    background:linear-gradient(180deg,var(--paper) 0%,#fbf7ec 50%,var(--paper) 100%);
-    box-shadow:inset 0 0 0 0.28mm rgba(0,0,0,.06); }
-  .card.A .body::after{ content:""; position:absolute; inset:1.2mm; border:0.22mm solid var(--line);
-    border-radius:.8mm; opacity:.55; pointer-events:none; }
-  .card.A .wm{ position:absolute; right:2.4mm; top:50%; width:22mm; height:22mm; transform:translateY(-52%);
+  .card.A .body{ flex:1; position:relative; padding:3.4mm 4.2mm 3.2mm; display:flex; flex-direction:column;
+    background:linear-gradient(180deg,var(--paper) 0%,#fbf7ec 50%,var(--paper) 100%); }
+  .card.A .wm{ position:absolute; right:3.2mm; top:50%; width:21mm; height:21mm; transform:translateY(-52%);
     color:var(--acc); opacity:.11; }
   .card.A .wm .sig{ stroke-width:1.1; }
   /* region permit: the letter IS the art — map color, map letter, full strength */
-  .card.A.permit .regmark{ position:absolute; right:3mm; top:50%; transform:translateY(-54%);
+  .card.A.permit .regmark{ position:absolute; right:3.6mm; top:50%; transform:translateY(-54%);
     width:16.4mm; height:16.4mm; display:flex; align-items:center; justify-content:center;
     border-radius:50%; background:color-mix(in srgb, var(--reg) 12%, #fff);
     border:0.35mm solid color-mix(in srgb, var(--reg) 55%, #fff); }
   .card.A.permit .rl{ font-family:var(--disp); font-size:42pt; line-height:.72; color:var(--reg);
     margin-top:-1.5mm;
     -webkit-text-stroke:0.18mm color-mix(in srgb, var(--reg) 72%, #000); paint-order:stroke fill; }
-  .card.A .fn.reg{ text-transform:uppercase; letter-spacing:.005em; font-size:13pt; max-width:38mm; }
-  .card.A .rchip{ font-family:var(--disp); font-size:8pt; color:#fff; line-height:1; padding:.5mm 1.5mm .8mm; border-radius:.8mm; }
-  .card.A .eyebrow{ font-family:var(--sans); font-size:4.2pt; letter-spacing:.16em; color:var(--acc); text-transform:uppercase; }
-  .card.A .fn{ font-family:var(--disp); font-size:15pt; line-height:1.02; margin:.8mm 0 .4mm; text-wrap:balance; max-width:44mm; }
-  .card.A .nm{ font-style:italic; font-size:7.2pt; color:#4b4438; max-width:42mm; line-height:1.15; }
+  .card.A .fn.reg{ text-transform:uppercase; letter-spacing:.005em; max-width:${TITLE_MM.permit}mm; }
+  .card.A .rchip{ font-family:var(--disp); font-size:9pt; color:#fff; line-height:1; padding:.5mm 1.6mm .9mm; border-radius:.8mm; }
+  .card.A .eyebrow{ font-family:var(--sans); font-size:4.6pt; letter-spacing:.16em; color:var(--acc); text-transform:uppercase; }
+  /* .fn font-size is set per card by fnSize(); the block's HEIGHT is fixed deck-wide by
+     FN_LINES, so a title that had to shrink still starts on the same line as every other
+     card's and never shifts the name/rail beneath it. */
+  .card.A .fn{ font-family:var(--disp); font-size:${TITLE_PT}pt; line-height:1.02; margin:.9mm 0 .5mm;
+    height:${FN_H.toFixed(2)}mm; text-wrap:balance; max-width:${TITLE_MM.plain}mm; }
+  .card.A .nm{ font-style:italic; font-size:7.6pt; color:#4b4438; max-width:40mm; line-height:1.15; }
   .card.A .rail{ margin-top:auto; display:flex; align-items:center; gap:2.4mm; }
   .card.A .rail .cad{ margin-right:auto; }
-  .card.A.back .body{ padding:2.4mm 3.2mm 2.2mm; }
-  .card.A .bhead{ display:flex; align-items:center; gap:1.4mm; border-bottom:0.25mm solid var(--line); padding-bottom:1mm; }
-  .card.A .bhead .in{ width:4.6mm; height:4.6mm; color:var(--acc); }
-  .card.A .bfn{ font-family:var(--disp); font-size:9.5pt; line-height:1; }
-  .card.A .bown{ margin-left:auto; font-family:var(--sans); font-size:3.9pt; letter-spacing:.12em;
+
+  /* company-owned side: no spine, lighter paper (tell the sides apart on the table) */
+  .card.A.back{ background:var(--paper-back); }
+  .card.A.back .body{ padding:4mm 4.4mm 3.6mm;
+    background:linear-gradient(180deg,var(--paper-back) 0%,#fffdf8 50%,var(--paper-back) 100%); }
+  .card.A .bhead{ display:flex; align-items:center; gap:1.6mm; border-bottom:0.25mm solid var(--line); padding-bottom:1.2mm; }
+  .card.A .bhead .in{ width:5.2mm; height:5.2mm; color:var(--acc); }
+  .card.A .bfn{ font-family:var(--disp); font-size:11pt; line-height:1; }
+  .card.A .bid{ font-family:var(--sans); font-size:5pt; font-weight:700; letter-spacing:.06em;
+    color:var(--acc); border:0.22mm solid var(--acc); border-radius:.7mm; padding:.3mm 1mm; }
+  .card.A .bown{ margin-left:auto; font-family:var(--sans); font-size:4.2pt; letter-spacing:.12em;
     background:var(--acc); color:#fff; padding:.5mm 1.3mm; border-radius:.7mm; }
-  .card.A .rtext{ flex:1; display:flex; align-items:center; font-size:5.3pt; line-height:1.3;
-    padding:1.2mm .4mm; text-align:justify; hyphens:auto; }
-  .card.A .rail.tight{ border-top:0.22mm solid var(--line); padding-top:.8mm; }
+  /* .rtext font-size is set per card by rtSize() */
+  .card.A .rtext{ flex:1; display:flex; align-items:center; font-size:7.4pt; line-height:1.28;
+    padding:1.2mm .2mm; text-align:justify; hyphens:auto; }
+  .card.A .rail.tight{ border-top:0.22mm solid var(--line); padding-top:1mm; }
 
   @media print {
     body { background: #fff; }
