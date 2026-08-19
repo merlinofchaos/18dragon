@@ -290,20 +290,26 @@ permit gate are offset by cheap early entry and dual high-value-city upside.
 
 - **Central ruins city.** Gray, permanent, **4 token slots**, base value **10gp**
   — the high slot count makes early entry cheap.
-- **Ruins hexes are special.** They have their own tile-lay options — a ruins hex
-  can be developed into **plain track, a dit, a town, or a metro** via a **special
-  tile lay unique to ruins**. (Render/annotate support = tooling D07/D08.)
-- **Metro** = a developed ruins hex adjacent to a ruins city that **boosts that
-  city's value**. Of the **6 hexes adjacent to the central city**, at least **1
-  must become plain track**; up to **5** can become metros.
-- **Second city (optional, emergent).** During play a ruins hex *may* be developed
-  into a city via the special ruins tile lay, creating a second high-value
-  destination with its own metro-bonus system that could rival the central city
-  late game. This is a **play-time development, not a starting-map feature, and it
-  is not guaranteed to happen** — the board is laid out without assuming it.
+- **Developing a ruins hex** *(finalized in C08 — full spec in
+  `docs/signature-mechanics.md` §2).* A ruins hex may become **plain track**, a **dit**,
+  a **city** (regular yellow city tile, **20gp**, has a token slot), or a **metro** (the
+  only *special* ruins tile). All follow normal track rules + the region-A permit for new
+  yellow (§6.1). Once a yellow tile is laid, the hex is committed to its type and only
+  **upgrades** along normal paths. *(Dits do **not** upgrade into cities.)*
+- **Metro** = the special dead-end **stub tile** (C15), laid for **10gp**, that **raises
+  the printed value of the adjacent ruins city** by its amount: **+10gp** yellow →
+  **+20gp** green (value) or **+10/+10** green (branch, boosting two adjacent cities).
+- **No forced plain-track rule (emergent).** Metros are dead-ends, so a route to a ruins
+  city needs a non-metro approach; ringing the central city in metros on all 6 adjacent
+  hexes strands it (no runnable route once L-trains rust). Self-defeating, **not
+  prohibited** — players leave an approach open by choice.
+- **Second city (optional, emergent).** Not a subsystem — a ruins hex developed with a
+  **yellow city tile** (above) upgrades normally, takes metros, and shares the same
+  100gp cap; it can rival the central city late game. **Never pre-placed, not
+  guaranteed.**
 - **Coastal hexes** carry dits/towns (vestigial inhabitants).
-- **Value cap.** Ruins-city value caps at **~100gp** (vs 40/50/60 elsewhere).
-  Both cities start low; either can become the map's top destination late.
+- **Value cap.** A ruins city's value is **hard-capped at 100gp** (base 10 + metros; vs
+  40/50/60 elsewhere).
 
 > **Starting-map cities.** The island's pre-placed cities (F17, L11, plus a 3rd
 > added in C27) are legitimate starting cities that host **minor company homes** —
@@ -393,10 +399,11 @@ findings feed retrospectives → PRD number updates.
 - Whether the **non-home minor's board hex** is simply vacated on merger (implied)
   or re-tokened for the major.
 
-**Verantum (§ 6.2):**
-- Metro **value increments** — how much each metro adds to its city.
-- The **special ruins tile-lay rules** — exact tiles, costs, and the conditions
-  to found the second city.
+**Verantum (§ 6.2):** ✅ *Resolved (C08, 2026-08-19 — see `docs/signature-mechanics.md`
+§2).* Metro increments +10/+20/+10+10 (C15 tiles), raising the adjacent city's printed
+value, hard-capped at 100gp; ruins lays cost 10gp (metro) / 20gp (city); the second city
+is just a normal yellow city tile; the "≥1 plain track" constraint is emergent, not a
+rule.
 
 **General:**
 - Currency name (`#gp` provisional).

@@ -100,8 +100,76 @@ separate permit token or component**:
 
 ## 2. Verantum Ruins & Metros
 
-*→ To be written in story C08 (the ruins/metro value system, the special ruins tile
-lays, and the emergent second-city conditions).*
+Verantum (region A) is an isolated island. Its ruins hexes start undeveloped and are
+built out during play; a central ruins city that starts nearly worthless can grow, via
+adjacent **metros**, into one of the map's richest destinations. Building on Verantum is
+permit-gated like any region (§1) — new yellow needs the **A permit**.
+
+### 2.1 The central ruins city
+
+- **Verantia (H9)** is a fixed **gray, permanent** city with **4 token slots** and a
+  **base value of 10gp**. It is pre-placed on the map; it is never upgraded by a normal
+  city tile. Its value grows only through adjacent metros (§2.3), up to the cap.
+
+### 2.2 Developing a ruins hex
+
+A ruins hex is developed by laying tiles on it. There are four things it can become; all
+follow normal 1822 track rules (legal connection, phase color, the A permit for new
+yellow) except where noted:
+
+| Development | Tile | Lay cost | Notes |
+|---|---|---|---|
+| **Plain track** | regular yellow track | standard (free unless terrain) | ordinary track |
+| **Dit / town** | regular yellow with a dit | standard | a dit does **not** upgrade into a city |
+| **City** | regular yellow **city** tile (a token slot) | **20gp** | upgrades along normal city paths; can receive metros; this is how a **second city** is founded (§2.5) |
+| **Metro** | the special dead-end **stub** tile (C15) | **10gp** | raises an adjacent ruins city's value (§2.3) |
+
+- **Permit + phase.** Laying **any new yellow** on a ruins hex (metro stub, city, plain,
+  dit) requires the **A permit** (§1) and the phase must allow that tile color. Green
+  **upgrades** (including the metro upgrades below) need no permit.
+- **Commitment.** Once a yellow tile is laid on a ruins hex, the hex **cannot be switched**
+  to a different development type — it can only be **upgraded along normal paths** (a
+  yellow metro stub → a green metro; a yellow city → a larger city). Stated explicitly
+  because ruins hexes start blank.
+
+### 2.3 Metros and city value
+
+A **metro** is the special dead-end stub tile. It **raises the printed value of the
+ruins city it is adjacent to** by the tile's amount — it is not separately-routed stub
+revenue; the boost is added to the city a reaching train collects.
+
+- **Metro tile values (C15):**
+  - **Yellow stub:** **+10gp** (one dead-end leg).
+  - **Green value upgrade:** the single stub raised to **+20gp**.
+  - **Green branch upgrade:** a **second dead-end leg** in another direction, **+10gp
+    each** — so one ruins hex can point a metro at **two** different adjacent cities
+    (e.g. the central city and a second city), +10 to each.
+- **Hard value cap = 100gp.** A ruins city's effective value (base 10 + the metros
+  boosting it) **can never exceed 100gp**, even if its metros would sum higher.
+
+### 2.4 Routing — the emergent metro limit
+
+There is **no rule** requiring any of the 6 hexes around the central city to stay plain
+track. It is **self-limiting**: metros are **dead-ends**, so a train can only reach the
+ruins city through a **non-metro** connection. If all 6 surrounding hexes are built as
+metros, no route can reach the city at all — once the L-trains rust, a company based
+there can run no route and cannot pay out. Ringing a city entirely in metros is therefore
+**self-defeating, not prohibited**; players leave at least one open approach by choice.
+
+### 2.5 The second city (emergent)
+
+A second high-value city is **not a special subsystem** — it is simply a ruins hex
+developed with a **yellow city tile** (§2.2, 20gp). It:
+
+- has a **token slot** and **upgrades along normal city paths** (unlike a dit, which
+  never becomes a city);
+- **receives metros** pointed at it from its own adjacent ruins hexes, exactly like the
+  central city, under the **same 100gp hard cap**;
+- is **never pre-placed** and **not guaranteed** to appear — it emerges only if players
+  choose to found it.
+
+Late game, a fully-developed second city can rival the central city as the island's top
+destination.
 
 ---
 
