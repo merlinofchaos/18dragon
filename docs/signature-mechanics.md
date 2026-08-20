@@ -120,7 +120,7 @@ yellow) except where noted:
 | Development | Tile | Lay cost | Notes |
 |---|---|---|---|
 | **Plain track** | regular yellow track | standard (free unless terrain) | ordinary track |
-| **Dit / town** | regular yellow with a dit | standard | a dit does **not** upgrade into a city |
+| **Dit / town** | regular yellow with a dit | standard | a dit does **not** upgrade into a city — *exception:* private **P21 Verantum Recolonization** may develop a Verantum dit into a city (private powers override, 1822 §1.3) |
 | **City** | regular yellow **city** tile (a token slot) | **20gp** | upgrades along normal city paths; can receive metros; this is how a **second city** is founded (§2.5) |
 | **Metro** | the special dead-end **stub** tile (C15) | **10gp** | raises an adjacent ruins city's value (§2.3) |
 
@@ -175,5 +175,80 @@ destination.
 
 ## 3. Mergers
 
-*→ To be written in story C13 (the full merger mechanic: eligibility, procedure, the
-share/par math, exchange tokens, and the PRD §9 merger open questions).*
+18Dragon has **no concessions**. A major company comes into being **only** by merging
+two minor companies — this is the sole path to majors. Mergers follow **1822PNW's**
+merger round, with one large change: **there are no associated/unassociated minors.** Any
+two qualifying minors can merge, and the player **chooses** which major to form.
+
+### 3.1 The merger round
+
+- A merger round runs **after every operating round from phase 2 onward** (phase 1's
+  single OR has none).
+- Mergers are resolved in **descending share-price order** — the highest-valued eligible
+  minor gets the first opportunity to merge. A minor that passes may still be merged
+  later, when a lower-valued minor is offered its opportunity.
+
+### 3.2 Eligibility
+
+Two minors may merge only if **all** of these hold:
+
+- it is **Phase 2 or later**;
+- **one player is president of both** minors;
+- the two minors are in **different regions**;
+- their tracks are **connected** by a route (any length) **not blocked by tokens**.
+
+### 3.3 Choosing the major
+
+The initiating player:
+
+- chooses **which minor provides the home token** — the major's home station is placed
+  at that minor's location; and
+- chooses an **available major associated with the home minor's region**.
+
+If the home minor's region has **no available major**, that minor cannot be the home
+token — the player may try the other minor as home instead, otherwise the merger cannot
+be formed.
+
+### 3.4 Procedure
+
+1. **Value.** Double each minor's current market price and add them together. This total
+   is what the player must be compensated by the new major.
+2. **Par.** Choose a par from the major par values **55 / 60 / 65 / 70 / 75 / 80 / 90 /
+   100** (50 is minors-only). The par must be **≥ total ÷ 6**; if the total exceeds
+   **600**, par **must be 100**. *(The ÷6 floor caps the payout at 6 shares.)*
+3. **Shares.** Divide the total by the chosen par and round to whole shares. Round **up**
+   → the player pays the company the difference; round **down** → the company pays the
+   player the difference. (The president's 20% certificate counts as its two shares.)
+4. **Assets.** Move both minors' **cash, trains, and privates** onto the major's charter;
+   **both minors are removed** from play.
+5. **Home token.** The chosen minor's board token becomes the major's **home station**.
+6. **Tokens.** The major takes onto its charter its placed **home token**, **2 exchange
+   tokens** (held in reserve), and a **destination token** (base-1822 destination rules).
+7. **The non-home minor's board token — president's choice.** Remove it and **either**
+   place a major token there (moved from exchange) **or** leave the hex vacant and move a
+   token from **exchange → available**.
+8. **Capitalisation.** A merged major always uses **incremental** capitalisation (see
+   §divergences 2.3 — full capitalisation applies only to stock-round flotation, which a
+   major never does).
+9. The major is ready and **runs in the next operating round** (its first turn).
+
+### 3.5 Exchange tokens
+
+An **exchange token** is a reserve token on the charter (not on the board). A major
+gains **2** at formation. It becomes a placeable (**available**) token by:
+
+- **Acquiring a minor** (§3.6) — each acquisition converts one exchange token; or
+- the **P21 Verantum Recolonization** / **P28 Station Token Swap** private powers —
+  **P28** moves a token between exchange and available (one-time, then closes); certain
+  Verantum privates (e.g. **P21**) place an exchange token directly on the board.
+  *(These are private powers, detailed in the privates roster, not core merger rules.)*
+
+### 3.6 Acquiring a minor (post-formation growth)
+
+After forming, a major grows by **acquiring minors** — inherited from 1822 (from a
+willing player in phases 2–7; from a bid box in phases 5–7 for **200gp**; see
+§divergences 5.16–5.18). Acquiring a minor:
+
+- absorbs the minor's assets;
+- makes the minor's certificate a **permit** for its region inside the major (§1); and
+- **converts one exchange token** to available.

@@ -168,8 +168,9 @@ divergence is § 5.1: concessions are gone, replaced by mergers.**
 following **1822PNW** with these changes:
 
 - **No associated minors** — majors aren't pre-tied to minors as in PNW.
-- **Timing.** Mergers occur in a dedicated **merger round after each operating
-  round** (as in PNW).
+- **Timing & order.** Mergers occur in a dedicated **merger round after each
+  operating round** (as in PNW), from phase 2 onward, resolved in **descending
+  share-price order** (highest-valued eligible minor first — PNW §6.1.2).
 - **Initiator.** A single player must be **president of both** minors merged.
 - **The two minors.** Their tracks must be **connected** by a route not blocked
   by tokens (as in PNW), and they must be in **different regions**.
@@ -179,17 +180,20 @@ following **1822PNW** with these changes:
   can't be the home token.
 - **Absorption.** All assets (treasury, trains, tokens, privates) of both minors
   transfer to the major; both minors are removed from play.
-- **Tokens.** The non-home minor is traded for a station token, and the major is
-  given one available station token — so the major ends with its placed **home
-  token**, **2 exchange tokens** in reserve, and a **destination token**
-  (base-1822 destination rules).
+- **Tokens.** The major ends with its placed **home token**, **2 exchange tokens**
+  in reserve, and a **destination token** (base-1822 destination rules). The
+  **non-home minor's board token** is the **president's choice** (PNW step 7): remove
+  it and either place a major token there (from exchange) **or** vacate the hex and
+  move a token from exchange → available.
   - An **exchange token** is a reserve token (not on the board) that converts to
-    a placeable token when the major later **acquires a minor** (plus other
-    means — see § 9).
+    a placeable token when the major later **acquires a minor**, or via the **P28
+    Station Token Swap** private *(C13 — resolves the §9 "other means")*.
 - **Stock & money (as 1822PNW).** Take each minor's **market price**, double it,
   sum the two, and divide by the **chosen par price**; round up or down = major
   shares the player receives. Round **up** → the player pays the company the
-  difference; round **down** → the company pays the player.
+  difference; round **down** → the company pays the player. **Par** is chosen from
+  the major values **55–100**, must be **≥ the doubled sum ÷ 6**, and **must be 100**
+  if the sum exceeds 600 *(C13)*.
 
 - **Capitalisation is formation-based, not phase-based** *(C06, 2026-08-18)*.
   1822 gates capitalisation by phase (incremental in 2–5, full in 6–7). 18Dragon
@@ -391,13 +395,11 @@ findings feed retrospectives → PRD number updates.
 
 ## 9. Open Questions
 
-**Mergers (§ 5.1):**
-- The "other means" by which a major's **exchange tokens** become available
-  (beyond acquiring a minor).
-- The **par-price range** offered when setting a merged major's par (the market's
-  50–100 par values, or a different set?).
-- Whether the **non-home minor's board hex** is simply vacated on merger (implied)
-  or re-tokened for the major.
+**Mergers (§ 5.1):** ✅ *Resolved (C13, 2026-08-20 — see `docs/signature-mechanics.md`
+§3).* Exchange tokens also become available via the **P28 Station Token Swap** private;
+par is chosen from **55–100**, **≥ doubled-sum ÷ 6**, forced to 100 if the sum > 600; the
+**non-home minor's hex is the president's choice** (re-token from exchange, or vacate and
+move exchange → available).
 
 **Verantum (§ 6.2):** ✅ *Resolved (C08, 2026-08-19 — see `docs/signature-mechanics.md`
 §2).* Metro increments +10/+20/+10+10 (C15 tiles), raising the adjacent city's printed
