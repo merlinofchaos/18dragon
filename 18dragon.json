@@ -1494,6 +1494,27 @@
           "width": 18
         }
       ]
+    },
+    "W01": {
+      "quantity": 2,
+      "color": "water",
+      "rotations": 3,
+      "track": [
+        {
+          "type": "straight",
+          "side": 1
+        }
+      ],
+      "values": [
+        {
+          "value": "-10",
+          "x": -46,
+          "y": 0,
+          "width": 30,
+          "height": 30,
+          "fontSize": 13
+        }
+      ]
     }
   },
   "map": {

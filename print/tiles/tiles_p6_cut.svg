@@ -43,5 +43,13 @@
 <line x1="118.939" y1="563.522" x2="77.369" y2="563.522" stroke="#00AEEF" stroke-width="0.5"/>
 <line x1="56.585" y1="527.522" x2="77.369" y2="563.522" stroke="#00AEEF" stroke-width="0.5"/>
 <line x1="77.369" y1="491.522" x2="118.939" y2="491.522" stroke="#00AEEF" stroke-width="0.5"/>
+<line x1="160.508" y1="569.475" x2="118.939" y2="641.475" stroke="#00AEEF" stroke-width="0.5"/>
+<line x1="202.077" y1="641.475" x2="77.369" y2="641.475" stroke="#00AEEF" stroke-width="0.5"/>
+<line x1="56.585" y1="605.475" x2="77.369" y2="641.475" stroke="#00AEEF" stroke-width="0.5"/>
+<line x1="77.369" y1="569.475" x2="56.585" y2="605.475" stroke="#00AEEF" stroke-width="0.5"/>
+<line x1="77.369" y1="569.475" x2="202.077" y2="569.475" stroke="#00AEEF" stroke-width="0.5"/>
+<line x1="118.939" y1="569.475" x2="160.508" y2="641.475" stroke="#00AEEF" stroke-width="0.5"/>
+<line x1="222.862" y1="605.475" x2="202.077" y2="641.475" stroke="#00AEEF" stroke-width="0.5"/>
+<line x1="202.077" y1="569.475" x2="222.862" y2="605.475" stroke="#00AEEF" stroke-width="0.5"/>
 </g>
 </svg>

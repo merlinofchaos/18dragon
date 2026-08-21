@@ -2,7 +2,7 @@
 
 From `18dragon.json` `tiles`. Double-dits omitted; Y cities pre-placed yellow (upgrade via 207/208/622).
 
-**Totals:** 57 types · 254 physical.
+**Totals:** 58 types · 256 physical.
 
 ## Standard track tiles
 | Tile | Qty |
@@ -75,3 +75,17 @@ B/K = 30/40/50/60; capitals D/R/V = 30/50/70/90; Brekheim H …/100. B upgrades 
 | X01 | yellow | +10 | 6 |
 | X02 | green | +20 | 2 |
 | X03 | green | +10/+10 | 1 |
+
+## Bridge tile
+Placed by the bridge privates **P10 *The Aurelian Span*** and **P11 *Halvard's
+Crossing*** (P11 is 5+ only) on one of the three bridge locations marked on the map —
+**M12** (spikes 2–5), **F19** (1–4), **R23** (1–4). Water-coloured so it reads as a
+crossing rather than a normal track lay; the **-10** marker is the toll another
+company pays the owner out of route revenue.
+
+| Tile | Color | Track | Marker | Qty |
+|------|-------|-------|--------|-----|
+| W01 | water (sea blue) | straight (3 rotations) | -10 | 2 |
+
+*Two tiles, one per private — three locations exist, so which crossings get built is a
+play decision. At 3–4 players only P10 is in the game, so only one bridge can be built.*
