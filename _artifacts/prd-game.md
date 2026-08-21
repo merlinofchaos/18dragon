@@ -51,9 +51,13 @@ of the best play.
 - **Players:** 3–6. Base 1822 supports 3–7; 18Dragon caps at **6** (7-player out
   of scope). 2-player is also out of scope — the game isn't expected to work at
   that count.
-- **Currency:** `#gp` (gold pieces; name provisional — see § 8 / Open Questions).
+- **Currency:** **ducats** *(C14, 2026-08-20)*. Components keep the **`gp`** display
+  text (the `#gp` → `150gp` format is retained, so nothing re-renders); "ducats" is the
+  currency's name in prose/the rulebook. A full swap to a ducat name/glyph on components
+  would be a separate propagation story, not required.
 - **Bank:** 12,000 gp.
-- **Expected length:** _open question — target play time TBD._
+- **Expected length:** _still open (deliberately, C14) — a target play time will be set
+  from playtest, not guessed now._
 
 **Starting capital & certificate limits** — 18Dragon-specific (diverged from both
 1822 and PNW), **provisional** pending playtest (§ 7). Derivation in § 6.3.
@@ -408,8 +412,10 @@ is just a normal yellow city tile; the "≥1 plain track" constraint is emergent
 rule.
 
 **General:**
-- Currency name (`#gp` provisional).
-- Target play length (§ 2).
+- Currency name — ✅ *Resolved (C14, 2026-08-20): **ducats**, displayed as `gp` on
+  components (`#gp` format retained; see § 2).*
+- Target play length (§ 2) — ⏳ *Deliberately kept open (C14): to be set from playtest,
+  not guessed. The one remaining §9 question.*
 
 ## 10. Deliverables
 

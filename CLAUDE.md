@@ -5,7 +5,8 @@
 **18Dragon** is an 18xx board game with a fantasy theme, designed by E. Halsey Miles.
 It is a variant of **1822** (not 1830). The game file is `18dragon.json` in this directory.
 
-- Currency: `#gp` (gold pieces — may be renamed after world design)
+- Currency: **ducats** (C14) — components keep the `#gp` display text (`#gp` → `150gp`);
+  "ducats" is the name used in prose/the rulebook
 - Subtitle: "Railways in a Fantasy Land"
 - Players: 3–6 (18Dragon-specific; not 1822's 2–7 — see PRD §2 / §6.3)
 - Bank: 12,000 gp
