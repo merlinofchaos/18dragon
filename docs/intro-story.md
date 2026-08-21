@@ -55,18 +55,18 @@ caravan masters have seen the fare table and understood it. And in Varstgrad, wh
 nobody has laid a foot of track, the houses did the thing Varstova does best. They
 worked out what a railway costs.
 
-More than any one man has. That is the whole of it. A concession is granted to a
-person, and no person can pay for a railway, so it is floated. A company is
-chartered, its shares are cut into tenths, and strangers put up the money for a
-piece of what the trains bring back. A small line has one owner and keeps every coin
-it earns. A great company has a president who paid for the seat, eight shares in
-other men's hands, and a board that will put him out of it if the dividends
-disappoint. And a share is not worth what it cost. It is worth what the Varstgrad
-floor says this afternoon.
+More than any one man has. That is the whole of it. No person can pay for a railway,
+so a company is chartered — its shares cut into tenths — and strangers put up the
+money for a piece of what the trains bring back. A small line has one owner and keeps
+every coin it earns. A great company has a president who paid for the chair and holds
+the largest block of its stock — a fifth at the least, and usually a good deal more —
+the rest scattered among other investors, and a board that will unseat them if the
+dividends disappoint. And a share is not worth what it cost. It is worth what the
+Varstgrad floor says this afternoon.
 
 The floor opened to railway paper before the thaw and has not been quiet since. It
 says a new number every time a company pays out, issues more paper, or fails to
 reach a town it promised. Half the men shouting on it will never see a locomotive.
 
-So: the kingdoms are granting concessions, the exchange is open, and nothing out
-there is built yet. Bring your money.
+So: the charters are being drawn up, the exchange is open, and nothing out there is
+built yet. Bring your money.

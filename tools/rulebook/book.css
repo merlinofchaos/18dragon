@@ -34,6 +34,14 @@ body{ margin:0; line-height:1.42; }
   color:var(--muted); margin:4mm 0 0; }
 .rb-title .m{ font-size:10pt; color:var(--muted); margin-top:30mm; }
 
+/* ---- narrative intro story (full-width, single centered measure) ---- */
+.story{ column-span:all; break-after:page; max-width:150mm; margin:0 auto; }
+.story h2{ border:none; color:var(--ink); text-align:center; font-family:Georgia,serif;
+  font-style:italic; font-weight:normal; font-size:19pt; margin:2mm 0 7mm; }
+.story p{ text-align:justify; margin:0 0 4mm; line-height:1.5; }
+.story p:first-of-type::first-letter{ font-size:230%; line-height:1; font-weight:700;
+  color:var(--accent); padding-right:1mm; }
+
 /* ---- table of contents (pandoc #TOC / nav) ---- */
 nav#TOC, #TOC{ break-after: page; }
 #TOC::before{ content:"Contents"; display:block;
