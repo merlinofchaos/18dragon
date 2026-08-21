@@ -37,7 +37,7 @@ sprints:
       C54 pipeline (parallel) → C23 prose → C55 figures. ~21 pts, a deliberately large
       batch; C55 is the split point if it runs long.
     stories:
-      C22: stub
+      C22: done
       C54: stub
       C23: stub
       C55: stub
