@@ -56,10 +56,10 @@ epics:
     prd: "prd-game.md 5-7, 9"
     stories: [C06, C07, C08, C09, C13, C14, C20]
   "Rulebook":
-    concept: "The 1822-diff rulebook deliverable."
+    concept: "The 1822-diff rulebook deliverable (markdown source → 2-column PDF + EPUB)."
     track: content
     prd: "prd-game.md 10.1"
-    stories: [C22, C23]
+    stories: [C22, C23, C54, C55]
   "Game Components":
     concept: "The 18xxMaker-produced pieces (section 11 manifest) beyond the map."
     track: content

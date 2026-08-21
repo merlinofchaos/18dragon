@@ -9,7 +9,7 @@
 # membership. Points are assigned in backlog.yaml during sprint planning.
 
 meta:
-  updated: "2026-08-20"  # sprint-18 complete + retro (signature mechanics: C06/C07/C08/C13/C14 all done)
+  updated: "2026-08-20"  # sprint-19 planned (rulebook: C22 scaffold + C54 pipeline + C23 author + C55 figures)
 
 # Unscheduled stories — id: status
 backlog:
@@ -18,8 +18,6 @@ backlog:
   C02: done
   C09: stub
   C21: stub
-  C22: stub
-  C23: stub
   C44: stub
   C45: stub
   C46: stub
@@ -28,6 +26,21 @@ backlog:
 
 # Real sprints — id: { status: planning|active|complete, goal: str, stories: { id: status } }
 sprints:
+  sprint-19:
+    status: active
+    goal: >-
+      Ship the 18Dragon rulebook (PRD §10.1) as a finished PDF (+ EPUB) matching the
+      original 1822 rulebook's quality — 2-column, images, worked examples — authored the
+      standard 1822-variant way (start from base 1822, mark every delta with its 1822
+      reference). Markdown source → HTML/CSS paged-media → PDF; Pandoc → EPUB, reusing the
+      house pipeline and embedding existing generated assets as figures. C22 scaffold +
+      C54 pipeline (parallel) → C23 prose → C55 figures. ~21 pts, a deliberately large
+      batch; C55 is the split point if it runs long.
+    stories:
+      C22: stub
+      C54: stub
+      C23: stub
+      C55: stub
   sprint-18:
     status: complete
     goal: >-

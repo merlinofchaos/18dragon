@@ -215,12 +215,31 @@ stories:
     title: "Extract base 1822 rulebook"
     type: content
     epics: ["Rulebook"]
-    points: null
+    points: 3
   C23:
     title: "Author 18Dragon rulebook (1822-diff style)"
     type: content
     epics: ["Rulebook"]
-    points: null
+    points: 8
+  C54:
+    title: "Rulebook render pipeline (markdown → 2-column PDF + EPUB)"
+    type: content
+    epics: ["Rulebook"]
+    points: 5
+    # Added sprint-19 planning (2026-08-20). HTML/CSS paged-media → PDF (reuses the
+    # house HTML→print pipeline; headless-Chrome/WeasyPrint render; 2-col CSS), + Pandoc
+    # → EPUB. Markdown source. Must embed the existing generated assets (Tile.jsx tiles,
+    # map, board mat, cards) as figures. Quality bar: match the original 1822 rulebook PDF.
+  C55:
+    title: "Rulebook figures & worked examples"
+    type: content
+    epics: ["Rulebook", "Game Components"]
+    points: 5
+    # Added sprint-19 planning (2026-08-20). The hex diagrams, market/token illustrations,
+    # and worked examples (merger walkthrough, permit gate, ruins/metro, bidding) that
+    # match the original rulebook. Reuse existing renders (18xxMaker map/tiles, board mat,
+    # cards) where possible; author new diagrams where not. Depends on C23 (know the
+    # examples) + C54 (embed them).
   C24:
     title: "Token sticker designs (station/market/revenue/destination/misc)"
     type: content
