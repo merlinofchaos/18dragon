@@ -1,0 +1,63 @@
+18Dragon — Licensing
+====================
+
+This repository is licensed in two parts.
+
+
+1. The tooling in `tools/` — MIT License
+----------------------------------------
+
+Copyright (c) 2026 E. Halsey Miles
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+This applies to the contents of `tools/` only. Note that the generated output
+of those tools, when run against this repository's data, is game content and
+falls under section 2.
+
+
+2. The game — all rights reserved
+---------------------------------
+
+Copyright (c) 2026 E. Halsey Miles. All rights reserved.
+
+This covers everything in this repository outside `tools/`, including but not
+limited to: the game design, rules and rulebook; the map, tiles, and tile set;
+company, private, and train rosters; the world, its regions, names, and
+fiction; all artwork; the generated components in `print/`; the 18xxMaker game
+file `18dragon.json`; the documentation in `docs/`; and the design and planning
+artifacts in `_artifacts/`.
+
+You may read this material, clone this repository, and print and play the game
+for your own personal, non-commercial use, including playtesting it with your
+own group.
+
+You may not redistribute this material, publish derivative works based on it,
+or use it commercially, without the prior written permission of the copyright
+holder.
+
+
+Third-party note
+----------------
+
+18Dragon is a variant of *1822*, designed by Simon Cutforth and published by
+All-Aboard Games. 18Dragon is an independent, unofficial work and is not
+affiliated with or endorsed by them. Base 1822's rules are described here
+only to the extent needed to state how 18Dragon differs; no 1822 rulebook text
+is reproduced in this repository.
