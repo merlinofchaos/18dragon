@@ -294,7 +294,7 @@
       "players_required": 3,
       "reverse": "rules text",
       "source": "18Dragon original (ties to the C13 merger mechanic)",
-      "rules_text": "While owned by a minor, the company may close this private to initiate a merger with another minor company, even with no connecting track. Until used, it pays its revenue to the owning company. If bought into a major it closes immediately for no effect (no dead certificate).",
+      "rules_text": "While owned by a minor, the company may close this private to initiate a merger with another minor company, even with no connecting track. Until used, it pays its revenue to the owning company. If bought into a major it closes immediately for no effect.",
       "extra": { "usable_by": "minor", "no_effect_if": "major" }
     },
     {
@@ -311,7 +311,7 @@
       "players_required": 3,
       "reverse": "rules text",
       "source": "18Dragon original",
-      "rules_text": "The owning company may close this private to place a +30 token on any mountain hex; any train running through that hex gains +30. Until used, it pays its revenue to the owning company.",
+      "rules_text": "The owning company may close this private to place a +30 token on a plain track in any mountain hex; any train running through that hex gains +30. Until used, it pays its revenue to the owning company.",
       "extra": { "bonus": 30, "target": "mountain hex" }
     },
     {

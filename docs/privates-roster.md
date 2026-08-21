@@ -258,7 +258,7 @@ the regular Troupes are **not** player-count-gated (see C12 steer below).*
 - **Dwarven Mining Troupe (P14/P15):** **Major, Phase 2**, 80gp/mountain.
 - **Mining Troupe discount:** applies to the **owning company** (not player).
 - **Merger Negotiations (P16):** **Minor/Major**; usable only while owned by a
-  **minor**; if bought into a **major** it closes for **no effect** (no dead cert).
+  **minor**; if bought into a **major** it closes for **no effect**.
 - **Troupe names:** unique in-game names, shared top-line "Mining Troupe" —
   approved (*Rockbreakers*, *Cragmen*, *Durgrok Delvers*, *Stonebeard Hewers*).
 - **Verantum Recolonization (P21):** **Minor/Major, Phase 3**.
