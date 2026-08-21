@@ -177,7 +177,9 @@ Array of phase objects. Fields:
 
 ### `stock`
 - `type`: `"1D"` or `"2D"`
-- 1822 uses **`"1D"`** — a flat single-row track
+- **18Dragon uses `"1D"`** — the **PNW** linear (single-row) market. *(Base 1822's own
+  market is **2D**; 18Dragon adopts PNW's 1D market — see `docs/divergences-from-1822.md`
+  §1.6. Earlier this note wrongly said "1822 uses 1D" — corrected C14 retro, 2026-08-20.)*
 - `par.values`: array of par price options
 - `movement`: object with `right`, `left`, `up`, `down` keys (arrays of strings)
 - For `"1D"`: `market` is a flat array (not nested)
@@ -195,7 +197,8 @@ gets rotated 90° (vertical text). This is because `Cell.jsx` checks
 so they stay horizontal. **Never include `"label"` on 1D market cells** — use `"value"`
 only; the renderer uses `value` for display when both are present.
 
-**1822 par values**: `[50, 60, 70, 80, 90, 100]`
+**18Dragon par values** (PNW set): `[50, 55, 60, 65, 70, 75, 80, 90, 100]` — *base
+1822's are the six `[50, 60, 70, 80, 90, 100]`.*
 - 50 = `p` (peach, minors only, phases 1–7)
 - 60–100 = `xp` (red, majors and minors, phases 2–7)
 

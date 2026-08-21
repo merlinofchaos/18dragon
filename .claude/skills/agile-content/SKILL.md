@@ -24,6 +24,11 @@ privates, tiles, rules, or balance — as `18dragon.json` edits and/or prose in
 3. **Design + produce** the material:
    - Ground decisions in `_artifacts/prd-game.md` and, where 18Dragon inherits
      from 1822, the g_1822 source. Note deliberate divergences.
+   - **Verify stated implementation facts against the game file / data masters, not
+     memory or the PRD.** When a doc states concrete values (par values, counts, costs,
+     token allotments), read them from `18dragon.json` / `data/*.json` **while authoring**
+     — the PRD and memory drift. *(Sprint-18 C06: the par set was written as 1822's six
+     values from memory; the game file actually has PNW's nine — caught only in review.)*
    - Apply per-region naming conventions (CLAUDE.md § Naming conventions).
    - Follow the 18xxMaker JSON schema exactly (CLAUDE.md § Schema). Mind the
      gotchas: non-empty `map.hexes`; no `label` on 1D market cells; `minors` is

@@ -9,7 +9,7 @@
 # membership. Points are assigned in backlog.yaml during sprint planning.
 
 meta:
-  updated: "2026-08-18"  # sprint-18 planned (signature mechanics: C06/C07/C08/C13/C14)
+  updated: "2026-08-20"  # sprint-18 complete + retro (signature mechanics: C06/C07/C08/C13/C14 all done)
 
 # Unscheduled stories — id: status
 backlog:
@@ -29,7 +29,7 @@ backlog:
 # Real sprints — id: { status: planning|active|complete, goal: str, stories: { id: status } }
 sprints:
   sprint-18:
-    status: active
+    status: complete
     goal: >-
       The signature 18Dragon mechanics are fully specified in docs/ — the 1822
       divergences, the region-permit gate, the Verantum ruins/metro value system,
