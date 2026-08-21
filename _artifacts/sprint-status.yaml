@@ -9,7 +9,7 @@
 # membership. Points are assigned in backlog.yaml during sprint planning.
 
 meta:
-  updated: "2026-08-20"  # sprint-19 planned (rulebook: C22 scaffold + C54 pipeline + C23 author + C55 figures)
+  updated: "2026-08-21"  # Tabletop Simulator epic backlogged (D11, C56-C60; PRD §12)
 
 # Unscheduled stories — id: status
 backlog:
@@ -23,6 +23,14 @@ backlog:
   C46: stub
   C47: stub
   D10: stub  # crop/guide marks for hand-cutting — contingency if Kraft blade won't cut laminate
+  # --- Tabletop Simulator epic (PRD §12) — backlogged 2026-08-21, after the rulebook.
+  # Order: D11 → C56 → C57 → C58 gets a loadable table; C59/C60 are polish.
+  D11: stub
+  C56: stub
+  C57: stub
+  C58: stub
+  C59: stub
+  C60: stub
 
 # Real sprints — id: { status: planning|active|complete, goal: str, stories: { id: status } }
 sprints:
@@ -39,7 +47,7 @@ sprints:
     stories:
       C22: done
       C54: done
-      C23: stub
+      C23: ready
       C55: stub
   sprint-18:
     status: complete

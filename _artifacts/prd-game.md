@@ -451,7 +451,9 @@ settled in 18xxMaker, implement 18Dragon as an **18xx.games** engine for **onlin
 playtesting**. A local 18xx.games copy exists, runnable via **Docker** on an
 available server (previously working; exact setup to be rediscovered). The
 abandoned `g_1822_dragon` dir (a stale 1822PNW copy in the 18xx engine) could seed
-it. Sequenced **after** the reference tooling and on-table playtesting.
+it. Sequenced **after** the reference tooling and on-table playtesting. See
+also **§ 12** — the Tabletop Simulator build is the *nearer-term* online playtest
+path and does not depend on this.
 
 ## 11. Components (production manifest)
 
@@ -479,3 +481,69 @@ does stickers poorly).
 **Not produced:** currency (use **poker chips**; `#gp` is only the value shown on
 charters/market), a **par chart** (unnecessary), and **destination cards**
 (destinations are token stickers only).
+
+## 12. Tabletop Simulator playtest build
+
+A **Tabletop Simulator (TTS) mod** generated from the same masters that drive the
+physical components, so the distributed play group can playtest the *current*
+design without anyone hand-building a table. This is the near-term online path;
+the 18xx.games engine (§ 10.3) remains a separate, later option.
+
+### 12.1 Why generate it
+
+A TTS mod is a single save-file JSON (`ObjectStates`), and every object's art is a
+**URL** — TTS embeds nothing. That makes the mod a *rendering* of the design in
+exactly the sense `18dragon.json` is: it must be regenerable from `data/` and
+`18dragon.json` on every design change, never hand-edited in-game. Anything
+hand-placed is lost at the next regeneration.
+
+### 12.2 Contents
+
+| Object | Source | Form in TTS |
+|--------|--------|-------------|
+| **Board** | 18xxMaker fork (`bin/render-map.mjs` lineage) | `Custom_Board` + one snap point per map hex |
+| **Tiles** | fork, per-tile transparent PNGs (`bin/render-tile.mjs` lineage) | `Custom_Tile` (hex), **stackable** — one stack per tile type at its manifest quantity |
+| **Certificates** | `tools/gen-certs.mjs` faces | `CustomDeck` sheets |
+| **Privates** | `tools/gen-private-cards.mjs` faces | `CustomDeck` (two-sided) |
+| **Trains** | `tools/gen-train-cards.mjs` faces | `CustomDeck` (two-sided) |
+| **Player order** | `tools/gen-player-order.mjs` faces | `CustomDeck` |
+| **Charters** | `tools/gen-charters.mjs` | `Custom_Tile` per charter, per-player zones |
+| **Tokens** | `tools/stickers.py` art | `Custom_Tile` (circle) in per-company bags |
+| **Stock market** | `18dragon.json` `stock` | board art + a draggable marker per company |
+
+Currency stays physical-analogue: TTS chip stacks, matching the poker-chip
+decision in § 11.
+
+### 12.3 Automation scope
+
+**Light Lua helpers only** — the mod assists, it does not enforce. In scope:
+bank and company-treasury counters, a clickable stock-market marker, a dividend
+splitter, and per-player charter/hand zones. **Out of scope:** scripted bidding,
+route validation, and share transactions — that is what an 18xx.games engine
+(§ 10.3) is for, and duplicating it in Lua is a poor trade.
+
+### 12.4 Asset hosting
+
+Art must be reachable by a public URL for every player — TTS embeds nothing.
+**Decision (2026-08-21): the `18dragon` repo is public**, so raw GitHub URLs serve
+the art directly and no separate assets repo is needed. There is no secrecy
+requirement (the designer credit is a pen name, not a hidden identity), and the
+art would be public regardless — it *is* the game.
+
+Sheets live on a **`gh-pages` orphan branch**, not `main`. This is about size, not
+privacy: the sheets are multi-megabyte 4096px PNGs rewritten on every art change,
+and git stores a fresh blob each time, so keeping them on `main` would grow the
+history by tens of megabytes per design iteration. On an orphan branch the history
+is disposable and can be flattened whenever it gets fat. `raw.githubusercontent`
+serves any branch, so nothing else changes.
+
+The generator still takes `--base-url` so the host can move without regenerating
+anything but the save file.
+
+### 12.5 What the fork must add
+
+Only one new script: a headless renderer emitting **per-tile transparent PNGs at a
+fixed pixel size** plus the **full board PNG**, into a target directory. Both are
+siblings of scripts the fork already has. No data-layer change is needed — the
+board and tiles genuinely come from `18dragon.json`, while cards, charters and
+tokens come from `data/` via `tools/` and never touch 18xxMaker.

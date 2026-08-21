@@ -66,6 +66,17 @@ stories:
     # so the designer can hand-cut accurately. Hold until the blade test resolves —
     # may be unneeded if the Kraft blade works. See D09 + sprint-14 retro.
 
+  D11:
+    title: "Headless TTS art renderer (per-tile transparent PNGs + board PNG)"
+    type: dev
+    epics: ["Tabletop Simulator"]
+    points: null
+    # PRD §12.5. One new fork script, a sibling of bin/render-tile.mjs (single tile ->
+    # transparent PNG via Tile.jsx at deviceScaleFactor 4) and bin/render-map.mjs (full
+    # board at a fitting viewport). Emits every tile type from 18dragon.json `tiles` at a
+    # FIXED pixel size with deterministic filenames, plus the whole-board PNG, into a
+    # target dir. No data-layer change: board+tiles genuinely come from 18dragon.json.
+
   # --- CONTENT (game material, components & rules) ---
   # Board split (2026-07-24, sprint-2 planning): each region = a geography pass +
   # a cities pass (finer granularity). Verantum is done via C01 + C27 + C28.
@@ -478,6 +489,66 @@ stories:
     # Designer chose (2026-08-18) to bump the global value (18Dragon doesn't use 18xxMaker's
     # digital market tokens; 12mm is right anyway). Reclassified content -> dev: it's a fork
     # config change (src/defaults.json) verified by the map render. Depends on C51.
+
+  C56:
+    title: "TTS sheet packer (cards, tiles, tokens -> grid sheets)"
+    type: content
+    epics: ["Tabletop Simulator", "Game Components"]
+    points: null
+    # PRD §12.2. A TTS CustomDeck is ONE image laid out as a grid: NumWidth x NumHeight,
+    # max 10x7 = 70 cards, keep each sheet <= 4096px per side. Reuses the existing face
+    # functions VERBATIM (majorCert/minorCert from gen-certs, privateFace from
+    # gen-private-cards, trainFace from cardkit, poFront/poBack from gen-player-order) --
+    # no redesign -- laid out as a tight grid with NO crop marks/bleed, screenshotted with
+    # headless Chrome (same backbone as tools/render-pdfs.sh). Also packs D11's tile PNGs
+    # and stickers.py token art into sheets. Outputs print/tts/*.png. Depends on D11.
+
+  C57:
+    title: "Publish TTS art to the gh-pages branch"
+    type: content
+    epics: ["Tabletop Simulator"]
+    points: null
+    # PRD §12.4. SCOPE SHRANK 2026-08-21: the designer settled that 18dragon is a PUBLIC
+    # repo (no secrecy requirement; the art is the game and would be public anyway), so
+    # this is no longer "set up hosting" -- raw.githubusercontent URLs just work. What
+    # remains: a publish script that pushes print/tts/*.png to a gh-pages ORPHAN branch,
+    # keeping the multi-megabyte 4096px sheets off main's history (they are rewritten on
+    # every art change; git stores a new blob each time). Orphan branch = disposable
+    # history, flatten when fat. Still GATES C58 -- the save file is nothing but URLs.
+    # PREREQ (designer, not automatable here): create the GitHub remote; `gh` is not
+    # installed on this machine and there is no remote configured yet.
+
+  C58:
+    title: "TTS save-file generator (tools/gen-tts.mjs)"
+    type: content
+    epics: ["Tabletop Simulator", "Game Components"]
+    points: null
+    # PRD §12.1/§12.2. THE story that yields a loadable mod. Emits print/tts/18dragon.json
+    # -- an ObjectStates save file: CustomDeck decks (card id = deckId*100 + index),
+    # stackable Custom_Tile hex piles at manifest quantities (CustomImage.CustomTile.Type=1),
+    # charters, per-company token bags, the Custom_Board, and the stock market. Takes
+    # --base-url so the host can change without regenerating art. Reads data/*.json +
+    # 18dragon.json; regenerable, never hand-edited in-game. Depends on C56, C57.
+
+  C59:
+    title: "Per-hex snap points on the TTS board"
+    type: content
+    epics: ["Tabletop Simulator", "World & Map"]
+    points: null
+    # PRD §12.2. One SnapPoint (with Rotation) per map hex on the Custom_Board, generated
+    # from the pointy-top coordinate math in CLAUDE.md rather than placed by hand. This is
+    # what separates a table where tiles land clean from a fiddly one. Depends on C58.
+
+  C60:
+    title: "TTS Lua helpers (counters, market marker, dividend splitter, zones)"
+    type: content
+    epics: ["Tabletop Simulator"]
+    points: null
+    # PRD §12.3. LIGHT assistance only -- the mod assists, it does not enforce. Bank and
+    # company-treasury counters, a clickable stock-market marker, a dividend splitter, and
+    # per-player charter/hand zones. Explicitly OUT: scripted bidding, route validation,
+    # share transactions (that is 18xx.games' job, PRD §10.3). Needs in-game iteration
+    # with the designer at the keyboard -- budget round trips. Depends on C58.
 
 # Notes:
 # - Stickers (C24) are content track but produced via Silhouette Cameo, not

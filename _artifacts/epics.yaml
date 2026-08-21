@@ -73,6 +73,14 @@ epics:
     stories: [C24]
 
   # --- Cross-cutting ---
+  "Tabletop Simulator":
+    concept: "Generate a loadable TTS mod (save-file JSON + publicly hosted art) from the
+      same data/ masters and 18dragon.json that drive the physical components, so the
+      distributed play group can playtest the current design online. Light Lua assistance
+      only — rules enforcement is 18xx.games' job, not the mod's."
+    track: mixed
+    prd: "prd-game.md 12"
+    stories: [D11, C56, C57, C58, C59, C60]
   "Verantum":
     concept: "The island — its map, ruins/metro system, and special rendering."
     track: mixed
