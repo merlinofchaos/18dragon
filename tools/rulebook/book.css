@@ -1,0 +1,77 @@
+/* 18Dragon rulebook — print (PDF via Paged.js + headless Chrome). US Letter, 2-column.
+   C54. Deltas (1822-differing rules) render in neutral blue. */
+
+:root{
+  --ink:#1b1b1b; --muted:#6f6f6f; --delta:#1f5fbf; --rule:#d8d8d8; --accent:#7B2D8B;
+}
+
+@page{
+  size: letter;                     /* 8.5 x 11 in */
+  margin: 16mm 14mm 16mm 14mm;
+  @top-left    { content:"18Dragon — Railways in a Fantasy Land";
+                 font-family:"Helvetica Neue",Arial,sans-serif; font-size:7.5pt;
+                 color:var(--muted); letter-spacing:.04em; }
+  @top-right   { content: string(section);
+                 font-family:"Helvetica Neue",Arial,sans-serif; font-size:7.5pt;
+                 color:var(--muted); }
+  @bottom-center{ content: counter(page);
+                 font-family:"Helvetica Neue",Arial,sans-serif; font-size:9pt;
+                 color:var(--muted); }
+}
+@page :first{                        /* title page: clean */
+  @top-left{content:""} @top-right{content:""} @bottom-center{content:""}
+}
+
+html{ font-family: Georgia,"Times New Roman",serif; font-size:10.2pt; color:var(--ink); }
+body{ margin:0; line-height:1.42; }
+
+/* ---- title page ---- */
+.rb-title{ break-after: page; text-align:center !important; padding-top:70mm; }
+.rb-title p{ text-align:center !important; }
+.rb-title .t{ font-family:"Helvetica Neue",Arial,sans-serif; font-size:40pt;
+  font-weight:800; letter-spacing:.02em; color:var(--accent); margin:0; }
+.rb-title .s{ font-family:"Helvetica Neue",Arial,sans-serif; font-size:14pt;
+  color:var(--muted); margin:4mm 0 0; }
+.rb-title .m{ font-size:10pt; color:var(--muted); margin-top:30mm; }
+
+/* ---- table of contents (pandoc #TOC / nav) ---- */
+nav#TOC, #TOC{ break-after: page; }
+#TOC::before{ content:"Contents"; display:block;
+  font-family:"Helvetica Neue",Arial,sans-serif; font-size:18pt; font-weight:700;
+  color:var(--accent); margin:0 0 4mm; }
+#TOC ul{ list-style:none; margin:0; padding:0; }
+#TOC li{ margin:0 0 1.4mm; }
+#TOC a{ text-decoration:none; color:var(--ink); }
+#TOC a::after{ content: target-counter(attr(href), page); float:right;
+  color:var(--muted); font-family:"Helvetica Neue",Arial,sans-serif; font-size:9pt; }
+
+/* ---- flowing body: 2 columns ---- */
+main.flow{ column-count:2; column-gap:7mm; }
+h1,h2,h3{ column-span:all; font-family:"Helvetica Neue",Arial,sans-serif; break-after:avoid; }
+h1{ string-set: section content(text); font-size:20pt; color:var(--accent);
+  margin:0 0 3mm; }
+h2{ string-set: section content(text); font-size:15pt; color:var(--accent);
+  border-bottom:1.4pt solid var(--accent); padding-bottom:1mm; margin:7mm 0 3mm; }
+h3{ font-size:11.5pt; color:var(--ink); margin:4mm 0 1.5mm; }
+p{ margin:0 0 2.2mm; text-align:justify; hyphens:auto; }
+ul,ol{ margin:0 0 2.2mm; padding-left:5mm; }
+li{ margin:0 0 1mm; }
+strong{ color:var(--ink); }
+code{ font-family:"SF Mono",Menlo,monospace; font-size:9pt; }
+
+/* deltas — 1822-differing rules */
+.delta{ color:var(--delta); }
+p.delta, div.delta, li.delta{ border-left:2pt solid var(--delta); padding-left:2.5mm; }
+
+/* tables */
+table{ border-collapse:collapse; font-size:8.6pt; margin:2mm 0; width:100%;
+  break-inside:avoid; }
+th,td{ border:0.5pt solid var(--rule); padding:1mm 1.5mm; text-align:left;
+  vertical-align:top; }
+th{ background:#f3eef6; font-family:"Helvetica Neue",Arial,sans-serif; }
+
+/* figures */
+figure{ break-inside:avoid; margin:3mm 0; }
+figure img{ width:100%; height:auto; border:0.5pt solid var(--rule); }
+figcaption{ font-family:"Helvetica Neue",Arial,sans-serif; font-size:8pt;
+  color:var(--muted); margin-top:1mm; }

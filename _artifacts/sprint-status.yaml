@@ -38,7 +38,7 @@ sprints:
       batch; C55 is the split point if it runs long.
     stories:
       C22: done
-      C54: stub
+      C54: done
       C23: stub
       C55: stub
   sprint-18:

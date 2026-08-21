@@ -1,0 +1,19 @@
+/* 18Dragon rulebook — EPUB (single-column reflow). C54.
+   Deltas render in neutral blue, matching the PDF. */
+
+body{ font-family: Georgia, serif; line-height:1.5; color:#1b1b1b; }
+h1,h2,h3{ font-family: sans-serif; }
+h1{ color:#7B2D8B; }
+h2{ color:#7B2D8B; border-bottom:1px solid #7B2D8B; padding-bottom:.15em; }
+h3{ color:#1b1b1b; }
+
+.delta{ color:#1f5fbf; }
+p.delta, div.delta, li.delta{ border-left:3px solid #1f5fbf; padding-left:.6em; }
+
+table{ border-collapse:collapse; font-size:.85em; }
+th,td{ border:1px solid #d8d8d8; padding:.25em .4em; text-align:left; }
+th{ background:#f3eef6; }
+
+figure{ margin:1em 0; text-align:center; }
+figure img{ max-width:100%; }
+figcaption{ font-family:sans-serif; font-size:.8em; color:#6f6f6f; }
