@@ -1,0 +1,449 @@
+{
+  "cardW": 700,
+  "cardH": 460,
+  "decks": [
+    {
+      "name": "certs-major",
+      "face": "certs-major.png",
+      "back": "certs-major.png",
+      "uniqueBack": true,
+      "numWidth": 5,
+      "numHeight": 4,
+      "count": 20,
+      "cards": [
+        {
+          "index": 0,
+          "major": "VR",
+          "kind": "president"
+        },
+        {
+          "index": 1,
+          "major": "VR",
+          "kind": "regular"
+        },
+        {
+          "index": 2,
+          "major": "PAX",
+          "kind": "president"
+        },
+        {
+          "index": 3,
+          "major": "PAX",
+          "kind": "regular"
+        },
+        {
+          "index": 4,
+          "major": "DK",
+          "kind": "president"
+        },
+        {
+          "index": 5,
+          "major": "DK",
+          "kind": "regular"
+        },
+        {
+          "index": 6,
+          "major": "ACL",
+          "kind": "president"
+        },
+        {
+          "index": 7,
+          "major": "ACL",
+          "kind": "regular"
+        },
+        {
+          "index": 8,
+          "major": "BR",
+          "kind": "president"
+        },
+        {
+          "index": 9,
+          "major": "BR",
+          "kind": "regular"
+        },
+        {
+          "index": 10,
+          "major": "GM",
+          "kind": "president"
+        },
+        {
+          "index": 11,
+          "major": "GM",
+          "kind": "regular"
+        },
+        {
+          "index": 12,
+          "major": "MK",
+          "kind": "president"
+        },
+        {
+          "index": 13,
+          "major": "MK",
+          "kind": "regular"
+        },
+        {
+          "index": 14,
+          "major": "SAB",
+          "kind": "president"
+        },
+        {
+          "index": 15,
+          "major": "SAB",
+          "kind": "regular"
+        },
+        {
+          "index": 16,
+          "major": "ZNR",
+          "kind": "president"
+        },
+        {
+          "index": 17,
+          "major": "ZNR",
+          "kind": "regular"
+        },
+        {
+          "index": 18,
+          "major": "KR",
+          "kind": "president"
+        },
+        {
+          "index": 19,
+          "major": "KR",
+          "kind": "regular"
+        }
+      ]
+    },
+    {
+      "name": "certs-minor",
+      "face": "certs-minor.png",
+      "back": "certs-minor.png",
+      "uniqueBack": true,
+      "numWidth": 5,
+      "numHeight": 6,
+      "count": 30,
+      "cards": [
+        {
+          "index": 0,
+          "minor": 1
+        },
+        {
+          "index": 1,
+          "minor": 2
+        },
+        {
+          "index": 2,
+          "minor": 3
+        },
+        {
+          "index": 3,
+          "minor": 4
+        },
+        {
+          "index": 4,
+          "minor": 5
+        },
+        {
+          "index": 5,
+          "minor": 6
+        },
+        {
+          "index": 6,
+          "minor": 7
+        },
+        {
+          "index": 7,
+          "minor": 8
+        },
+        {
+          "index": 8,
+          "minor": 9
+        },
+        {
+          "index": 9,
+          "minor": 10
+        },
+        {
+          "index": 10,
+          "minor": 11
+        },
+        {
+          "index": 11,
+          "minor": 12
+        },
+        {
+          "index": 12,
+          "minor": 13
+        },
+        {
+          "index": 13,
+          "minor": 14
+        },
+        {
+          "index": 14,
+          "minor": 15
+        },
+        {
+          "index": 15,
+          "minor": 16
+        },
+        {
+          "index": 16,
+          "minor": 17
+        },
+        {
+          "index": 17,
+          "minor": 18
+        },
+        {
+          "index": 18,
+          "minor": 19
+        },
+        {
+          "index": 19,
+          "minor": 20
+        },
+        {
+          "index": 20,
+          "minor": 21
+        },
+        {
+          "index": 21,
+          "minor": 22
+        },
+        {
+          "index": 22,
+          "minor": 23
+        },
+        {
+          "index": 23,
+          "minor": 24
+        },
+        {
+          "index": 24,
+          "minor": 25
+        },
+        {
+          "index": 25,
+          "minor": 26
+        },
+        {
+          "index": 26,
+          "minor": 27
+        },
+        {
+          "index": 27,
+          "minor": 28
+        },
+        {
+          "index": 28,
+          "minor": 29
+        },
+        {
+          "index": 29,
+          "minor": 30
+        }
+      ]
+    },
+    {
+      "name": "privates",
+      "face": "privates.png",
+      "back": "privates-back.png",
+      "uniqueBack": true,
+      "numWidth": 5,
+      "numHeight": 6,
+      "count": 30,
+      "cards": [
+        {
+          "index": 0,
+          "private": "P1"
+        },
+        {
+          "index": 1,
+          "private": "P2"
+        },
+        {
+          "index": 2,
+          "private": "P3"
+        },
+        {
+          "index": 3,
+          "private": "P4"
+        },
+        {
+          "index": 4,
+          "private": "P5"
+        },
+        {
+          "index": 5,
+          "private": "P6"
+        },
+        {
+          "index": 6,
+          "private": "P7"
+        },
+        {
+          "index": 7,
+          "private": "P8"
+        },
+        {
+          "index": 8,
+          "private": "P9"
+        },
+        {
+          "index": 9,
+          "private": "P10"
+        },
+        {
+          "index": 10,
+          "private": "P11"
+        },
+        {
+          "index": 11,
+          "private": "P12"
+        },
+        {
+          "index": 12,
+          "private": "P13"
+        },
+        {
+          "index": 13,
+          "private": "P14"
+        },
+        {
+          "index": 14,
+          "private": "P15"
+        },
+        {
+          "index": 15,
+          "private": "P16"
+        },
+        {
+          "index": 16,
+          "private": "P17"
+        },
+        {
+          "index": 17,
+          "private": "P18"
+        },
+        {
+          "index": 18,
+          "private": "P19"
+        },
+        {
+          "index": 19,
+          "private": "P20"
+        },
+        {
+          "index": 20,
+          "private": "P21"
+        },
+        {
+          "index": 21,
+          "private": "P22"
+        },
+        {
+          "index": 22,
+          "private": "P23"
+        },
+        {
+          "index": 23,
+          "private": "P24"
+        },
+        {
+          "index": 24,
+          "private": "P25"
+        },
+        {
+          "index": 25,
+          "private": "P26"
+        },
+        {
+          "index": 26,
+          "private": "P27"
+        },
+        {
+          "index": 27,
+          "private": "P28"
+        },
+        {
+          "index": 28,
+          "private": "P29"
+        },
+        {
+          "index": 29,
+          "private": "P30"
+        }
+      ]
+    },
+    {
+      "name": "trains",
+      "face": "trains.png",
+      "back": "trains-back.png",
+      "uniqueBack": true,
+      "numWidth": 5,
+      "numHeight": 2,
+      "count": 6,
+      "cards": [
+        {
+          "index": 0,
+          "train": "L"
+        },
+        {
+          "index": 1,
+          "train": "3"
+        },
+        {
+          "index": 2,
+          "train": "4"
+        },
+        {
+          "index": 3,
+          "train": "5"
+        },
+        {
+          "index": 4,
+          "train": "6"
+        },
+        {
+          "index": 5,
+          "train": "7"
+        }
+      ]
+    },
+    {
+      "name": "player-order",
+      "face": "player-order.png",
+      "back": "player-order-back.png",
+      "uniqueBack": false,
+      "numWidth": 5,
+      "numHeight": 2,
+      "count": 6,
+      "cards": [
+        {
+          "index": 0,
+          "playerOrder": 1
+        },
+        {
+          "index": 1,
+          "playerOrder": 2
+        },
+        {
+          "index": 2,
+          "playerOrder": 3
+        },
+        {
+          "index": 3,
+          "playerOrder": 4
+        },
+        {
+          "index": 4,
+          "playerOrder": 5
+        },
+        {
+          "index": 5,
+          "playerOrder": 6
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,491 @@
+{
+  "boardMat": {
+    "png": "board-mat.png",
+    "wMm": 476,
+    "hMm": 240.39999999999998,
+    "wPx": 4096,
+    "hPx": 2068
+  },
+  "charters": [
+    {
+      "png": "charters/charter-major-VR.png",
+      "major": "VR",
+      "wMm": 178,
+      "hMm": 127
+    },
+    {
+      "png": "charters/charter-major-PAX.png",
+      "major": "PAX",
+      "wMm": 178,
+      "hMm": 127
+    },
+    {
+      "png": "charters/charter-major-DK.png",
+      "major": "DK",
+      "wMm": 178,
+      "hMm": 127
+    },
+    {
+      "png": "charters/charter-major-ACL.png",
+      "major": "ACL",
+      "wMm": 178,
+      "hMm": 127
+    },
+    {
+      "png": "charters/charter-major-BR.png",
+      "major": "BR",
+      "wMm": 178,
+      "hMm": 127
+    },
+    {
+      "png": "charters/charter-major-GM.png",
+      "major": "GM",
+      "wMm": 178,
+      "hMm": 127
+    },
+    {
+      "png": "charters/charter-major-MK.png",
+      "major": "MK",
+      "wMm": 178,
+      "hMm": 127
+    },
+    {
+      "png": "charters/charter-major-SAB.png",
+      "major": "SAB",
+      "wMm": 178,
+      "hMm": 127
+    },
+    {
+      "png": "charters/charter-major-ZNR.png",
+      "major": "ZNR",
+      "wMm": 178,
+      "hMm": 127
+    },
+    {
+      "png": "charters/charter-major-KR.png",
+      "major": "KR",
+      "wMm": 178,
+      "hMm": 127
+    },
+    {
+      "png": "charters/charter-minor-1.png",
+      "minor": 1,
+      "wMm": 152,
+      "hMm": 76
+    },
+    {
+      "png": "charters/charter-minor-2.png",
+      "minor": 2,
+      "wMm": 152,
+      "hMm": 76
+    },
+    {
+      "png": "charters/charter-minor-3.png",
+      "minor": 3,
+      "wMm": 152,
+      "hMm": 76
+    },
+    {
+      "png": "charters/charter-minor-4.png",
+      "minor": 4,
+      "wMm": 152,
+      "hMm": 76
+    },
+    {
+      "png": "charters/charter-minor-5.png",
+      "minor": 5,
+      "wMm": 152,
+      "hMm": 76
+    },
+    {
+      "png": "charters/charter-minor-6.png",
+      "minor": 6,
+      "wMm": 152,
+      "hMm": 76
+    },
+    {
+      "png": "charters/charter-minor-7.png",
+      "minor": 7,
+      "wMm": 152,
+      "hMm": 76
+    },
+    {
+      "png": "charters/charter-minor-8.png",
+      "minor": 8,
+      "wMm": 152,
+      "hMm": 76
+    },
+    {
+      "png": "charters/charter-minor-9.png",
+      "minor": 9,
+      "wMm": 152,
+      "hMm": 76
+    },
+    {
+      "png": "charters/charter-minor-10.png",
+      "minor": 10,
+      "wMm": 152,
+      "hMm": 76
+    },
+    {
+      "png": "charters/charter-minor-11.png",
+      "minor": 11,
+      "wMm": 152,
+      "hMm": 76
+    },
+    {
+      "png": "charters/charter-minor-12.png",
+      "minor": 12,
+      "wMm": 152,
+      "hMm": 76
+    },
+    {
+      "png": "charters/charter-minor-13.png",
+      "minor": 13,
+      "wMm": 152,
+      "hMm": 76
+    },
+    {
+      "png": "charters/charter-minor-14.png",
+      "minor": 14,
+      "wMm": 152,
+      "hMm": 76
+    },
+    {
+      "png": "charters/charter-minor-15.png",
+      "minor": 15,
+      "wMm": 152,
+      "hMm": 76
+    },
+    {
+      "png": "charters/charter-minor-16.png",
+      "minor": 16,
+      "wMm": 152,
+      "hMm": 76
+    },
+    {
+      "png": "charters/charter-minor-17.png",
+      "minor": 17,
+      "wMm": 152,
+      "hMm": 76
+    },
+    {
+      "png": "charters/charter-minor-18.png",
+      "minor": 18,
+      "wMm": 152,
+      "hMm": 76
+    },
+    {
+      "png": "charters/charter-minor-19.png",
+      "minor": 19,
+      "wMm": 152,
+      "hMm": 76
+    },
+    {
+      "png": "charters/charter-minor-20.png",
+      "minor": 20,
+      "wMm": 152,
+      "hMm": 76
+    },
+    {
+      "png": "charters/charter-minor-21.png",
+      "minor": 21,
+      "wMm": 152,
+      "hMm": 76
+    },
+    {
+      "png": "charters/charter-minor-22.png",
+      "minor": 22,
+      "wMm": 152,
+      "hMm": 76
+    },
+    {
+      "png": "charters/charter-minor-23.png",
+      "minor": 23,
+      "wMm": 152,
+      "hMm": 76
+    },
+    {
+      "png": "charters/charter-minor-24.png",
+      "minor": 24,
+      "wMm": 152,
+      "hMm": 76
+    },
+    {
+      "png": "charters/charter-minor-25.png",
+      "minor": 25,
+      "wMm": 152,
+      "hMm": 76
+    },
+    {
+      "png": "charters/charter-minor-26.png",
+      "minor": 26,
+      "wMm": 152,
+      "hMm": 76
+    },
+    {
+      "png": "charters/charter-minor-27.png",
+      "minor": 27,
+      "wMm": 152,
+      "hMm": 76
+    },
+    {
+      "png": "charters/charter-minor-28.png",
+      "minor": 28,
+      "wMm": 152,
+      "hMm": 76
+    },
+    {
+      "png": "charters/charter-minor-29.png",
+      "minor": 29,
+      "wMm": 152,
+      "hMm": 76
+    },
+    {
+      "png": "charters/charter-minor-30.png",
+      "minor": 30,
+      "wMm": 152,
+      "hMm": 76
+    }
+  ],
+  "charterGeom": {
+    "major": {
+      "slots": {
+        "home": {
+          "x": 0.07843273875882571,
+          "y": 0.153125,
+          "w": 0.056484578223708656,
+          "h": 0.07916666666666666
+        },
+        "dest": {
+          "x": 0.16603957636566333,
+          "y": 0.153125,
+          "w": 0.056484578223708656,
+          "h": 0.07916666666666666
+        },
+        "avail-0": {
+          "x": 0.32055927164622816,
+          "y": 0.15149739583333333,
+          "w": 0.056484578223708656,
+          "h": 0.07916666666666666
+        },
+        "avail-1": {
+          "x": 0.39785395763656634,
+          "y": 0.15149739583333333,
+          "w": 0.056484578223708656,
+          "h": 0.07916666666666666
+        },
+        "avail-2": {
+          "x": 0.4751486436269045,
+          "y": 0.15149739583333333,
+          "w": 0.056484578223708656,
+          "h": 0.07916666666666666
+        },
+        "avail-3": {
+          "x": 0.5524433296172426,
+          "y": 0.15149739583333333,
+          "w": 0.056484578223708656,
+          "h": 0.07916666666666666
+        },
+        "exch-0": {
+          "x": 0.7745494240059457,
+          "y": 0.15,
+          "w": 0.056484578223708656,
+          "h": 0.07916666666666666
+        },
+        "exch-1": {
+          "x": 0.8458983649201041,
+          "y": 0.15,
+          "w": 0.056484578223708656,
+          "h": 0.07916666666666666
+        },
+        "exch-2": {
+          "x": 0.9172473058342624,
+          "y": 0.15,
+          "w": 0.056484578223708656,
+          "h": 0.07916666666666666
+        }
+      },
+      "zones": {
+        "trains": {
+          "x": 0,
+          "y": 0.3020833333333333,
+          "w": 0.5833333333333334,
+          "h": 0.6979166666666666
+        },
+        "treasury": {
+          "x": 0.5833333333333334,
+          "y": 0.3020833333333333,
+          "w": 0.4166666666666667,
+          "h": 0.6979166666666666
+        }
+      }
+    },
+    "minor": {
+      "slots": {
+        "home": {
+          "x": 0,
+          "y": 0,
+          "w": 0.09051595180460739,
+          "h": 1
+        }
+      },
+      "zones": {
+        "trains": {
+          "x": 0.13751461908776894,
+          "y": 0,
+          "w": 0.7267114532053199,
+          "h": 1
+        },
+        "permit": {
+          "x": 0.8642260722930889,
+          "y": 0,
+          "w": 0.1357739277069111,
+          "h": 1
+        }
+      }
+    }
+  },
+  "wordmarks": [
+    {
+      "key": "pool",
+      "png": "mats/wordmark-pool.png",
+      "text": "BANK POOL",
+      "wMm": 310,
+      "hMm": 161.739,
+      "wPx": 2344,
+      "hPx": 1224
+    },
+    {
+      "key": "spent",
+      "png": "mats/wordmark-spent.png",
+      "text": "OUT OF PLAY",
+      "wMm": 310,
+      "hMm": 161.739,
+      "wPx": 2344,
+      "hPx": 1224
+    }
+  ],
+  "seatMarks": [
+    {
+      "seat": 1,
+      "key": "certs",
+      "png": "mats/seat-1-certs.png",
+      "label": "CERTIFICATES",
+      "wMm": 138,
+      "hMm": 44,
+      "wPx": 653,
+      "hPx": 209
+    },
+    {
+      "seat": 1,
+      "key": "charters",
+      "png": "mats/seat-1-charters.png",
+      "label": "CHARTERS",
+      "wMm": 109,
+      "hMm": 91,
+      "wPx": 515,
+      "hPx": 430
+    },
+    {
+      "seat": 2,
+      "key": "certs",
+      "png": "mats/seat-2-certs.png",
+      "label": "CERTIFICATES",
+      "wMm": 138,
+      "hMm": 44,
+      "wPx": 653,
+      "hPx": 209
+    },
+    {
+      "seat": 2,
+      "key": "charters",
+      "png": "mats/seat-2-charters.png",
+      "label": "CHARTERS",
+      "wMm": 109,
+      "hMm": 91,
+      "wPx": 515,
+      "hPx": 430
+    },
+    {
+      "seat": 3,
+      "key": "certs",
+      "png": "mats/seat-3-certs.png",
+      "label": "CERTIFICATES",
+      "wMm": 156,
+      "hMm": 36,
+      "wPx": 738,
+      "hPx": 171
+    },
+    {
+      "seat": 3,
+      "key": "charters",
+      "png": "mats/seat-3-charters.png",
+      "label": "CHARTERS",
+      "wMm": 156,
+      "hMm": 61,
+      "wPx": 738,
+      "hPx": 289
+    },
+    {
+      "seat": 4,
+      "key": "certs",
+      "png": "mats/seat-4-certs.png",
+      "label": "CERTIFICATES",
+      "wMm": 149,
+      "hMm": 36,
+      "wPx": 705,
+      "hPx": 171
+    },
+    {
+      "seat": 4,
+      "key": "charters",
+      "png": "mats/seat-4-charters.png",
+      "label": "CHARTERS",
+      "wMm": 149,
+      "hMm": 61,
+      "wPx": 705,
+      "hPx": 289
+    },
+    {
+      "seat": 5,
+      "key": "certs",
+      "png": "mats/seat-5-certs.png",
+      "label": "CERTIFICATES",
+      "wMm": 149,
+      "hMm": 36,
+      "wPx": 705,
+      "hPx": 171
+    },
+    {
+      "seat": 5,
+      "key": "charters",
+      "png": "mats/seat-5-charters.png",
+      "label": "CHARTERS",
+      "wMm": 149,
+      "hMm": 61,
+      "wPx": 705,
+      "hPx": 289
+    },
+    {
+      "seat": 6,
+      "key": "certs",
+      "png": "mats/seat-6-certs.png",
+      "label": "CERTIFICATES",
+      "wMm": 156,
+      "hMm": 36,
+      "wPx": 738,
+      "hPx": 171
+    },
+    {
+      "seat": 6,
+      "key": "charters",
+      "png": "mats/seat-6-charters.png",
+      "label": "CHARTERS",
+      "wMm": 156,
+      "hMm": 61,
+      "wPx": 738,
+      "hPx": 289
+    }
+  ]
+}

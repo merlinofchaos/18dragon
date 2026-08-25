@@ -1,0 +1,880 @@
+{
+  "tiles": [
+    {
+      "id": "3",
+      "color": "yellow",
+      "kind": "dit",
+      "quantity": 6
+    },
+    {
+      "id": "4",
+      "color": "yellow",
+      "kind": "dit",
+      "quantity": 6
+    },
+    {
+      "id": "5",
+      "color": "yellow",
+      "kind": "city-plain",
+      "quantity": 6,
+      "slots": [
+        {
+          "slot": 0,
+          "nx": 0,
+          "ny": 0,
+          "dN": 0.25
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "color": "yellow",
+      "kind": "city-plain",
+      "quantity": 8,
+      "slots": [
+        {
+          "slot": 0,
+          "nx": 0,
+          "ny": 0,
+          "dN": 0.25
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "color": "yellow",
+      "kind": "track",
+      "quantity": 20
+    },
+    {
+      "id": "8",
+      "color": "yellow",
+      "kind": "track",
+      "quantity": 20
+    },
+    {
+      "id": "9",
+      "color": "yellow",
+      "kind": "track",
+      "quantity": 20
+    },
+    {
+      "id": "14",
+      "color": "green",
+      "kind": "city-plain",
+      "quantity": 6,
+      "slots": [
+        {
+          "slot": 0,
+          "nx": -0.125,
+          "ny": 0,
+          "dN": 0.25
+        },
+        {
+          "slot": 1,
+          "nx": 0.125,
+          "ny": 0,
+          "dN": 0.25
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "color": "green",
+      "kind": "city-plain",
+      "quantity": 6,
+      "slots": [
+        {
+          "slot": 0,
+          "nx": -0.125,
+          "ny": 0,
+          "dN": 0.25
+        },
+        {
+          "slot": 1,
+          "nx": 0.125,
+          "ny": 0,
+          "dN": 0.25
+        }
+      ]
+    },
+    {
+      "id": "57",
+      "color": "yellow",
+      "kind": "city-plain",
+      "quantity": 6,
+      "slots": [
+        {
+          "slot": 0,
+          "nx": 0,
+          "ny": 0,
+          "dN": 0.25
+        }
+      ]
+    },
+    {
+      "id": "58",
+      "color": "yellow",
+      "kind": "dit",
+      "quantity": 6
+    },
+    {
+      "id": "60",
+      "color": "gray",
+      "kind": "track",
+      "quantity": 2
+    },
+    {
+      "id": "63",
+      "color": "brown",
+      "kind": "city-plain",
+      "quantity": 8,
+      "slots": [
+        {
+          "slot": 0,
+          "nx": -0.125,
+          "ny": 0,
+          "dN": 0.25
+        },
+        {
+          "slot": 1,
+          "nx": 0.125,
+          "ny": 0,
+          "dN": 0.25
+        }
+      ]
+    },
+    {
+      "id": "80",
+      "color": "green",
+      "kind": "track",
+      "quantity": 6
+    },
+    {
+      "id": "81",
+      "color": "green",
+      "kind": "track",
+      "quantity": 6
+    },
+    {
+      "id": "82",
+      "color": "green",
+      "kind": "track",
+      "quantity": 8
+    },
+    {
+      "id": "83",
+      "color": "green",
+      "kind": "track",
+      "quantity": 8
+    },
+    {
+      "id": "141",
+      "color": "green",
+      "kind": "dit",
+      "quantity": 4
+    },
+    {
+      "id": "142",
+      "color": "green",
+      "kind": "dit",
+      "quantity": 4
+    },
+    {
+      "id": "143",
+      "color": "green",
+      "kind": "dit",
+      "quantity": 4
+    },
+    {
+      "id": "144",
+      "color": "green",
+      "kind": "dit",
+      "quantity": 4
+    },
+    {
+      "id": "207",
+      "color": "green",
+      "kind": "city-lettered",
+      "quantity": 2,
+      "slots": [
+        {
+          "slot": 0,
+          "nx": -0.125,
+          "ny": 0,
+          "dN": 0.25
+        },
+        {
+          "slot": 1,
+          "nx": 0.125,
+          "ny": 0,
+          "dN": 0.25
+        }
+      ]
+    },
+    {
+      "id": "208",
+      "color": "green",
+      "kind": "city-lettered",
+      "quantity": 1,
+      "slots": [
+        {
+          "slot": 0,
+          "nx": -0.125,
+          "ny": 0,
+          "dN": 0.25
+        },
+        {
+          "slot": 1,
+          "nx": 0.125,
+          "ny": 0,
+          "dN": 0.25
+        }
+      ]
+    },
+    {
+      "id": "448",
+      "color": "brown",
+      "kind": "city-plain",
+      "quantity": 5,
+      "slots": [
+        {
+          "slot": 0,
+          "nx": -0.125,
+          "ny": 0,
+          "dN": 0.25
+        },
+        {
+          "slot": 1,
+          "nx": 0.125,
+          "ny": 0,
+          "dN": 0.25
+        }
+      ]
+    },
+    {
+      "id": "544",
+      "color": "brown",
+      "kind": "track",
+      "quantity": 6
+    },
+    {
+      "id": "545",
+      "color": "brown",
+      "kind": "track",
+      "quantity": 6
+    },
+    {
+      "id": "546",
+      "color": "brown",
+      "kind": "track",
+      "quantity": 8
+    },
+    {
+      "id": "611",
+      "color": "brown",
+      "kind": "city-plain",
+      "quantity": 4,
+      "slots": [
+        {
+          "slot": 0,
+          "nx": -0.125,
+          "ny": 0,
+          "dN": 0.25
+        },
+        {
+          "slot": 1,
+          "nx": 0.125,
+          "ny": 0,
+          "dN": 0.25
+        }
+      ]
+    },
+    {
+      "id": "619",
+      "color": "green",
+      "kind": "city-plain",
+      "quantity": 6,
+      "slots": [
+        {
+          "slot": 0,
+          "nx": -0.125,
+          "ny": 0,
+          "dN": 0.25
+        },
+        {
+          "slot": 1,
+          "nx": 0.125,
+          "ny": 0,
+          "dN": 0.25
+        }
+      ]
+    },
+    {
+      "id": "622",
+      "color": "green",
+      "kind": "city-lettered",
+      "quantity": 1,
+      "slots": [
+        {
+          "slot": 0,
+          "nx": -0.125,
+          "ny": 0,
+          "dN": 0.25
+        },
+        {
+          "slot": 1,
+          "nx": 0.125,
+          "ny": 0,
+          "dN": 0.25
+        }
+      ]
+    },
+    {
+      "id": "B01",
+      "color": "yellow",
+      "kind": "city-lettered",
+      "quantity": 4,
+      "slots": [
+        {
+          "slot": 0,
+          "nx": 0,
+          "ny": 0,
+          "dN": 0.25
+        }
+      ]
+    },
+    {
+      "id": "B02",
+      "color": "yellow",
+      "kind": "city-lettered",
+      "quantity": 4,
+      "slots": [
+        {
+          "slot": 0,
+          "nx": 0,
+          "ny": 0,
+          "dN": 0.25
+        }
+      ]
+    },
+    {
+      "id": "B03",
+      "color": "green",
+      "kind": "city-lettered",
+      "quantity": 2,
+      "slots": [
+        {
+          "slot": 0,
+          "nx": -0.125,
+          "ny": 0,
+          "dN": 0.25
+        },
+        {
+          "slot": 1,
+          "nx": 0.125,
+          "ny": 0,
+          "dN": 0.25
+        }
+      ]
+    },
+    {
+      "id": "B04",
+      "color": "green",
+      "kind": "city-lettered",
+      "quantity": 2,
+      "slots": [
+        {
+          "slot": 0,
+          "nx": -0.125,
+          "ny": 0,
+          "dN": 0.25
+        },
+        {
+          "slot": 1,
+          "nx": 0.125,
+          "ny": 0,
+          "dN": 0.25
+        }
+      ]
+    },
+    {
+      "id": "B05",
+      "color": "brown",
+      "kind": "city-lettered",
+      "quantity": 4,
+      "slots": [
+        {
+          "slot": 0,
+          "nx": -0.125,
+          "ny": 0,
+          "dN": 0.25
+        },
+        {
+          "slot": 1,
+          "nx": 0.125,
+          "ny": 0,
+          "dN": 0.25
+        }
+      ]
+    },
+    {
+      "id": "B06",
+      "color": "gray",
+      "kind": "city-lettered",
+      "quantity": 4,
+      "slots": [
+        {
+          "slot": 0,
+          "nx": -0.125,
+          "ny": 0,
+          "dN": 0.25
+        },
+        {
+          "slot": 1,
+          "nx": 0.125,
+          "ny": 0,
+          "dN": 0.25
+        }
+      ]
+    },
+    {
+      "id": "K01",
+      "color": "yellow",
+      "kind": "city-lettered",
+      "quantity": 2,
+      "slots": [
+        {
+          "slot": 0,
+          "nx": 0,
+          "ny": 0,
+          "dN": 0.25
+        }
+      ]
+    },
+    {
+      "id": "K02",
+      "color": "green",
+      "kind": "city-lettered",
+      "quantity": 2,
+      "slots": [
+        {
+          "slot": 0,
+          "nx": -0.125,
+          "ny": 0,
+          "dN": 0.25
+        },
+        {
+          "slot": 1,
+          "nx": 0.125,
+          "ny": 0,
+          "dN": 0.25
+        }
+      ]
+    },
+    {
+      "id": "K03",
+      "color": "brown",
+      "kind": "city-lettered",
+      "quantity": 2,
+      "slots": [
+        {
+          "slot": 0,
+          "nx": -0.125,
+          "ny": 0,
+          "dN": 0.25
+        },
+        {
+          "slot": 1,
+          "nx": 0.125,
+          "ny": 0,
+          "dN": 0.25
+        }
+      ]
+    },
+    {
+      "id": "K04",
+      "color": "gray",
+      "kind": "city-lettered",
+      "quantity": 2,
+      "slots": [
+        {
+          "slot": 0,
+          "nx": -0.125,
+          "ny": 0,
+          "dN": 0.25
+        },
+        {
+          "slot": 1,
+          "nx": 0.125,
+          "ny": 0,
+          "dN": 0.25
+        }
+      ]
+    },
+    {
+      "id": "H01",
+      "color": "yellow",
+      "kind": "city-lettered",
+      "quantity": 1,
+      "slots": [
+        {
+          "slot": 0,
+          "nx": -0.125,
+          "ny": 0,
+          "dN": 0.25
+        },
+        {
+          "slot": 1,
+          "nx": 0.125,
+          "ny": 0,
+          "dN": 0.25
+        }
+      ]
+    },
+    {
+      "id": "H02",
+      "color": "green",
+      "kind": "city-lettered",
+      "quantity": 1,
+      "slots": [
+        {
+          "slot": 0,
+          "nx": -0.125,
+          "ny": 0,
+          "dN": 0.25
+        },
+        {
+          "slot": 1,
+          "nx": 0.125,
+          "ny": 0,
+          "dN": 0.25
+        }
+      ]
+    },
+    {
+      "id": "H03",
+      "color": "brown",
+      "kind": "city-lettered",
+      "quantity": 1,
+      "slots": [
+        {
+          "slot": 0,
+          "nx": -0.07488,
+          "ny": -0.12969,
+          "dN": 0.25
+        },
+        {
+          "slot": 1,
+          "nx": -0.0753,
+          "ny": 0.11957,
+          "dN": 0.25
+        },
+        {
+          "slot": 2,
+          "nx": 0.1412,
+          "ny": -0.00543,
+          "dN": 0.25
+        }
+      ]
+    },
+    {
+      "id": "H04",
+      "color": "gray",
+      "kind": "city-lettered",
+      "quantity": 1,
+      "slots": [
+        {
+          "slot": 0,
+          "nx": -0.125,
+          "ny": -0.125,
+          "dN": 0.25
+        },
+        {
+          "slot": 1,
+          "nx": 0.125,
+          "ny": -0.125,
+          "dN": 0.25
+        },
+        {
+          "slot": 2,
+          "nx": -0.125,
+          "ny": 0.125,
+          "dN": 0.25
+        },
+        {
+          "slot": 3,
+          "nx": 0.125,
+          "ny": 0.125,
+          "dN": 0.25
+        }
+      ]
+    },
+    {
+      "id": "R01",
+      "color": "yellow",
+      "kind": "city-lettered",
+      "quantity": 1,
+      "slots": [
+        {
+          "slot": 0,
+          "nx": -0.125,
+          "ny": 0,
+          "dN": 0.25
+        },
+        {
+          "slot": 1,
+          "nx": 0.125,
+          "ny": 0,
+          "dN": 0.25
+        }
+      ]
+    },
+    {
+      "id": "R02",
+      "color": "green",
+      "kind": "city-lettered",
+      "quantity": 1,
+      "slots": [
+        {
+          "slot": 0,
+          "nx": -0.125,
+          "ny": 0,
+          "dN": 0.25
+        },
+        {
+          "slot": 1,
+          "nx": 0.125,
+          "ny": 0,
+          "dN": 0.25
+        }
+      ]
+    },
+    {
+      "id": "R03",
+      "color": "brown",
+      "kind": "city-lettered",
+      "quantity": 1,
+      "slots": [
+        {
+          "slot": 0,
+          "nx": -0.07488,
+          "ny": -0.12969,
+          "dN": 0.25
+        },
+        {
+          "slot": 1,
+          "nx": -0.0753,
+          "ny": 0.11957,
+          "dN": 0.25
+        },
+        {
+          "slot": 2,
+          "nx": 0.1412,
+          "ny": -0.00543,
+          "dN": 0.25
+        }
+      ]
+    },
+    {
+      "id": "R04",
+      "color": "gray",
+      "kind": "city-lettered",
+      "quantity": 1,
+      "slots": [
+        {
+          "slot": 0,
+          "nx": -0.07488,
+          "ny": -0.12969,
+          "dN": 0.25
+        },
+        {
+          "slot": 1,
+          "nx": -0.0753,
+          "ny": 0.11957,
+          "dN": 0.25
+        },
+        {
+          "slot": 2,
+          "nx": 0.1412,
+          "ny": -0.00543,
+          "dN": 0.25
+        }
+      ]
+    },
+    {
+      "id": "D01",
+      "color": "green",
+      "kind": "city-lettered",
+      "quantity": 1,
+      "slots": [
+        {
+          "slot": 0,
+          "nx": -0.125,
+          "ny": 0,
+          "dN": 0.25
+        },
+        {
+          "slot": 1,
+          "nx": 0.125,
+          "ny": 0,
+          "dN": 0.25
+        }
+      ]
+    },
+    {
+      "id": "D02",
+      "color": "brown",
+      "kind": "city-lettered",
+      "quantity": 1,
+      "slots": [
+        {
+          "slot": 0,
+          "nx": -0.07488,
+          "ny": -0.12969,
+          "dN": 0.25
+        },
+        {
+          "slot": 1,
+          "nx": -0.0753,
+          "ny": 0.11957,
+          "dN": 0.25
+        },
+        {
+          "slot": 2,
+          "nx": 0.1412,
+          "ny": -0.00543,
+          "dN": 0.25
+        }
+      ]
+    },
+    {
+      "id": "D03",
+      "color": "gray",
+      "kind": "city-lettered",
+      "quantity": 1,
+      "slots": [
+        {
+          "slot": 0,
+          "nx": -0.07488,
+          "ny": -0.12969,
+          "dN": 0.25
+        },
+        {
+          "slot": 1,
+          "nx": -0.0753,
+          "ny": 0.11957,
+          "dN": 0.25
+        },
+        {
+          "slot": 2,
+          "nx": 0.1412,
+          "ny": -0.00543,
+          "dN": 0.25
+        }
+      ]
+    },
+    {
+      "id": "V01",
+      "color": "green",
+      "kind": "city-lettered",
+      "quantity": 1,
+      "slots": [
+        {
+          "slot": 0,
+          "nx": -0.125,
+          "ny": 0,
+          "dN": 0.25
+        },
+        {
+          "slot": 1,
+          "nx": 0.125,
+          "ny": 0,
+          "dN": 0.25
+        }
+      ]
+    },
+    {
+      "id": "V02",
+      "color": "brown",
+      "kind": "city-lettered",
+      "quantity": 1,
+      "slots": [
+        {
+          "slot": 0,
+          "nx": -0.07488,
+          "ny": -0.12969,
+          "dN": 0.25
+        },
+        {
+          "slot": 1,
+          "nx": -0.0753,
+          "ny": 0.11957,
+          "dN": 0.25
+        },
+        {
+          "slot": 2,
+          "nx": 0.1412,
+          "ny": -0.00543,
+          "dN": 0.25
+        }
+      ]
+    },
+    {
+      "id": "V03",
+      "color": "gray",
+      "kind": "city-lettered",
+      "quantity": 1,
+      "slots": [
+        {
+          "slot": 0,
+          "nx": -0.07488,
+          "ny": -0.12969,
+          "dN": 0.25
+        },
+        {
+          "slot": 1,
+          "nx": -0.0753,
+          "ny": 0.11957,
+          "dN": 0.25
+        },
+        {
+          "slot": 2,
+          "nx": 0.1412,
+          "ny": -0.00543,
+          "dN": 0.25
+        }
+      ]
+    },
+    {
+      "id": "X01",
+      "color": "yellow",
+      "kind": "special",
+      "quantity": 6
+    },
+    {
+      "id": "X02",
+      "color": "green",
+      "kind": "special",
+      "quantity": 4
+    },
+    {
+      "id": "X03",
+      "color": "green",
+      "kind": "special",
+      "quantity": 1
+    },
+    {
+      "id": "X04",
+      "color": "brown",
+      "kind": "special",
+      "quantity": 1
+    },
+    {
+      "id": "W01",
+      "color": "water",
+      "kind": "special",
+      "quantity": 2
+    }
+  ]
+}
